@@ -35,7 +35,7 @@
 ---
 
 ## Project Report Collaboration Insights
-El equipo ha utilizado un flujo de trabajo en github: [https://github.com/PowerTech-NRC12053/saferoute-report](https://github.com/PowerTech-NRC12053/saferoute-report)
+El equipo ha utilizado un flujo de trabajo en github: [https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-report](https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-report)
 
 ---
 
@@ -109,6 +109,19 @@ _Nota._ Adaptado de Resultados del Censo Educativo 2022 (p. 12), por Ministerio 
 
 #### 1.2.2 Lean UX Process
 ##### 1.2.2.1. Lean UX Problem Statements
+
+El transporte escolar privado en el Perú opera mayoritariamente de forma informal, coordinándose mediante
+llamadas telefónicas, mensajes de WhatsApp y registros manuales en hojas privadas. En este contexto, tanto
+los padres de familia como los transportistas escolares enfrentan dificultades que comprometen la seguridad
+y eficiencia del servicio. Hemos observado un factor crítico que afecta a este ecosistema, los padres de familia
+no cuentan con visibilidad sobre el trayecto de sus hijos, mientras que los transportistas carecen de
+herramientas digitales para gestionar rutas, alumnos e incidencias de forma estructurada. Estas dos
+necesidades son interdependientes, mientras que por un lado los padres necesitan visibilidad, y por el otro los
+transportistas no tienen los medios para proporcionársela. ¿Cómo podemos desarrollar una plataforma que
+permita a los transportistas escolares gestionar su operación de forma digital, mientras ofrece
+simultáneamente a los padres de familia la visibilidad y tranquilidad que necesitan sobre el traslado de sus
+hijos?
+
 ##### 1.2.2.2. Lean UX Assumptions
 
 **Business Assumptions**
@@ -2740,7 +2753,7 @@ Muestra la estructura interna de 4 capas del contexto encargado de la monetizaci
 
 - Trip Execution & Monitoring: 
 
-![saferoute-trip](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/PowerTech-NRC12053/saferoute-platform/main/saferoute-asp-net-developer/Safer-Route-Platform/docs/saferoute-trip.puml)
+![saferoute-trip](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/main/saferoute-asp-net-developer/Safer-Route-Platform/docs/saferoute-trip.puml)
 
 Gestiona la ejecución de viajes, asistencia e incidentes.
 Trip (AggregateRoot) — Atributos: id, organizationId, routeId, driverId, tripState, startTime, endTime, -attendances: List<Attendance> e -incidents: List<Incident>. Métodos: Start(), Complete(), RecordBoarding(childId, state), ReportIncident(description), GetAttendanceSummary(), GetIncidentLog(). Composición 1:0..* con ambas entidades hijas.
@@ -2750,7 +2763,7 @@ Value Objects propios: TripState (pending/inProgress/completed), BoardingState (
 
 - Fleet & Route Planning: 
 
-![saferoute-fleet](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/PowerTech-NRC12053/saferoute-platform/main/saferoute-asp-net-developer/Safer-Route-Platform/docs/saferoute-fleet.puml)
+![saferoute-fleet](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/main/saferoute-asp-net-developer/Safer-Route-Platform/docs/saferoute-fleet.puml)
 
 Gestiona rutas, vehículos, paradas y asignaciones.
 Route (AggregateRoot) — Atributos: id, organizationId, name, routeState, departureTime, serviceDays, vehicle, assignment y -stops: List<Stop>. Métodos: DefineRoute(), AddStop(), RemoveStop(), Activate(), Deactivate(), GetStopSequence(). Tiene composición 1:1..* con Stop (has): una ruta requiere al menos una parada. Se relaciona 1:1 con Vehicle y Assignment.
@@ -2761,7 +2774,7 @@ Value Objects propios: RouteState (draft/active/inactive), StopOrder (posición 
 
 - Stakeholder & Asset Management: 
 
-![vue-saferoute-stakeholder](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/PowerTech-NRC12053/saferoute-webapp/main/saferoute/docs/vue-saferoute-stakeholder.puml)
+![vue-saferoute-stakeholder](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-webapp/main/saferoute/docs/vue-saferoute-stakeholder.puml)
 
 
 Modela a los actores humanos del sistema: padres, conductores, hijos y grupos de estudiantes.
@@ -2772,7 +2785,7 @@ StudentGroup (Entity) — Agrupa referencias a hijos (-children: List<ChildId>) 
 
 - Notifications & Communication:
 
-![saferoute-notifications](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/PowerTech-NRC12053/saferoute-platform/main/saferoute-asp-net-developer/Safer-Route-Platform/docs/saferoute-notifications.puml)
+![saferoute-notifications](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/main/saferoute-asp-net-developer/Safer-Route-Platform/docs/saferoute-notifications.puml)
 
 Gestiona el envío de notificaciones hacia padres de familia.
 Notification (AggregateRoot) — Atributos: id, organizationId, parentId, tripId, -category: NotificationCategory, -deliveryState: NotificationDeliveryState, -message: NotificationMessage, sentAt, -alerts: List<Alert> y -announcements: List<Announcement>. Métodos: Queue(), Dispatch(), MarkDelivered(), IsDelivered(), GetCategory(), GetMessage(). Composición 1:0..* con Alert y 1:0..* con Announcement.
@@ -2782,13 +2795,13 @@ Value Objects propios: NotificationCategory (boarding/arrival/incident/panic), N
 
 - Shared:
 
-![saferoute-shared](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/PowerTech-NRC12053/saferoute-platform/main/saferoute-asp-net-developer/Safer-Route-Platform/docs/saferoute-shared.puml)
+![saferoute-shared](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/main/saferoute-asp-net-developer/Safer-Route-Platform/docs/saferoute-shared.puml)
 
 Este módulo no pertenece a un bounded context específico sino que actúa como kernel compartido. Contiene exclusivamente Value Objects reutilizables a lo largo de toda la aplicación: OrganizationId, UserId, ParentId, DriverId, ChildId, RouteId, TripId, SubscriptionId, PlanId, FullName y Coordinates. Todos son inmutables, encapsulan un valor primitivo (Guid, string o double) con scope privado, y exponen métodos públicos como New(), Equals() y ToString(). FullName es el único con dos atributos (firstName, lastName) y agrega GetFullName() e IsValid(). Coordinates encapsula latitude y longitude como double con validación geoespacial.
 
 - Identity and Access Management:
 
-![saferoute-iam](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/PowerTech-NRC12053/saferoute-platform/main/saferoute-asp-net-developer/Safer-Route-Platform/docs/saferoute-iam.puml)
+![saferoute-iam](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/main/saferoute-asp-net-developer/Safer-Route-Platform/docs/saferoute-iam.puml)
 
 Gestiona organizaciones, usuarios y roles. Contiene dos Aggregate Roots y una Entity:
 Organization (AggregateRoot) — Tiene -id: OrganizationId, -name: OrganizationName, -status: OrganizationStatus y -createdAt: DateTime. Expone métodos públicos para su ciclo de vida: Create(), Activate(), Suspend() e IsActive(). Se relaciona 1:1 con OrganizationId (identified by), OrganizationName (has) y OrganizationStatus (has).
@@ -2798,7 +2811,7 @@ Los Value Objects propios (OrganizationName, OrganizationStatus, Email, Password
 
 - Subscription & Plan Management: 
 
-![saferoute-subscription](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/PowerTech-NRC12053/saferoute-platform/main/saferoute-asp-net-developer/Safer-Route-Platform/docs/saferoute-subscription.puml)
+![saferoute-subscription](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/main/saferoute-asp-net-developer/Safer-Route-Platform/docs/saferoute-subscription.puml)
 
 Gestiona los planes y suscripciones de cada organización.
 Subscription (AggregateRoot) — Atributos: id, organizationId, planId, -state: SubscriptionState, startDate, endDate. Métodos: Activate(), Upgrade(planId), Cancel(), IsActive(), GetRemainingDays(). Se asocia 1:1 con User del bounded context IAM (owned by), indicando dependencia entre contextos.
@@ -2813,7 +2826,7 @@ Value Objects propios: SubscriptionState (active/expired/cancelled), PlanTier (b
 
 - Trip Execution & Monitoring: 
 
-![vue-saferoute-trip](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/PowerTech-NRC12053/saferoute-webapp/main/saferoute/docs/vue-saferoute-trip.puml)
+![vue-saferoute-trip](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-webapp/main/saferoute/docs/vue-saferoute-trip.puml)
 
 Pantallas operativas para el control en tiempo real de los viajes.
 
@@ -2823,7 +2836,7 @@ Application & Infrastructure: TripStore centraliza el viaje en curso, asistencia
 
 - Fleet & Route Planning: 
 
-![vue-saferoute-fleet](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/PowerTech-NRC12053/saferoute-webapp/main/saferoute/docs/vue-saferoute-fleet.puml)
+![vue-saferoute-fleet](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-webapp/main/saferoute/docs/vue-saferoute-fleet.puml)
 
 Interfaz para armar la logística de rutas, vehículos y asignaciones.
 
@@ -2833,7 +2846,7 @@ Application & Infrastructure: FleetStore orquesta el estado de rutas, vehículos
 
 - Stakeholder & Asset Management: 
 
-![vue-saferoute-stakeholder](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/PowerTech-NRC12053/saferoute-webapp/main/saferoute/docs/vue-saferoute-stakeholder.puml)
+![vue-saferoute-stakeholder](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-webapp/main/saferoute/docs/vue-saferoute-stakeholder.puml)
 
 Controla las vistas de listado y gestión de los actores operativos del sistema.
 
@@ -2843,7 +2856,7 @@ Application & Infrastructure: StakeholderStore centraliza las listas de actores.
 
 - Notifications & Communication:
 
-![vue-saferoute-notifications](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/PowerTech-NRC12053/saferoute-webapp/main/saferoute/docs/vue-saferoute-notifications.puml)
+![vue-saferoute-notifications](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-webapp/main/saferoute/docs/vue-saferoute-notifications.puml)
 
 Centraliza la visualización y envío de notificaciones y alertas.
 
@@ -2853,7 +2866,7 @@ Application & Infrastructure: NotificationsStore maneja los arreglos reactivos d
 
 - Shared:
 
-![vue-saferoute-shared](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/PowerTech-NRC12053/saferoute-webapp/main/saferoute/docs/vue-saferoute-shared.puml)
+![vue-saferoute-shared](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-webapp/main/saferoute/docs/vue-saferoute-shared.puml)
 
 Actúa como el núcleo común de infraestructura y componentes base para toda la aplicación Vue.
 
@@ -2863,7 +2876,7 @@ Application & Infrastructure: Provee el cliente HTTP genérico (ApiClient) que u
 
 - Identity and Access Management:
 
-![vue-saferoute-iam](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/PowerTech-NRC12053/saferoute-webapp/main/saferoute/docs/vue-saferoute-iam.puml)
+![vue-saferoute-iam](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-webapp/main/saferoute/docs/vue-saferoute-iam.puml)
 
 
 Gestiona la autenticación de usuarios y la configuración de la organización.
@@ -2874,7 +2887,7 @@ Application & Infrastructure: IamStore centraliza el estado reactivo (currentUse
 
 - Subscription & Plan Management: 
 
-![vue-saferoute-subscription](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/PowerTech-NRC12053/saferoute-webapp/main/saferoute/docs/vue-saferoute-subscription.puml)
+![vue-saferoute-subscription](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-webapp/main/saferoute/docs/vue-saferoute-subscription.puml)
 
 Maneja la visualización y selección de planes para la organización.
 
@@ -3423,11 +3436,11 @@ En esta sección se describen las herramientas y tecnologías utilizadas para el
 
 Para el manejo del código fuente, utilizamos GitHub para colaborar entre miembros de equipo en multiples repositorios. A continuación se listan los enlaces de cada repositorio utilizado.
 
-- Organización: <https://github.com/PowerTech-NRC12053>
-- Repositorio de Landing Page: <https://github.com/PowerTech-NRC12053/SafeRoute-landing-page>
-- Repositorio del informe: <https://github.com/PowerTech-NRC12053/SafeRoute-report>
-- Repositorio del frontend: <https://github.com/PowerTech-NRC12053/SafeRoute-frontend-applications>
-- Repositorio del backend: <https://github.com/PowerTech-NRC12053/SafeRoute-web-services>
+- Organización: <https://github.com/upc-pre-202610-1asi0730-12053-powertech>
+- Repositorio de Landing Page: <https://github.com/upc-pre-202610-1asi0730-12053-powertech/SafeRoute-landing-page>
+- Repositorio del informe: <https://github.com/upc-pre-202610-1asi0730-12053-powertech/SafeRoute-report>
+- Repositorio del frontend: <https://github.com/upc-pre-202610-1asi0730-12053-powertech/SafeRoute-frontend-applications>
+- Repositorio del backend: <https://github.com/upc-pre-202610-1asi0730-12053-powertech/SafeRoute-web-services>
 
 En el repositorio del informe se seguirá un esquema de trabajo basado en GitFlow. La rama main almacenará la versión estable del informe correspondiente a cada entregable del trabajo, mientras que la rama develop concentrará la integración de avances validados por cada integrante antes de su consolidación final. A partir de develop, cada integrante creará ramas feature de trabajo para las secciones asignadas. Las ramas feature seguirán una nomenclatura asociada al capítulo o bloque trabajado, por ejemplo: feature/chapter-1-introduction-and-lean-ux, o feature/chapter-5-software-configuration-management. Esta convención permite identificar con claridad qué parte del informe está siendo desarrollada y reduce el riesgo de conflictos entre los miembros del equipo.
 
@@ -3526,7 +3539,7 @@ La Landing Page fue desarrollada utilizando HTML, CSS y JavaScript, y será desp
 5. Seleccionar la rama `main` (o `master`) y la carpeta raíz (`/`) como fuente.
 6. GitHub generará automáticamente una URL pública para acceder a la landing page.
 
-**URL desplegada:** [Landing Page SafeRoute](https://powertech-nrc12053.github.io/saferoute-website/)
+**URL desplegada:** [Landing Page SafeRoute](https://upc-pre-202610-1asi0730-12053-powertech.github.io/saferoute-website/)
 
 ---
 
@@ -3625,7 +3638,7 @@ Establecer la infraestructura base de SafeRoute mediante el desarrollo de una La
 | **US8** | Inicio de Trayecto      | T14 | Activación de Ruta | Implementar el trigger que notifica el inicio del viaje a los padres. | 8 | Fabio | To-do |
 | **---** | **Constraint General**  | T15 | Setup Arquitectónico | Configuración de BD SQL Server y estructura modular en C#. | 12 | Chris | To-do |
 
-**URL desplegada:** [Landing Page SafeRoute](https://powertech-nrc12053.github.io/saferoute-website/)
+**URL desplegada:** [Landing Page SafeRoute](https://upc-pre-202610-1asi0730-12053-powertech.github.io/saferoute-website/)
 
 Durante el Sprint 1, el equipo realizó commits principalmente sobre el repositorio del informe (SafeRoute-report), abarcando la documentación de los capítulos I al V, incluyendo el diseño de producto, arquitectura de software, wireframes, mockups y la configuración del entorno de desarrollo.
 
@@ -3668,7 +3681,7 @@ Durante el Sprint 1, el equipo realizó commits principalmente sobre el reposito
 
 ##### 5.2.1.5. Execution Evidence for Sprint Review
 
-Durante el Sprint 1, el equipo logró diseñar y desplegar la primera versión pública de la Landing Page de SafeRoute, accesible en [https://powertech-nrc12053.github.io/saferoute-website/](https://powertech-nrc12053.github.io/saferoute-website/).
+Durante el Sprint 1, el equipo logró diseñar y desplegar la primera versión pública de la Landing Page de SafeRoute, accesible en [https://upc-pre-202610-1asi0730-12053-powertech.github.io/saferoute-website/](https://upc-pre-202610-1asi0730-12053-powertech.github.io/saferoute-website/).
 
 La Landing Page presenta la propuesta de valor del producto, las funcionalidades principales, los roles del sistema, los planes de suscripción y el flujo de uso, con soporte de internacionalización (ES/EN). A continuación se presentan las capturas de las secciones implementadas.
 
@@ -3732,7 +3745,7 @@ La documentación de endpoints, contratos de API y evidencia de consumo de servi
 
 | Recurso      | Acción implementada   | Método HTTP | URL / Endpoint | Link de repositorio                                        |
 |--------------|-----------------------|-------------|------------|------------------------------------------------------------|
-| Landing Page | Visualización inicial | GET         |            | https://github.com/PowerTech-NRC12053/saferoute-report.git |
+| Landing Page | Visualización inicial | GET         |            | https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-report.git |
 ##### 5.2.1.7. Software Deployment Evidence for Sprint Review
 
 Durante el Sprint 1 se realizó el despliegue de la Landing Page de SafeRoute
@@ -3748,7 +3761,7 @@ utilizando GitHub Pages como plataforma de hosting estático.
    **URL:** 
 
 
-https://powertech-nrc12053.github.io/saferoute-website/
+https://upc-pre-202610-1asi0730-12053-powertech.github.io/saferoute-website/
 
 
    ![Landing Live](assets/images/Chapter-5/Sprint1/landing-hero.png)
