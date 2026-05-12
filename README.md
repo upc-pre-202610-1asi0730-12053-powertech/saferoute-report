@@ -961,8 +961,21 @@ En esta sección se presenta el glosario de términos de negocio utilizados dent
 
 ## Capítulo III: Requirements Specification
 ### 3.1. User Stories
-
 Las siguientes User Stories representan los requisitos detallados del sistema SafeRoute, cubriendo la operación completa, la Landing Page y la API técnica.
+
+| Epic / ID | Título | Descripción | Escenarios de Aceptación (Gherkin) | Relacionado con |
+|:---|:---|:---|:---|:---|
+| **E5** | **Technical Foundation** | Infraestructura técnica y capacidades base del sistema | N/A | N/A |
+| **TS1** | Implementación JWT Authentication | Como sistema, deseo emitir tokens JWT para asegurar sesiones autenticadas. | **S1:** Given credenciales válidas, When usuario inicia sesión, Then retorna JWT válido. <br> **S2:** Given token activo, When consume endpoint protegido, Then retorna 200 OK. <br> **S3:** Given token expirado, When consume endpoint, Then retorna 401 Unauthorized. | E5 |
+| **TS2** | Integración Leaflet Maps | Como sistema, deseo integrar Leaflet para visualizar rutas dinámicas en tiempo real. | **S1:** Given coordenadas válidas, When carga mapa, Then renderiza ruta correctamente. <br> **S2:** Given tracking activo, When recibe GPS, Then actualiza posición del vehículo. <br> **S3:** Given API de mapas caída, When carga mapa, Then muestra mensaje de error. | E5 |
+| **TS3** | Persistencia de Tracking GPS | Como sistema, deseo almacenar coordenadas GPS para mantener historial de viajes. | **S1:** Given viaje activo, When recibe coordenadas, Then almacena latitud y longitud. <br> **S2:** Given historial solicitado, When consulta viaje, Then retorna recorrido completo. <br> **S3:** Given coordenadas inválidas, When procesa request, Then rechaza registro. | E5 |
+| **TS4** | Configuración Swagger/OpenAPI | Como developer, deseo acceder a documentación interactiva para probar endpoints REST. | **S1:** Given acceso a `/swagger`, When carga interfaz, Then muestra endpoints documentados. <br> **S2:** Given endpoint válido, When ejecuta prueba, Then retorna respuesta esperada. <br> **S3:** Given API offline, When abre Swagger, Then muestra error de conexión. | E5 |
+| **TS5** | Soporte i18n Angular | Como sistema, deseo soportar múltiples idiomas para internacionalizar la Landing Page. | **S1:** Given idioma inglés, When usuario cambia lenguaje, Then traduce componentes. <br> **S2:** Given idioma español, When recarga página, Then mantiene preferencia. <br> **S3:** Given traducción inexistente, When carga clave, Then usa fallback en español. | E5 |
+| **TS6** | Sistema de Push Notifications | Como sistema, deseo enviar notificaciones push automáticas para eventos críticos. | **S1:** Given alumno abordado, When se registra boarding, Then envía push al padre. <br> **S2:** Given incidente crítico, When conductor reporta emergencia, Then dispara alerta prioritaria. <br> **S3:** Given dispositivo desconectado, When intenta enviar push, Then almacena reintento. | E5 |
+| **TS7** | Implementación HTTPS/SSL | Como sistema, deseo cifrar comunicaciones para proteger datos sensibles. | **S1:** Given acceso web, When usuario navega, Then conexión usa HTTPS. <br> **S2:** Given envío de credenciales, When procesa request, Then información viaja cifrada. <br> **S3:** Given certificado expirado, When abre sitio, Then navegador alerta inseguridad. | E5 |
+| **TS8** | Soporte Offline para Conductores | Como sistema, deseo almacenar eventos temporalmente cuando no exista conexión. | **S1:** Given sin internet, When conductor registra boarding, Then guarda localmente. <br> **S2:** Given conexión restaurada, When sincroniza, Then envía eventos pendientes. <br> **S3:** Given conflicto de sincronización, When procesa datos, Then muestra advertencia. | E5 |
+| **TS9** | API: Obtener Alumnos | Como developer, quiero listar alumnos por ruta, para integraciones externas. | **S1:** Given GET `/students`, When token Admin, Then retorna JSON lista. <br> **S2:** Given filtro por ID, When consulta, Then retorna datos de 1 alumno. <br> **S3:** Given token expirado, When consulta, Then retorna 401 Unauthorized. | E5 |
+| **TS10** | API: Registro GPS | Como developer, quiero enviar coordenadas, para actualizar la posición del bus. | **S1:** Given alta frecuencia, When envía 10 req/seg, Then el sistema procesa sin delay. <br> **S2:** Given coordenadas inválidas, When envía null, Then retorna 400 Bad Request. | E5 |
 
 | Epic / ID | Título | Descripción | Escenarios de Aceptación (Gherkin: 2 Positivos / 1 Negativo) | Relacionado con |
 |:---|:---|:---|:---|:---|
@@ -1012,9 +1025,6 @@ Las siguientes User Stories representan los requisitos detallados del sistema Sa
 | US40 | Verificación de SSL | Como visitante, quiero ver el candado de seguridad, para confiar mis datos. | **S1:** Given acceso a la web, When ve la barra de direcciones, Then aparece el prefijo HTTPS. <br> **S2:** Given envío de datos, When procesa formulario, Then viajan cifrados. <br> **S3:** Given certificado vencido, When entra, Then el navegador muestra aviso de "Sitio no seguro". | E4 |
 | US41 | Política de Cookies i18n | Como visitante, quiero aceptar cookies, para cumplir con normativas legales. | **S1:** Given primera visita, When aparece el banner, Then puede elegir "Aceptar todas". <br> **S2:** Given idioma inglés, When ve el banner, Then los términos están en inglés. <br> **S3:** Given rechazo de cookies, When navega, Then solo carga las técnicas esenciales. | E4 |
 | US42 | Soporte Multimoneda | Como visitante, quiero ver precios en mi moneda, para facilitar la comparación. | **S1:** Given geolocalización Perú, When ve precios, Then muestra en Soles (PEN). <br> **S2:** Given cambio manual a USA, When selecciona, Then muestra precios en Dólares (USD). <br> **S3:** Given moneda desconocida, When carga sitio, Then muestra precios en USD por defecto. | E4 |
-| **E5** | **SafeRoute RESTful API** | Integraciones para desarrolladores | | |
-| US43 | API: Obtener Alumnos | Como developer, quiero listar alumnos por ruta, para integraciones externas. | **S1:** Given GET `/students`, When token Admin, Then retorna JSON lista. <br> **S2:** Given filtro por ID, When consulta, Then retorna datos de 1 alumno. <br> **S3:** Given token expirado, When consulta, Then retorna 401 Unauthorized. | E5 |
-| US43 | API: Registro GPS | Como developer, quiero enviar coordenadas, para actualizar la posición del bus. | **S1:** Given alta frecuencia, When envía 10 req/seg, Then el sistema procesa sin delay. <br> **S2:** Given coordenadas inválidas, When envía null, Then retorna 400 Bad Request. | E5 |
 
 ### 3.2. Impact Mapping
 Segmento Objetivo 1: Carlos Ramirez, conductor
@@ -1027,34 +1037,44 @@ Segmento Objetivo 2: Rosita Nery, padre de familia
 ### 3.3. Product Backlog
 # Product Backlog - SafeRoute
 
-| Orden | User Story ID | Título | Descripción | Story Points |
-|------:|---------------|--------|-------------|-------------|
-| 1 | US25 | Visualización de Hero | Como visitante, deseo ver la propuesta de valor de SafeRoute para entender rápidamente el servicio. | 2 |
-| 2 | US28 | Consulta de Precios | Como visitante, deseo ver los planes y precios para evaluar mi presupuesto. | 3 |
-| 3 | US32 | Formulario de Contacto | Como visitante, deseo enviar mis datos para solicitar información o una demo comercial. | 3 |
-| 4 | US29 | Sección ¿Cómo funciona? | Como visitante, deseo entender el proceso del servicio antes de contratar. | 2 |
-| 5 | US31 | Testimonios Reales | Como visitante, deseo leer reseñas para confiar en la marca. | 2 |
-| 6 | US30 | Implementación i18n | Como visitante, deseo cambiar idioma ES/EN para navegar cómodamente. | 5 |
-| 7 | US1 | Contratar Plan | Como administrador, deseo elegir un plan para digitalizar y escalar mi operación. | 5 |
-| 8 | US2 | Registro de Conductores | Como administrador, deseo crear cuentas de conductores para asignar responsabilidades. | 3 |
-| 9 | US4 | Alta de Alumnos | Como administrador, deseo registrar alumnos para incluirlos en rutas. | 5 |
-| 10 | US3 | Registro de Padres | Como administrador, deseo registrar padres para habilitar monitoreo. | 3 |
-| 11 | US5 | Creación de Rutas | Como administrador, deseo crear rutas y paradas para optimizar tiempos. | 8 |
-| 12 | US6 | Asignación de Roles | Como administrador, deseo asignar conductores a rutas para organizar operaciones. | 3 |
-| 13 | US10 | Inicio de Trayecto | Como conductor, deseo iniciar la ruta para notificar que estoy en camino. | 3 |
-| 14 | US11 | Marcación de Abordaje | Como conductor, deseo registrar el abordaje para confirmar asistencia. | 5 |
-| 15 | US18| Rastreo en Tiempo Real | Como padre, deseo ver la movilidad en el mapa para calcular hora de llegada. | 8 |
-| 16 | US19 | Alerta de Proximidad | Como padre, deseo recibir aviso cuando el vehículo esté cerca. | 5 |
-| 17 | US20 | Confirmación de Llegada | Como padre, deseo saber si mi hijo llegó al colegio para estar tranquilo. | 3 |
-| 18 | US14 | Finalización de Ruta | Como conductor, deseo cerrar la ruta para concluir el servicio. | 2 |
-| 19 | US12 | Reporte de Incidencias | Como conductor, deseo informar retrasos o problemas durante la ruta. | 5 |
-| 20 | US16 | Navegación Integrada | Como conductor, deseo abrir mapas externos para usar la mejor ruta disponible. | 3 |
-| 21 | US7 | Analítica de Flota | Como administrador, deseo revisar métricas de rendimiento operativo. | 8 |
-| 22 | US22 | Historial de Asistencia | Como padre, deseo revisar asistencia mensual de mi hijo. | 5 |
-| 23 | US15 | Bitácora de Viajes | Como conductor, deseo consultar historial de viajes realizados. | 3 |
-| 24 | US23 | Perfil del Estudiante | Como padre, deseo registrar alergias o datos médicos relevantes. | 5 |
-| 25 | US24 | Chat con Soporte | Como padre, deseo reportar ausencias o dudas desde la app. | 5 |
-| 26 | US13 | Botón de Pánico | Como conductor, deseo activar SOS en emergencias críticas. | 8 |
+El equipo gestionó el Product Backlog mediante una herramienta Scrum digital, organizando User Stories y Technical Stories
+![Product Backlog](./assets/images/product-backlog-scrum.png)
+
+| Orden | Tipo | ID | Título | Descripción | Story Points |
+|------:|------|------|--------|-------------|-------------|
+| 1 | US | US25 | Visualización de Hero | Como visitante, deseo ver la propuesta de valor de SafeRoute para entender rápidamente el servicio. | 2 |
+| 2 | US | US28 | Consulta de Precios | Como visitante, deseo ver los planes y precios para evaluar mi presupuesto. | 3 |
+| 3 | US | US32 | Formulario de Contacto | Como visitante, deseo enviar mis datos para solicitar información o una demo comercial. | 3 |
+| 4 | US | US29 | Sección ¿Cómo funciona? | Como visitante, deseo entender el proceso del servicio antes de contratar. | 2 |
+| 5 | US | US31 | Testimonios Reales | Como visitante, deseo leer reseñas para confiar en la marca. | 2 |
+| 6 | TS | TS5 | Soporte i18n  | Como sistema, deseo soportar múltiples idiomas para internacionalizar la Landing Page. | 5 |
+| 7 | TS | TS7 | Implementación HTTPS/SSL | Como sistema, deseo cifrar comunicaciones para proteger datos sensibles. | 3 |
+| 8 | TS | TS2 | Integración Leaflet Maps | Como sistema, deseo integrar Leaflet para visualizar rutas dinámicas en tiempo real. | 5 |
+| 9 | US | US1 | Contratar Plan | Como administrador, deseo elegir un plan para digitalizar y escalar mi operación. | 5 |
+| 10 | US | US2 | Registro de Conductores | Como administrador, deseo crear cuentas de conductores para asignar responsabilidades. | 3 |
+| 11 | US | US4 | Alta de Alumnos | Como administrador, deseo registrar alumnos para incluirlos en rutas. | 5 |
+| 12 | US | US3 | Registro de Padres | Como administrador, deseo registrar padres para habilitar monitoreo. | 3 |
+| 13 | TS | TS1 | JWT Authentication | Como sistema, deseo emitir tokens JWT para asegurar sesiones autenticadas. | 5 |
+| 14 | US | US5 | Creación de Rutas | Como administrador, deseo crear rutas y paradas para optimizar tiempos. | 8 |
+| 15 | US | US6 | Asignación de Roles | Como administrador, deseo asignar conductores a rutas para organizar operaciones. | 3 |
+| 16 | TS | TS3 | Persistencia de Tracking GPS | Como sistema, deseo almacenar coordenadas GPS para mantener historial de viajes. | 5 |
+| 17 | US | US10 | Inicio de Trayecto | Como conductor, deseo iniciar la ruta para notificar que estoy en camino. | 3 |
+| 18 | US | US11 | Marcación de Abordaje | Como conductor, deseo registrar el abordaje para confirmar asistencia. | 5 |
+| 19 | US | US18 | Rastreo en Tiempo Real | Como padre, deseo ver la movilidad en el mapa para calcular hora de llegada. | 8 |
+| 20 | US | US19 | Alerta de Proximidad | Como padre, deseo recibir aviso cuando el vehículo esté cerca. | 5 |
+| 21 | TS | TS6 | Sistema de Push Notifications | Como sistema, deseo enviar notificaciones push automáticas para eventos críticos. | 5 |
+| 22 | US | US20 | Confirmación de Llegada | Como padre, deseo saber si mi hijo llegó al colegio para estar tranquilo. | 3 |
+| 23 | US | US14 | Finalización de Ruta | Como conductor, deseo cerrar la ruta para concluir el servicio. | 2 |
+| 24 | US | US12 | Reporte de Incidencias | Como conductor, deseo informar retrasos o problemas durante la ruta. | 5 |
+| 25 | US | US16 | Navegación Integrada | Como conductor, deseo abrir mapas externos para usar la mejor ruta disponible. | 3 |
+| 26 | TS | TS8 | Soporte Offline para Conductores | Como sistema, deseo almacenar eventos temporalmente cuando no exista conexión. | 5 |
+| 27 | US | US7 | Analítica de Flota | Como administrador, deseo revisar métricas de rendimiento operativo. | 8 |
+| 28 | US | US22 | Historial de Asistencia | Como padre, deseo revisar asistencia mensual de mi hijo. | 5 |
+| 29 | US | US15 | Bitácora de Viajes | Como conductor, deseo consultar historial de viajes realizados. | 3 |
+| 30 | US | US23 | Perfil del Estudiante | Como padre, deseo registrar alergias o datos médicos relevantes. | 5 |
+| 31 | US | US24 | Chat con Soporte | Como padre, deseo reportar ausencias o dudas desde la app. | 5 |
+| 32 | US | US13 | Botón de Pánico | Como conductor, deseo activar SOS en emergencias críticas. | 8 |
+| 33 | TS | TS4 | Configuración Swagger/OpenAPI | Como developer, deseo acceder a documentación interactiva para probar endpoints REST. | 3 |
 
 ---
 
