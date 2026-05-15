@@ -4243,7 +4243,7 @@ La distribución del trabajo se mantuvo alineada con la **Leadership and Collabo
 
 **1. Despliegues y Servicios API**
 
-- **Web Application (Frontend):** [https://saferoute-webapp.vercel.app](https://saferoute-webapp.vercel.app)
+- **Web Application (Frontend):** [https://happy-river-0e93e8e0f.7.azurestaticapps.net](https://happy-river-0e93e8e0f.7.azurestaticapps.net)
 - **Landing Page:** [https://upc-pre-202610-1asi0730-12053-powertech.github.io/saferoute-website/](https://upc-pre-202610-1asi0730-12053-powertech.github.io/saferoute-website/)
 
 **2. Repositorios de GitHub**
