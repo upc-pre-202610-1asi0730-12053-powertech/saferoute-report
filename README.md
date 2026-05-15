@@ -3906,7 +3906,7 @@ Para el Sprint 2, los principales aspectos de trabajo se organizaron en torno al
 
 El objetivo del Sprint 2 fue desarrollar y desplegar la primera versión funcional de la Frontend Web Application de SafeRoute en Vue.js, implementando los módulos core del sistema: Shared Kernel como base arquitectónica, IAM y Subscriptions como subdominios genéricos, Stakeholder para gestión de perfiles, Routes para la planificación logística y Trip para la ejecución y monitoreo en tiempo real del trayecto escolar.
 
-![Sprint Backlog 2](assets/images/Chapter-5/Sprint2/trello-sprint2.png)
+![Sprint Backlog 2](assets/images/Chapter-5/Sprint2/trello-sprint2_1.png)
 
 
 **URL del Board:** https://trello.com/invite/b/6a039c6fedc318910e775250/ATTI095b53f960877c725150d2e6f6820377E27FB291/sprint-2-saferoute
