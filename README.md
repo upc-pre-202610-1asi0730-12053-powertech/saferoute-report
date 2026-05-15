@@ -4108,7 +4108,7 @@ Se desarrolló el flujo de notificaciones automáticas hacia los padres ante eve
 ---[![Notifications Module](assets/images/Chapter-5/Sprint2/notifications-timeline1.png)](assets/images/Chapter-5/Sprint2/notifications-timeline1.png)
 
 
-**URL desplegada en Azure:** [Pendiente de incluir]
+**URL desplegada en Azure:** <https://happy-river-0e93e8e0f.7.azurestaticapps.net/identity-and-access-management/sign-in?redirect=/home>
 
 
 ##### 5.2.2.6. Services Documentation Evidence for Sprint Review
@@ -4139,7 +4139,7 @@ A continuación se documentan los recursos consumidos por el frontend desde la F
 
 | Componente | Repositorio                                                                 | Estado al cierre del Sprint 2 |
 |------------|-----------------------------------------------------------------------------|-------------------------------|
-| Frontend Web Application | https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-webapp | Desplegado en Azure (URL pendiente de incluir) |
+| Frontend Web Application | https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-webapp | Desplegado en Azure (https://happy-river-0e93e8e0f.7.azurestaticapps.net/identity-and-access-management/sign-in?redirect=/home) |
 | Backend Web Services | pendiente                                                                   | No implementado - planificado para Sprint 3 |
 
 ### 5.2.2.7. Software Deployment Evidence for Sprint Review
@@ -4155,14 +4155,11 @@ Durante el Sprint 2 se realizó el despliegue de la Frontend Web Application de 
 
 2. Se verificó la accesibilidad pública de la Frontend Web Application desplegada, validando el correcto funcionamiento de los módulos implementados (IAM, Subscription, Stakeholder, Routes, Trip y Notifications) consumiendo la Fake REST API local.
 
-   **URL desplegada en Azure:** Pendiente de incluir
+   **URL desplegada en Azure:** <https://happy-river-0e93e8e0f.7.azurestaticapps.net/identity-and-access-management/sign-in?redirect=/home>
 
+   [![Frontend Web App Live](assets/images/Chapter-5/Sprint2/frontend-deployed.jpg)](assets/images/Chapter-5/Sprint2/frontend-deployed.png)
 
-
-   [![Frontend Web App Live](assets/images/Chapter-5/Sprint2/frontend-deployed.png)](assets/images/Chapter-5/Sprint2/frontend-deployed.png) pendiente
 ### 5.2.2.8. Team Collaboration Insights during Sprint
-
-
 
 Durante el Sprint 2, el equipo mantuvo una colaboración activa distribuida en los dos repositorios principales del proyecto: el repositorio del informe y el repositorio de la Frontend Web Application. La actividad principal se concentró en el repositorio del informe, donde se documentaron los avances de planificación, backlog y evidencias del sprint. La actividad en el repositorio del frontend se mantuvo en un nivel moderado, correspondiente a la implementación progresiva de los módulos core del sistema (IAM, Subscription, Stakeholder, Routes, Trip y Notifications).
 
