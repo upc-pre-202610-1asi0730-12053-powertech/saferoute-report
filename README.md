@@ -3951,7 +3951,37 @@ Se desarrolló el flujo de notificaciones automáticas hacia los padres ante eve
 
 **URL desplegada en Azure:** [Pendiente de incluir]
 
-### 5.2.2.6. Services Documentation Evidence for Sprint Review
+
+##### 5.2.2.6. Services Documentation Evidence for Sprint Review
+
+Durante el Sprint 2, el equipo se enfocó en el desarrollo y despliegue de la Frontend Web Application de SafeRoute en Vue.js sobre Microsoft Azure, implementando los módulos core del sistema bajo el enfoque Domain-Driven Design. En este sprint, el frontend opera consumiendo una **Fake REST API local** servida mediante `json-server` sobre un archivo `db.json`, que simula los endpoints y respuestas del backend real. Esta estrategia permitió validar los flujos de interacción, la navegación entre vistas, la estructura de los DTOs y la consistencia del modelo de dominio en el cliente antes de la integración con el Web Service definitivo.
+
+En consecuencia, durante el Sprint 2 **no se implementaron ni desplegaron servicios web (Web Services / RESTful API) en ASP.NET Core**, ya que la implementación del backend real se encuentra planificada para el Sprint 3. La documentación formal de endpoints, contratos de API, configuración de Swagger/OpenAPI y evidencia de consumo desde el frontend hacia el servicio desplegado será abordada en dicho sprint.
+
+A continuación se documentan los recursos consumidos por el frontend desde la Fake API local durante el Sprint 2:
+
+| Recurso | Acción implementada | Método HTTP | URL / Endpoint (Fake API) | Bounded Context |
+|---------|---------------------|-------------|---------------------------|-----------------|
+| Users | Autenticación y registro | POST | `http://localhost:3000/users` | IAM |
+| Organizations | Registro de organización | POST | `http://localhost:3000/organizations` | IAM |
+| Plans | Listado de planes disponibles | GET | `http://localhost:3000/plans` | Subscription |
+| Subscriptions | Contratación de plan | POST | `http://localhost:3000/subscriptions` | Subscription |
+| Drivers | CRUD de conductores | GET / POST / PUT / DELETE | `http://localhost:3000/drivers` | Stakeholder |
+| Parents | CRUD de padres de familia | GET / POST / PUT / DELETE | `http://localhost:3000/parents` | Stakeholder |
+| Children | Alta y gestión de alumnos | GET / POST / PUT / DELETE | `http://localhost:3000/children` | Stakeholder |
+| Vehicles | Gestión de flota | GET / POST / PUT / DELETE | `http://localhost:3000/vehicles` | Stakeholder |
+| Routes | Creación y trazado de rutas | GET / POST / PUT / DELETE | `http://localhost:3000/routes` | Routes |
+| Stops | Gestión de paradas por ruta | GET / POST / PUT / DELETE | `http://localhost:3000/stops` | Routes |
+| Trips | Inicio, ejecución y cierre de viaje | GET / POST / PUT | `http://localhost:3000/trips` | Trip |
+| Attendances | Marcación de abordaje | POST / PUT | `http://localhost:3000/attendances` | Trip |
+| Notifications | Listado de notificaciones del padre | GET | `http://localhost:3000/notifications` | Notifications |
+
+**Repositorios relacionados:**
+
+| Componente | Repositorio                                                                 | Estado al cierre del Sprint 2 |
+|------------|-----------------------------------------------------------------------------|-------------------------------|
+| Frontend Web Application | https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-webapp | Desplegado en Azure (URL pendiente de incluir) |
+| Backend Web Services | pendiente                                                                   | No implementado - planificado para Sprint 3 |
 
 ### 5.2.2.7. Software Deployment Evidence for Sprint Review
 
