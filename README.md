@@ -319,13 +319,14 @@ En base al análisis competitivo y SWOT realizado, SafeRoute plantea las siguien
 
 | Campo | Detalle |
 | :--- | :--- |
-| Nombre y Apellidos | Arturo Núñez |
-| Edad | 28 años |
-| Distrito / Zona de trabajo | San Miguel y Miraflores, Lima |
-| Segmento | Conductor de Transporte Escolar |
-| Inicio en video | 00:15 |
-| Duración | 07:19 |
-| URL del video | [https://1drv.ms/v/c/f647ccc757f760c7/IQBpmAWWCOusSLuP0uLD_z7NAe5clO5HVvyL8gi5oJuddj8?e=9qIP9h](https://1drv.ms/v/c/f647ccc757f760c7/IQBpmAWWCOusSLuP0uLD_z7NAe5clO5HVvyL8gi5oJuddj8?e=9qIP9h)] |
+| **Nombre y Apellidos** | Arturo Núñez |
+| **Edad** | 28 años |
+| **Distrito / Zona de trabajo** | San Miguel y Miraflores, Lima |
+| **Segmento** | Conductor de Transporte Escolar |
+| **Inicio en video** | 00:15 |
+| **Fin de video** | 07:34 |
+| **Duración** | 07:19 |
+| **URL del video** | [https://1drv.ms/v/c/f647ccc757f760c7/IQBpmAWWCOusSLuP0uLD_z7NAe5clO5HVvyL8gi5oJuddj8?e=9qIP9h](https://1drv.ms/v/c/f647ccc757f760c7/IQBpmAWWCOusSLuP0uLD_z7NAe5clO5HVvyL8gi5oJuddj8?e=9qIP9h)] |
 
 #### Screenshot
 ![SegmentoObjetivo1](./assets/images/ArturoNunez-SegmentoObjetivo1.png)
@@ -390,7 +391,8 @@ La entrevista confirma que el segmento conductor necesita reducir carga operativ
 | **Distrito / Zona de residencia** | Santiago de Surco, Lima |
 | **Segmento** | Padre de Familia |
 | **Inicio en video** | 07:42 |
-| **Duración** | 04:80 |
+| **Fin de video** | 12:28 |
+| **Duración** | 04:46 |
 | **URL del video** | [https://1drv.ms/v/c/f647ccc757f760c7/IQBpmAWWCOusSLuP0uLD_z7NAe5clO5HVvyL8gi5oJuddj8?e=9qIP9h](https://1drv.ms/v/c/f647ccc757f760c7/IQBpmAWWCOusSLuP0uLD_z7NAe5clO5HVvyL8gi5oJuddj8?e=9qIP9h)] |
 
 #### **Screenshot**
@@ -496,7 +498,8 @@ Asimismo, respalda los objetivos del Impact Mapping relacionados con generar tra
 | **Distrito / Zona de residencia** | Pueblo Libre, Lima |
 | **Segmento** | Padre de Familia |
 | **Inicio en video** | 12:31 |
-| **Duración** | 07:33 |
+| **Fin de video** | 20:00 |
+| **Duración** | 07:29 |
 | **URL del video** | [https://1drv.ms/v/c/f647ccc757f760c7/IQBpmAWWCOusSLuP0uLD_z7NAe5clO5HVvyL8gi5oJuddj8?e=9qIP9h](https://1drv.ms/v/c/f647ccc757f760c7/IQBpmAWWCOusSLuP0uLD_z7NAe5clO5HVvyL8gi5oJuddj8?e=9qIP9h)] |
 
 #### **Screenshot**
@@ -591,8 +594,9 @@ Los datos recolectados validan los supuestos del segmento Padre de Familia dentr
 | **Edad** | 25 años |
 | **Distrito / Zona de residencia** | Callería, Pucallpa |
 | **Segmento** | Padre de Familia |
-| **Inicio en video** | 20:03 |
-| **Duración** | 08:04 |
+| **Inicio en video** | 20:04 |
+| **Fin de video** | 28:54 |
+| **Duración** | 08:50 |
 | **URL del video** | [[[https://1drv.ms/v/c/f647ccc757f760c7/IQBpmAWWCOusSLuP0uLD_z7NAe5clO5HVvyL8gi5oJuddj8?e=9qIP9h](https://1drv.ms/v/c/f647ccc757f760c7/IQBpmAWWCOusSLuP0uLD_z7NAe5clO5HVvyL8gi5oJuddj8?e=9qIP9h)] |
 
 #### **Screenshot**
