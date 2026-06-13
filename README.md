@@ -3678,10 +3678,10 @@ En la reunión de planificación del Sprint 1, el equipo definió como objetivo 
 | Location | Reunión virtual vía Discord |
 | Prepared By | Ramirez Ruiz, Nickolas |
 | Attendees (to planning meeting) | De La Cruz De Los Santos, Mathias Marcelo / Ortega Quintana, Jose Zacarias / Quispe Serrano, Julio Frank / Ramirez Ruiz, Nickolas / Vallejo Trujillo, Fabio Cesar |
-| Sprint 1 Review Summary | Este es el primer sprint del proyecto, por lo que no existe un sprint anterior que revisar. |
+| Sprint 1 Review Summary |  |
 | Sprint 1 Retrospective Summary | Este es el primer sprint del proyecto, por lo que no existe una retrospectiva previa. |
 | **Sprint Goal & User Stories** | |
-| Sprint 1 Goal | We are creating a bilingual website for SafeRoute to show parents and school transport drivers what we offer. We will know it's ready when the site is live and working in both Spanish and English. |
+| Sprint 1 Goal | Estamos creando un sitio web bilingüe para SafeRoute para mostrar a los padres y a los conductores de transporte escolar lo que ofrecemos. Sabremos que está listo cuando el sitio esté activo y funcionando tanto en español como en inglés.. |
 | Sprint 1 Velocity | 50 |
 | Sum of Story Points | 47 |
 
@@ -3896,7 +3896,7 @@ En la reunión de planificación del Sprint 2, el equipo definió como objetivo 
 | Sprint 1 Review Summary | En el Sprint 1 se desplegó exitosamente la Landing Page bilingüe (ES/EN) de SafeRoute con todas sus secciones: Hero, Funcionalidades, Roles, Planes, ¿Cómo funciona? y Footer. Se estableció la arquitectura base del sistema bajo DDD con 6 bounded contexts documentados y diagramas C4 elaborados. |
 | Sprint 1 Retrospective Summary | El equipo identificó como acierto la organización mediante GitFlow y el uso de ramas feature por sección. Como oportunidad de mejora se destacó iniciar la implementación del frontend con mayor anticipación para evitar acumulación de trabajo al final del sprint. |
 | **Sprint Goal  & User Stories** |
-| Sprint 2 Goal |We are focusing on launching a working app for SafeRoute's administrators, drivers, and parents. We will know it is ready when admins can register users, drivers can manage trips, and parents can track the bus in real time. |
+| Sprint 2 Goal |Nos estamos centrando en lanzar una aplicación funcional para los administradores, conductores y padres de SafeRoute. Sabremos que está lista cuando los administradores puedan registrar usuarios, los conductores puedan gestionar los viajes y los padres puedan rastrear el autobús en tiempo real. |
 | Sprint 2 Velocity | 60 |
 | Sum of Story Points | 58 |
 
