@@ -4508,6 +4508,202 @@ Durante las entrevistas se registrarán observaciones cualitativas y operativas 
 | Visibilidad del estado  | Evalúa si el sistema comunica adecuadamente cambios como abordaje registrado, incidencia enviada o llegada confirmada. |
 
 
+#### 5.3.2. Registro de Entrevistas
+
+Cada entrevista incluye los datos del participante, evidencia visual de la sesión, URL del video publicado en Microsoft Stream, timing de inicio, duración y un resumen descriptivo de las principales apreciaciones del entrevistado respecto a las tareas asignadas.
+
+
+##### Primer segmento: Conductores de transporte escolar
+
+Para el segmento Driver, las entrevistas se enfocan en validar la experiencia del conductor al interactuar con los flujos operativos principales de SafeRoute.
+
+**User Flows evaluados:**
+
+* **User Flow 6:** Control claro de alumnos durante la ruta.
+* **User Flow 8:** Comunicación de incidencia o avance durante el viaje.
+* **User Flow 9:** Botón de pánico ante emergencia.
+
+**Tareas asignadas al entrevistado:**
+
+* Explorar el Landing Page de SafeRoute.
+* Identificar la propuesta de valor del servicio.
+* Iniciar sesión como conductor.
+* Revisar la ruta asignada.
+* Controlar el estado de los estudiantes durante la ruta.
+* Reportar una incidencia o avance del viaje.
+* Identificar el uso del botón de pánico ante una emergencia.
+* Comentar dudas, dificultades y sugerencias de mejora.
+
+###### Entrevista de validación 1 - Driver
+
+**Entrevistador:**
+[Nombre y apellido del entrevistador]
+
+**Datos del entrevistado**
+
+* **Nombre:** [Nombre]
+* **Apellidos:** [Apellidos]
+* **Edad:** [Edad]
+* **Distrito:** [Distrito]
+* **Segmento:** Driver
+* **URL del video:** [Pegar URL de Microsoft Stream]
+* **Timing de inicio:** [mm:ss]
+* **Timing de fin:** [mm:ss]
+* **Duración:** [mm:ss]
+
+<p align="center">
+<img src="assets/images/ChapterV/ValidationInterviews/driver-validation-interview-1.png" alt="Driver Validation Interview 1" width="500"/>
+</p>
+
+**Resumen descriptivo:**
+[Redactar aquí el resumen de la entrevista. Debe explicar cómo el entrevistado interactuó con el Landing Page y con los flujos asignados de la Web Application. Incluir si comprendió la propuesta de valor, si pudo completar las tareas, qué partes le resultaron claras, qué dificultades encontró y qué sugerencias brindó. También mencionar sus apreciaciones sobre el control de alumnos, reporte de incidencias, botón de pánico, claridad de botones, mensajes del sistema y confianza generada por la plataforma.]
+
+
+###### Entrevista de validación 2 - Driver
+
+**Entrevistador:**
+[Nombre y apellido del entrevistador]
+
+**Datos del entrevistado**
+
+* **Nombre:** [Nombre]
+* **Apellidos:** [Apellidos]
+* **Edad:** [Edad]
+* **Distrito:** [Distrito]
+* **Segmento:** Driver
+* **URL del video:** [Pegar URL de Microsoft Stream]
+* **Timing de inicio:** [mm:ss]
+**Timing de fin:** [mm:ss]
+* **Duración:** [mm:ss]
+
+<p align="center">
+<img src="assets/images/ChapterV/ValidationInterviews/driver-validation-interview-2.png" alt="Driver Validation Interview 2" width="500"/>
+</p>
+
+**Resumen descriptivo:**
+[Redactar aquí el resumen de la entrevista. Debe explicar las principales apreciaciones del conductor respecto al Landing Page y los User Flows evaluados. Indicar si logró comprender el flujo de control de alumnos, reporte de incidencias y botón de emergencia. Incluir comentarios sobre facilidad de uso, claridad visual, rapidez del flujo, confianza y recomendaciones de mejora.]
+
+
+###### Entrevista de validación 3 - Driver
+
+**Entrevistador:**
+[Nombre y apellido del entrevistador]
+
+**Datos del entrevistado**
+
+* **Nombre:** [Nombre]
+* **Apellidos:** [Apellidos]
+* **Edad:** [Edad]
+* **Distrito:** [Distrito]
+* **Segmento:** Driver
+* **URL del video:** [Pegar URL de Microsoft Stream]
+* **Timing de inicio:** [mm:ss]
+* **Duración:** [mm:ss]
+
+<p align="center">
+<img src="assets/images/ChapterV/ValidationInterviews/driver-validation-interview-3.png" alt="Driver Validation Interview 3" width="500"/>
+</p>
+
+**Resumen descriptivo:**
+[Redactar aquí el resumen de la entrevista. Explicar cómo el entrevistado realizó las tareas asignadas, qué elementos entendió con facilidad, qué problemas o dudas presentó y qué mejoras propuso para el flujo del conductor. Mencionar especialmente la percepción sobre seguridad, rapidez del uso durante una ruta y claridad de los mensajes del sistema.]
+
+
+##### Segundo segmento: Padres de familia
+
+Para el segmento **Parent**, las entrevistas se enfocan en validar la experiencia del padre de familia al monitorear el viaje escolar de su hijo y recibir información relevante durante el trayecto.
+
+**User Flows evaluados:**
+
+* **User Flow 10:** Rastreo en tiempo real del vehículo.
+* **User Flow 11:** Recepción de notificaciones automáticas.
+* **User Flow 12:** Confirmación de llegada e historial de asistencia.
+
+**Tareas asignadas al entrevistado:**
+
+* Explorar el Landing Page de SafeRoute.
+* Identificar la propuesta de valor del servicio.
+* Iniciar sesión como padre de familia.
+* Revisar el dashboard familiar.
+* Ubicar el viaje activo del estudiante.
+* Visualizar la ubicación del vehículo.
+* Revisar el estado de abordaje o llegada.
+* Interpretar las notificaciones automáticas.
+* Revisar historial o confirmación del servicio.
+* Comentar dudas, dificultades y sugerencias de mejora.
+
+###### Entrevista de validación 1 - Parent
+
+**Entrevistador:**
+[Nombre y apellido del entrevistador]
+
+**Datos del entrevistado**
+
+* **Nombre:** [Nombre]
+* **Apellidos:** [Apellidos]
+* **Edad:** [Edad]
+* **Distrito:** [Distrito]
+* **Segmento:** Parent
+* **URL del video:** [Pegar URL de Microsoft Stream]
+* **Timing de inicio:** [mm:ss]
+* **Duración:** [mm:ss]
+
+<p align="center">
+<img src="assets/images/ChapterV/ValidationInterviews/parent-validation-interview-1.png" alt="Parent Validation Interview 1" width="500"/>
+</p>
+
+**Resumen descriptivo:**
+[Redactar aquí el resumen de la entrevista. Debe explicar cómo el entrevistado interactuó con el Landing Page y con los User Flows asignados para el segmento Parent. Incluir si comprendió la propuesta de valor, si pudo ubicar el viaje activo, interpretar la ubicación del vehículo, entender las notificaciones y confirmar la llegada o historial del estudiante. Mencionar qué partes le generaron confianza, qué dudas tuvo y qué mejoras sugirió.]
+
+
+
+###### Entrevista de validación 2 - Parent
+
+**Entrevistador:**
+[Nombre y apellido del entrevistador]
+
+**Datos del entrevistado**
+
+* **Nombre:** [Nombre]
+* **Apellidos:** [Apellidos]
+* **Edad:** [Edad]
+* **Distrito:** [Distrito]
+* **Segmento:** Parent
+* **URL del video:** [Pegar URL de Microsoft Stream]
+* **Timing de inicio:** [mm:ss]
+* **Duración:** [mm:ss]
+
+<p align="center">
+<img src="assets/images/ChapterV/ValidationInterviews/parent-validation-interview-2.png" alt="Parent Validation Interview 2" width="500"/>
+</p>
+
+**Resumen descriptivo:**
+[Redactar aquí el resumen de la entrevista. Explicar las principales apreciaciones del padre de familia respecto a la navegación, monitoreo del viaje, claridad del mapa, estado de abordaje, notificaciones y confirmación de llegada. Incluir comentarios sobre confianza, reducción de incertidumbre y utilidad de la plataforma en un caso real.]
+
+
+###### Entrevista de validación 3 - Parent
+
+**Entrevistador:**
+[Nombre y apellido del entrevistador]
+
+**Datos del entrevistado**
+
+* **Nombre:** [Nombre]
+* **Apellidos:** [Apellidos]
+* **Edad:** [Edad]
+* **Distrito:** [Distrito]
+* **Segmento:** Parent
+* **URL del video:** [Pegar URL de Microsoft Stream]
+* **Timing de inicio:** [mm:ss]
+* **Duración:** [mm:ss]
+
+<p align="center">
+<img src="assets/images/ChapterV/ValidationInterviews/parent-validation-interview-3.png" alt="Parent Validation Interview 3" width="500"/>
+</p>
+
+**Resumen descriptivo:**
+[Redactar aquí el resumen de la entrevista. Indicar cómo el entrevistado completó las tareas asignadas, qué entendió del Landing Page, cómo percibió el monitoreo en tiempo real y si la información mostrada fue suficiente para sentirse tranquilo. Mencionar dificultades, sugerencias y apreciaciones sobre seguridad, confianza y facilidad de uso.]
+
+---
 
 
 
