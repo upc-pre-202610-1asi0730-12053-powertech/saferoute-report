@@ -4279,7 +4279,6 @@ Durante el Sprint 3, el equipo realizó commits sobre los repositorios `saferout
 
 
 
-> Los `Commit Id` del repositorio del backend deben completarse con el `git log` real de `saferoute-platform`. Como evidencia objetiva del avance, se incluye el historial de migraciones de Entity Framework Core generadas durante el sprint:
 
 #### 5.2.3.5. Execution Evidence for Sprint Review
 
