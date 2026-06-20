@@ -4227,45 +4227,51 @@ Para el Sprint 3, los aspectos de trabajo se organizaron en torno a la implement
 | Vallejo Trujillo, Fabio Cesar | fabiovallejo | C | C                           | C                                   | L                           | C                             |
 | Ramirez Ruiz, Nickolas | Bynickram02 | C | C                           | C                                   | L                           | C                             |
 
+
 #### 5.2.3.3. Sprint Backlog 3
 
-El objetivo del Sprint 3 fue implementar la primera versión funcional del Backend Web Service de SafeRoute en ASP.NET Core (.NET 10), aplicando Domain-Driven Design con separación CQRS mediante Cortex.Mediator y persistencia con Entity Framework Core sobre MySQL. Se implementaron los servicios REST de los bounded contexts Subscription, Stakeholder, Assets, Fleet, Trip, Notifications y Profiles, junto con el Shared Kernel.
+El objetivo del Sprint 3 fue implementar la primera versión funcional del Backend Web Service de SafeRoute en ASP.NET Core (.NET 10), aplicando Domain-Driven Design con separación CQRS mediante Cortex.Mediator y persistencia con Entity Framework Core sobre MySQL. Se implementaron los servicios REST de los bounded contexts Stakeholder & Asset Management, Subscription & Plan Management, Fleet & Route Management, Trip Execution & Monitoring y Notifications & Communication, junto con el Shared Kernel que soporta la base común de la solución.
 
 ![Sprint Backlog 3](assets/images/Chapter-5/Sprint3/trello-sprint3.png)
 
-**URL del Board:** [SafeRoute - Sprint 3](#)
+
+**URL del Board:** [https://trello.com/b/HOyzrybS/sprint-3-saferoute](#)
 
 | Sprint # | Sprint 3 | | | | | | |
 |:---|:---|:---|:---|:---|:---|:---|:---|
 | **User Story** | | **Work-Item / Task** | | | | | |
 | **Id** | **Title** | **Id** | **Title** | **Description** | **Estimation (Hours)** | **Assigned To** | **Status** |
-| — | Arquitectura Backend (Shared Kernel) | T01.1 | Configurar solución ASP.NET Core | Inicializar el proyecto en .NET 10 con la estructura por bounded contexts. | 2 | Julio Frank | Done |
-| — | Arquitectura Backend (Shared Kernel) | T01.2 | Implementar Shared Kernel | Crear entidades base, value objects, auditoría e interceptores comunes. | 2 | Julio Frank | Done |
-| — | Arquitectura Backend (Shared Kernel) | T01.3 | Configurar EF Core + MySQL | Configurar AppDbContext, cadena de conexión y convenciones sobre MySQL. | 2 | Julio Frank | Done |
-| — | Arquitectura Backend (Shared Kernel) | T01.4 | Integrar Cortex.Mediator (CQRS) | Configurar el mediador para separar Commands y Queries. | 2 | Julio Frank | Done |
-| — | Arquitectura Backend (Shared Kernel) | T01.5 | Configurar Swagger / OpenAPI | Habilitar la documentación interactiva de la API. | 1 | Julio Frank | Done |
-| US1 | Contratar Plan | T02.1 | Implementar dominio de Subscription | Modelar agregados Plan y Subscription con sus reglas de negocio. | 2 | Mathias | Done |
-| US1 | Contratar Plan | T02.2 | Implementar servicios de Plans | Exponer endpoints de creación y consulta de planes. | 2 | Mathias | Done |
-| US1 | Contratar Plan | T02.3 | Implementar servicios de Subscriptions | Exponer endpoints de creación, activación, cambio de plan y cancelación. | 3 | Mathias | Done |
-| US1 | Contratar Plan | T02.4 | Persistir Subscription en MySQL | Configurar el mapeo EF y la migración del contexto. | 1 | Mathias | Done |
-| US2 | Registro de Conductores | T03.1 | Implementar dominio Stakeholder (Drivers) | Modelar el agregado Driver con licencia y teléfono. | 2 | José | Done |
-| US2 | Registro de Conductores | T03.2 | Implementar servicios de Drivers | Exponer CRUD REST de conductores y actualización de teléfono. | 2 | José | Done |
-| US3 | Registro de Padres | T03.3 | Implementar dominio y servicios de Parents | Exponer CRUD REST de padres y vinculación de hijos. | 2 | José | Done |
-| US4 | Alta de Alumnos | T03.4 | Implementar Student Groups | Exponer servicios de agrupación de estudiantes y finalización. | 2 | José | Done |
-| US6 | Asignación de Vehículos | T04.1 | Implementar dominio Assets (Vehicles) | Modelar el agregado Vehicle en el bounded context Assets. | 2 | José | Done |
-| US6 | Asignación de Vehículos | T04.2 | Implementar servicios de Vehicles | Exponer CRUD REST de la flota vehicular. | 2 | José | Done |
-| US5 | Creación de Rutas | T05.1 | Implementar dominio Fleet (Routes) | Modelar el agregado Route con paradas, días de servicio y horario. | 3 | Fabio | Done |
-| US5 | Creación de Rutas | T05.2 | Implementar servicios de Routes | Exponer endpoints de creación, paradas, asignación de vehículo/conductor y activación. | 3 | Fabio | Done |
-| US5 | Creación de Rutas | T05.3 | Persistir Fleet en MySQL | Configurar el mapeo EF y la migración del contexto Fleet. | 1 | Fabio | Done |
-| US7 | Ejecución del Viaje | T06.1 | Implementar dominio Trip | Modelar el agregado Trip con su ciclo de vida. | 2 | Fabio | Done |
-| US7 | Ejecución del Viaje | T06.2 | Implementar servicios de Trips | Exponer endpoints de inicio, abordaje, incidentes y cierre. | 3 | Fabio | Done |
-| US20 | Confirmación de Llegada | T07.1 | Implementar dominio Notifications | Modelar el agregado Notification con alertas y anuncios. | 2 | Nickolas | Done |
-| US20 | Confirmación de Llegada | T07.2 | Implementar servicios de Notifications | Exponer endpoints de creación, despacho, entrega, alertas y anuncios. | 3 | Nickolas | Done |
-| — | Gestión de Perfiles | T08.1 | Implementar dominio y servicios de Profiles | Exponer servicios de creación y consulta de perfiles. | 2 | Nickolas | Done |
-| — | Persistencia Cross-Context | T09.1 | Implementar claves foráneas entre contextos | Definir relaciones cross-context y su migración. | 2 | Julio Frank | Done |
-| — | Datos de Prueba | T09.2 | Generar seed desde db.json | Migrar los datos de la Fake API a un script SQL de carga inicial en MySQL. | 2 | José | Done |
-| — | Levantamiento de Observaciones TB1 | T10.1 | Corregir observaciones de la entrega previa | Aplicar las correcciones señaladas en la evaluación TB1. | 3 | Nickolas | Done |
-| — | Documentación Sprint 3 | T11.1 | Documentar evidencias del Sprint 3 | Registrar planificación, backlog y evidencias en el informe. | 2 | Nickolas | Done |
+| — | Arquitectura Base | T01.1 | Configurar solución ASP.NET Core | Inicializar el proyecto Safer-Route-Platform en .NET 10 con la estructura por bounded contexts. | 2 | Frank | Done |
+| — | Arquitectura Base | T01.2 | Implementar Shared Kernel | Crear entidades base y value objects compartidos reutilizables por los contextos. | 2 | Frank | Done |
+| — | Arquitectura Base | T01.3 | Configurar EF Core + MySQL | Configurar AppDbContext, cadena de conexión y convenciones sobre MySQL. | 2 | Frank | Done |
+| — | Arquitectura Base | T01.4 | Integrar Cortex.Mediator (CQRS) | Configurar el mediador para separar Commands y Queries en la capa de aplicación. | 2 | Frank | Done |
+| — | Documentación de API | T02.1 | Configurar Swagger / OpenAPI | Habilitar la documentación interactiva de la API mediante Swashbuckle. | 1 | Fabio | Done |
+| — | Documentación de API | T02.2 | Validar endpoints en Swagger UI | Verificar la visualización y prueba de los endpoints de cada contexto. | 1 | Fabio | Done |
+| US1 | Contratar Plan | T03.1 | Implementar dominio de Subscription | Modelar los agregados Plan y Subscription con sus reglas de negocio. | 2 | José | Done |
+| US1 | Contratar Plan | T03.2 | Implementar servicios de Plans | Exponer endpoints REST de creación y consulta de planes. | 2 | José | Done |
+| US1 | Contratar Plan | T03.3 | Implementar servicios de Subscriptions | Exponer endpoints de creación, activación, cambio de plan y cancelación. | 3 | José | Done |
+| US1 | Contratar Plan | T03.4 | Persistir Subscription en MySQL | Configurar el mapeo EF y la migración del contexto Subscription. | 1 | José | Done |
+| US2, US3, US4, US6 | Stakeholder & Asset Management | T04.1 | Implementar dominio Stakeholder & Asset Management | Modelar los agregados Driver, Parent, Student Group, Vehicle y Profile. | 2 | Mathias | Done |
+| US2 | Registro de Conductores | T04.2 | Implementar servicios de Drivers | Exponer CRUD REST de conductores y actualización de número telefónico. | 2 | Mathias | Done |
+| US3 | Registro de Padres | T04.3 | Implementar servicios de Parents | Exponer CRUD REST de padres y vinculación de hijos. | 2 | Mathias | Done |
+| US4 | Alta de Alumnos | T04.4 | Implementar servicios de Student Groups | Exponer servicios de agrupación de estudiantes y finalización de grupos. | 2 | Mathias | Done |
+| US6 | Asignación de Vehículos | T04.5 | Implementar servicios de Vehicles | Exponer CRUD REST de la flota vehicular (asset). | 2 | Mathias | Done |
+| — | Gestión de Perfiles | T04.6 | Implementar servicios de Profiles | Exponer servicios de creación y consulta de perfiles de usuario. | 2 | Mathias | Done |
+| US5 | Creación de Rutas | T05.1 | Implementar dominio Fleet (Routes) | Modelar el agregado Route con paradas, días de servicio y horario de salida. | 3 | Nickolas | Done |
+| US5 | Creación de Rutas | T05.2 | Implementar servicios de Routes | Exponer endpoints de creación, paradas, asignación de vehículo/conductor y activación. | 3 | Nickolas | Done |
+| US5 | Creación de Rutas | T05.3 | Persistir Fleet en MySQL | Configurar el mapeo EF y la migración del contexto Fleet. | 1 | Nickolas | Done |
+| US7 | Ejecución del Viaje | T06.1 | Implementar dominio Trip | Modelar el agregado Trip con su ciclo de vida (preparado, iniciado, completado). | 2 | Fabio | Done |
+| US7 | Ejecución del Viaje | T06.2 | Implementar servicios de Trips | Exponer endpoints de inicio, registro de abordaje, reporte de incidentes y cierre. | 3 | Fabio | Done |
+| US20 | Confirmación de Llegada | T07.1 | Implementar dominio Notifications | Modelar el agregado Notification con alertas y anuncios. | 2 | Frank | Done |
+| US20 | Confirmación de Llegada | T07.2 | Implementar servicios de Notifications | Exponer endpoints de creación, despacho, entrega, alertas y anuncios. | 3 | Frank | Done |
+| — | Persistencia Cross-Context | T08.1 | Implementar claves foráneas entre contextos | Definir las relaciones cross-context y la migración correspondiente. | 2 | Frank | Done |
+| — | Datos de Prueba | T08.2 | Generar seed desde db.json | Migrar los datos de la Fake API (`db.json`) a un script SQL de carga inicial en MySQL. | 2 | José | Done |
+| — | Levantamiento de Observaciones TB1 | T09.1 | Corregir observaciones de la entrega previa | Aplicar las correcciones señaladas en la evaluación TB1 sobre los artefactos del informe. | 3 | Nickolas | Done |
+| — | Documentación Sprint 3 | T09.2 | Documentar evidencias del Sprint 3 | Registrar planificación, backlog, evidencias de servicios y despliegue en el informe. | 2 | Nickolas | Done |
+
+
+
+
 
 #### 5.2.3.4. Development Evidence for Sprint Review
 
