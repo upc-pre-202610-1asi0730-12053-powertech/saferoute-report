@@ -3629,7 +3629,7 @@ El frontend de la aplicación, desarrollado con Vue.js, fue desplegado utilizand
 8. Crear el recurso y esperar la ejecución del flujo de despliegue.
 9. Acceder a **Información general** del recurso para obtener la dirección URL pública.
 
-**URL desplegada:** <https://happy-river-0e93e8e0f.7.azurestaticapps.net/identity-and-access-management/sign-in?redirect=/home>
+**URL desplegada:** <https://ashy-dune-098494d0f.7.azurestaticapps.net/identity-and-access-management/sign-in>
 
 ---
 
@@ -3657,7 +3657,35 @@ La Fake API del proyecto fue desplegada utilizando **Azure App Service**, config
 16. Esperar que el proceso finalice correctamente.
 17. Acceder al enlace de dominio predeterminado generado por Azure App Service.
 
-**URL desplegada:** <https://saferoute-db.azurewebsites.net>
+**URL desplegada:** <https://mock-api-webapp.azurewebsites.net/>
+
+##### Despliegue de Backend API
+
+El backend de la aplicación fue desarrollado con ASP.NET Core y desplegado en **Azure App Service** utilizando una imagen Docker publicada en **Azure Container Registry**. Esta estrategia permite empaquetar la API junto con sus dependencias y desplegarla de forma consistente en la nube.
+
+###### Pasos de despliegue
+
+1. Acceder al portal de Azure.
+2. Crear un recurso de **Azure Container Registry** para almacenar la imagen Docker del backend.
+3. Crear un recurso de **Azure Database for MySQL Flexible Server** para alojar la base de datos de producción.
+4. Crear la base de datos requerida por la aplicación en el servidor MySQL.
+5. Configurar las reglas de acceso y firewall del servidor MySQL para permitir la conexión desde Azure App Service.
+6. Generar la imagen Docker del backend desde el proyecto ASP.NET Core.
+7. Iniciar sesión en Azure Container Registry desde Docker.
+8. Etiquetar la imagen Docker con el nombre del servidor de Azure Container Registry.
+9. Publicar la imagen en Azure Container Registry.
+10. Crear una nueva **Web App** en Azure App Service.
+11. Seleccionar como origen de despliegue la imagen almacenada en Azure Container Registry.
+12. Configurar el puerto expuesto por el contenedor según la configuración del backend.
+13. Acceder al recurso de App Service y abrir la sección **Environment Variables** o **Configuration**.
+14. Agregar la cadena de conexión de MySQL utilizada por el backend.
+15. Configurar las variables necesarias para el entorno de producción.
+16. Reiniciar el App Service para aplicar la configuración.
+17. Verificar los logs de inicio del contenedor desde **Log stream**.
+18. Confirmar que las migraciones de base de datos se ejecuten correctamente al iniciar la aplicación.
+19. Acceder al endpoint público de Swagger para validar que la API esté disponible.
+
+**URL desplegada:** <https://asp-powertech-prod-dfembvcde5bdfxdx.mexicocentral-01.azurewebsites.net/swagger/index.html>
 
 ---
 
@@ -4119,7 +4147,7 @@ Se desarrolló el flujo de notificaciones automáticas hacia los padres ante eve
 ---[![Notifications Module](assets/images/Chapter-5/Sprint2/notifications-timeline1.png)](assets/images/Chapter-5/Sprint2/notifications-timeline1.png)
 
 
-**URL desplegada en Azure:** <https://happy-river-0e93e8e0f.7.azurestaticapps.net/identity-and-access-management/sign-in?redirect=/home>
+**URL desplegada en Azure:** <https://ashy-dune-098494d0f.7.azurestaticapps.net/identity-and-access-management/sign-in>
 
 
 ##### 5.2.2.6. Services Documentation Evidence for Sprint Review
@@ -4150,7 +4178,7 @@ A continuación se documentan los recursos consumidos por el frontend desde la F
 
 | Componente | Repositorio                                                                 | Estado al cierre del Sprint 2 |
 |------------|-----------------------------------------------------------------------------|-------------------------------|
-| Frontend Web Application | https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-webapp | Desplegado en Azure (https://happy-river-0e93e8e0f.7.azurestaticapps.net/identity-and-access-management/sign-in?redirect=/home) |
+| Frontend Web Application | https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-webapp | Desplegado en Azure (https://ashy-dune-098494d0f.7.azurestaticapps.net/identity-and-access-management/sign-in) |
 | Backend Web Services | pendiente                                                                   | No implementado - planificado para Sprint 3 |
 
 ### 5.2.2.7. Software Deployment Evidence for Sprint Review
@@ -4166,7 +4194,7 @@ Durante el Sprint 2 se realizó el despliegue de la Frontend Web Application de 
 
 2. Se verificó la accesibilidad pública de la Frontend Web Application desplegada, validando el correcto funcionamiento de los módulos implementados (IAM, Subscription, Stakeholder, Routes, Trip y Notifications) consumiendo la Fake REST API local.
 
-   **URL desplegada en Azure:** <https://happy-river-0e93e8e0f.7.azurestaticapps.net/identity-and-access-management/sign-in?redirect=/home>
+   **URL desplegada en Azure:** <https://ashy-dune-098494d0f.7.azurestaticapps.net/identity-and-access-management/sign-in>
 
    [![Frontend Web App Live](assets/images/Chapter-5/Sprint2/frontend-deployed.jpg)](assets/images/Chapter-5/Sprint2/frontend-deployed.png)
 
@@ -4934,8 +4962,9 @@ Para el segmento **Parent**, las entrevistas se enfocan en validar la experienci
 
 **1. Despliegues y Servicios API**
 
-- **Web Application (Frontend):** [https://happy-river-0e93e8e0f.7.azurestaticapps.net](https://happy-river-0e93e8e0f.7.azurestaticapps.net)
+- **Web Application (Frontend):** [https://ashy-dune-098494d0f.7.azurestaticapps.net/identity-and-access-management/sign-in](https://ashy-dune-098494d0f.7.azurestaticapps.net/identity-and-access-management/sign-in)
 - **Landing Page:** [https://upc-pre-202610-1asi0730-12053-powertech.github.io/saferoute-website/](https://upc-pre-202610-1asi0730-12053-powertech.github.io/saferoute-website/)
+- **Web Application (Backend):** [https://asp-powertech-prod-dfembvcde5bdfxdx.mexicocentral-01.azurewebsites.net/swagger/index.html](https://asp-powertech-prod-dfembvcde5bdfxdx.mexicocentral-01.azurewebsites.net/swagger/index.html)
 
 **2. Repositorios de GitHub**
 
@@ -4943,6 +4972,7 @@ Para el segmento **Parent**, las entrevistas se enfocan en validar la experienci
 - **Informe del Proyecto:** [https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-report](https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-report)
 - **Landing Page Source:** [https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-website](https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-website)
 - **Web Application Source:** [https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-webapp](https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-webapp)
+- **Web Application (Backend) Source:** [https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform](https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform)
 
 **3. Diseño y Prototipado**
 
