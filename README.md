@@ -4194,7 +4194,188 @@ El repositorio del frontend registró actividad moderada y sostenida durante el 
 [![Frontend Pulse Sprint 2](assets/images/Chapter-5/Sprint2/frontend-pulse.png)](assets/images/Chapter-5/Sprint2/frontend-pulse.png)
 
 
+### 5.2.3. Sprint 3
 
+#### 5.2.3.1. Sprint Planning 3
+
+En la reunión de planificación del Sprint 3, el equipo definió como objetivo principal implementar la primera versión funcional del Backend Web Service de SafeRoute en ASP.NET Core, exponiendo los servicios REST de los bounded contexts del sistema sobre una base de datos MySQL, además de levantar las observaciones de la entrega anterior (TB1).
+
+| Sprint # | Sprint 3                                                                                                                                                                                                                                                                       |
+|:---|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Sprint Planning Background** |                                                                                                                                                                                                                                                                                |
+| Date | 2026-06-05                                                                                                                                                                                                                                                                     |
+| Time | 07:00 PM                                                                                                                                                                                                                                                                       |
+| Location | Reunión virtual vía Discord                                                                                                                                                                                                                                                    |
+| Prepared By | Ramirez Ruiz, Nickolas                                                                                                                                                                                                                                                         |
+| Attendees (to planning meeting) | De La Cruz De Los Santos, Mathias Marcelo / Ortega Quintana, Jose Zacarias / Quispe Serrano, Julio Frank / Ramirez Ruiz, Nickolas / Vallejo Trujillo, Fabio Cesar                                                                                                              |
+| Sprint 2 Review Summary | En el Sprint 2 se desarrolló y desplegó en Microsoft Azure la primera versión funcional de la Frontend Web Application en Vue.js, integrando los módulos core del sistema bajo DDD y consumiendo una Fake REST API local (`json-server`) a la espera del backend real.         |
+| Sprint 2 Retrospective Summary | El equipo identificó como acierto la modularización del frontend por bounded context, que facilitó el trabajo en paralelo. Como oportunidades de mejora se priorizó implementar el backend real para reemplazar la Fake API y levantar las observaciones de la evaluación TB1. |
+| **Sprint Goal & User Stories** |                                                                                                                                                                                                                                                                                |
+| Sprint 3 Goal | Nuestro objetivo es implementar servicios REST conectados a nuestra base de datos para profesionalizar la plataforma de SafeRoute, garantizando que toda la información se registre en tiempo real y sea fácilmente consultable mediante la documentación técnica en Swagger.  |
+| Sprint 3 Velocity | 65                                                                                                                                                                                                                                                                             |
+| Sum of Story Points | 62                                                                                                                                                                                                                                                                             |
+
+#### 5.2.3.2. Aspect Leaders and Collaborators
+
+Para el Sprint 3, los aspectos de trabajo se organizaron en torno a la implementación de los servicios REST del backend por bounded context y la arquitectura compartida (Shared Kernel). Se presenta la Leadership-and-Collaboration Matrix (LACX):
+
+| Team Member (Last Name, First Name) | GitHub Username | Shared Kernel & API Base (L/C) | Subscription Services (L/C) | Stakeholder & Assets Services (L/C) | Fleet & Trip Services (L/C) | Notifications & Profiles (L/C) |
+|-------------------------------------|-----------------|-------------------------------|-----------------------------|-------------------------------------|-----------------------------|-------------------------------|
+| Quispe Serrano, Julio Frank | FraSe_JQ | L | C                           | C                                   | C                           | L                             |
+| Ortega Quintana, Jose Zacarias | AgoxX61 | C | L                           | C                                   | C                           | C                             |
+| De La Cruz, Mathias Marcelo | Dela050406 | C | C                           | L                                   | C                           | C                             |
+| Vallejo Trujillo, Fabio Cesar | fabiovallejo | C | C                           | C                                   | L                           | C                             |
+| Ramirez Ruiz, Nickolas | Bynickram02 | C | C                           | C                                   | L                           | C                             |
+
+#### 5.2.3.3. Sprint Backlog 3
+
+El objetivo del Sprint 3 fue implementar la primera versión funcional del Backend Web Service de SafeRoute en ASP.NET Core (.NET 10), aplicando Domain-Driven Design con separación CQRS mediante Cortex.Mediator y persistencia con Entity Framework Core sobre MySQL. Se implementaron los servicios REST de los bounded contexts Subscription, Stakeholder, Assets, Fleet, Trip, Notifications y Profiles, junto con el Shared Kernel.
+
+![Sprint Backlog 3](assets/images/Chapter-5/Sprint3/trello-sprint3.png)
+
+**URL del Board:** [SafeRoute - Sprint 3](#)
+
+| Sprint # | Sprint 3 | | | | | | |
+|:---|:---|:---|:---|:---|:---|:---|:---|
+| **User Story** | | **Work-Item / Task** | | | | | |
+| **Id** | **Title** | **Id** | **Title** | **Description** | **Estimation (Hours)** | **Assigned To** | **Status** |
+| — | Arquitectura Backend (Shared Kernel) | T01.1 | Configurar solución ASP.NET Core | Inicializar el proyecto en .NET 10 con la estructura por bounded contexts. | 2 | Julio Frank | Done |
+| — | Arquitectura Backend (Shared Kernel) | T01.2 | Implementar Shared Kernel | Crear entidades base, value objects, auditoría e interceptores comunes. | 2 | Julio Frank | Done |
+| — | Arquitectura Backend (Shared Kernel) | T01.3 | Configurar EF Core + MySQL | Configurar AppDbContext, cadena de conexión y convenciones sobre MySQL. | 2 | Julio Frank | Done |
+| — | Arquitectura Backend (Shared Kernel) | T01.4 | Integrar Cortex.Mediator (CQRS) | Configurar el mediador para separar Commands y Queries. | 2 | Julio Frank | Done |
+| — | Arquitectura Backend (Shared Kernel) | T01.5 | Configurar Swagger / OpenAPI | Habilitar la documentación interactiva de la API. | 1 | Julio Frank | Done |
+| US1 | Contratar Plan | T02.1 | Implementar dominio de Subscription | Modelar agregados Plan y Subscription con sus reglas de negocio. | 2 | Mathias | Done |
+| US1 | Contratar Plan | T02.2 | Implementar servicios de Plans | Exponer endpoints de creación y consulta de planes. | 2 | Mathias | Done |
+| US1 | Contratar Plan | T02.3 | Implementar servicios de Subscriptions | Exponer endpoints de creación, activación, cambio de plan y cancelación. | 3 | Mathias | Done |
+| US1 | Contratar Plan | T02.4 | Persistir Subscription en MySQL | Configurar el mapeo EF y la migración del contexto. | 1 | Mathias | Done |
+| US2 | Registro de Conductores | T03.1 | Implementar dominio Stakeholder (Drivers) | Modelar el agregado Driver con licencia y teléfono. | 2 | José | Done |
+| US2 | Registro de Conductores | T03.2 | Implementar servicios de Drivers | Exponer CRUD REST de conductores y actualización de teléfono. | 2 | José | Done |
+| US3 | Registro de Padres | T03.3 | Implementar dominio y servicios de Parents | Exponer CRUD REST de padres y vinculación de hijos. | 2 | José | Done |
+| US4 | Alta de Alumnos | T03.4 | Implementar Student Groups | Exponer servicios de agrupación de estudiantes y finalización. | 2 | José | Done |
+| US6 | Asignación de Vehículos | T04.1 | Implementar dominio Assets (Vehicles) | Modelar el agregado Vehicle en el bounded context Assets. | 2 | José | Done |
+| US6 | Asignación de Vehículos | T04.2 | Implementar servicios de Vehicles | Exponer CRUD REST de la flota vehicular. | 2 | José | Done |
+| US5 | Creación de Rutas | T05.1 | Implementar dominio Fleet (Routes) | Modelar el agregado Route con paradas, días de servicio y horario. | 3 | Fabio | Done |
+| US5 | Creación de Rutas | T05.2 | Implementar servicios de Routes | Exponer endpoints de creación, paradas, asignación de vehículo/conductor y activación. | 3 | Fabio | Done |
+| US5 | Creación de Rutas | T05.3 | Persistir Fleet en MySQL | Configurar el mapeo EF y la migración del contexto Fleet. | 1 | Fabio | Done |
+| US7 | Ejecución del Viaje | T06.1 | Implementar dominio Trip | Modelar el agregado Trip con su ciclo de vida. | 2 | Fabio | Done |
+| US7 | Ejecución del Viaje | T06.2 | Implementar servicios de Trips | Exponer endpoints de inicio, abordaje, incidentes y cierre. | 3 | Fabio | Done |
+| US20 | Confirmación de Llegada | T07.1 | Implementar dominio Notifications | Modelar el agregado Notification con alertas y anuncios. | 2 | Nickolas | Done |
+| US20 | Confirmación de Llegada | T07.2 | Implementar servicios de Notifications | Exponer endpoints de creación, despacho, entrega, alertas y anuncios. | 3 | Nickolas | Done |
+| — | Gestión de Perfiles | T08.1 | Implementar dominio y servicios de Profiles | Exponer servicios de creación y consulta de perfiles. | 2 | Nickolas | Done |
+| — | Persistencia Cross-Context | T09.1 | Implementar claves foráneas entre contextos | Definir relaciones cross-context y su migración. | 2 | Julio Frank | Done |
+| — | Datos de Prueba | T09.2 | Generar seed desde db.json | Migrar los datos de la Fake API a un script SQL de carga inicial en MySQL. | 2 | José | Done |
+| — | Levantamiento de Observaciones TB1 | T10.1 | Corregir observaciones de la entrega previa | Aplicar las correcciones señaladas en la evaluación TB1. | 3 | Nickolas | Done |
+| — | Documentación Sprint 3 | T11.1 | Documentar evidencias del Sprint 3 | Registrar planificación, backlog y evidencias en el informe. | 2 | Nickolas | Done |
+
+#### 5.2.3.4. Development Evidence for Sprint Review
+
+Durante el Sprint 3, el equipo realizó commits sobre los repositorios `saferoute-report` y `saferoute-platform` (Backend Web Service), abarcando la corrección de las observaciones de TB1 en el informe y la implementación de los servicios REST del backend en ASP.NET Core bajo DDD + CQRS, con persistencia en MySQL mediante Entity Framework Core.
+
+
+
+> Los `Commit Id` del repositorio del backend deben completarse con el `git log` real de `saferoute-platform`. Como evidencia objetiva del avance, se incluye el historial de migraciones de Entity Framework Core generadas durante el sprint:
+
+#### 5.2.3.5. Execution Evidence for Sprint Review
+
+Durante el Sprint 3, el equipo desarrolló e implementó la primera versión funcional del Backend Web Service de SafeRoute en ASP.NET Core (.NET 10), aplicando DDD con separación CQRS y persistencia sobre MySQL. La API expone los servicios REST de los bounded contexts del sistema, validados mediante la interfaz interactiva de Swagger UI. A continuación se presentan las principales evidencias de ejecución por contexto:
+
+- **Subscription & Plan Management:** creación y consulta de planes; creación, activación, cambio de plan y cancelación de suscripciones.
+- **Stakeholder Management:** CRUD de conductores (con actualización de teléfono), padres (con vinculación de hijos) y grupos de estudiantes (con asignación de alumnos y finalización).
+- **Assets:** CRUD de la flota vehicular (agregado Vehicle).
+- **Fleet & Route Planning:** ciclo de vida de la ruta (creación en borrador, paradas, asignación de vehículo/conductor, días de servicio, horario y activación/desactivación).
+- **Trip Execution:** preparación, inicio, registro de abordaje, reporte de incidentes y cierre del viaje.
+- **Notifications & Profiles:** creación, despacho, entrega, alertas y anuncios de notificaciones; creación y consulta de perfiles.
+
+![Swagger UI - Vista general](assets/images/Chapter-5/Sprint3/swagger.png)
+
+
+**Documentación interactiva (Swagger UI):** `https://asp-powertech-prod-dfembvcde5bdfxdx.mexicocentral-01.azurewebsites.net/swagger/index.html`
+
+#### 5.2.3.6. Services Documentation Evidence for Sprint Review
+
+Durante el Sprint 3, el equipo implementó y documentó el Backend Web Service de SafeRoute como una RESTful API en ASP.NET Core (.NET 10), sustituyendo la Fake REST API local del Sprint 2. La documentación de contratos se genera con **OpenAPI vía Swagger** (Swashbuckle), la persistencia se realiza con **Entity Framework Core 10 sobre MySQL** y todos los recursos se exponen bajo el prefijo de versión `api/v1`. Se excluye el contexto IAM, cuya documentación formal se abordará en el siguiente sprint.
+
+A continuación se documentan los endpoints implementados, indicando verbo HTTP, sintaxis de llamada, parámetros y la acción soportada:
+
+| Bounded Context | Acción | Verbo HTTP | Sintaxis de llamada | Parámetros |
+|-----------------|--------|------------|---------------------|------------|
+| Subscription | Listar / crear planes | GET · POST | `/api/v1/plans` | Body: `{ planTier, maxRoutes, maxDrivers, price }` |
+| Subscription | Obtener plan | GET | `/api/v1/plans/{planId}` | Path: `planId` (Guid) |
+| Subscription | Listar / crear suscripción | GET · POST | `/api/v1/subscriptions` | Body: `{ organizationId, planId, startDate, endDate }` |
+| Subscription | Activar suscripción | POST | `/api/v1/subscriptions/{id}/activate` | Path: `subscriptionId` (Guid) |
+| Subscription | Cambiar de plan | PUT | `/api/v1/subscriptions/{id}/plan` | Path: `id`; Body: `{ planId }` |
+| Subscription | Cancelar suscripción | POST | `/api/v1/subscriptions/{id}/cancel` | Path: `subscriptionId` (Guid) |
+| Stakeholder | CRUD conductores | POST · GET · PUT · DELETE | `/api/v1/drivers` · `/drivers/{driverId}` | Body: `{ organizationId, userId, firstName, lastName, email, phoneNumber, licenseNumber }` |
+| Stakeholder | Actualizar teléfono | PUT | `/api/v1/drivers/{id}/phone-number` | Path: `driverId`; Body: `{ phoneNumber }` |
+| Stakeholder | CRUD padres | POST · GET · PUT · DELETE | `/api/v1/parents` · `/parents/{parentId}` | Body: `{ organizationId, userId, firstName, lastName, email, phoneNumber }` |
+| Stakeholder | Vincular / quitar hijo | POST · DELETE | `/api/v1/parents/{id}/children` · `/{id}/children/{childId}` | Body: `{ firstName, lastName, age }` |
+| Stakeholder | Grupos de estudiantes | POST · GET | `/api/v1/student-groups` · `/student-groups/{id}` | Body: `{ organizationId, name }` |
+| Stakeholder | Asignar / quitar alumno · finalizar | POST · DELETE · POST | `/api/v1/student-groups/{id}/children` · `/{id}/children/{childId}` · `/{id}/finalize` | Path: `studentGroupId`; Body: `{ childId }` |
+| Assets | CRUD vehículos | POST · GET · PUT · DELETE | `/api/v1/vehicles` · `/vehicles/{vehicleId}` | Body: `{ organizationId, plate, model, capacity, status }` |
+| Fleet | Crear / listar rutas | POST · GET | `/api/v1/routes` · `/routes/{routeId}` | Body: `{ organizationId, name }` |
+| Fleet | Gestionar paradas | POST · DELETE | `/api/v1/routes/{id}/stops` · `/{id}/stops/{stopId}` | Body: `{ name, latitude, longitude }` |
+| Fleet | Asignar vehículo / conductor | PUT | `/api/v1/routes/{id}/vehicle` · `/{id}/driver` | Body: `{ plate, model, brand, capacity }` / `{ driverId }` |
+| Fleet | Asignar / quitar niño | POST · DELETE | `/api/v1/routes/{id}/children` · `/{id}/children/{childId}` | Body: `{ childId }` |
+| Fleet | Días de servicio / horario | PUT | `/api/v1/routes/{id}/service-days` · `/{id}/departure-time` | Body: `{ days[] }` / `{ departureTime }` |
+| Fleet | Activar / desactivar | POST | `/api/v1/routes/{id}/activate` · `/{id}/deactivate` | Path: `routeId` (Guid) |
+| Trip | Crear / listar viajes | POST · GET | `/api/v1/trips` · `/trips/{tripId}` | Body: `{ organizationId, routeId, driverId }` |
+| Trip | Iniciar · abordaje · incidente · completar | POST | `/api/v1/trips/{id}/start` · `/boarding` · `/incidents` · `/complete` | Body: `{ childId, boardingState }` / `{ description }` |
+| Notifications | Crear / listar notificaciones | POST · GET | `/api/v1/notifications` · `/notifications/{id}` | Body: `{ organizationId, parentId, tripId, category, message }` |
+| Notifications | Despachar · entregar · alertas · anuncios | POST | `/api/v1/notifications/{id}/dispatch` · `/delivered` · `/alerts` · `/announcements` | Body: `{ panic }` / `{ routeId, message }` |
+| Profiles | Crear / listar perfiles | POST · GET | `/api/v1/profiles` · `/profiles/{profileId}` | Body: `{ organizationId, userId, firstName, lastName, phone, role, license, status }` |
+
+**Ejemplo de request/response — Crear viaje (POST `/api/v1/trips`):**
+
+```jsonc
+// Request body
+{
+  "organizationId": "a0000000-0000-0000-0000-000000000001",
+  "routeId": "aa000000-0000-0000-0000-000000000001",
+  "driverId": "dd000000-0000-0000-0000-000000000001"
+}
+
+// Response 201 Created
+{
+  "id": "bb000000-0000-0000-0000-000000000001",
+  "organizationId": "a0000000-0000-0000-0000-000000000001",
+  "routeId": "aa000000-0000-0000-0000-000000000001",
+  "driverId": "dd000000-0000-0000-0000-000000000001",
+  "tripState": "Prepared",
+  "startTime": null,
+  "endTime": null,
+  "attendances": [],
+  "incidents": []
+}
+```
+
+El response devuelve el recurso `TripResource` con el viaje en estado `Prepared`; los campos `startTime`, `endTime`, `attendances` e `incidents` se completan progresivamente al invocar los endpoints `/start`, `/boarding`, `/incidents` y `/complete`.
+
+![Swagger UI - Interacción con datos de muestra](assets/images/Chapter-5/Sprint3/swagger-trip.png)
+
+**Repositorio de Web Services:** `https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform`
+**Commits relacionados con Documentación (OpenAPI/Swagger):** _(completar con los Commit Id reales)_
+
+#### 5.2.3.7. Software Deployment Evidence for Sprint Review
+
+Durante el Sprint 3, el Backend Web Service de SafeRoute se ejecutó y validó en entorno local sobre el servidor Kestrel de ASP.NET Core, persistiendo sobre una instancia de MySQL (`saferoute-appweb`). Los pasos realizados fueron:
+
+1. Aplicación de las migraciones de Entity Framework Core para construir el esquema relacional de la base de datos.
+2. Carga de datos iniciales mediante el script de seed generado a partir del `db.json` de la Fake API del Sprint 2.
+3. Ejecución del Web Service y verificación de la documentación interactiva en Swagger UI (`https://localhost:7003/swagger`), validando los endpoints de cada bounded context.
+
+![Esquema de la base de datos](assets/images/Chapter-5/Sprint3/database-schema.png)
+
+> El despliegue del Backend Web Service en la nube y su integración definitiva con la Frontend Web Application desplegada en Azure quedan planificados para el siguiente sprint, una vez consolidada y validada la capa de servicios.
+
+#### 5.2.3.8. Team Collaboration Insights during Sprint
+
+Durante el Sprint 3, el equipo mantuvo una colaboración activa distribuida en dos repositorios: el del informe y el nuevo repositorio del Backend Web Service. La actividad técnica se concentró en la implementación de los servicios REST por bounded context, mientras que en el informe se trabajó el levantamiento de las observaciones de TB1 y la documentación del sprint.
+
+![Report Pulse Sprint 3](assets/images/Chapter-5/Sprint3/report-pulse.png)
+
+![Backend Pulse Sprint 3](assets/images/Chapter-5/Sprint3/backend-pulse.png)
+
+La distribución del trabajo se mantuvo alineada con la Leadership and Collaboration Matrix (LACX) definida al inicio del sprint, donde cada integrante asumió la responsabilidad principal de uno o más bounded contexts del backend mientras colaboraba en los restantes mediante revisiones de código. El uso consistente de GitFlow y de Conventional Commits permitió mantener un historial trazable y profesional en ambos repositorios.
 
 ---
 
