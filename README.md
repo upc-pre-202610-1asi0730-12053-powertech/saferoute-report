@@ -326,11 +326,12 @@ En base al análisis competitivo y SWOT realizado, SafeRoute plantea las siguien
 18. Para finalizar, ¿qué consideras indispensable para sentirte tranquilo(a) con el transporte de tu hijo?
     
 #### 2.2.2. Registro de entrevistas
-### Entrevista 1: Arturo Núñez
+
+### Entrevista 1: Andy Pillaca
 
 | Campo | Detalle |
 | :--- | :--- |
-| **Nombre y Apellidos** | Arturo Núñez |
+| **Nombre y Apellidos** | Andy Pillaca |
 | **Edad** | 28 años |
 | **Distrito / Zona de trabajo** | San Miguel y Miraflores, Lima |
 | **Segmento** | Conductor de Transporte Escolar |
@@ -340,7 +341,8 @@ En base al análisis competitivo y SWOT realizado, SafeRoute plantea las siguien
 | **URL del video** | [https://1drv.ms/v/c/f647ccc757f760c7/IQBpmAWWCOusSLuP0uLD_z7NAe5clO5HVvyL8gi5oJuddj8?e=9qIP9h](https://1drv.ms/v/c/f647ccc757f760c7/IQBpmAWWCOusSLuP0uLD_z7NAe5clO5HVvyL8gi5oJuddj8?e=9qIP9h)] |
 
 #### Screenshot
-![SegmentoObjetivo1](./assets/images/ArturoNunez-SegmentoObjetivo1.png)
+
+![SegmentoObjetivo1](./assets/images/AndyPillaca-SegmentoObjetivo1.png)
 
 ---
 
@@ -348,7 +350,7 @@ En base al análisis competitivo y SWOT realizado, SafeRoute plantea las siguien
 
 ### Características Objetivas y Entorno
 
-Arturo Núñez es un conductor de transporte escolar independiente de 28 años, con aproximadamente seis años de experiencia en el rubro. Opera principalmente en los distritos de San Miguel y Miraflores, zonas urbanas con alto flujo vehicular. Gestiona su propia unidad móvil y administra directamente la captación de clientes, organización de rutas y comunicación con padres de familia.
+Andy Pillaca es un conductor de transporte escolar independiente de 28 años, con aproximadamente seis años de experiencia en el rubro. Opera principalmente en los distritos de San Miguel y Miraflores, zonas urbanas con alto flujo vehicular. Gestiona su propia unidad móvil y administra directamente la captación de clientes, organización de rutas y comunicación con padres de familia.
 
 Su rutina diaria consiste en recoger estudiantes en sus domicilios, trasladarlos al colegio y retornarlos posteriormente según el turno escolar.
 
@@ -365,7 +367,7 @@ El uso del teléfono móvil es constante durante la jornada. Se evidencia famili
 
 ### Características Subjetivas y Personalidad
 
-Arturo presenta un perfil pragmático, independiente y orientado a resultados. Busca mantener el orden operativo, aunque reconoce limitaciones de su sistema actual. Muestra preocupación por la seguridad vial y estrés cuando debe responder mensajes mientras conduce.
+Andy presenta un perfil pragmático, independiente y orientado a resultados. Busca mantener el orden operativo, aunque reconoce limitaciones de su sistema actual. Muestra preocupación por la seguridad vial y estrés cuando debe responder mensajes mientras conduce.
 
 También demuestra apertura al cambio tecnológico siempre que la solución sea sencilla, rápida y útil.
 
@@ -716,14 +718,16 @@ Se confirma que este segmento necesita una solución digital enfocada en:
 Esto respalda directamente las User Stories relacionadas con rastreo GPS, alertas automáticas, confirmación de llegada y acceso a información del trayecto dentro de SafeRoute.
 
 #### 2.2.3. Análisis de entrevistas
+
 ## Segmento Objetivo 1: Conductores de Transporte Escolar
 
 El presente análisis corresponde a una muestra inicial de 1 entrevista válida del segmento conductor, por lo que los porcentajes reflejan únicamente los hallazgos preliminares del entrevistado y serán refinados con futuras entrevistas.
+
 ### Características Objetivas del Segmento
 
 | Característica | Resultado | Sustento |
 |---|---|---|
-| Edad joven-adulta (25 a 35 años) | 100% | Arturo tiene 28 años |
+| Edad joven-adulta (25 a 35 años) | 100% | Andy tiene 28 años |
 | Trabajo independiente | 100% | Indica operar con unidad propia y captar clientes directamente |
 | Experiencia en el rubro mayor a 5 años | 100% | Señala 6 años trabajando en transporte escolar |
 | Opera en zonas urbanas congestionadas | 100% | Trabaja en San Miguel y Miraflores |
@@ -4746,27 +4750,30 @@ Para el segmento Driver, las entrevistas se enfocan en validar la experiencia de
 ###### Entrevista de validación 1 - Driver
 
 **Entrevistador:**
-[Nombre y apellido del entrevistador]
+Fabio Vallejo
 
 **Datos del entrevistado**
 
-* **Nombre:** [Nombre]
-* **Apellidos:** [Apellidos]
-* **Edad:** [Edad]
-* **Distrito:** [Distrito]
+* **Nombre:** Andy
+* **Apellidos:** Pillaca
+* **Edad:** 28
+* **Distrito:** San Miguel y Miraflores
 * **Segmento:** Driver
 * **URL del video:** [Pegar URL de Microsoft Stream]
 * **Timing de inicio:** [mm:ss]
 * **Timing de fin:** [mm:ss]
-* **Duración:** [mm:ss]
+* **Duración:** 6:37
 
 <p align="center">
 <img src="assets/images/ChapterV/ValidationInterviews/driver-validation-interview-1.png" alt="Driver Validation Interview 1" width="500"/>
 </p>
 
 **Resumen descriptivo:**
-[Redactar aquí el resumen de la entrevista. Debe explicar cómo el entrevistado interactuó con el Landing Page y con los flujos asignados de la Web Application. Incluir si comprendió la propuesta de valor, si pudo completar las tareas, qué partes le resultaron claras, qué dificultades encontró y qué sugerencias brindó. También mencionar sus apreciaciones sobre el control de alumnos, reporte de incidencias, botón de pánico, claridad de botones, mensajes del sistema y confianza generada por la plataforma.]
+Andy indicó que ha utilizado aplicaciones de mapas como Google Maps, pero no una plataforma especializada en movilidad escolar. Para él, una solución como SafeRoute debería mostrar desde el inicio la ruta asignada, lista de alumnos, horarios, puntos de recogida y estado del recorrido.
 
+Durante la evaluación, consideró que la plataforma es fácil de usar y que el flujo para controlar alumnos durante la ruta es claro. Destacó como puntos positivos las confirmaciones visuales, los mensajes de éxito y la posibilidad de reportar incidencias de forma rápida. Además, señaló que usaría SafeRoute en un contexto real porque mejora el control de la ruta, la comunicación con los padres y el seguimiento seguro de los alumnos.
+
+Como oportunidades de mejora, recomendó incluir botones más grandes para acciones críticas, acceso rápido a emergencias, menos pasos durante la operación y mayor información visual sobre los beneficios del sistema en el Landing Page.
 
 ###### Entrevista de validación 2 - Driver
 
