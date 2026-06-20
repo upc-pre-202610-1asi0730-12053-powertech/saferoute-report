@@ -4299,87 +4299,122 @@ Durante el Sprint 3, el equipo desarrolló e implementó la primera versión fun
 
 #### 5.2.3.6. Services Documentation Evidence for Sprint Review
 
-Durante el Sprint 3, el equipo implementó y documentó el Backend Web Service de SafeRoute como una RESTful API en ASP.NET Core (.NET 10), sustituyendo la Fake REST API local del Sprint 2. La documentación de contratos se genera con **OpenAPI vía Swagger** (Swashbuckle), la persistencia se realiza con **Entity Framework Core 10 sobre MySQL** y todos los recursos se exponen bajo el prefijo de versión `api/v1`. Se excluye el contexto IAM, cuya documentación formal se abordará en el siguiente sprint.
+Durante el Sprint 3, el equipo implementó y documentó el Backend Web Service de SafeRoute como una RESTful API en ASP.NET Core (.NET 10), sustituyendo la Fake REST API local del Sprint 2. La documentación de contratos se genera con **OpenAPI vía Swagger** (Swashbuckle), la persistencia se realiza con **Entity Framework Core 10 sobre MySQL** y todos los recursos se exponen bajo el prefijo de versión `api/v1`. Se excluye el contexto Identity & Access Management, cuya documentación formal se abordará en el siguiente sprint.
 
-A continuación se documentan los endpoints implementados, indicando verbo HTTP, sintaxis de llamada, parámetros y la acción soportada:
+Dado que en este Sprint el Web Service aún no se ha desplegado en la nube, la documentación OpenAPI de todos los endpoints se encuentra disponible y operativa en la **URL local de Swagger UI**: `https://localhost:7003/swagger`.
 
-| Bounded Context | Acción | Verbo HTTP | Sintaxis de llamada | Parámetros |
-|-----------------|--------|------------|---------------------|------------|
-| Subscription | Listar / crear planes | GET · POST | `/api/v1/plans` | Body: `{ planTier, maxRoutes, maxDrivers, price }` |
-| Subscription | Obtener plan | GET | `/api/v1/plans/{planId}` | Path: `planId` (Guid) |
-| Subscription | Listar / crear suscripción | GET · POST | `/api/v1/subscriptions` | Body: `{ organizationId, planId, startDate, endDate }` |
-| Subscription | Activar suscripción | POST | `/api/v1/subscriptions/{id}/activate` | Path: `subscriptionId` (Guid) |
-| Subscription | Cambiar de plan | PUT | `/api/v1/subscriptions/{id}/plan` | Path: `id`; Body: `{ planId }` |
-| Subscription | Cancelar suscripción | POST | `/api/v1/subscriptions/{id}/cancel` | Path: `subscriptionId` (Guid) |
-| Stakeholder | CRUD conductores | POST · GET · PUT · DELETE | `/api/v1/drivers` · `/drivers/{driverId}` | Body: `{ organizationId, userId, firstName, lastName, email, phoneNumber, licenseNumber }` |
-| Stakeholder | Actualizar teléfono | PUT | `/api/v1/drivers/{id}/phone-number` | Path: `driverId`; Body: `{ phoneNumber }` |
-| Stakeholder | CRUD padres | POST · GET · PUT · DELETE | `/api/v1/parents` · `/parents/{parentId}` | Body: `{ organizationId, userId, firstName, lastName, email, phoneNumber }` |
-| Stakeholder | Vincular / quitar hijo | POST · DELETE | `/api/v1/parents/{id}/children` · `/{id}/children/{childId}` | Body: `{ firstName, lastName, age }` |
-| Stakeholder | Grupos de estudiantes | POST · GET | `/api/v1/student-groups` · `/student-groups/{id}` | Body: `{ organizationId, name }` |
-| Stakeholder | Asignar / quitar alumno · finalizar | POST · DELETE · POST | `/api/v1/student-groups/{id}/children` · `/{id}/children/{childId}` · `/{id}/finalize` | Path: `studentGroupId`; Body: `{ childId }` |
-| Assets | CRUD vehículos | POST · GET · PUT · DELETE | `/api/v1/vehicles` · `/vehicles/{vehicleId}` | Body: `{ organizationId, plate, model, capacity, status }` |
-| Fleet | Crear / listar rutas | POST · GET | `/api/v1/routes` · `/routes/{routeId}` | Body: `{ organizationId, name }` |
-| Fleet | Gestionar paradas | POST · DELETE | `/api/v1/routes/{id}/stops` · `/{id}/stops/{stopId}` | Body: `{ name, latitude, longitude }` |
-| Fleet | Asignar vehículo / conductor | PUT | `/api/v1/routes/{id}/vehicle` · `/{id}/driver` | Body: `{ plate, model, brand, capacity }` / `{ driverId }` |
-| Fleet | Asignar / quitar niño | POST · DELETE | `/api/v1/routes/{id}/children` · `/{id}/children/{childId}` | Body: `{ childId }` |
-| Fleet | Días de servicio / horario | PUT | `/api/v1/routes/{id}/service-days` · `/{id}/departure-time` | Body: `{ days[] }` / `{ departureTime }` |
-| Fleet | Activar / desactivar | POST | `/api/v1/routes/{id}/activate` · `/{id}/deactivate` | Path: `routeId` (Guid) |
-| Trip | Crear / listar viajes | POST · GET | `/api/v1/trips` · `/trips/{tripId}` | Body: `{ organizationId, routeId, driverId }` |
-| Trip | Iniciar · abordaje · incidente · completar | POST | `/api/v1/trips/{id}/start` · `/boarding` · `/incidents` · `/complete` | Body: `{ childId, boardingState }` / `{ description }` |
-| Notifications | Crear / listar notificaciones | POST · GET | `/api/v1/notifications` · `/notifications/{id}` | Body: `{ organizationId, parentId, tripId, category, message }` |
-| Notifications | Despachar · entregar · alertas · anuncios | POST | `/api/v1/notifications/{id}/dispatch` · `/delivered` · `/alerts` · `/announcements` | Body: `{ panic }` / `{ routeId, message }` |
-| Profiles | Crear / listar perfiles | POST · GET | `/api/v1/profiles` · `/profiles/{profileId}` | Body: `{ organizationId, userId, firstName, lastName, phone, role, license, status }` |
+A continuación se documentan los endpoints implementados por bounded context, indicando para cada acción el verbo HTTP, la sintaxis de llamada, los parámetros y el response esperado:
 
-**Ejemplo de request/response — Crear viaje (POST `/api/v1/trips`):**
+**Subscription & Plan Management**
 
+| Acción | Verbo | Sintaxis de llamada | Parámetros | Response |
+|--------|-------|---------------------|------------|----------|
+| Listar / crear planes | GET · POST | `/api/v1/plans` | Body: `{ planTier, maxRoutes, maxDrivers, price }` | `201` → `PlanResource` |
+| Obtener plan | GET | `/api/v1/plans/{planId}` | Path: `planId` (Guid) | `200` → `PlanResource` |
+| Listar / crear suscripción | GET · POST | `/api/v1/subscriptions` | Body: `{ organizationId, planId, startDate, endDate }` | `201` → `SubscriptionResource` |
+| Obtener suscripción | GET | `/api/v1/subscriptions/{subscriptionId}` | Path: `subscriptionId` (Guid) | `200` → `SubscriptionResource` |
+| Activar suscripción | POST | `/api/v1/subscriptions/{id}/activate` | Path: `subscriptionId` (Guid) | `200` → `SubscriptionResource` (state: Active) |
+| Cambiar de plan | PUT | `/api/v1/subscriptions/{id}/plan` | Path: `id`; Body: `{ planId }` | `200` → `SubscriptionResource` |
+| Cancelar suscripción | POST | `/api/v1/subscriptions/{id}/cancel` | Path: `subscriptionId` (Guid) | `200` → `SubscriptionResource` (state: Cancelled) |
+
+**Stakeholder & Asset Management**
+
+| Acción | Verbo | Sintaxis de llamada | Parámetros | Response |
+|--------|-------|---------------------|------------|----------|
+| CRUD de conductores | POST · GET · PUT · DELETE | `/api/v1/drivers` · `/drivers/{driverId}` | Body: `{ organizationId, userId, firstName, lastName, email, phoneNumber, licenseNumber }` | `201/200` → `DriverResource` · `204` (delete) |
+| Actualizar teléfono | PUT | `/api/v1/drivers/{driverId}/phone-number` | Path: `driverId`; Body: `{ phoneNumber }` | `200` → `DriverResource` |
+| CRUD de padres | POST · GET · PUT · DELETE | `/api/v1/parents` · `/parents/{parentId}` | Body: `{ organizationId, userId, firstName, lastName, email, phoneNumber }` | `201/200` → `ParentResource` · `204` (delete) |
+| Vincular / quitar hijo | POST · DELETE | `/api/v1/parents/{parentId}/children` · `/{parentId}/children/{childId}` | Body: `{ firstName, lastName, age }` | `200` → `ParentResource` |
+| Grupos de estudiantes | POST · GET | `/api/v1/student-groups` · `/student-groups/{id}` | Body: `{ organizationId, name }` | `201/200` → `StudentGroupResource` |
+| Asignar/quitar alumno · finalizar | POST · DELETE · POST | `/api/v1/student-groups/{id}/children` · `/{id}/children/{childId}` · `/{id}/finalize` | Path: `studentGroupId`; Body: `{ childId }` | `200` → `StudentGroupResource` |
+| CRUD de vehículos (assets) | POST · GET · PUT · DELETE | `/api/v1/vehicles` · `/vehicles/{vehicleId}` | Body: `{ organizationId, plate, model, capacity, status }` | `201/200` → `VehicleResource` · `204` (delete) |
+| Listar / consultar perfiles | GET | `/api/v1/profiles` · `/profiles/{profileId}` | Path: `profileId` (Guid) | `200` → `ProfileResource` |
+
+**Fleet & Route Management**
+
+| Acción | Verbo | Sintaxis de llamada | Parámetros | Response |
+|--------|-------|---------------------|------------|----------|
+| Crear / listar / consultar rutas | POST · GET | `/api/v1/routes` · `/routes/{routeId}` | Body: `{ organizationId, name }` | `201/200` → `RouteResource` |
+| Gestionar paradas | POST · DELETE | `/api/v1/routes/{id}/stops` · `/{id}/stops/{stopId}` | Body: `{ name, latitude, longitude }` | `200` → `RouteResource` |
+| Asignar vehículo / conductor | PUT | `/api/v1/routes/{id}/vehicle` · `/{id}/driver` | Body: `{ plate, model, brand, capacity }` / `{ driverId }` | `200` → `RouteResource` |
+| Asignar / quitar niño | POST · DELETE | `/api/v1/routes/{id}/children` · `/{id}/children/{childId}` | Body: `{ childId }` | `200` → `RouteResource` |
+| Días de servicio / horario | PUT | `/api/v1/routes/{id}/service-days` · `/{id}/departure-time` | Body: `{ days[] }` / `{ departureTime }` | `200` → `RouteResource` |
+| Activar / desactivar ruta | POST | `/api/v1/routes/{id}/activate` · `/{id}/deactivate` | Path: `routeId` (Guid) | `200` → `RouteResource` (state: Active/Inactive) |
+
+**Trip Execution & Monitoring**
+
+| Acción | Verbo | Sintaxis de llamada | Parámetros | Response |
+|--------|-------|---------------------|------------|----------|
+| Crear / listar / consultar viajes | POST · GET | `/api/v1/trips` · `/trips/{tripId}` | Body: `{ organizationId, routeId, driverId }` | `201/200` → `TripResource` |
+| Iniciar viaje | POST | `/api/v1/trips/{tripId}/start` | Path: `tripId` (Guid) | `200` → `TripResource` (state: InProgress) |
+| Registrar abordaje | POST | `/api/v1/trips/{tripId}/boarding` | Body: `{ childId, boardingState }` | `200` → `TripResource` |
+| Reportar incidente | POST | `/api/v1/trips/{tripId}/incidents` | Body: `{ description }` | `200` → `TripResource` |
+| Completar viaje | POST | `/api/v1/trips/{tripId}/complete` | Path: `tripId` (Guid) | `200` → `TripResource` (state: Completed) |
+
+**Notifications & Communication**
+
+| Acción | Verbo | Sintaxis de llamada | Parámetros | Response |
+|--------|-------|---------------------|------------|----------|
+| Crear / listar / consultar | POST · GET | `/api/v1/notifications` · `/notifications/{id}` | Body: `{ organizationId, parentId, tripId, category, message }` | `201/200` → `NotificationResource` |
+| Despachar / marcar entregada | POST | `/api/v1/notifications/{id}/dispatch` · `/{id}/delivered` | Path: `notificationId` (Guid) | `200` → `NotificationResource` |
+| Disparar alerta | POST | `/api/v1/notifications/{id}/alerts` | Body: `{ panic }` | `200` → `NotificationResource` |
+| Publicar anuncio | POST | `/api/v1/notifications/{id}/announcements` | Body: `{ routeId, message }` | `200` → `NotificationResource` |
+
+**Ejemplos de request / response (datos de muestra):**
+
+*Crear suscripción — POST `/api/v1/subscriptions`*
 ```jsonc
-// Request body
-{
-  "organizationId": "a0000000-0000-0000-0000-000000000001",
-  "routeId": "aa000000-0000-0000-0000-000000000001",
-  "driverId": "dd000000-0000-0000-0000-000000000001"
-}
-
+// Request
+{ "organizationId": "a0000000-...-0001", "planId": "c0000000-...-0002",
+  "startDate": "2026-06-01T00:00:00Z", "endDate": "2026-12-01T00:00:00Z" }
 // Response 201 Created
-{
-  "id": "bb000000-0000-0000-0000-000000000001",
-  "organizationId": "a0000000-0000-0000-0000-000000000001",
-  "routeId": "aa000000-0000-0000-0000-000000000001",
-  "driverId": "dd000000-0000-0000-0000-000000000001",
-  "tripState": "Prepared",
-  "startTime": null,
-  "endTime": null,
-  "attendances": [],
-  "incidents": []
-}
+{ "id": "d0000000-...-0001", "organizationId": "a0000000-...-0001",
+  "planId": "c0000000-...-0002", "state": "Pending",
+  "startDate": "2026-06-01T00:00:00Z", "endDate": "2026-12-01T00:00:00Z",
+  "remainingDays": 183 }
 ```
+El response devuelve `SubscriptionResource` en estado `Pending`; al invocar `/activate` cambia a `Active`.
 
-El response devuelve el recurso `TripResource` con el viaje en estado `Prepared`; los campos `startTime`, `endTime`, `attendances` e `incidents` se completan progresivamente al invocar los endpoints `/start`, `/boarding`, `/incidents` y `/complete`.
+*Registrar conductor — POST `/api/v1/drivers`*
+```jsonc
+// Response 201 Created
+{ "id": "dd000000-...-0001", "organizationId": "a0000000-...-0001",
+  "userId": "b0000000-...-0001", "firstName": "Carlos", "lastName": "Pérez",
+  "fullName": "Carlos Pérez", "email": "carlos@saferoute.com",
+  "phoneNumber": "+51999888777", "licenseNumber": "Q-12345678", "available": true }
+```
+El response devuelve `DriverResource` con `available: true` y el `fullName` calculado por el dominio.
 
-![Swagger UI - Interacción con datos de muestra](assets/images/Chapter-5/Sprint3/swagger-trip.png)
+*Crear viaje — POST `/api/v1/trips`*
+```jsonc
+// Response 201 Created
+{ "id": "bb000000-...-0001", "organizationId": "a0000000-...-0001",
+  "routeId": "aa000000-...-0001", "driverId": "dd000000-...-0001",
+  "tripState": "Prepared", "startTime": null, "endTime": null,
+  "attendances": [], "incidents": [] }
+```
+El response devuelve `TripResource` en estado `Prepared`; los campos `startTime`, `attendances` e `incidents` se completan al invocar `/start`, `/boarding` e `/incidents`.
+
+**Capturas de la documentación en uso:**
+
+![Swagger UI - Vista general de endpoints](assets/images/Chapter-5/Sprint3/swagger.png)
+
 
 **Repositorio de Web Services:** `https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform`
-**Commits relacionados con Documentación (OpenAPI/Swagger):** _(completar con los Commit Id reales)_
 
 #### 5.2.3.7. Software Deployment Evidence for Sprint Review
 
-Durante el Sprint 3, el Backend Web Service de SafeRoute se ejecutó y validó en entorno local sobre el servidor Kestrel de ASP.NET Core, persistiendo sobre una instancia de MySQL (`saferoute-appweb`). Los pasos realizados fueron:
+Durante el Sprint 3, el Backend Web Service de SafeRoute se ejecutó el servidor de ASP.NET Core, persistiendo sobre una instancia de MySQL (`saferoute-appweb`). PENDIENTE
 
-1. Aplicación de las migraciones de Entity Framework Core para construir el esquema relacional de la base de datos.
-2. Carga de datos iniciales mediante el script de seed generado a partir del `db.json` de la Fake API del Sprint 2.
-3. Ejecución del Web Service y verificación de la documentación interactiva en Swagger UI (`https://localhost:7003/swagger`), validando los endpoints de cada bounded context.
 
-![Esquema de la base de datos](assets/images/Chapter-5/Sprint3/database-schema.png)
-
-> El despliegue del Backend Web Service en la nube y su integración definitiva con la Frontend Web Application desplegada en Azure quedan planificados para el siguiente sprint, una vez consolidada y validada la capa de servicios.
 
 #### 5.2.3.8. Team Collaboration Insights during Sprint
 
 Durante el Sprint 3, el equipo mantuvo una colaboración activa distribuida en dos repositorios: el del informe y el nuevo repositorio del Backend Web Service. La actividad técnica se concentró en la implementación de los servicios REST por bounded context, mientras que en el informe se trabajó el levantamiento de las observaciones de TB1 y la documentación del sprint.
 
-![Report Pulse Sprint 3](assets/images/Chapter-5/Sprint3/report-pulse.png)
+![Report Pulse Sprint 3](assets/images/Chapter-5/Sprint3/report-pulse.png) PENIENTE
 
-![Backend Pulse Sprint 3](assets/images/Chapter-5/Sprint3/backend-pulse.png)
+![Backend Pulse Sprint 3](assets/images/Chapter-5/Sprint3/backend-pulse.png) PENDIENTE
 
 La distribución del trabajo se mantuvo alineada con la Leadership and Collaboration Matrix (LACX) definida al inicio del sprint, donde cada integrante asumió la responsabilidad principal de uno o más bounded contexts del backend mientras colaboraba en los restantes mediante revisiones de código. El uso consistente de GitFlow y de Conventional Commits permitió mantener un historial trazable y profesional en ambos repositorios.
 
