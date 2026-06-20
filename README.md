@@ -4849,28 +4849,36 @@ Para el segmento **Parent**, las entrevistas se enfocan en validar la experienci
 
 ###### Entrevista de validación 1 - Parent
 
+* **User Flow 10:** Rastreo en tiempo real del vehículo.
+
 **Entrevistador:**
-[Nombre y apellido del entrevistador]
+Nickolas Ramirez Ruiz
 
 **Datos del entrevistado**
 
-* **Nombre:** [Nombre]
-* **Apellidos:** [Apellidos]
-* **Edad:** [Edad]
-* **Distrito:** [Distrito]
+* **Nombre:** Maximo 
+* **Apellidos:** Quevedo Cordova
+* **Edad:** 25 años
+* **Distrito:** Callería, Pucallpa
 * **Segmento:** Parent
-* **URL del video:** [Pegar URL de Microsoft Stream]
-* **Timing de inicio:** [mm:ss]
-* **Duración:** [mm:ss]
+* **URL del video:** https://upcedupe-my.sharepoint.com/personal/u202415551_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu202415551%5Fupc%5Fedu%5Fpe%2FDocuments%2FEntrevista%20de%20Validaci%C3%B3n%20Parents%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E61cdc2bb%2D44e1%2D4061%2D9c3b%2D1f2812627c03
+
+
+**Timing de inicio:** [mm:ss]
+* **Duración:** [6:16]
 
 <p align="center">
+
 <img src="assets/images/ChapterV/ValidationInterviews/parent-validation-interview-1.png" alt="Parent Validation Interview 1" width="500"/>
+
 </p>
 
+
 **Resumen descriptivo:**
-[Redactar aquí el resumen de la entrevista. Debe explicar cómo el entrevistado interactuó con el Landing Page y con los User Flows asignados para el segmento Parent. Incluir si comprendió la propuesta de valor, si pudo ubicar el viaje activo, interpretar la ubicación del vehículo, entender las notificaciones y confirmar la llegada o historial del estudiante. Mencionar qué partes le generaron confianza, qué dudas tuvo y qué mejoras sugirió.]
-
-
+En esta sesión de validación, Nickolas Ramirez y Maximo Quevedo exploraron a fondo la plataforma Safe Route,
+concluyendo que su diseño intuitivo y sus funciones críticas como el monitoreo en tiempo real de unidades, la gestión multiactivo de estudiantes y
+la alerta temprana ante incidencias de tráfico mediante una clara señalética cromática no solo garantizan una experiencia de usuario sumamente cómoda,
+sino que establecen un estándar de seguridad y eficiencia que convenció plenamente al entrevistado para su adopción definitiva.
 
 ###### Entrevista de validación 2 - Parent
 
