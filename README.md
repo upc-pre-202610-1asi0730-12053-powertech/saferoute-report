@@ -326,11 +326,12 @@ En base al análisis competitivo y SWOT realizado, SafeRoute plantea las siguien
 18. Para finalizar, ¿qué consideras indispensable para sentirte tranquilo(a) con el transporte de tu hijo?
     
 #### 2.2.2. Registro de entrevistas
-### Entrevista 1: Arturo Núñez
+
+### Entrevista 1: Andy Pillaca
 
 | Campo | Detalle |
 | :--- | :--- |
-| **Nombre y Apellidos** | Arturo Núñez |
+| **Nombre y Apellidos** | Andy Pillaca |
 | **Edad** | 28 años |
 | **Distrito / Zona de trabajo** | San Miguel y Miraflores, Lima |
 | **Segmento** | Conductor de Transporte Escolar |
@@ -340,7 +341,8 @@ En base al análisis competitivo y SWOT realizado, SafeRoute plantea las siguien
 | **URL del video** | [https://1drv.ms/v/c/f647ccc757f760c7/IQBpmAWWCOusSLuP0uLD_z7NAe5clO5HVvyL8gi5oJuddj8?e=9qIP9h](https://1drv.ms/v/c/f647ccc757f760c7/IQBpmAWWCOusSLuP0uLD_z7NAe5clO5HVvyL8gi5oJuddj8?e=9qIP9h)] |
 
 #### Screenshot
-![SegmentoObjetivo1](./assets/images/ArturoNunez-SegmentoObjetivo1.png)
+
+![SegmentoObjetivo1](./assets/images/AndyPillaca-SegmentoObjetivo1.png)
 
 ---
 
@@ -348,7 +350,7 @@ En base al análisis competitivo y SWOT realizado, SafeRoute plantea las siguien
 
 ### Características Objetivas y Entorno
 
-Arturo Núñez es un conductor de transporte escolar independiente de 28 años, con aproximadamente seis años de experiencia en el rubro. Opera principalmente en los distritos de San Miguel y Miraflores, zonas urbanas con alto flujo vehicular. Gestiona su propia unidad móvil y administra directamente la captación de clientes, organización de rutas y comunicación con padres de familia.
+Andy Pillaca es un conductor de transporte escolar independiente de 28 años, con aproximadamente seis años de experiencia en el rubro. Opera principalmente en los distritos de San Miguel y Miraflores, zonas urbanas con alto flujo vehicular. Gestiona su propia unidad móvil y administra directamente la captación de clientes, organización de rutas y comunicación con padres de familia.
 
 Su rutina diaria consiste en recoger estudiantes en sus domicilios, trasladarlos al colegio y retornarlos posteriormente según el turno escolar.
 
@@ -365,7 +367,7 @@ El uso del teléfono móvil es constante durante la jornada. Se evidencia famili
 
 ### Características Subjetivas y Personalidad
 
-Arturo presenta un perfil pragmático, independiente y orientado a resultados. Busca mantener el orden operativo, aunque reconoce limitaciones de su sistema actual. Muestra preocupación por la seguridad vial y estrés cuando debe responder mensajes mientras conduce.
+Andy presenta un perfil pragmático, independiente y orientado a resultados. Busca mantener el orden operativo, aunque reconoce limitaciones de su sistema actual. Muestra preocupación por la seguridad vial y estrés cuando debe responder mensajes mientras conduce.
 
 También demuestra apertura al cambio tecnológico siempre que la solución sea sencilla, rápida y útil.
 
@@ -716,14 +718,16 @@ Se confirma que este segmento necesita una solución digital enfocada en:
 Esto respalda directamente las User Stories relacionadas con rastreo GPS, alertas automáticas, confirmación de llegada y acceso a información del trayecto dentro de SafeRoute.
 
 #### 2.2.3. Análisis de entrevistas
+
 ## Segmento Objetivo 1: Conductores de Transporte Escolar
 
 El presente análisis corresponde a una muestra inicial de 1 entrevista válida del segmento conductor, por lo que los porcentajes reflejan únicamente los hallazgos preliminares del entrevistado y serán refinados con futuras entrevistas.
+
 ### Características Objetivas del Segmento
 
 | Característica | Resultado | Sustento |
 |---|---|---|
-| Edad joven-adulta (25 a 35 años) | 100% | Arturo tiene 28 años |
+| Edad joven-adulta (25 a 35 años) | 100% | Andy tiene 28 años |
 | Trabajo independiente | 100% | Indica operar con unidad propia y captar clientes directamente |
 | Experiencia en el rubro mayor a 5 años | 100% | Señala 6 años trabajando en transporte escolar |
 | Opera en zonas urbanas congestionadas | 100% | Trabaja en San Miguel y Miraflores |
@@ -3629,7 +3633,7 @@ El frontend de la aplicación, desarrollado con Vue.js, fue desplegado utilizand
 8. Crear el recurso y esperar la ejecución del flujo de despliegue.
 9. Acceder a **Información general** del recurso para obtener la dirección URL pública.
 
-**URL desplegada:** <https://happy-river-0e93e8e0f.7.azurestaticapps.net/identity-and-access-management/sign-in?redirect=/home>
+**URL desplegada:** <https://ashy-dune-098494d0f.7.azurestaticapps.net/identity-and-access-management/sign-in>
 
 ---
 
@@ -3657,7 +3661,35 @@ La Fake API del proyecto fue desplegada utilizando **Azure App Service**, config
 16. Esperar que el proceso finalice correctamente.
 17. Acceder al enlace de dominio predeterminado generado por Azure App Service.
 
-**URL desplegada:** <https://saferoute-db.azurewebsites.net>
+**URL desplegada:** <https://mock-api-webapp.azurewebsites.net/>
+
+##### Despliegue de Backend API
+
+El backend de la aplicación fue desarrollado con ASP.NET Core y desplegado en **Azure App Service** utilizando una imagen Docker publicada en **Azure Container Registry**. Esta estrategia permite empaquetar la API junto con sus dependencias y desplegarla de forma consistente en la nube.
+
+###### Pasos de despliegue
+
+1. Acceder al portal de Azure.
+2. Crear un recurso de **Azure Container Registry** para almacenar la imagen Docker del backend.
+3. Crear un recurso de **Azure Database for MySQL Flexible Server** para alojar la base de datos de producción.
+4. Crear la base de datos requerida por la aplicación en el servidor MySQL.
+5. Configurar las reglas de acceso y firewall del servidor MySQL para permitir la conexión desde Azure App Service.
+6. Generar la imagen Docker del backend desde el proyecto ASP.NET Core.
+7. Iniciar sesión en Azure Container Registry desde Docker.
+8. Etiquetar la imagen Docker con el nombre del servidor de Azure Container Registry.
+9. Publicar la imagen en Azure Container Registry.
+10. Crear una nueva **Web App** en Azure App Service.
+11. Seleccionar como origen de despliegue la imagen almacenada en Azure Container Registry.
+12. Configurar el puerto expuesto por el contenedor según la configuración del backend.
+13. Acceder al recurso de App Service y abrir la sección **Environment Variables** o **Configuration**.
+14. Agregar la cadena de conexión de MySQL utilizada por el backend.
+15. Configurar las variables necesarias para el entorno de producción.
+16. Reiniciar el App Service para aplicar la configuración.
+17. Verificar los logs de inicio del contenedor desde **Log stream**.
+18. Confirmar que las migraciones de base de datos se ejecuten correctamente al iniciar la aplicación.
+19. Acceder al endpoint público de Swagger para validar que la API esté disponible.
+
+**URL desplegada:** <https://asp-powertech-prod-dfembvcde5bdfxdx.mexicocentral-01.azurewebsites.net/swagger/index.html>
 
 ---
 
@@ -4119,7 +4151,7 @@ Se desarrolló el flujo de notificaciones automáticas hacia los padres ante eve
 ---[![Notifications Module](assets/images/Chapter-5/Sprint2/notifications-timeline1.png)](assets/images/Chapter-5/Sprint2/notifications-timeline1.png)
 
 
-**URL desplegada en Azure:** <https://happy-river-0e93e8e0f.7.azurestaticapps.net/identity-and-access-management/sign-in?redirect=/home>
+**URL desplegada en Azure:** <https://ashy-dune-098494d0f.7.azurestaticapps.net/identity-and-access-management/sign-in>
 
 
 ##### 5.2.2.6. Services Documentation Evidence for Sprint Review
@@ -4150,8 +4182,8 @@ A continuación se documentan los recursos consumidos por el frontend desde la F
 
 | Componente | Repositorio                                                                 | Estado al cierre del Sprint 2 |
 |------------|-----------------------------------------------------------------------------|-------------------------------|
-| Frontend Web Application | https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-webapp | Desplegado en Azure (https://happy-river-0e93e8e0f.7.azurestaticapps.net/identity-and-access-management/sign-in?redirect=/home) |
-| Backend Web Services |                                                                    | No implementado - planificado para Sprint 3 |
+| Frontend Web Application | https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-webapp | Desplegado en Azure (https://ashy-dune-098494d0f.7.azurestaticapps.net/identity-and-access-management/sign-in) |
+| Backend Web Services | pendiente                                                                   | No implementado - planificado para Sprint 3 |
 
 ### 5.2.2.7. Software Deployment Evidence for Sprint Review
 
@@ -4166,7 +4198,7 @@ Durante el Sprint 2 se realizó el despliegue de la Frontend Web Application de 
 
 2. Se verificó la accesibilidad pública de la Frontend Web Application desplegada, validando el correcto funcionamiento de los módulos implementados (IAM, Subscription, Stakeholder, Routes, Trip y Notifications) consumiendo la Fake REST API local.
 
-   **URL desplegada en Azure:** <https://happy-river-0e93e8e0f.7.azurestaticapps.net/identity-and-access-management/sign-in?redirect=/home>
+   **URL desplegada en Azure:** <https://ashy-dune-098494d0f.7.azurestaticapps.net/identity-and-access-management/sign-in>
 
    [![Frontend Web App Live](assets/images/Chapter-5/Sprint2/frontend-deployed.jpg)](assets/images/Chapter-5/Sprint2/frontend-deployed.png)
 
@@ -4973,77 +5005,78 @@ Para el segmento Driver, las entrevistas se enfocan en validar la experiencia de
 ###### Entrevista de validación 1 - Driver
 
 **Entrevistador:**
-[Nombre y apellido del entrevistador]
+Fabio Vallejo
 
 **Datos del entrevistado**
 
-* **Nombre:** [Nombre]
-* **Apellidos:** [Apellidos]
-* **Edad:** [Edad]
-* **Distrito:** [Distrito]
+* **Nombre:** Andy
+* **Apellidos:** Pillaca
+* **Edad:** 28
+* **Distrito:** San Miguel y Miraflores
 * **Segmento:** Driver
-* **URL del video:** [Pegar URL de Microsoft Stream]
-* **Timing de inicio:** [mm:ss]
-* **Timing de fin:** [mm:ss]
-* **Duración:** [mm:ss]
+* **URL del video:** https://1drv.ms/v/c/a3bda66c80e2095c/IQCkK7xkt2N7TbSCOXPbCJTqAXZRWtdYueZppMSIM3shK4c?e=usVO15
+* **Timing de inicio:** 0:18
+* **Timing de fin:** 6:55
+* **Duración:** 6:36
 
 <p align="center">
 <img src="assets/images/ChapterV/ValidationInterviews/driver-validation-interview-1.png" alt="Driver Validation Interview 1" width="500"/>
 </p>
 
 **Resumen descriptivo:**
-[Redactar aquí el resumen de la entrevista. Debe explicar cómo el entrevistado interactuó con el Landing Page y con los flujos asignados de la Web Application. Incluir si comprendió la propuesta de valor, si pudo completar las tareas, qué partes le resultaron claras, qué dificultades encontró y qué sugerencias brindó. También mencionar sus apreciaciones sobre el control de alumnos, reporte de incidencias, botón de pánico, claridad de botones, mensajes del sistema y confianza generada por la plataforma.]
+Andy indicó que ha utilizado aplicaciones de mapas como Google Maps, pero no una plataforma especializada en movilidad escolar. Para él, una solución como SafeRoute debería mostrar desde el inicio la ruta asignada, lista de alumnos, horarios, puntos de recogida y estado del recorrido.
 
+Durante la evaluación, consideró que la plataforma es fácil de usar y que el flujo para controlar alumnos durante la ruta es claro. Destacó como puntos positivos las confirmaciones visuales, los mensajes de éxito y la posibilidad de reportar incidencias de forma rápida. Además, señaló que usaría SafeRoute en un contexto real porque mejora el control de la ruta, la comunicación con los padres y el seguimiento seguro de los alumnos.
+
+Como oportunidades de mejora, recomendó incluir botones más grandes para acciones críticas, acceso rápido a emergencias, menos pasos durante la operación y mayor información visual sobre los beneficios del sistema en el Landing Page.
 
 ###### Entrevista de validación 2 - Driver
+###### User Flow 8: Comunicación de incidencia o avance durante el viaje
+- **User goal:**  
+Como conductor, quiero comunicar una incidencia o avance de la ruta durante el viaje.
 
-**Entrevistador:**
-[Nombre y apellido del entrevistador]
+- **User Story asociada:**  
+US12 - Como conductor, quiero reportar incidencias, para informar retrasos o problemas durante la ruta.
 
-**Datos del entrevistado**
+- **Validación durante entrevista:**  
+Este flujo fue observado de forma complementaria durante la entrevista del segmento Driver, en la que el usuario navegó por pantallas relacionadas con viaje activo, alertas y acciones disponibles durante la ruta.
 
-* **Nombre:** [Nombre]
-* **Apellidos:** [Apellidos]
-* **Edad:** [Edad]
-* **Distrito:** [Distrito]
-* **Segmento:** Driver
-* **URL del video:** [Pegar URL de Microsoft Stream]
-* **Timing de inicio:** [mm:ss]
-**Timing de fin:** [mm:ss]
-* **Duración:** [mm:ss]
+- **Descripción del flujo:**
 
-<p align="center">
-<img src="assets/images/ChapterV/ValidationInterviews/driver-validation-interview-2.png" alt="Driver Validation Interview 2" width="500"/>
-</p>
+**Happy path:**  
+El conductor se encuentra dentro de un viaje activo y accede a las acciones disponibles durante la ruta. Ante un retraso, desvío, obstáculo o situación relevante, selecciona la opción de alerta o reporte correspondiente. El sistema muestra la sección de alertas/incidencias, permitiendo registrar o visualizar eventos asociados al viaje. Esta información permite mantener informado al sistema y facilita que padres o administradores conozcan el estado de la ruta.
 
-**Resumen descriptivo:**
-[Redactar aquí el resumen de la entrevista. Debe explicar las principales apreciaciones del conductor respecto al Landing Page y los User Flows evaluados. Indicar si logró comprender el flujo de control de alumnos, reporte de incidencias y botón de emergencia. Incluir comentarios sobre facilidad de uso, claridad visual, rapidez del flujo, confianza y recomendaciones de mejora.]
+**Unhappy path:**  
+Si el conductor intenta reportar una incidencia sin información suficiente, el sistema debería evitar el envío incompleto y solicitar los datos necesarios. Si existe un problema de conexión o el reporte no puede enviarse correctamente, la plataforma debería mostrar un mensaje claro indicando que la acción no fue completada, evitando que el conductor crea que la incidencia fue comunicada cuando aún no fue registrada.
+
+- **Observación para validación:**  
+Durante la entrevista, el usuario logró identificar secciones relacionadas con alertas y acciones del viaje, lo que permite validar preliminarmente que el sistema contempla mecanismos para comunicar eventos durante la ruta. Sin embargo, se recomienda realizar una validación posterior más específica del formulario o flujo completo de reporte de incidencias.
 
 
 ###### Entrevista de validación 3 - Driver
+###### User Flow 9: Botón de pánico ante emergencia
 
-**Entrevistador:**
-[Nombre y apellido del entrevistador]
+- **User goal:**  
+Como conductor, quiero una manera inmediata de informar una emergencia.
 
-**Datos del entrevistado**
+- **User Story asociada:**  
+US13 - Como conductor, quiero activar un botón de pánico, para alertar situaciones críticas durante la ruta.
 
-* **Nombre:** [Nombre]
-* **Apellidos:** [Apellidos]
-* **Edad:** [Edad]
-* **Distrito:** [Distrito]
-* **Segmento:** Driver
-* **URL del video:** [Pegar URL de Microsoft Stream]
-* **Timing de inicio:** [mm:ss]
-* **Duración:** [mm:ss]
+- **Validación durante entrevista:**  
+Este flujo fue observado de forma complementaria durante la entrevista del segmento Driver, debido a que en la pantalla de viaje activo se evidenció la presencia de una acción SOS o botón de emergencia dentro de las opciones disponibles para el conductor.
 
-<p align="center">
-<img src="assets/images/ChapterV/ValidationInterviews/driver-validation-interview-3.png" alt="Driver Validation Interview 3" width="500"/>
-</p>
+- **Descripción del flujo:**
 
-**Resumen descriptivo:**
-[Redactar aquí el resumen de la entrevista. Explicar cómo el entrevistado realizó las tareas asignadas, qué elementos entendió con facilidad, qué problemas o dudas presentó y qué mejoras propuso para el flujo del conductor. Mencionar especialmente la percepción sobre seguridad, rapidez del uso durante una ruta y claridad de los mensajes del sistema.]
+**Happy path:**  
+El conductor se encuentra ejecutando una ruta activa y visualiza el botón SOS dentro de las acciones principales del viaje. Ante una emergencia, selecciona dicha opción para activar una alerta crítica. El sistema debe registrar el evento de emergencia y comunicarlo a los usuarios correspondientes, como administradores o padres de familia, permitiendo una respuesta rápida ante una situación de riesgo.
 
+**Unhappy path:**  
+Si el conductor presiona el botón por error, el sistema debería solicitar una confirmación antes de enviar la alerta crítica. Si la alerta no puede enviarse por problemas de conexión, el sistema debería mostrar un estado claro del envío o intentar reenviar la alerta automáticamente. Esto es importante porque, en una emergencia, el usuario necesita saber si la alerta fue realmente registrada.
 
+- **Observación para validación:**  
+Durante la entrevista, el botón SOS fue visible dentro del flujo de viaje activo, lo que permite validar que la funcionalidad está presente y ubicada en un contexto adecuado para el conductor. No obstante, se recomienda complementar esta validación con una prueba específica de activación, confirmación y visualización del estado de la alerta.
+
+---
 ##### Segundo segmento: Padres de familia
 
 Para el segmento **Parent**, las entrevistas se enfocan en validar la experiencia del padre de familia al monitorear el viaje escolar de su hijo y recibir información relevante durante el trayecto.
@@ -5069,75 +5102,96 @@ Para el segmento **Parent**, las entrevistas se enfocan en validar la experienci
 
 ###### Entrevista de validación 1 - Parent
 
+* **User Flow 10:** Rastreo en tiempo real del vehículo.
+
 **Entrevistador:**
-[Nombre y apellido del entrevistador]
+Nickolas Ramirez Ruiz
 
 **Datos del entrevistado**
 
-* **Nombre:** [Nombre]
-* **Apellidos:** [Apellidos]
-* **Edad:** [Edad]
-* **Distrito:** [Distrito]
+* **Nombre:** Maximo 
+* **Apellidos:** Quevedo Cordova
+* **Edad:** 25 años
+* **Distrito:** Callería, Pucallpa
 * **Segmento:** Parent
-* **URL del video:** [Pegar URL de Microsoft Stream]
-* **Timing de inicio:** [mm:ss]
-* **Duración:** [mm:ss]
+* **URL del video:** https://1drv.ms/v/c/a3bda66c80e2095c/IQCkK7xkt2N7TbSCOXPbCJTqAXZRWtdYueZppMSIM3shK4c?e=usVO15
+* **Timing de inicio:** 7:06
+* **Duración:** 6:15
+* **Fin de entrevista:** 13:21
 
 <p align="center">
+
 <img src="assets/images/ChapterV/ValidationInterviews/parent-validation-interview-1.png" alt="Parent Validation Interview 1" width="500"/>
+
 </p>
 
+
 **Resumen descriptivo:**
-[Redactar aquí el resumen de la entrevista. Debe explicar cómo el entrevistado interactuó con el Landing Page y con los User Flows asignados para el segmento Parent. Incluir si comprendió la propuesta de valor, si pudo ubicar el viaje activo, interpretar la ubicación del vehículo, entender las notificaciones y confirmar la llegada o historial del estudiante. Mencionar qué partes le generaron confianza, qué dudas tuvo y qué mejoras sugirió.]
+En esta sesión de validación, Nickolas Ramirez y Maximo Quevedo exploraron a fondo la plataforma Safe Route,
+concluyendo que su diseño intuitivo y sus funciones críticas como el monitoreo en tiempo real de unidades, la gestión multiactivo de estudiantes y
+la alerta temprana ante incidencias de tráfico mediante una clara señalética cromática no solo garantizan una experiencia de usuario sumamente cómoda,
+sino que establecen un estándar de seguridad y eficiencia que convenció plenamente al entrevistado para su adopción definitiva.
 
-
+- **User Flow principal evaluado:** User Flow 10 - Rastreo en tiempo real del vehículo.
+- **User Flows complementarios observados:** User Flow 11 - Recepción de notificaciones automáticas.
 
 ###### Entrevista de validación 2 - Parent
+###### User Flow 11: Recepción de notificaciones automáticas
 
-**Entrevistador:**
-[Nombre y apellido del entrevistador]
+- **User goal:**  
+Como padre de familia, quiero recibir notificaciones sin tener que preguntar.
 
-**Datos del entrevistado**
+- **User Story asociada:**  
+US19 - Como padre, quiero recibir una alerta de proximidad, para prepararme antes de la llegada del vehículo.  
+US20 - Como padre, quiero recibir confirmación de llegada, para estar tranquilo.
 
-* **Nombre:** [Nombre]
-* **Apellidos:** [Apellidos]
-* **Edad:** [Edad]
-* **Distrito:** [Distrito]
-* **Segmento:** Parent
-* **URL del video:** [Pegar URL de Microsoft Stream]
-* **Timing de inicio:** [mm:ss]
-* **Duración:** [mm:ss]
+- **Validación durante entrevista:**  
+Este flujo fue observado de forma complementaria durante las entrevistas del segmento Parent, debido a que los participantes revisaron secciones relacionadas con seguimiento del bus, estados del viaje, alertas y notificaciones dentro de la Web Application.
 
-<p align="center">
-<img src="assets/images/ChapterV/ValidationInterviews/parent-validation-interview-2.png" alt="Parent Validation Interview 2" width="500"/>
-</p>
+- **Descripción del flujo:**
 
-**Resumen descriptivo:**
-[Redactar aquí el resumen de la entrevista. Explicar las principales apreciaciones del padre de familia respecto a la navegación, monitoreo del viaje, claridad del mapa, estado de abordaje, notificaciones y confirmación de llegada. Incluir comentarios sobre confianza, reducción de incertidumbre y utilidad de la plataforma en un caso real.]
+**Happy path:**  
+El padre de familia inicia sesión en SafeRoute y accede a su dashboard familiar. Durante el seguimiento del viaje activo, el sistema muestra información relacionada con el estado del traslado escolar, como ubicación del vehículo, avance del recorrido, paradas y estado del estudiante. Cuando ocurre un evento relevante, como proximidad del bus, abordaje del estudiante, llegada al destino o incidencia, el sistema genera una notificación automática visible para el usuario. De esta manera, el padre puede mantenerse informado sin necesidad de llamar o escribir al conductor.
+
+**Unhappy path:**  
+Si las notificaciones no se muestran correctamente, están desactivadas o el usuario no las identifica con facilidad, el padre podría no enterarse oportunamente de eventos importantes del viaje. En ese caso, el sistema debería permitir consultar los eventos dentro de una sección de alertas o historial, mostrando claramente el tipo de notificación, hora, estado del evento y nivel de importancia. Si no existen notificaciones disponibles, la plataforma debería mostrar un estado vacío comprensible, evitando que el usuario interprete la ausencia de alertas como un error del sistema.
+
+- **Observación para validación:**  
+Durante las entrevistas Parent, se evidenció que las secciones de seguimiento del bus, alertas e historial son importantes para que el padre de familia comprenda el estado del traslado escolar. Aunque la validación principal se centró en el rastreo en tiempo real y la confirmación de llegada, también se pudo observar de forma complementaria la relevancia del User Flow 11, ya que las notificaciones automáticas funcionan como apoyo para reducir la incertidumbre del usuario durante el viaje.
+
+- **Recomendación:**  
+Se recomienda reforzar la visibilidad de las notificaciones dentro del dashboard familiar, diferenciando claramente eventos informativos, alertas de proximidad, confirmaciones de llegada e incidencias. También sería conveniente mostrar indicadores como “Nueva”, “Leída”, “Importante” o “Crítica”, para que el padre pueda reconocer rápidamente el nivel de urgencia de cada notificación.
 
 
 ###### Entrevista de validación 3 - Parent
-
+* **User Flow 12**
 **Entrevistador:**
-[Nombre y apellido del entrevistador]
+Mathias De La Cruz
 
 **Datos del entrevistado**
 
-* **Nombre:** [Nombre]
-* **Apellidos:** [Apellidos]
-* **Edad:** [Edad]
-* **Distrito:** [Distrito]
+* **Nombre:** Carla
+* **Apellidos:** Peláez
+* **Edad:** 38 años
+* **Distrito:** Santiago de Surco, Lima
 * **Segmento:** Parent
-* **URL del video:** [Pegar URL de Microsoft Stream]
-* **Timing de inicio:** [mm:ss]
-* **Duración:** [mm:ss]
+* **URL del video:** [https://1drv.ms/v/c/a3bda66c80e2095c/IQCkK7xkt2N7TbSCOXPbCJTqAXZRWtdYueZppMSIM3shK4c?e=usVO15]
+* **Timing de inicio:** 13:27
+* **Duración:** 06:31
+* * **Fin de entrevista:** 19:59
 
 <p align="center">
-<img src="assets/images/ChapterV/ValidationInterviews/parent-validation-interview-3.png" alt="Parent Validation Interview 3" width="500"/>
+<img src="assets/images/ChapterV/ValidationInterviews/parent-validation-interview-3.png" alt="Parent Validation Interview 1" width="500"/>
 </p>
 
 **Resumen descriptivo:**
-[Redactar aquí el resumen de la entrevista. Indicar cómo el entrevistado completó las tareas asignadas, qué entendió del Landing Page, cómo percibió el monitoreo en tiempo real y si la información mostrada fue suficiente para sentirse tranquilo. Mencionar dificultades, sugerencias y apreciaciones sobre seguridad, confianza y facilidad de uso.]
+Durante la sesión de validación, Carla Peláez interactuó con la Web Application de SafeRoute desde el rol de padre de familia. Primero accedió a la pantalla de inicio de sesión, donde se validó el flujo de autenticación y la identificación del tipo de usuario. Posteriormente, ingresó al dashboard familiar, donde pudo visualizar las opciones principales relacionadas con el monitoreo del transporte escolar.
+
+Durante la navegación, la entrevistada revisó el módulo de seguimiento del bus, donde se mostró la ubicación del vehículo en un mapa y una lista de estados asociados al recorrido. Este flujo permitió validar si el padre de familia puede identificar la ubicación del transporte y comprender el estado del trayecto sin necesidad de contactar directamente al conductor.
+
+Asimismo, se revisó la sección de historial de asistencia, donde la participante pudo observar registros asociados a los viajes del estudiante. También se mostró el centro de alertas, orientado a la revisión de notificaciones o incidencias, y finalmente la sección de perfil, donde se visualizan datos personales, opciones de notificación y configuración de seguridad.
+
+En general, la entrevista permitió validar que el flujo del segmento Parent cubre tareas importantes como iniciar sesión, revisar el estado del viaje, monitorear el bus, consultar asistencia, revisar alertas y acceder a la configuración del perfil. Las observaciones obtenidas servirán como insumo para identificar oportunidades de mejora en claridad de navegación, visibilidad del estado del sistema y confianza percibida durante el monitoreo del transporte escolar.
 
 ---
 
@@ -5189,8 +5243,9 @@ Para el segmento **Parent**, las entrevistas se enfocan en validar la experienci
 
 **1. Despliegues y Servicios API**
 
-- **Web Application (Frontend):** [https://happy-river-0e93e8e0f.7.azurestaticapps.net](https://happy-river-0e93e8e0f.7.azurestaticapps.net)
+- **Web Application (Frontend):** [https://ashy-dune-098494d0f.7.azurestaticapps.net/identity-and-access-management/sign-in](https://ashy-dune-098494d0f.7.azurestaticapps.net/identity-and-access-management/sign-in)
 - **Landing Page:** [https://upc-pre-202610-1asi0730-12053-powertech.github.io/saferoute-website/](https://upc-pre-202610-1asi0730-12053-powertech.github.io/saferoute-website/)
+- **Web Application (Backend):** [https://asp-powertech-prod-dfembvcde5bdfxdx.mexicocentral-01.azurewebsites.net/swagger/index.html](https://asp-powertech-prod-dfembvcde5bdfxdx.mexicocentral-01.azurewebsites.net/swagger/index.html)
 
 **2. Repositorios de GitHub**
 
@@ -5198,6 +5253,7 @@ Para el segmento **Parent**, las entrevistas se enfocan en validar la experienci
 - **Informe del Proyecto:** [https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-report](https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-report)
 - **Landing Page Source:** [https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-website](https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-website)
 - **Web Application Source:** [https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-webapp](https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-webapp)
+- **Web Application (Backend) Source:** [https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform](https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform)
 
 **3. Diseño y Prototipado**
 
