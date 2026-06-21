@@ -5539,9 +5539,11 @@ Organizar las acciones del conductor según prioridad:
 
 #### 5.4 Video About-the-Product
 
+<img src="assets/images/Chapter-5/Sprint3/about-the-product.png" alt="Video About The Product" width="500"/>
+
 Enlace de YouTube: [https://youtu.be/qPBa6Kya2Fo](https://youtu.be/qPBa6Kya2Fo)
 
-Enlace de Microsoft Stream: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202424059_upc_edu_pe/IQBgC3pMo0wcSp3ERhMrj61kASg3LeEPclr1i0IiKDBtEyU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Zve2Sj](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202424059_upc_edu_pe/IQBgC3pMo0wcSp3ERhMrj61kASg3LeEPclr1i0IiKDBtEyU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Zve2Sj)
+Enlace de Microsoft Stream: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202424059_upc_edu_pe/IQBgC3pMo0wcSp3ERhMrj61kASg3LeEPclr1i0IiKDBtEyU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=ECTx9t](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202424059_upc_edu_pe/IQBgC3pMo0wcSp3ERhMrj61kASg3LeEPclr1i0IiKDBtEyU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=ECTx9t)
 
 ---
 
@@ -5644,3 +5646,13 @@ El video también resume la evolución del proyecto desde la identificación de 
 **4. Entrevistas y Evidencias**
 
 - **Entrevistas de Segmentos:** [https://1drv.ms/v/c/f647ccc757f760c7/IQBpmAWWCOusSLuP0uLD_z7NAe5clO5HVvyL8gi5oJuddj8?e=9qIP9h](https://1drv.ms/v/c/f647ccc757f760c7/IQBpmAWWCOusSLuP0uLD_z7NAe5clO5HVvyL8gi5oJuddj8?e=9qIP9h)
+
+- **Entrevistas de Validacion:** [https://1drv.ms/v/c/a3bda66c80e2095c/IQCkK7xkt2N7TbSCOXPbCJTqAXZRWtdYueZppMSIM3shK4c?e=usVO15](https://1drv.ms/v/c/a3bda66c80e2095c/IQCkK7xkt2N7TbSCOXPbCJTqAXZRWtdYueZppMSIM3shK4c?e=usVO15)
+
+**5. About The Team**
+
+- URL del video: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241d922_upc_edu_pe/IQD9O5YgApFcSpcnArLVFQlOAR5QH6LYp8gJ-1pY8kjvyPQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=C8jtbJ](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241d922_upc_edu_pe/IQD9O5YgApFcSpcnArLVFQlOAR5QH6LYp8gJ-1pY8kjvyPQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=C8jtbJ)
+
+**6. About the product**
+
+- URL del video: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202424059_upc_edu_pe/IQBgC3pMo0wcSp3ERhMrj61kASg3LeEPclr1i0IiKDBtEyU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=ECTx9t](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202424059_upc_edu_pe/IQBgC3pMo0wcSp3ERhMrj61kASg3LeEPclr1i0IiKDBtEyU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=ECTx9t)
