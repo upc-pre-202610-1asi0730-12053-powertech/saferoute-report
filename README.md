@@ -98,6 +98,7 @@ TB1:
 
 [![Frontend Pulse Web Application Collaboration Insights](assets/images/Chapter-5/Sprint2/frontend-pulse.png)](assets/images/Chapter-5/Sprint2/frontend-pulse.png)
 
+### Sprint 3
 
 AV2: 
 
