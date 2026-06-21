@@ -2817,76 +2817,49 @@ Muestra la estructura interna de 4 capas del contexto encargado de la monetizaci
 #### 4.7.1. Class Diagrams
 
 **BackEnd**
+-- Identity and Access Management:
 
-- Trip Execution & Monitoring: 
+![saferoute-iam](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/refs/heads/develop/saferoute-powertech-platform/docs/saferoute-iam.puml)
 
-![saferoute-trip](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/main/saferoute-asp-net-developer/Safer-Route-Platform/docs/saferoute-trip.puml)
+Gestiona organizaciones, usuarios y roles en el entorno de la aplicación. **Organization (AggregateRoot)** maneja el ciclo de vida de la institución mediante operaciones de creación, activación y suspensión. **User (AggregateRoot)** gestiona la autenticación y la asignación de roles de los usuarios, asociándose a una organización mediante `OrganizationId` y utilizando Value Objects de seguridad como `PasswordHash`. **Role (Entity)** define los niveles de acceso dentro del sistema mediante `RoleTier`. Los Value Objects del contexto garantizan la validez de datos como nombres, estados, correos electrónicos y credenciales.
 
-Gestiona la ejecución de viajes, asistencia e incidentes.
-Trip (AggregateRoot) — Atributos: id, organizationId, routeId, driverId, tripState, startTime, endTime, -attendances: List<Attendance> e -incidents: List<Incident>. Métodos: Start(), Complete(), RecordBoarding(childId, state), ReportIncident(description), GetAttendanceSummary(), GetIncidentLog(). Composición 1:0..* con ambas entidades hijas.
-Attendance (Entity) — Atributos: id, childId, -boardingState: BoardingState, boardedAt. Métodos: UpdateBoardingState(), IsBoarded(), GetBoardingTime(). Referencia al ChildId compartido (tracks) con multiplicidad 1:1.
-Incident (Entity) — Atributos: id, -description: IncidentDescription, reportedAt. Métodos: Report(), GetDescription(), GetReportedAt(). Asociada 1:1 con IncidentDescription (described by).
-Value Objects propios: TripState (pending/inProgress/completed), BoardingState (boarded/missing/omitted), IncidentDescription (con validación).
+-- Subscription & Plan Management:
 
-- Fleet & Route Planning: 
+![saferoute-subscription](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/refs/heads/develop/saferoute-powertech-platform/docs/saferoute-subscription.puml)
 
-![saferoute-fleet](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/main/saferoute-asp-net-developer/Safer-Route-Platform/docs/saferoute-fleet.puml)
+Controla el modelo de negocio, definiendo los planes y suscripciones de cada organización. **Subscription (AggregateRoot)** administra el estado y la vigencia de una suscripción mediante operaciones de activación, actualización y cancelación. **Plan (AggregateRoot)** define las capacidades operativas y comerciales de la plataforma mediante los Value Objects `RouteQuota` y `DriverQuota`, que regulan los límites de rutas y conductores disponibles para cada organización.
 
-Gestiona rutas, vehículos, paradas y asignaciones.
-Route (AggregateRoot) — Atributos: id, organizationId, name, routeState, departureTime, serviceDays, vehicle, assignment y -stops: List<Stop>. Métodos: DefineRoute(), AddStop(), RemoveStop(), Activate(), Deactivate(), GetStopSequence(). Tiene composición 1:1..* con Stop (has): una ruta requiere al menos una parada. Se relaciona 1:1 con Vehicle y Assignment.
-Stop (Entity) — Atributos: id, name, coordinates: Coordinates, -stopOrder: StopOrder. Métodos: GetNextStop(), IsFirst(), IsLast(), UpdateCoordinates(). Asociada a Coordinates del shared kernel.
-Vehicle (Entity) — Atributos: id, organizationId, plate, model, capacity: int, brand. Métodos: IsAvailable(), GetPlate(), GetCapacity(), UpdateDetails().
-Assignment (Entity) — Atributos: id, -driverId: DriverId, -children: List<ChildId>. Métodos: AssignDriver(), AssignChild(), RemoveChild(). Referencia 1:1..* a ChildId compartido (includes).
-Value Objects propios: RouteState (draft/active/inactive), StopOrder (posición entera), DepartureTime (TimeSpan), ServiceDays (lista de días).
+- Stakeholder & Asset Management:
 
-- Stakeholder & Asset Management: 
+![saferoute-stakeholder](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/refs/heads/develop/saferoute-powertech-platform/docs/saferoute-stakeholder.puml)
 
-![vue-saferoute-stakeholder](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-webapp/main/saferoute/docs/vue-saferoute-stakeholder.puml)
+Modela a los actores humanos y sus agrupaciones dentro del sistema. **Parent (AggregateRoot)** representa a los apoderados y administra la relación con sus hijos registrados. **Driver (Entity)** define a los conductores, incorporando información específica como el número de licencia. **Child (Entity)** representa a los estudiantes y gestiona su estado de inscripción. **StudentGroup (Entity)** permite organizar referencias a múltiples estudiantes para facilitar procesos de asignación y gestión operativa.
 
+- Fleet & Route Planning:
 
-Modela a los actores humanos del sistema: padres, conductores, hijos y grupos de estudiantes.
-Parent (AggregateRoot) — Atributos privados: id, organizationId, userId, fullName, email, phoneNumber y -children: List<Child>. Métodos públicos: AddChild(), RemoveChild(), GetChildren(). Composición 1:1..* con Child (has): un Parent debe tener al menos un hijo.
-Driver (Entity) — Similar a Parent pero agrega -licenseNumber: LicenseNumber. Métodos: IsAvailable(), GetLicenseNumber(), UpdatePhoneNumber(). Sin composición propia, referenciado desde otros contextos vía DriverId compartido.
-Child (Entity, compuesta dentro de Parent) — Atributos: id, fullName, age: int y -enrollmentState: ChildEnrollmentState. Métodos: Enroll(), Unenroll(), IsEnrolled().
-StudentGroup (Entity) — Agrupa referencias a hijos (-children: List<ChildId>) sin poseerlos directamente. Métodos: AddChild(), RemoveChild(), Finalize(), IsFinalized(). Relación 1:1..* con ChildId compartido (groups).
+![saferoute-fleet](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/refs/heads/develop/saferoute-powertech-platform/docs/saferoute-fleet.puml)
+
+Encargado de la planificación logística y operativa del transporte. **Route (AggregateRoot)** define recorridos, horarios y estado operativo de las rutas utilizando Value Objects como `DepartureTime` y `ServiceDays`. **Stop (Entity)** gestiona la ubicación y secuencia de las paradas dentro de una ruta. **Vehicle (Entity)** controla la información y capacidad de las unidades de transporte. **Assignment (Entity)** vincula conductores y estudiantes a una ruta específica para su ejecución.
+
+- Trip Execution & Monitoring:
+
+![saferoute-trip](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/refs/heads/develop/saferoute-powertech-platform/docs/saferoute-trip.puml)
+
+Gestiona la ejecución y supervisión de los recorridos programados. **Trip (AggregateRoot)** controla el ciclo de vida de un viaje, asociando una ruta, un conductor y una organización. **Attendance (Entity)** registra la asistencia y abordaje de cada estudiante mediante el Value Object `BoardingState`. **Incident (Entity)** permite documentar situaciones ocurridas durante el trayecto utilizando `IncidentDescription` para validar y encapsular la información reportada.
 
 - Notifications & Communication:
 
-![saferoute-notifications](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/main/saferoute-asp-net-developer/Safer-Route-Platform/docs/saferoute-notifications.puml)
+![saferoute-notifications](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/refs/heads/develop/saferoute-powertech-platform/docs/saferoute-notifications.puml)
 
-Gestiona el envío de notificaciones hacia padres de familia.
-Notification (AggregateRoot) — Atributos: id, organizationId, parentId, tripId, -category: NotificationCategory, -deliveryState: NotificationDeliveryState, -message: NotificationMessage, sentAt, -alerts: List<Alert> y -announcements: List<Announcement>. Métodos: Queue(), Dispatch(), MarkDelivered(), IsDelivered(), GetCategory(), GetMessage(). Composición 1:0..* con Alert y 1:0..* con Announcement.
-Alert (Entity) — Atributos: id, triggeredAt. Métodos: Trigger(), GetTriggeredAt(), IsPanic(). Representa un evento de alerta puntual dentro de una notificación.
-Announcement (Entity) — Atributos: id, routeId, -message: NotificationMessage, publishedAt. Métodos: Publish(), GetMessage(), GetPublishedAt(). Referencia RouteId del shared kernel (belongs to) con multiplicidad 1:1.
-Value Objects propios: NotificationCategory (boarding/arrival/incident/panic), NotificationDeliveryState (queued/dispatched/delivered), NotificationMessage (encapsula contenido con validación).
+Centraliza el envío de información y alertas hacia los padres de familia. **Notification (AggregateRoot)** gestiona la creación, envío y seguimiento de mensajes relacionados con eventos de viaje. **Alert (Entity)** representa alertas inmediatas asociadas a incidentes o situaciones críticas. **Announcement (Entity)** administra comunicados generales vinculados a rutas específicas. Los Value Objects del contexto permiten clasificar mensajes y controlar su estado de entrega.
 
 - Shared:
 
-![saferoute-shared](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/main/saferoute-asp-net-developer/Safer-Route-Platform/docs/saferoute-shared.puml)
+![saferoute-shared](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/refs/heads/develop/saferoute-powertech-platform/docs/saferoute-shared.puml)
 
-Este módulo no pertenece a un bounded context específico sino que actúa como kernel compartido. Contiene exclusivamente Value Objects reutilizables a lo largo de toda la aplicación: OrganizationId, UserId, ParentId, DriverId, ChildId, RouteId, TripId, SubscriptionId, PlanId, FullName y Coordinates. Todos son inmutables, encapsulan un valor primitivo (Guid, string o double) con scope privado, y exponen métodos públicos como New(), Equals() y ToString(). FullName es el único con dos atributos (firstName, lastName) y agrega GetFullName() e IsValid(). Coordinates encapsula latitude y longitude como double con validación geoespacial.
+Actúa como el Shared Kernel transversal de toda la solución.
 
-- Identity and Access Management:
-
-![saferoute-iam](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/main/saferoute-asp-net-developer/Safer-Route-Platform/docs/saferoute-iam.puml)
-
-Gestiona organizaciones, usuarios y roles. Contiene dos Aggregate Roots y una Entity:
-Organization (AggregateRoot) — Tiene -id: OrganizationId, -name: OrganizationName, -status: OrganizationStatus y -createdAt: DateTime. Expone métodos públicos para su ciclo de vida: Create(), Activate(), Suspend() e IsActive(). Se relaciona 1:1 con OrganizationId (identified by), OrganizationName (has) y OrganizationStatus (has).
-User (AggregateRoot) — Tiene -id: UserId, -organizationId: OrganizationId, -fullName: FullName, -email: Email, -passwordHash: PasswordHash y -role: Role. Expone Register(), Authenticate(password), ChangeRole(role). Se asocia 1:1 con todos sus value objects y con la entidad Role (has). Pertenece a una organización vía OrganizationId compartido.
-Role (Entity) — Referenciada desde User, tiene -id: int y -roleTier: RoleTier, con métodos IsAdmin(), IsDriver(), IsParent(). Se asocia 1:1 con RoleTier (categorized by).
-Los Value Objects propios (OrganizationName, OrganizationStatus, Email, PasswordHash, RoleTier) encapsulan strings privados con validaciones y métodos de consulta públicos. PasswordHash es especial: expone Hash() y Verify().
-
-- Subscription & Plan Management: 
-
-![saferoute-subscription](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/main/saferoute-asp-net-developer/Safer-Route-Platform/docs/saferoute-subscription.puml)
-
-Gestiona los planes y suscripciones de cada organización.
-Subscription (AggregateRoot) — Atributos: id, organizationId, planId, -state: SubscriptionState, startDate, endDate. Métodos: Activate(), Upgrade(planId), Cancel(), IsActive(), GetRemainingDays(). Se asocia 1:1 con User del bounded context IAM (owned by), indicando dependencia entre contextos.
-Plan (AggregateRoot) — Atributos: id, -planTier: PlanTier, -routeQuota: RouteQuota, -driverQuota: DriverQuota, price: decimal. Métodos: GetPlanName(), GetRouteLimit(), GetDriverLimit(), IsWithinRouteQuota(), IsWithinDriverQuota(). Asociado 1:1 con PlanTier, RouteQuota y DriverQuota.
-Value Objects propios: SubscriptionState (active/expired/cancelled), PlanTier (basic/intermediate/complete), RouteQuota y DriverQuota (encapsulan límites enteros con validación de cuota).
-
-
-
+Contiene exclusivamente Value Objects inmutables que sirven como identificadores globales (`OrganizationId`, `UserId`, `ParentId`, `DriverId`, `ChildId`, `RouteId`, `TripId`, `SubscriptionId` y `PlanId`) y conceptos compartidos como `FullName` y `Coordinates`. Esto garantiza consistencia semántica y tipada en la comunicación entre todos los Bounded Contexts del sistema.
 
 
 **FrontEnd**
