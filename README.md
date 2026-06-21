@@ -4493,7 +4493,7 @@ Respuesta real `200 OK` de un request ejecutado sobre la API conectada a MySQL.
 
 El siguiente video ilustra y explica la visualización y navegación lograda en este Sprint, recorriendo la documentación Swagger y ejecutando endpoints representativos de cada bounded context contra la base de datos MySQL:
 
- **Enlace al video:** *(pegar aquí la URL del video — YouTube/Drive)*
+ **Enlace al video:** *(https://www.youtube.com/watch?v=R2t3VSuSEVI)*
 
 #### 5.2.3.6. Services Documentation Evidence for Sprint Review
 
@@ -4576,10 +4576,48 @@ A continuación se documentan los endpoints implementados por bounded context, i
 
 **Repositorio de Web Services:** `https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform`
 
-#### 5.2.3.7. Software Deployment Evidence for Sprint Review
+### 5.2.3.7. Software Deployment Evidence for Sprint Review
 
-Durante el Sprint 3, el Backend Web Service de SafeRoute se ejecutó el servidor de ASP.NET Core, persistiendo sobre una instancia de MySQL (`saferoute-appweb`). PENDIENTE
 
+
+Durante este Sprint, el proceso de Deployment se centró en publicar la primera versión funcional del **Web Service de SafeRoute (Powertech-Platform)** en la nube, de modo que la API REST quedara accesible públicamente para su visualización, navegación y pruebas. El despliegue se realizó sobre **Microsoft Azure**, utilizando **Azure App Service** para alojar el backend en ASP.NET Core (.NET 10) y un servicio de base de datos **MySQL** para la persistencia gestionada con Entity Framework Core.
+
+Las actividades de Deployment realizadas en este Sprint abarcaron: la creación y configuración de la cuenta y suscripción en Azure, el aprovisionamiento de los recursos en la nube (App Service y base de datos MySQL), la configuración de las cadenas de conexión y variables de entorno, la publicación del Web Service desde el proyecto de desarrollo y la verificación final del despliegue mediante la documentación Swagger/OpenAPI en producción.
+
+> **Nota:** En este Sprint el producto desplegado corresponde al **Web Service**. La Landing Page y las Web Applications se desplegarán en Sprints posteriores.
+
+### Pasos realizados
+
+**1. Creación de la cuenta y suscripción en Azure**
+Se configuró la cuenta de Microsoft Azure y la suscripción del equipo, habilitando el acceso al portal para el aprovisionamiento de recursos en la nube.
+![Creación de cuenta y suscripción en Azure](assets/images/Chapter-5/Sprint3/deploy-azure-account.png)
+
+**2. Creación del recurso Azure App Service**
+Se creó el recurso de App Service que aloja el Web Service, seleccionando la región **Mexico Central**, el runtime de .NET y el plan de hospedaje correspondiente.
+![Creación del App Service](assets/images/Chapter-5/Sprint3/deploy-app-service.png)
+
+**3. Aprovisionamiento de la base de datos MySQL**
+Se aprovisionó el servicio de base de datos MySQL en la nube y se creó la base de datos del proyecto, sobre la cual EF Core aplica las migraciones del esquema.
+![Aprovisionamiento de base de datos MySQL](assets/images/Chapter-5/Sprint3/deploy-mysql.png)
+
+**4. Configuración de la cadena de conexión y variables de entorno**
+Se configuró en App Service la cadena de conexión `DefaultConnection` hacia la base de datos MySQL, junto con las variables de entorno necesarias para el entorno de producción.
+![Configuración de connection string](assets/images/Chapter-5/Sprint3/deploy-connection-string.png)
+
+**5. Publicación del Web Service**
+Se publicó el proyecto ASP.NET Core (.NET 10) en el App Service, generando el despliegue de la API REST de los bounded contexts de SafeRoute.
+![Publicación del Web Service](assets/images/Chapter-5/Sprint3/deploy-publish.png)
+
+**6. Verificación del despliegue**
+Se verificó el despliegue accediendo a la documentación Swagger UI publicada en producción, confirmando que todos los endpoints quedaron disponibles y operativos.
+![Verificación del despliegue en Swagger](assets/images/Chapter-5/Sprint3/swagger.png)
+
+### Resultado
+
+El Web Service quedó desplegado y accesible públicamente en Azure App Service, con la documentación OpenAPI disponible en:
+
+**URL del despliegue:**
+https://asp-powertech-prod-dfembvcde5bdfxdx.mexicocentral-01.azurewebsites.net/swagger/index.html
 
 
 #### 5.2.3.8. Team Collaboration Insights during Sprint
