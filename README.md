@@ -4309,31 +4309,229 @@ El objetivo del Sprint 3 fue implementar la primera versión funcional del Backe
 
 Durante el Sprint 3, el equipo realizó commits sobre los repositorios `saferoute-report` y `saferoute-platform` (Backend Web Service), abarcando la corrección de las observaciones de TB1 en el informe y la implementación de los servicios REST del backend en ASP.NET Core bajo DDD + CQRS, con persistencia en MySQL mediante Entity Framework Core.
 
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| powertech/saferoute-platform | develop | 351ece6 | chore: initial repository structure | — | 13/06/2026 |
+| powertech/saferoute-platform | feature/trip-execution-and-monitoring | 6c79a45 | feat: added complete trip command and Trip aggregate | — | 13/06/2026 |
+| powertech/saferoute-platform | develop | 0ddacec | init repository | — | 14/06/2026 |
+| powertech/saferoute-platform | develop | 930a767 | clear repository | — | 14/06/2026 |
+| powertech/saferoute-platform | feature/trip-execution-and-monitoring | a287609 | feat: added Trip aggregate and TripState value object for Trip bounded context | — | 15/06/2026 |
+| powertech/saferoute-platform | feature/trip-execution-and-monitoring | 3081ee4 | feat: added create trip command for Trip bounded context | — | 15/06/2026 |
+| powertech/saferoute-platform | feature/trip-execution-and-monitoring | 057880f | feat: added start trip command and get trip by id query for Trip bounded context | — | 16/06/2026 |
+| powertech/saferoute-platform | feature/trip-execution-and-monitoring | 1fb1d64 | feat: added complete trip command for Trip bounded context | — | 16/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | eaaf05b | feat: added initial structure for Fleet bounded context | — | 19/06/2026 |
+| powertech/saferoute-platform | feature/trip-execution-and-monitoring | 6a754aa | feat: added report incident command for Trip bounded context | — | 19/06/2026 |
+| powertech/saferoute-platform | feature/trip-execution-and-monitoring | 7f98d06 | feat: added set boarding status command for trip bounded context | — | 19/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | b0f03d9 | feat: added assign students to route command for Fleet bounded context | — | 19/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | e8c3556 | feat: added Create Route Command for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | b52bfd1 | feat: added IRouteCommandService for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | f22e074 | feat: added RouteCommandService for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | c0df997 | feat: added RouteQueryService for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 77cc0e1 | feat: added GetAllRoutesQuery for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | ea07cfb | feat: added GetRoutesByOrganizationIdQuery for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | c8269b0 | feat: added Route for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 5ca97bb | feat: added RouteActivationFinalized for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | e0acc40 | feat: added AssignStudentsToRouteCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | afa0755 | feat: update AssignStudentsToRouteCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 58a5315 | feat: added ActivateRouteCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | eb467f6 | feat: added AddStopCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 606168f | feat: added AssignDriverCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 502fd8d | feat: added AssignVehicleCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | e2f271b | feat: added CreateRouteCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | f9bbcfb | feat: added DeactivateRouteCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 8237fea | feat: added DefineServiceDaysCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | bdc5ea9 | feat: added RemoveStudentFromRouteCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | cba02bd | feat: added RemoveStopCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | f282666 | feat: added SetDepartureTimeCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | e678f12 | feat: added Assigment for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | b86a699 | feat: added Stop/StopOrder for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 8850c90 | feat: added Vehicle for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 48c6466 | feat: added update for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 2b15408 | feat: added RouteActivatedEvent for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 2231d26 | feat: added RouteDefinedEvent for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 45d1ac8 | feat: added VehicleAssignedToRouteEvent for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 0adb5ad | feat: added GetAllRoutesQuery for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | d7d0e7c | feat: added GetRouteByIdQuery for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | c85c3c1 | feat: added GetRoutesByOrganizationIdQuery for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | b9ebadb | feat: added IRouteRepository for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | f709fab | Add Plan Aggregate | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 17e2733 | Add Subscription aggregate | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 607d84e | Add CancelSubscription command | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 2040fe1 | Add ActivateSubscription command | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 423b8c1 | feat: added UpgradeSubscriptionCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 9b85350 | feat: added CreatePlanCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 8588847 | feat: added CreateSubscriptionCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | d61cc90 | feat: added GetAllPlanQueries | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 185918f | feat: added GetAllSubscriptionQuery | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 49925a0 | feat: added GetPlanByIdQuery | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | cd98df8 | feat: added GetSubscriptionByIdQuery | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 77b184a | feat: added RouterQuota | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 2747328 | feat: added DriverQuota | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 35fad30 | feat: added PlanTier | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 2487af0 | feat: added SubscriptionState | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | a541928 | feat: added SubscriptionError | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 96bff20 | feat: added PlanRepository | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | e160464 | feat: added ISubscriptionRepository | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 4aec31e | feat: added ISubscriptionCommandService | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 0d64e3f | feat: added SubscriptionCommandService | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 1f364a0 | feat: added SubscriptionQueryService | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 5769cfd | feat: added ISubscriptionQueryService | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | e42bad4 | feat: added ModelBuildrExtensions | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 6470062 | feat: added PlanRepository | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | fc37d9d | feat: added SubscriptionRepository | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 1208300 | feat: added UpgradeSubscriptionResource | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 4c179aa | feat: added CreatePlanResource | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | a4a0522 | feat: added PlanResource | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 644474f | feat: added CreateSubscriptionResource | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 2adb8a7 | feat: added SubscriptionResource | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 33d930c | feat: added SubscriptionResourceFromEntityAssembler | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 8e3a79d | feat: added SubscriptionActionResultAssembler | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 4f52f81 | feat: added PlansController | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 340092b | feat: added SubscriptionsController | — | 20/06/2026 |
+| powertech/saferoute-platform | develop | cc28d7e | Merge pull request #1 from feature/subscription-and-plan-management | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | ac45381 | feat: added AddStopResource for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | a0f5a4a | feat: added AssignVehicleResource for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 1284413 | feat: added CreateRouteResource for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | b9b898a | feat: added DefineServiceDaysResource for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 67769d0 | feat: added SetDepartureTimeResource for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 1a48941 | feat: added StopResource for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 92fa2b2 | feat: added VehicleResource for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 9a68170 | feat: added CreateRouteCommandFromResourceAssembler for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 30d9af0 | feat: update RoutesController for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | e5e2db6 | fix: fixed files in fleet context and added value objects | — | 20/06/2026 |
+| powertech/saferoute-platform | develop | a14e9de | Merge branch 'feature/fleet-and-route-management' into develop | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 2ed124a | add AddChiToGrupCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | bbf9297 | add AddChildToParentCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 44833f3 | add CreateDruverCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 20948eb | add CreateStudentGroupCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | b091b89 | add DeleteDriverCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | b76c9fa | add DeleteParentCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 99ed904 | add DeleteParentCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | c4b2168 | add DeleteParentCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 10f560e | add ReomveChildFromParentCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 1422205 | add UpdateDriverCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 2396786 | add UpdateDriverPhoneCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 8a6e536 | add UpdateParentCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | cd0a12e | add VOs | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 0efcc8c | add StakeHolderError | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 96611ca | add Domain Entities | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 2097f90 | add Parent Aggregate | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 1e9a2f2 | add Queries | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 048809e | add Repositories | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 22b565e | add CommandService | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 707cca7 | add QueryService | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | e0aef7c | add Internal Appliication services | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | f2b0af6 | add Infrastructure layer | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/trip-execution-and-monitoring | f729ddd | fix: fixed subscription context and added value objects | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/trip-execution-and-monitoring | 5ee604a | feat: added get all trips and get trips by route id queries for Trip bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/trip-execution-and-monitoring | c1dbe88 | feat: added trip errors for Trip bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 64be19d | feat(notification): add create notification command. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 0468d6e | feat(notification): add notification value objects. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | b861caf | feat(notification): add notification aggregate root. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 73a225c | feat(notification): add create notification command service contract. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 55f1f71 | feat(notification): add create notification command service skeleton. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | f7c14a1 | feat(notification): add notification repository contract. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | f02a9a4 | feat(notification): add notification errors. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 0686b88 | feat(notification): add create notification command handling implementation. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | de65f90 | feat(notification): add notification repository implementation. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | e44807f | feat(notification): add notification persistence mapping. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | cc6fa75 | feat(notification): add create notification REST resources and assemblers. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | a219eba | feat(notification): add create notification endpoint. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 791e07d | feat(notification): register create notification dependencies. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 46dcd53 | feat(notification): add get notification by id query. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 87afd9d | feat(notification): add get notification by id query service contract. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 9dfa32b | feat(notification): add get notification by id query service skeleton. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 243b29e | feat(notification): add get notification by id query handling implementation. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | d2a549a | feat(notification): add notification repository query method. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 02cc7fe | feat(notification): add notification repository query implementation. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 2665131 | feat(notification): add get notification by id endpoint. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 998b39c | feat(notification): register get notification by id dependencies. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 0227ec3 | feat(notification): add get all notifications query. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 87e63a0 | feat(notification): add get all notifications query handling skeleton. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | e36a72a | feat(notification): add get all notifications query handling implementation. | — | 20/06/2026 |
 
 
-> Los `Commit Id` del repositorio del backend deben completarse con el `git log` real de `saferoute-platform`. Como evidencia objetiva del avance, se incluye el historial de migraciones de Entity Framework Core generadas durante el sprint:
-
-#### 5.2.3.5. Execution Evidence for Sprint Review
-
-Durante el Sprint 3, el equipo desarrolló e implementó la primera versión funcional del Backend Web Service de SafeRoute en ASP.NET Core (.NET 10), aplicando DDD con separación CQRS y persistencia sobre MySQL. La API expone los servicios REST de los bounded contexts del sistema, validados mediante la interfaz interactiva de Swagger UI. A continuación se presentan las principales evidencias de ejecución por contexto:
-
-- **Subscription & Plan Management:** creación y consulta de planes; creación, activación, cambio de plan y cancelación de suscripciones.
-- **Stakeholder Management:** CRUD de conductores (con actualización de teléfono), padres (con vinculación de hijos) y grupos de estudiantes (con asignación de alumnos y finalización).
-- **Assets:** CRUD de la flota vehicular (agregado Vehicle).
-- **Fleet & Route Planning:** ciclo de vida de la ruta (creación en borrador, paradas, asignación de vehículo/conductor, días de servicio, horario y activación/desactivación).
-- **Trip Execution:** preparación, inicio, registro de abordaje, reporte de incidentes y cierre del viaje.
-- **Notifications & Profiles:** creación, despacho, entrega, alertas y anuncios de notificaciones; creación y consulta de perfiles.
-
-![Swagger UI - Vista general](assets/images/Chapter-5/Sprint3/swagger.png)
+### 5.2.3.5. Execution Evidence for Sprint Review
 
 
-**Documentación interactiva (Swagger UI):** `https://asp-powertech-prod-dfembvcde5bdfxdx.mexicocentral-01.azurewebsites.net/swagger/index.html`
+### Resumen del Sprint 3
+
+Durante este Sprint se desarrolló y puso en ejecución la primera versión funcional del **Backend Web Service de SafeRoute**, construido en **ASP.NET Core (.NET 10)** bajo **Domain-Driven Design** con separación **CQRS** mediante **Cortex.Mediator** y persistencia con **Entity Framework Core sobre MySQL**. Al tratarse de un Web Service, la evidencia de ejecución se presenta a través de la **documentación interactiva OpenAPI (Swagger UI)**, que permite visualizar, navegar y probar en vivo todos los endpoints REST expuestos.
+
+La API quedó organizada en bounded contexts, todos bajo el versionado `api/v1/`, e incluye la ejecución funcional de:
+
+- **Subscription & Plan Management** — gestión de planes (`/api/v1/plans`) y suscripciones (`/api/v1/subscriptions`), con creación, consulta, activación, cambio de plan y cancelación.
+- **Stakeholder & Asset Management** — conductores (`/api/v1/drivers`), padres y vinculación de hijos (`/api/v1/parents`), grupos de estudiantes (`/api/v1/student-groups`), perfiles (`/api/v1/profiles`) y vehículos (`/api/v1/vehicles`).
+- **Fleet & Route Management** — gestión completa de rutas (`/api/v1/routes`): paradas, asignación de vehículo/conductor, días de servicio, horario de salida, activación y desactivación.
+- **Trip Execution & Monitoring** — ciclo de vida del viaje (`/api/v1/trips`): preparación, inicio, registro de abordaje, reporte de incidentes y cierre.
+- **Notifications & Communication** — notificaciones (`/api/v1/notifications`): creación, despacho, entrega, alertas y anuncios.
+
+Todos los contextos se apoyan en el **Shared Kernel**, que provee entidades y value objects base, configuración de EF Core/MySQL, el mediador CQRS, middleware de manejo de errores (Problem Details) y la configuración de Swagger/OpenAPI.
+
+### Screenshots de las principales vistas implementadas
+
+A continuación se presentan las capturas de la documentación Swagger UI con los endpoints en ejecución por cada bounded context:
+
+| # | Vista | Descripción |
+|---|---|---|
+| 1 | Swagger UI – Vista general | Panel principal de la API con todos los controllers agrupados por bounded context. |
+| 2 | Plans & Subscriptions | Endpoints de creación/consulta de planes y de creación, activación, upgrade y cancelación de suscripciones. |
+| 3 | Drivers, Parents & Student Groups | CRUD de conductores, gestión de padres con vinculación de hijos y agrupación de estudiantes. |
+| 4 | Vehicles & Profiles | CRUD de la flota vehicular y consulta de perfiles de usuario. |
+| 5 | Routes | Creación de rutas, paradas, asignación de vehículo/conductor, días de servicio y activación. |
+| 6 | Trips | Inicio, registro de abordaje, reporte de incidentes y cierre de viajes. |
+| 7 | Notifications | Creación, despacho, entrega, alertas y anuncios. |
+| 8 | Ejecución de un endpoint (Try it out) | Respuesta real `200 OK` de un request ejecutado sobre la API conectada a MySQL. |
+
+**1. Swagger UI – Vista general**
+Panel principal de la API con todos los controllers agrupados por bounded context.
+![Swagger UI - Vista general de endpoints](assets/images/Chapter-5/Sprint3/swagger.png)
+
+
+
+**2. Plans & Subscriptions**
+Endpoints de creación/consulta de planes y de creación, activación, upgrade y cancelación de suscripciones.
+![Swagger UI - Plans & Subscriptions](assets/images/Chapter-5/Sprint3/swagger-subscriptions.png)
+
+
+**3. Drivers, Parents & Student Groups**
+CRUD de conductores, gestión de padres con vinculación de hijos y agrupación de estudiantes.
+![Swagger UI - Drivers, Parents & Student Groups](assets/images/Chapter-5/Sprint3/swagger-stakeholder.png)
+
+
+**4. Vehicles & Profiles**
+CRUD de la flota vehicular y consulta de perfiles de usuario.
+![Swagger UI - Vehicles & Profiles](assets/images/Chapter-5/Sprint3/swagger-vehicles-profiles.png)
+
+
+**5. Routes**
+Creación de rutas, paradas, asignación de vehículo/conductor, días de servicio y activación.
+![Swagger UI - Routes](assets/images/Chapter-5/Sprint3/swagger-routes.png)
+
+
+**6. Trips**
+Inicio, registro de abordaje, reporte de incidentes y cierre de viajes.
+![Swagger UI - Trips](assets/images/Chapter-5/Sprint3/swagger-trips.png)
+
+
+**7. Notifications**
+Creación, despacho, entrega, alertas y anuncios.
+![Swagger UI - Notifications](assets/images/Chapter-5/Sprint3/swagger-notifications.png)
+
+**8. Ejecución de un endpoint (Try it out)**
+Respuesta real `200 OK` de un request ejecutado sobre la API conectada a MySQL.
+![Swagger UI - Try it out 200 OK](assets/images/Chapter-5/Sprint3/swagger-try-it-out.png)
+### Enlace al video
+
+El siguiente video ilustra y explica la visualización y navegación lograda en este Sprint, recorriendo la documentación Swagger y ejecutando endpoints representativos de cada bounded context contra la base de datos MySQL:
+
+ **Enlace al video:** *(https://www.youtube.com/watch?v=R2t3VSuSEVI)*
 
 #### 5.2.3.6. Services Documentation Evidence for Sprint Review
 
 Durante el Sprint 3, el equipo implementó y documentó el Backend Web Service de SafeRoute como una RESTful API en ASP.NET Core (.NET 10), sustituyendo la Fake REST API local del Sprint 2. La documentación de contratos se genera con **OpenAPI vía Swagger** (Swashbuckle), la persistencia se realiza con **Entity Framework Core 10 sobre MySQL** y todos los recursos se exponen bajo el prefijo de versión `api/v1`. Se excluye el contexto Identity & Access Management, cuya documentación formal se abordará en el siguiente sprint.
 
-Dado que en este Sprint el Web Service aún no se ha desplegado en la nube, la documentación OpenAPI de todos los endpoints se encuentra disponible y operativa en la **URL local de Swagger UI**: `https://localhost:7003/swagger`.
+**URL de Swagger UI**: `https://asp-powertech-prod-dfembvcde5bdfxdx.mexicocentral-01.azurewebsites.net/swagger/index.html`.
 
 A continuación se documentan los endpoints implementados por bounded context, indicando para cada acción el verbo HTTP, la sintaxis de llamada, los parámetros y el response esperado:
 
@@ -4392,61 +4590,77 @@ A continuación se documentan los endpoints implementados por bounded context, i
 | Disparar alerta | POST | `/api/v1/notifications/{id}/alerts` | Body: `{ panic }` | `200` → `NotificationResource` |
 | Publicar anuncio | POST | `/api/v1/notifications/{id}/announcements` | Body: `{ routeId, message }` | `200` → `NotificationResource` |
 
-**Ejemplos de request / response (datos de muestra):**
 
-*Crear suscripción — POST `/api/v1/subscriptions`*
-```jsonc
-// Request
-{ "organizationId": "a0000000-...-0001", "planId": "c0000000-...-0002",
-  "startDate": "2026-06-01T00:00:00Z", "endDate": "2026-12-01T00:00:00Z" }
-// Response 201 Created
-{ "id": "d0000000-...-0001", "organizationId": "a0000000-...-0001",
-  "planId": "c0000000-...-0002", "state": "Pending",
-  "startDate": "2026-06-01T00:00:00Z", "endDate": "2026-12-01T00:00:00Z",
-  "remainingDays": 183 }
-```
-El response devuelve `SubscriptionResource` en estado `Pending`; al invocar `/activate` cambia a `Active`.
 
-*Registrar conductor — POST `/api/v1/drivers`*
-```jsonc
-// Response 201 Created
-{ "id": "dd000000-...-0001", "organizationId": "a0000000-...-0001",
-  "userId": "b0000000-...-0001", "firstName": "Carlos", "lastName": "Pérez",
-  "fullName": "Carlos Pérez", "email": "carlos@saferoute.com",
-  "phoneNumber": "+51999888777", "licenseNumber": "Q-12345678", "available": true }
-```
-El response devuelve `DriverResource` con `available: true` y el `fullName` calculado por el dominio.
+**Repositorios relacionados:**
 
-*Crear viaje — POST `/api/v1/trips`*
-```jsonc
-// Response 201 Created
-{ "id": "bb000000-...-0001", "organizationId": "a0000000-...-0001",
-  "routeId": "aa000000-...-0001", "driverId": "dd000000-...-0001",
-  "tripState": "Prepared", "startTime": null, "endTime": null,
-  "attendances": [], "incidents": [] }
-```
-El response devuelve `TripResource` en estado `Prepared`; los campos `startTime`, `attendances` e `incidents` se completan al invocar `/start`, `/boarding` e `/incidents`.
+| Componente | Repositorio                                                                 | Estado al cierre del Sprint 3        |
+|------------|-----------------------------------------------------------------------------|--------------------------------------|
+| Frontend Web Application | https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-webapp | Desplegado en Azure (Link pendiente) |
+| Backend Web Services |  https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform    |        Link pendiente                | |
 
-**Capturas de la documentación en uso:**
+
+
+**Capturas del swagger en uso:**
 
 ![Swagger UI - Vista general de endpoints](assets/images/Chapter-5/Sprint3/swagger.png)
 
 
 **Repositorio de Web Services:** `https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform`
 
-#### 5.2.3.7. Software Deployment Evidence for Sprint Review
+### 5.2.3.7. Software Deployment Evidence for Sprint Review
 
-Durante el Sprint 3, el Backend Web Service de SafeRoute se ejecutó el servidor de ASP.NET Core, persistiendo sobre una instancia de MySQL (`saferoute-appweb`). PENDIENTE
 
+
+Durante este Sprint, el proceso de Deployment se centró en publicar la primera versión funcional del **Web Service de SafeRoute (Powertech-Platform)** en la nube, de modo que la API REST quedara accesible públicamente para su visualización, navegación y pruebas. El despliegue se realizó sobre **Microsoft Azure**, utilizando **Azure App Service** para alojar el backend en ASP.NET Core (.NET 10) y un servicio de base de datos **MySQL** para la persistencia gestionada con Entity Framework Core.
+
+Las actividades de Deployment realizadas en este Sprint abarcaron: la creación y configuración de la cuenta y suscripción en Azure, el aprovisionamiento de los recursos en la nube (App Service y base de datos MySQL), la configuración de las cadenas de conexión y variables de entorno, la publicación del Web Service desde el proyecto de desarrollo y la verificación final del despliegue mediante la documentación Swagger/OpenAPI en producción.
+
+> **Nota:** En este Sprint el producto desplegado corresponde al **Web Service**. La Landing Page y las Web Applications se desplegarán en Sprints posteriores.
+
+### Pasos realizados
+
+**1. Creación de la cuenta y suscripción en Azure**
+Se configuró la cuenta de Microsoft Azure y la suscripción del equipo, habilitando el acceso al portal para el aprovisionamiento de recursos en la nube.
+![Creación de cuenta y suscripción en Azure](assets/images/Chapter-5/Sprint3/deploy-azure-account.png)
+
+**2. Creación del recurso Azure App Service**
+Se creó el recurso de App Service que aloja el Web Service, seleccionando la región **Mexico Central**, el runtime de .NET y el plan de hospedaje correspondiente.
+![Creación del App Service](assets/images/Chapter-5/Sprint3/deploy-app-service.png)
+
+**3. Aprovisionamiento de la base de datos MySQL**
+Se aprovisionó el servicio de base de datos MySQL en la nube y se creó la base de datos del proyecto, sobre la cual EF Core aplica las migraciones del esquema.
+![Aprovisionamiento de base de datos MySQL](assets/images/Chapter-5/Sprint3/deploy-mysql.png)
+
+**4. Configuración de la cadena de conexión y variables de entorno**
+Se configuró en App Service la cadena de conexión `DefaultConnection` hacia la base de datos MySQL, junto con las variables de entorno necesarias para el entorno de producción.
+![Configuración de connection string](assets/images/Chapter-5/Sprint3/deploy-connection-string.png)
+
+**5. Publicación del Web Service**
+Se publicó el proyecto ASP.NET Core (.NET 10) en el App Service, generando el despliegue de la API REST de los bounded contexts de SafeRoute.
+![Publicación del Web Service](assets/images/Chapter-5/Sprint3/deploy-publish.png)
+
+**6. Verificación del despliegue**
+Se verificó el despliegue accediendo a la documentación Swagger UI publicada en producción, confirmando que todos los endpoints quedaron disponibles y operativos.
+![Verificación del despliegue en Swagger](assets/images/Chapter-5/Sprint3/swagger.png)
+
+### Resultado
+
+El Web Service quedó desplegado y accesible públicamente en Azure App Service, con la documentación OpenAPI disponible en:
+
+**URL del despliegue:**
+https://asp-powertech-prod-dfembvcde5bdfxdx.mexicocentral-01.azurewebsites.net/swagger/index.html
 
 
 #### 5.2.3.8. Team Collaboration Insights during Sprint
 
 Durante el Sprint 3, el equipo mantuvo una colaboración activa distribuida en dos repositorios: el del informe y el nuevo repositorio del Backend Web Service. La actividad técnica se concentró en la implementación de los servicios REST por bounded context, mientras que en el informe se trabajó el levantamiento de las observaciones de TB1 y la documentación del sprint.
 
-![Report Pulse Sprint 3](assets/images/Chapter-5/Sprint3/report-pulse.png) PENIENTE
+![Report Pulse Sprint 3](assets/images/Chapter-5/Sprint3/report-pulse.png)
 
-![Backend Pulse Sprint 3](assets/images/Chapter-5/Sprint3/backend-pulse.png) PENDIENTE
+![Report contributors Sprint 3](assets/images/Chapter-5/Sprint3/contributors.png)
+
+![Backend Pulse Sprint 3](assets/images/Chapter-5/Sprint3/backend-pulse.png)
 
 La distribución del trabajo se mantuvo alineada con la Leadership and Collaboration Matrix (LACX) definida al inicio del sprint, donde cada integrante asumió la responsabilidad principal de uno o más bounded contexts del backend mientras colaboraba en los restantes mediante revisiones de código. El uso consistente de GitFlow y de Conventional Commits permitió mantener un historial trazable y profesional en ambos repositorios.
 
@@ -4454,7 +4668,7 @@ La distribución del trabajo se mantuvo alineada con la Leadership and Collabora
 
 **Resumen de colaboración del equipo:**
 
-La distribución del trabajo se mantuvo alineada con la **Leadership and Collaboration Matrix (LACX)** definida al inicio del sprint, donde cada integrante asumió la responsabilidad principal de un módulo del frontend mientras colaboraba en los módulos restantes mediante revisiones de código y soporte técnico. El uso consistente de GitFlow, junto con la convención de Conventional Commits, permitió mantener un historial trazable y profesional en ambos repositorios del proyecto.
+La distribución del trabajo se mantuvo alineada con la **Leadership and Collaboration Matrix** definida al inicio del sprint, donde cada integrante asumió la responsabilidad principal de un módulo del frontend mientras colaboraba en los módulos restantes mediante revisiones de código y soporte técnico. El uso consistente de GitFlow, junto con la convención de Conventional Commits, permitió mantener un historial trazable y profesional en ambos repositorios del proyecto.
 
 ### 5.3. Validation Interviews
 
