@@ -4249,16 +4249,15 @@ En la reunión de planificación del Sprint 3, el equipo definió como objetivo 
 
 #### 5.2.3.2. Aspect Leaders and Collaborators
 
-Para el Sprint 3, los aspectos de trabajo se organizaron en torno a la implementación de los servicios REST del backend por bounded context y la arquitectura compartida (Shared Kernel). Se presenta la Leadership-and-Collaboration Matrix (LACX):
+Para el Sprint 3, los aspectos de trabajo se organizaron en torno a la implementación de los servicios REST del backend por bounded context, la arquitectura compartida (Shared Kernel) y el refuerzo de la Landing Page con la sección About Us. Se presenta la Leadership-and-Collaboration Matrix (LACX):
 
-| Team Member (Last Name, First Name) | GitHub Username | Shared Kernel & API Base (L/C) | Subscription Services (L/C) | Stakeholder & Assets Services (L/C) | Fleet & Trip Services (L/C) | Notifications & Profiles (L/C) |
-|-------------------------------------|-----------------|-------------------------------|-----------------------------|-------------------------------------|-----------------------------|-------------------------------|
-| Quispe Serrano, Julio Frank | FraSe_JQ | L | C                           | C                                   | C                           | L                             |
-| Ortega Quintana, Jose Zacarias | AgoxX61 | C | L                           | C                                   | C                           | C                             |
-| De La Cruz, Mathias Marcelo | Dela050406 | C | C                           | L                                   | C                           | C                             |
-| Vallejo Trujillo, Fabio Cesar | fabiovallejo | C | C                           | C                                   | L                           | C                             |
-| Ramirez Ruiz, Nickolas | Bynickram02 | C | C                           | C                                   | L                           | C                             |
-
+| Team Member (Last Name, First Name) | GitHub Username | Shared Kernel & API Base (L/C) | Subscription Services (L/C) | Stakeholder & Assets Services (L/C) | Fleet & Trip Services (L/C) | Notifications & Profiles (L/C) | Landing Page – About Us (L/C) |
+|-------------------------------------|-----------------|--------------------------------|-----------------------------|-------------------------------------|-----------------------------|--------------------------------|-------------------------------|
+| Quispe Serrano, Julio Frank | FraSe_JQ | L | C | C | C | L | C |
+| Ortega Quintana, Jose Zacarias | AgoxX61 | C | L | C | C | C | C |
+| De La Cruz, Mathias Marcelo | Dela050406 | C | C | L | C | C | L |
+| Vallejo Trujillo, Fabio Cesar | fabiovallejo | C | C | C | L | C | C |
+| Ramirez Ruiz, Nickolas | Bynickram02 | C | C | C | L | C | C |
 
 #### 5.2.3.3. Sprint Backlog 3
 
