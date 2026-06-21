@@ -326,11 +326,12 @@ En base al análisis competitivo y SWOT realizado, SafeRoute plantea las siguien
 18. Para finalizar, ¿qué consideras indispensable para sentirte tranquilo(a) con el transporte de tu hijo?
     
 #### 2.2.2. Registro de entrevistas
-### Entrevista 1: Arturo Núñez
+
+### Entrevista 1: Andy Pillaca
 
 | Campo | Detalle |
 | :--- | :--- |
-| **Nombre y Apellidos** | Arturo Núñez |
+| **Nombre y Apellidos** | Andy Pillaca |
 | **Edad** | 28 años |
 | **Distrito / Zona de trabajo** | San Miguel y Miraflores, Lima |
 | **Segmento** | Conductor de Transporte Escolar |
@@ -340,7 +341,8 @@ En base al análisis competitivo y SWOT realizado, SafeRoute plantea las siguien
 | **URL del video** | [https://1drv.ms/v/c/f647ccc757f760c7/IQBpmAWWCOusSLuP0uLD_z7NAe5clO5HVvyL8gi5oJuddj8?e=9qIP9h](https://1drv.ms/v/c/f647ccc757f760c7/IQBpmAWWCOusSLuP0uLD_z7NAe5clO5HVvyL8gi5oJuddj8?e=9qIP9h)] |
 
 #### Screenshot
-![SegmentoObjetivo1](./assets/images/ArturoNunez-SegmentoObjetivo1.png)
+
+![SegmentoObjetivo1](./assets/images/AndyPillaca-SegmentoObjetivo1.png)
 
 ---
 
@@ -348,7 +350,7 @@ En base al análisis competitivo y SWOT realizado, SafeRoute plantea las siguien
 
 ### Características Objetivas y Entorno
 
-Arturo Núñez es un conductor de transporte escolar independiente de 28 años, con aproximadamente seis años de experiencia en el rubro. Opera principalmente en los distritos de San Miguel y Miraflores, zonas urbanas con alto flujo vehicular. Gestiona su propia unidad móvil y administra directamente la captación de clientes, organización de rutas y comunicación con padres de familia.
+Andy Pillaca es un conductor de transporte escolar independiente de 28 años, con aproximadamente seis años de experiencia en el rubro. Opera principalmente en los distritos de San Miguel y Miraflores, zonas urbanas con alto flujo vehicular. Gestiona su propia unidad móvil y administra directamente la captación de clientes, organización de rutas y comunicación con padres de familia.
 
 Su rutina diaria consiste en recoger estudiantes en sus domicilios, trasladarlos al colegio y retornarlos posteriormente según el turno escolar.
 
@@ -365,7 +367,7 @@ El uso del teléfono móvil es constante durante la jornada. Se evidencia famili
 
 ### Características Subjetivas y Personalidad
 
-Arturo presenta un perfil pragmático, independiente y orientado a resultados. Busca mantener el orden operativo, aunque reconoce limitaciones de su sistema actual. Muestra preocupación por la seguridad vial y estrés cuando debe responder mensajes mientras conduce.
+Andy presenta un perfil pragmático, independiente y orientado a resultados. Busca mantener el orden operativo, aunque reconoce limitaciones de su sistema actual. Muestra preocupación por la seguridad vial y estrés cuando debe responder mensajes mientras conduce.
 
 También demuestra apertura al cambio tecnológico siempre que la solución sea sencilla, rápida y útil.
 
@@ -716,14 +718,16 @@ Se confirma que este segmento necesita una solución digital enfocada en:
 Esto respalda directamente las User Stories relacionadas con rastreo GPS, alertas automáticas, confirmación de llegada y acceso a información del trayecto dentro de SafeRoute.
 
 #### 2.2.3. Análisis de entrevistas
+
 ## Segmento Objetivo 1: Conductores de Transporte Escolar
 
 El presente análisis corresponde a una muestra inicial de 1 entrevista válida del segmento conductor, por lo que los porcentajes reflejan únicamente los hallazgos preliminares del entrevistado y serán refinados con futuras entrevistas.
+
 ### Características Objetivas del Segmento
 
 | Característica | Resultado | Sustento |
 |---|---|---|
-| Edad joven-adulta (25 a 35 años) | 100% | Arturo tiene 28 años |
+| Edad joven-adulta (25 a 35 años) | 100% | Andy tiene 28 años |
 | Trabajo independiente | 100% | Indica operar con unidad propia y captar clientes directamente |
 | Experiencia en el rubro mayor a 5 años | 100% | Señala 6 años trabajando en transporte escolar |
 | Opera en zonas urbanas congestionadas | 100% | Trabaja en San Miguel y Miraflores |
@@ -3629,7 +3633,7 @@ El frontend de la aplicación, desarrollado con Vue.js, fue desplegado utilizand
 8. Crear el recurso y esperar la ejecución del flujo de despliegue.
 9. Acceder a **Información general** del recurso para obtener la dirección URL pública.
 
-**URL desplegada:** <https://happy-river-0e93e8e0f.7.azurestaticapps.net/identity-and-access-management/sign-in?redirect=/home>
+**URL desplegada:** <https://ashy-dune-098494d0f.7.azurestaticapps.net/identity-and-access-management/sign-in>
 
 ---
 
@@ -3657,7 +3661,35 @@ La Fake API del proyecto fue desplegada utilizando **Azure App Service**, config
 16. Esperar que el proceso finalice correctamente.
 17. Acceder al enlace de dominio predeterminado generado por Azure App Service.
 
-**URL desplegada:** <https://saferoute-db.azurewebsites.net>
+**URL desplegada:** <https://mock-api-webapp.azurewebsites.net/>
+
+##### Despliegue de Backend API
+
+El backend de la aplicación fue desarrollado con ASP.NET Core y desplegado en **Azure App Service** utilizando una imagen Docker publicada en **Azure Container Registry**. Esta estrategia permite empaquetar la API junto con sus dependencias y desplegarla de forma consistente en la nube.
+
+###### Pasos de despliegue
+
+1. Acceder al portal de Azure.
+2. Crear un recurso de **Azure Container Registry** para almacenar la imagen Docker del backend.
+3. Crear un recurso de **Azure Database for MySQL Flexible Server** para alojar la base de datos de producción.
+4. Crear la base de datos requerida por la aplicación en el servidor MySQL.
+5. Configurar las reglas de acceso y firewall del servidor MySQL para permitir la conexión desde Azure App Service.
+6. Generar la imagen Docker del backend desde el proyecto ASP.NET Core.
+7. Iniciar sesión en Azure Container Registry desde Docker.
+8. Etiquetar la imagen Docker con el nombre del servidor de Azure Container Registry.
+9. Publicar la imagen en Azure Container Registry.
+10. Crear una nueva **Web App** en Azure App Service.
+11. Seleccionar como origen de despliegue la imagen almacenada en Azure Container Registry.
+12. Configurar el puerto expuesto por el contenedor según la configuración del backend.
+13. Acceder al recurso de App Service y abrir la sección **Environment Variables** o **Configuration**.
+14. Agregar la cadena de conexión de MySQL utilizada por el backend.
+15. Configurar las variables necesarias para el entorno de producción.
+16. Reiniciar el App Service para aplicar la configuración.
+17. Verificar los logs de inicio del contenedor desde **Log stream**.
+18. Confirmar que las migraciones de base de datos se ejecuten correctamente al iniciar la aplicación.
+19. Acceder al endpoint público de Swagger para validar que la API esté disponible.
+
+**URL desplegada:** <https://asp-powertech-prod-dfembvcde5bdfxdx.mexicocentral-01.azurewebsites.net/swagger/index.html>
 
 ---
 
@@ -4119,7 +4151,7 @@ Se desarrolló el flujo de notificaciones automáticas hacia los padres ante eve
 ---[![Notifications Module](assets/images/Chapter-5/Sprint2/notifications-timeline1.png)](assets/images/Chapter-5/Sprint2/notifications-timeline1.png)
 
 
-**URL desplegada en Azure:** <https://happy-river-0e93e8e0f.7.azurestaticapps.net/identity-and-access-management/sign-in?redirect=/home>
+**URL desplegada en Azure:** <https://ashy-dune-098494d0f.7.azurestaticapps.net/identity-and-access-management/sign-in>
 
 
 ##### 5.2.2.6. Services Documentation Evidence for Sprint Review
@@ -4150,7 +4182,7 @@ A continuación se documentan los recursos consumidos por el frontend desde la F
 
 | Componente | Repositorio                                                                 | Estado al cierre del Sprint 2 |
 |------------|-----------------------------------------------------------------------------|-------------------------------|
-| Frontend Web Application | https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-webapp | Desplegado en Azure (https://happy-river-0e93e8e0f.7.azurestaticapps.net/identity-and-access-management/sign-in?redirect=/home) |
+| Frontend Web Application | https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-webapp | Desplegado en Azure (https://ashy-dune-098494d0f.7.azurestaticapps.net/identity-and-access-management/sign-in) |
 | Backend Web Services | pendiente                                                                   | No implementado - planificado para Sprint 3 |
 
 ### 5.2.2.7. Software Deployment Evidence for Sprint Review
@@ -4166,7 +4198,7 @@ Durante el Sprint 2 se realizó el despliegue de la Frontend Web Application de 
 
 2. Se verificó la accesibilidad pública de la Frontend Web Application desplegada, validando el correcto funcionamiento de los módulos implementados (IAM, Subscription, Stakeholder, Routes, Trip y Notifications) consumiendo la Fake REST API local.
 
-   **URL desplegada en Azure:** <https://happy-river-0e93e8e0f.7.azurestaticapps.net/identity-and-access-management/sign-in?redirect=/home>
+   **URL desplegada en Azure:** <https://ashy-dune-098494d0f.7.azurestaticapps.net/identity-and-access-management/sign-in>
 
    [![Frontend Web App Live](assets/images/Chapter-5/Sprint2/frontend-deployed.jpg)](assets/images/Chapter-5/Sprint2/frontend-deployed.png)
 
@@ -4194,13 +4226,449 @@ El repositorio del frontend registró actividad moderada y sostenida durante el 
 [![Frontend Pulse Sprint 2](assets/images/Chapter-5/Sprint2/frontend-pulse.png)](assets/images/Chapter-5/Sprint2/frontend-pulse.png)
 
 
+### 5.2.3. Sprint 3
 
+#### 5.2.3.1. Sprint Planning 3
+
+En la reunión de planificación del Sprint 3, el equipo definió como objetivo principal implementar la primera versión funcional del Backend Web Service de SafeRoute en ASP.NET Core, exponiendo los servicios REST de los bounded contexts del sistema sobre una base de datos MySQL, además de levantar las observaciones de la entrega anterior (TB1).
+
+| Sprint # | Sprint 3                                                                                                                                                                                                                                                                       |
+|:---|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Sprint Planning Background** |                                                                                                                                                                                                                                                                                |
+| Date | 2026-06-05                                                                                                                                                                                                                                                                     |
+| Time | 07:00 PM                                                                                                                                                                                                                                                                       |
+| Location | Reunión virtual vía Discord                                                                                                                                                                                                                                                    |
+| Prepared By | Ramirez Ruiz, Nickolas                                                                                                                                                                                                                                                         |
+| Attendees (to planning meeting) | De La Cruz De Los Santos, Mathias Marcelo / Ortega Quintana, Jose Zacarias / Quispe Serrano, Julio Frank / Ramirez Ruiz, Nickolas / Vallejo Trujillo, Fabio Cesar                                                                                                              |
+| Sprint 2 Review Summary | En el Sprint 2 se desarrolló y desplegó en Microsoft Azure la primera versión funcional de la Frontend Web Application en Vue.js, integrando los módulos core del sistema bajo DDD y consumiendo una Fake REST API local (`json-server`) a la espera del backend real.         |
+| Sprint 2 Retrospective Summary | El equipo identificó como acierto la modularización del frontend por bounded context, que facilitó el trabajo en paralelo. Como oportunidades de mejora se priorizó implementar el backend real para reemplazar la Fake API y levantar las observaciones de la evaluación TB1. |
+| **Sprint Goal & User Stories** |                                                                                                                                                                                                                                                                                |
+| Sprint 3 Goal | Nuestro objetivo es implementar servicios REST conectados a nuestra base de datos para profesionalizar la plataforma de SafeRoute, garantizando que toda la información se registre en tiempo real y sea fácilmente consultable mediante la documentación técnica en Swagger.  |
+| Sprint 3 Velocity | 65                                                                                                                                                                                                                                                                             |
+| Sum of Story Points | 62                                                                                                                                                                                                                                                                             |
+
+#### 5.2.3.2. Aspect Leaders and Collaborators
+
+Para el Sprint 3, los aspectos de trabajo se organizaron en torno a la implementación de los servicios REST del backend por bounded context y la arquitectura compartida (Shared Kernel). Se presenta la Leadership-and-Collaboration Matrix (LACX):
+
+| Team Member (Last Name, First Name) | GitHub Username | Shared Kernel & API Base (L/C) | Subscription Services (L/C) | Stakeholder & Assets Services (L/C) | Fleet & Trip Services (L/C) | Notifications & Profiles (L/C) |
+|-------------------------------------|-----------------|-------------------------------|-----------------------------|-------------------------------------|-----------------------------|-------------------------------|
+| Quispe Serrano, Julio Frank | FraSe_JQ | L | C                           | C                                   | C                           | L                             |
+| Ortega Quintana, Jose Zacarias | AgoxX61 | C | L                           | C                                   | C                           | C                             |
+| De La Cruz, Mathias Marcelo | Dela050406 | C | C                           | L                                   | C                           | C                             |
+| Vallejo Trujillo, Fabio Cesar | fabiovallejo | C | C                           | C                                   | L                           | C                             |
+| Ramirez Ruiz, Nickolas | Bynickram02 | C | C                           | C                                   | L                           | C                             |
+
+
+#### 5.2.3.3. Sprint Backlog 3
+
+El objetivo del Sprint 3 fue implementar la primera versión funcional del Backend Web Service de SafeRoute en ASP.NET Core (.NET 10), aplicando Domain-Driven Design con separación CQRS mediante Cortex.Mediator y persistencia con Entity Framework Core sobre MySQL. Se implementaron los servicios REST de los bounded contexts Stakeholder & Asset Management, Subscription & Plan Management, Fleet & Route Management, Trip Execution & Monitoring y Notifications & Communication, junto con el Shared Kernel que soporta la base común de la solución.
+
+![Sprint Backlog 3](assets/images/Chapter-5/Sprint3/trello-sprint3.png)
+
+
+**URL del Board:** [https://trello.com/b/HOyzrybS/sprint-3-saferoute](#)
+
+| Sprint # | Sprint 3 | | | | | | |
+|:---|:---|:---|:---|:---|:---|:---|:---|
+| **User Story** | | **Work-Item / Task** | | | | | |
+| **Id** | **Title** | **Id** | **Title** | **Description** | **Estimation (Hours)** | **Assigned To** | **Status** |
+| — | Arquitectura Base | T01.1 | Configurar solución ASP.NET Core | Inicializar el proyecto Safer-Route-Platform en .NET 10 con la estructura por bounded contexts. | 2 | Frank | Done |
+| — | Arquitectura Base | T01.2 | Implementar Shared Kernel | Crear entidades base y value objects compartidos reutilizables por los contextos. | 2 | Frank | Done |
+| — | Arquitectura Base | T01.3 | Configurar EF Core + MySQL | Configurar AppDbContext, cadena de conexión y convenciones sobre MySQL. | 2 | Frank | Done |
+| — | Arquitectura Base | T01.4 | Integrar Cortex.Mediator (CQRS) | Configurar el mediador para separar Commands y Queries en la capa de aplicación. | 2 | Frank | Done |
+| — | Documentación de API | T02.1 | Configurar Swagger / OpenAPI | Habilitar la documentación interactiva de la API mediante Swashbuckle. | 1 | Fabio | Done |
+| — | Documentación de API | T02.2 | Validar endpoints en Swagger UI | Verificar la visualización y prueba de los endpoints de cada contexto. | 1 | Fabio | Done |
+| US1 | Contratar Plan | T03.1 | Implementar dominio de Subscription | Modelar los agregados Plan y Subscription con sus reglas de negocio. | 2 | José | Done |
+| US1 | Contratar Plan | T03.2 | Implementar servicios de Plans | Exponer endpoints REST de creación y consulta de planes. | 2 | José | Done |
+| US1 | Contratar Plan | T03.3 | Implementar servicios de Subscriptions | Exponer endpoints de creación, activación, cambio de plan y cancelación. | 3 | José | Done |
+| US1 | Contratar Plan | T03.4 | Persistir Subscription en MySQL | Configurar el mapeo EF y la migración del contexto Subscription. | 1 | José | Done |
+| US2, US3, US4, US6 | Stakeholder & Asset Management | T04.1 | Implementar dominio Stakeholder & Asset Management | Modelar los agregados Driver, Parent, Student Group, Vehicle y Profile. | 2 | Mathias | Done |
+| US2 | Registro de Conductores | T04.2 | Implementar servicios de Drivers | Exponer CRUD REST de conductores y actualización de número telefónico. | 2 | Mathias | Done |
+| US3 | Registro de Padres | T04.3 | Implementar servicios de Parents | Exponer CRUD REST de padres y vinculación de hijos. | 2 | Mathias | Done |
+| US4 | Alta de Alumnos | T04.4 | Implementar servicios de Student Groups | Exponer servicios de agrupación de estudiantes y finalización de grupos. | 2 | Mathias | Done |
+| US6 | Asignación de Vehículos | T04.5 | Implementar servicios de Vehicles | Exponer CRUD REST de la flota vehicular (asset). | 2 | Mathias | Done |
+| — | Gestión de Perfiles | T04.6 | Implementar servicios de Profiles | Exponer servicios de creación y consulta de perfiles de usuario. | 2 | Mathias | Done |
+| US5 | Creación de Rutas | T05.1 | Implementar dominio Fleet (Routes) | Modelar el agregado Route con paradas, días de servicio y horario de salida. | 3 | Nickolas | Done |
+| US5 | Creación de Rutas | T05.2 | Implementar servicios de Routes | Exponer endpoints de creación, paradas, asignación de vehículo/conductor y activación. | 3 | Nickolas | Done |
+| US5 | Creación de Rutas | T05.3 | Persistir Fleet en MySQL | Configurar el mapeo EF y la migración del contexto Fleet. | 1 | Nickolas | Done |
+| US7 | Ejecución del Viaje | T06.1 | Implementar dominio Trip | Modelar el agregado Trip con su ciclo de vida (preparado, iniciado, completado). | 2 | Fabio | Done |
+| US7 | Ejecución del Viaje | T06.2 | Implementar servicios de Trips | Exponer endpoints de inicio, registro de abordaje, reporte de incidentes y cierre. | 3 | Fabio | Done |
+| US20 | Confirmación de Llegada | T07.1 | Implementar dominio Notifications | Modelar el agregado Notification con alertas y anuncios. | 2 | Frank | Done |
+| US20 | Confirmación de Llegada | T07.2 | Implementar servicios de Notifications | Exponer endpoints de creación, despacho, entrega, alertas y anuncios. | 3 | Frank | Done |
+| — | Persistencia Cross-Context | T08.1 | Implementar claves foráneas entre contextos | Definir las relaciones cross-context y la migración correspondiente. | 2 | Frank | Done |
+| — | Datos de Prueba | T08.2 | Generar seed desde db.json | Migrar los datos de la Fake API (`db.json`) a un script SQL de carga inicial en MySQL. | 2 | José | Done |
+| — | Levantamiento de Observaciones TB1 | T09.1 | Corregir observaciones de la entrega previa | Aplicar las correcciones señaladas en la evaluación TB1 sobre los artefactos del informe. | 3 | Nickolas | Done |
+| — | Documentación Sprint 3 | T09.2 | Documentar evidencias del Sprint 3 | Registrar planificación, backlog, evidencias de servicios y despliegue en el informe. | 2 | Nickolas | Done |
+
+
+
+
+
+#### 5.2.3.4. Development Evidence for Sprint Review
+
+Durante el Sprint 3, el equipo realizó commits sobre los repositorios `saferoute-report` y `saferoute-platform` (Backend Web Service), abarcando la corrección de las observaciones de TB1 en el informe y la implementación de los servicios REST del backend en ASP.NET Core bajo DDD + CQRS, con persistencia en MySQL mediante Entity Framework Core.
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| powertech/saferoute-platform | develop | 351ece6 | chore: initial repository structure | — | 13/06/2026 |
+| powertech/saferoute-platform | feature/trip-execution-and-monitoring | 6c79a45 | feat: added complete trip command and Trip aggregate | — | 13/06/2026 |
+| powertech/saferoute-platform | develop | 0ddacec | init repository | — | 14/06/2026 |
+| powertech/saferoute-platform | develop | 930a767 | clear repository | — | 14/06/2026 |
+| powertech/saferoute-platform | feature/trip-execution-and-monitoring | a287609 | feat: added Trip aggregate and TripState value object for Trip bounded context | — | 15/06/2026 |
+| powertech/saferoute-platform | feature/trip-execution-and-monitoring | 3081ee4 | feat: added create trip command for Trip bounded context | — | 15/06/2026 |
+| powertech/saferoute-platform | feature/trip-execution-and-monitoring | 057880f | feat: added start trip command and get trip by id query for Trip bounded context | — | 16/06/2026 |
+| powertech/saferoute-platform | feature/trip-execution-and-monitoring | 1fb1d64 | feat: added complete trip command for Trip bounded context | — | 16/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | eaaf05b | feat: added initial structure for Fleet bounded context | — | 19/06/2026 |
+| powertech/saferoute-platform | feature/trip-execution-and-monitoring | 6a754aa | feat: added report incident command for Trip bounded context | — | 19/06/2026 |
+| powertech/saferoute-platform | feature/trip-execution-and-monitoring | 7f98d06 | feat: added set boarding status command for trip bounded context | — | 19/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | b0f03d9 | feat: added assign students to route command for Fleet bounded context | — | 19/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | e8c3556 | feat: added Create Route Command for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | b52bfd1 | feat: added IRouteCommandService for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | f22e074 | feat: added RouteCommandService for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | c0df997 | feat: added RouteQueryService for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 77cc0e1 | feat: added GetAllRoutesQuery for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | ea07cfb | feat: added GetRoutesByOrganizationIdQuery for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | c8269b0 | feat: added Route for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 5ca97bb | feat: added RouteActivationFinalized for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | e0acc40 | feat: added AssignStudentsToRouteCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | afa0755 | feat: update AssignStudentsToRouteCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 58a5315 | feat: added ActivateRouteCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | eb467f6 | feat: added AddStopCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 606168f | feat: added AssignDriverCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 502fd8d | feat: added AssignVehicleCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | e2f271b | feat: added CreateRouteCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | f9bbcfb | feat: added DeactivateRouteCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 8237fea | feat: added DefineServiceDaysCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | bdc5ea9 | feat: added RemoveStudentFromRouteCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | cba02bd | feat: added RemoveStopCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | f282666 | feat: added SetDepartureTimeCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | e678f12 | feat: added Assigment for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | b86a699 | feat: added Stop/StopOrder for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 8850c90 | feat: added Vehicle for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 48c6466 | feat: added update for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 2b15408 | feat: added RouteActivatedEvent for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 2231d26 | feat: added RouteDefinedEvent for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 45d1ac8 | feat: added VehicleAssignedToRouteEvent for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 0adb5ad | feat: added GetAllRoutesQuery for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | d7d0e7c | feat: added GetRouteByIdQuery for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | c85c3c1 | feat: added GetRoutesByOrganizationIdQuery for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | b9ebadb | feat: added IRouteRepository for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | f709fab | Add Plan Aggregate | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 17e2733 | Add Subscription aggregate | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 607d84e | Add CancelSubscription command | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 2040fe1 | Add ActivateSubscription command | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 423b8c1 | feat: added UpgradeSubscriptionCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 9b85350 | feat: added CreatePlanCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 8588847 | feat: added CreateSubscriptionCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | d61cc90 | feat: added GetAllPlanQueries | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 185918f | feat: added GetAllSubscriptionQuery | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 49925a0 | feat: added GetPlanByIdQuery | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | cd98df8 | feat: added GetSubscriptionByIdQuery | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 77b184a | feat: added RouterQuota | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 2747328 | feat: added DriverQuota | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 35fad30 | feat: added PlanTier | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 2487af0 | feat: added SubscriptionState | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | a541928 | feat: added SubscriptionError | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 96bff20 | feat: added PlanRepository | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | e160464 | feat: added ISubscriptionRepository | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 4aec31e | feat: added ISubscriptionCommandService | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 0d64e3f | feat: added SubscriptionCommandService | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 1f364a0 | feat: added SubscriptionQueryService | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 5769cfd | feat: added ISubscriptionQueryService | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | e42bad4 | feat: added ModelBuildrExtensions | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 6470062 | feat: added PlanRepository | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | fc37d9d | feat: added SubscriptionRepository | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 1208300 | feat: added UpgradeSubscriptionResource | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 4c179aa | feat: added CreatePlanResource | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | a4a0522 | feat: added PlanResource | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 644474f | feat: added CreateSubscriptionResource | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 2adb8a7 | feat: added SubscriptionResource | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 33d930c | feat: added SubscriptionResourceFromEntityAssembler | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 8e3a79d | feat: added SubscriptionActionResultAssembler | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 4f52f81 | feat: added PlansController | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 340092b | feat: added SubscriptionsController | — | 20/06/2026 |
+| powertech/saferoute-platform | develop | cc28d7e | Merge pull request #1 from feature/subscription-and-plan-management | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | ac45381 | feat: added AddStopResource for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | a0f5a4a | feat: added AssignVehicleResource for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 1284413 | feat: added CreateRouteResource for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | b9b898a | feat: added DefineServiceDaysResource for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 67769d0 | feat: added SetDepartureTimeResource for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 1a48941 | feat: added StopResource for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 92fa2b2 | feat: added VehicleResource for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 9a68170 | feat: added CreateRouteCommandFromResourceAssembler for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 30d9af0 | feat: update RoutesController for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | e5e2db6 | fix: fixed files in fleet context and added value objects | — | 20/06/2026 |
+| powertech/saferoute-platform | develop | a14e9de | Merge branch 'feature/fleet-and-route-management' into develop | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 2ed124a | add AddChiToGrupCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | bbf9297 | add AddChildToParentCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 44833f3 | add CreateDruverCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 20948eb | add CreateStudentGroupCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | b091b89 | add DeleteDriverCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | b76c9fa | add DeleteParentCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 99ed904 | add DeleteParentCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | c4b2168 | add DeleteParentCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 10f560e | add ReomveChildFromParentCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 1422205 | add UpdateDriverCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 2396786 | add UpdateDriverPhoneCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 8a6e536 | add UpdateParentCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | cd0a12e | add VOs | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 0efcc8c | add StakeHolderError | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 96611ca | add Domain Entities | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 2097f90 | add Parent Aggregate | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 1e9a2f2 | add Queries | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 048809e | add Repositories | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 22b565e | add CommandService | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 707cca7 | add QueryService | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | e0aef7c | add Internal Appliication services | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | f2b0af6 | add Infrastructure layer | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/trip-execution-and-monitoring | f729ddd | fix: fixed subscription context and added value objects | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/trip-execution-and-monitoring | 5ee604a | feat: added get all trips and get trips by route id queries for Trip bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/trip-execution-and-monitoring | c1dbe88 | feat: added trip errors for Trip bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 64be19d | feat(notification): add create notification command. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 0468d6e | feat(notification): add notification value objects. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | b861caf | feat(notification): add notification aggregate root. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 73a225c | feat(notification): add create notification command service contract. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 55f1f71 | feat(notification): add create notification command service skeleton. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | f7c14a1 | feat(notification): add notification repository contract. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | f02a9a4 | feat(notification): add notification errors. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 0686b88 | feat(notification): add create notification command handling implementation. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | de65f90 | feat(notification): add notification repository implementation. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | e44807f | feat(notification): add notification persistence mapping. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | cc6fa75 | feat(notification): add create notification REST resources and assemblers. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | a219eba | feat(notification): add create notification endpoint. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 791e07d | feat(notification): register create notification dependencies. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 46dcd53 | feat(notification): add get notification by id query. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 87afd9d | feat(notification): add get notification by id query service contract. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 9dfa32b | feat(notification): add get notification by id query service skeleton. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 243b29e | feat(notification): add get notification by id query handling implementation. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | d2a549a | feat(notification): add notification repository query method. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 02cc7fe | feat(notification): add notification repository query implementation. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 2665131 | feat(notification): add get notification by id endpoint. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 998b39c | feat(notification): register get notification by id dependencies. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 0227ec3 | feat(notification): add get all notifications query. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 87e63a0 | feat(notification): add get all notifications query handling skeleton. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | e36a72a | feat(notification): add get all notifications query handling implementation. | — | 20/06/2026 |
+
+
+### 5.2.3.5. Execution Evidence for Sprint Review
+
+
+### Resumen del Sprint 3
+
+Durante este Sprint se desarrolló y puso en ejecución la primera versión funcional del **Backend Web Service de SafeRoute**, construido en **ASP.NET Core (.NET 10)** bajo **Domain-Driven Design** con separación **CQRS** mediante **Cortex.Mediator** y persistencia con **Entity Framework Core sobre MySQL**. Al tratarse de un Web Service, la evidencia de ejecución se presenta a través de la **documentación interactiva OpenAPI (Swagger UI)**, que permite visualizar, navegar y probar en vivo todos los endpoints REST expuestos.
+
+La API quedó organizada en bounded contexts, todos bajo el versionado `api/v1/`, e incluye la ejecución funcional de:
+
+- **Subscription & Plan Management** — gestión de planes (`/api/v1/plans`) y suscripciones (`/api/v1/subscriptions`), con creación, consulta, activación, cambio de plan y cancelación.
+- **Stakeholder & Asset Management** — conductores (`/api/v1/drivers`), padres y vinculación de hijos (`/api/v1/parents`), grupos de estudiantes (`/api/v1/student-groups`), perfiles (`/api/v1/profiles`) y vehículos (`/api/v1/vehicles`).
+- **Fleet & Route Management** — gestión completa de rutas (`/api/v1/routes`): paradas, asignación de vehículo/conductor, días de servicio, horario de salida, activación y desactivación.
+- **Trip Execution & Monitoring** — ciclo de vida del viaje (`/api/v1/trips`): preparación, inicio, registro de abordaje, reporte de incidentes y cierre.
+- **Notifications & Communication** — notificaciones (`/api/v1/notifications`): creación, despacho, entrega, alertas y anuncios.
+
+Todos los contextos se apoyan en el **Shared Kernel**, que provee entidades y value objects base, configuración de EF Core/MySQL, el mediador CQRS, middleware de manejo de errores (Problem Details) y la configuración de Swagger/OpenAPI.
+
+### Screenshots de las principales vistas implementadas
+
+A continuación se presentan las capturas de la documentación Swagger UI con los endpoints en ejecución por cada bounded context:
+
+| # | Vista | Descripción |
+|---|---|---|
+| 1 | Swagger UI – Vista general | Panel principal de la API con todos los controllers agrupados por bounded context. |
+| 2 | Plans & Subscriptions | Endpoints de creación/consulta de planes y de creación, activación, upgrade y cancelación de suscripciones. |
+| 3 | Drivers, Parents & Student Groups | CRUD de conductores, gestión de padres con vinculación de hijos y agrupación de estudiantes. |
+| 4 | Vehicles & Profiles | CRUD de la flota vehicular y consulta de perfiles de usuario. |
+| 5 | Routes | Creación de rutas, paradas, asignación de vehículo/conductor, días de servicio y activación. |
+| 6 | Trips | Inicio, registro de abordaje, reporte de incidentes y cierre de viajes. |
+| 7 | Notifications | Creación, despacho, entrega, alertas y anuncios. |
+| 8 | Ejecución de un endpoint (Try it out) | Respuesta real `200 OK` de un request ejecutado sobre la API conectada a MySQL. |
+
+**1. Swagger UI – Vista general**
+Panel principal de la API con todos los controllers agrupados por bounded context.
+![Swagger UI - Vista general de endpoints](assets/images/Chapter-5/Sprint3/swagger.png)
+
+
+
+**2. Plans & Subscriptions**
+Endpoints de creación/consulta de planes y de creación, activación, upgrade y cancelación de suscripciones.
+![Swagger UI - Plans & Subscriptions](assets/images/Chapter-5/Sprint3/swagger-subscriptions.png)
+
+
+**3. Drivers, Parents & Student Groups**
+CRUD de conductores, gestión de padres con vinculación de hijos y agrupación de estudiantes.
+![Swagger UI - Drivers, Parents & Student Groups](assets/images/Chapter-5/Sprint3/swagger-stakeholder.png)
+
+
+**4. Vehicles & Profiles**
+CRUD de la flota vehicular y consulta de perfiles de usuario.
+![Swagger UI - Vehicles & Profiles](assets/images/Chapter-5/Sprint3/swagger-vehicles-profiles.png)
+
+
+**5. Routes**
+Creación de rutas, paradas, asignación de vehículo/conductor, días de servicio y activación.
+![Swagger UI - Routes](assets/images/Chapter-5/Sprint3/swagger-routes.png)
+
+
+**6. Trips**
+Inicio, registro de abordaje, reporte de incidentes y cierre de viajes.
+![Swagger UI - Trips](assets/images/Chapter-5/Sprint3/swagger-trips.png)
+
+
+**7. Notifications**
+Creación, despacho, entrega, alertas y anuncios.
+![Swagger UI - Notifications](assets/images/Chapter-5/Sprint3/swagger-notifications.png)
+
+**8. Ejecución de un endpoint (Try it out)**
+Respuesta real `200 OK` de un request ejecutado sobre la API conectada a MySQL.
+![Swagger UI - Try it out 200 OK](assets/images/Chapter-5/Sprint3/swagger-try-it-out.png)
+### Enlace al video
+
+El siguiente video ilustra y explica la visualización y navegación lograda en este Sprint, recorriendo la documentación Swagger y ejecutando endpoints representativos de cada bounded context contra la base de datos MySQL:
+
+ **Enlace al video:** *(https://www.youtube.com/watch?v=R2t3VSuSEVI)*
+
+#### 5.2.3.6. Services Documentation Evidence for Sprint Review
+
+Durante el Sprint 3, el equipo implementó y documentó el Backend Web Service de SafeRoute como una RESTful API en ASP.NET Core (.NET 10), sustituyendo la Fake REST API local del Sprint 2. La documentación de contratos se genera con **OpenAPI vía Swagger** (Swashbuckle), la persistencia se realiza con **Entity Framework Core 10 sobre MySQL** y todos los recursos se exponen bajo el prefijo de versión `api/v1`. Se excluye el contexto Identity & Access Management, cuya documentación formal se abordará en el siguiente sprint.
+
+**URL de Swagger UI**: `https://asp-powertech-prod-dfembvcde5bdfxdx.mexicocentral-01.azurewebsites.net/swagger/index.html`.
+
+A continuación se documentan los endpoints implementados por bounded context, indicando para cada acción el verbo HTTP, la sintaxis de llamada, los parámetros y el response esperado:
+
+**Subscription & Plan Management**
+
+| Acción | Verbo | Sintaxis de llamada | Parámetros | Response |
+|--------|-------|---------------------|------------|----------|
+| Listar / crear planes | GET · POST | `/api/v1/plans` | Body: `{ planTier, maxRoutes, maxDrivers, price }` | `201` → `PlanResource` |
+| Obtener plan | GET | `/api/v1/plans/{planId}` | Path: `planId` (Guid) | `200` → `PlanResource` |
+| Listar / crear suscripción | GET · POST | `/api/v1/subscriptions` | Body: `{ organizationId, planId, startDate, endDate }` | `201` → `SubscriptionResource` |
+| Obtener suscripción | GET | `/api/v1/subscriptions/{subscriptionId}` | Path: `subscriptionId` (Guid) | `200` → `SubscriptionResource` |
+| Activar suscripción | POST | `/api/v1/subscriptions/{id}/activate` | Path: `subscriptionId` (Guid) | `200` → `SubscriptionResource` (state: Active) |
+| Cambiar de plan | PUT | `/api/v1/subscriptions/{id}/plan` | Path: `id`; Body: `{ planId }` | `200` → `SubscriptionResource` |
+| Cancelar suscripción | POST | `/api/v1/subscriptions/{id}/cancel` | Path: `subscriptionId` (Guid) | `200` → `SubscriptionResource` (state: Cancelled) |
+
+**Stakeholder & Asset Management**
+
+| Acción | Verbo | Sintaxis de llamada | Parámetros | Response |
+|--------|-------|---------------------|------------|----------|
+| CRUD de conductores | POST · GET · PUT · DELETE | `/api/v1/drivers` · `/drivers/{driverId}` | Body: `{ organizationId, userId, firstName, lastName, email, phoneNumber, licenseNumber }` | `201/200` → `DriverResource` · `204` (delete) |
+| Actualizar teléfono | PUT | `/api/v1/drivers/{driverId}/phone-number` | Path: `driverId`; Body: `{ phoneNumber }` | `200` → `DriverResource` |
+| CRUD de padres | POST · GET · PUT · DELETE | `/api/v1/parents` · `/parents/{parentId}` | Body: `{ organizationId, userId, firstName, lastName, email, phoneNumber }` | `201/200` → `ParentResource` · `204` (delete) |
+| Vincular / quitar hijo | POST · DELETE | `/api/v1/parents/{parentId}/children` · `/{parentId}/children/{childId}` | Body: `{ firstName, lastName, age }` | `200` → `ParentResource` |
+| Grupos de estudiantes | POST · GET | `/api/v1/student-groups` · `/student-groups/{id}` | Body: `{ organizationId, name }` | `201/200` → `StudentGroupResource` |
+| Asignar/quitar alumno · finalizar | POST · DELETE · POST | `/api/v1/student-groups/{id}/children` · `/{id}/children/{childId}` · `/{id}/finalize` | Path: `studentGroupId`; Body: `{ childId }` | `200` → `StudentGroupResource` |
+| CRUD de vehículos (assets) | POST · GET · PUT · DELETE | `/api/v1/vehicles` · `/vehicles/{vehicleId}` | Body: `{ organizationId, plate, model, capacity, status }` | `201/200` → `VehicleResource` · `204` (delete) |
+| Listar / consultar perfiles | GET | `/api/v1/profiles` · `/profiles/{profileId}` | Path: `profileId` (Guid) | `200` → `ProfileResource` |
+
+**Fleet & Route Management**
+
+| Acción | Verbo | Sintaxis de llamada | Parámetros | Response |
+|--------|-------|---------------------|------------|----------|
+| Crear / listar / consultar rutas | POST · GET | `/api/v1/routes` · `/routes/{routeId}` | Body: `{ organizationId, name }` | `201/200` → `RouteResource` |
+| Gestionar paradas | POST · DELETE | `/api/v1/routes/{id}/stops` · `/{id}/stops/{stopId}` | Body: `{ name, latitude, longitude }` | `200` → `RouteResource` |
+| Asignar vehículo / conductor | PUT | `/api/v1/routes/{id}/vehicle` · `/{id}/driver` | Body: `{ plate, model, brand, capacity }` / `{ driverId }` | `200` → `RouteResource` |
+| Asignar / quitar niño | POST · DELETE | `/api/v1/routes/{id}/children` · `/{id}/children/{childId}` | Body: `{ childId }` | `200` → `RouteResource` |
+| Días de servicio / horario | PUT | `/api/v1/routes/{id}/service-days` · `/{id}/departure-time` | Body: `{ days[] }` / `{ departureTime }` | `200` → `RouteResource` |
+| Activar / desactivar ruta | POST | `/api/v1/routes/{id}/activate` · `/{id}/deactivate` | Path: `routeId` (Guid) | `200` → `RouteResource` (state: Active/Inactive) |
+
+**Trip Execution & Monitoring**
+
+| Acción | Verbo | Sintaxis de llamada | Parámetros | Response |
+|--------|-------|---------------------|------------|----------|
+| Crear / listar / consultar viajes | POST · GET | `/api/v1/trips` · `/trips/{tripId}` | Body: `{ organizationId, routeId, driverId }` | `201/200` → `TripResource` |
+| Iniciar viaje | POST | `/api/v1/trips/{tripId}/start` | Path: `tripId` (Guid) | `200` → `TripResource` (state: InProgress) |
+| Registrar abordaje | POST | `/api/v1/trips/{tripId}/boarding` | Body: `{ childId, boardingState }` | `200` → `TripResource` |
+| Reportar incidente | POST | `/api/v1/trips/{tripId}/incidents` | Body: `{ description }` | `200` → `TripResource` |
+| Completar viaje | POST | `/api/v1/trips/{tripId}/complete` | Path: `tripId` (Guid) | `200` → `TripResource` (state: Completed) |
+
+**Notifications & Communication**
+
+| Acción | Verbo | Sintaxis de llamada | Parámetros | Response |
+|--------|-------|---------------------|------------|----------|
+| Crear / listar / consultar | POST · GET | `/api/v1/notifications` · `/notifications/{id}` | Body: `{ organizationId, parentId, tripId, category, message }` | `201/200` → `NotificationResource` |
+| Despachar / marcar entregada | POST | `/api/v1/notifications/{id}/dispatch` · `/{id}/delivered` | Path: `notificationId` (Guid) | `200` → `NotificationResource` |
+| Disparar alerta | POST | `/api/v1/notifications/{id}/alerts` | Body: `{ panic }` | `200` → `NotificationResource` |
+| Publicar anuncio | POST | `/api/v1/notifications/{id}/announcements` | Body: `{ routeId, message }` | `200` → `NotificationResource` |
+
+
+
+**Repositorios relacionados:**
+
+| Componente | Repositorio                                                                 | Estado al cierre del Sprint 3        |
+|------------|-----------------------------------------------------------------------------|--------------------------------------|
+| Frontend Web Application | https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-webapp | Desplegado en Azure (Link pendiente) |
+| Backend Web Services |  https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform    |        Link pendiente                | |
+
+
+
+**Capturas del swagger en uso:**
+
+![Swagger UI - Vista general de endpoints](assets/images/Chapter-5/Sprint3/swagger.png)
+
+
+**Repositorio de Web Services:** `https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform`
+
+### 5.2.3.7. Software Deployment Evidence for Sprint Review
+
+
+
+Durante este Sprint, el proceso de Deployment se centró en publicar la primera versión funcional del **Web Service de SafeRoute (Powertech-Platform)** en la nube, de modo que la API REST quedara accesible públicamente para su visualización, navegación y pruebas. El despliegue se realizó sobre **Microsoft Azure**, utilizando **Azure App Service** para alojar el backend en ASP.NET Core (.NET 10) y un servicio de base de datos **MySQL** para la persistencia gestionada con Entity Framework Core.
+
+Las actividades de Deployment realizadas en este Sprint abarcaron: la creación y configuración de la cuenta y suscripción en Azure, el aprovisionamiento de los recursos en la nube (App Service y base de datos MySQL), la configuración de las cadenas de conexión y variables de entorno, la publicación del Web Service desde el proyecto de desarrollo y la verificación final del despliegue mediante la documentación Swagger/OpenAPI en producción.
+
+> **Nota:** En este Sprint el producto desplegado corresponde al **Web Service**. La Landing Page y las Web Applications se desplegarán en Sprints posteriores.
+
+### Pasos realizados
+
+**1. Creación de la cuenta y suscripción en Azure**
+Se configuró la cuenta de Microsoft Azure y la suscripción del equipo, habilitando el acceso al portal para el aprovisionamiento de recursos en la nube.
+![Creación de cuenta y suscripción en Azure](assets/images/Chapter-5/Sprint3/deploy-azure-account.png)
+
+**2. Creación del recurso Azure App Service**
+Se creó el recurso de App Service que aloja el Web Service, seleccionando la región **Mexico Central**, el runtime de .NET y el plan de hospedaje correspondiente.
+![Creación del App Service](assets/images/Chapter-5/Sprint3/deploy-app-service.png)
+
+**3. Aprovisionamiento de la base de datos MySQL**
+Se aprovisionó el servicio de base de datos MySQL en la nube y se creó la base de datos del proyecto, sobre la cual EF Core aplica las migraciones del esquema.
+![Aprovisionamiento de base de datos MySQL](assets/images/Chapter-5/Sprint3/deploy-mysql.png)
+
+**4. Configuración de la cadena de conexión y variables de entorno**
+Se configuró en App Service la cadena de conexión `DefaultConnection` hacia la base de datos MySQL, junto con las variables de entorno necesarias para el entorno de producción.
+![Configuración de connection string](assets/images/Chapter-5/Sprint3/deploy-connection-string.png)
+
+**5. Publicación del Web Service**
+Se publicó el proyecto ASP.NET Core (.NET 10) en el App Service, generando el despliegue de la API REST de los bounded contexts de SafeRoute.
+![Publicación del Web Service](assets/images/Chapter-5/Sprint3/deploy-publish.png)
+
+**6. Verificación del despliegue**
+Se verificó el despliegue accediendo a la documentación Swagger UI publicada en producción, confirmando que todos los endpoints quedaron disponibles y operativos.
+![Verificación del despliegue en Swagger](assets/images/Chapter-5/Sprint3/swagger.png)
+
+### Resultado
+
+El Web Service quedó desplegado y accesible públicamente en Azure App Service, con la documentación OpenAPI disponible en:
+
+**URL del despliegue:**
+https://asp-powertech-prod-dfembvcde5bdfxdx.mexicocentral-01.azurewebsites.net/swagger/index.html
+
+
+#### 5.2.3.8. Team Collaboration Insights during Sprint
+
+Durante el Sprint 3, el equipo mantuvo una colaboración activa distribuida en dos repositorios: el del informe y el nuevo repositorio del Backend Web Service. La actividad técnica se concentró en la implementación de los servicios REST por bounded context, mientras que en el informe se trabajó el levantamiento de las observaciones de TB1 y la documentación del sprint.
+
+![Report Pulse Sprint 3](assets/images/Chapter-5/Sprint3/report-pulse.png)
+
+![Report contributors Sprint 3](assets/images/Chapter-5/Sprint3/contributors.png)
+
+![Backend Pulse Sprint 3](assets/images/Chapter-5/Sprint3/backend-pulse.png)
+
+La distribución del trabajo se mantuvo alineada con la Leadership and Collaboration Matrix (LACX) definida al inicio del sprint, donde cada integrante asumió la responsabilidad principal de uno o más bounded contexts del backend mientras colaboraba en los restantes mediante revisiones de código. El uso consistente de GitFlow y de Conventional Commits permitió mantener un historial trazable y profesional en ambos repositorios.
 
 ---
 
 **Resumen de colaboración del equipo:**
 
-La distribución del trabajo se mantuvo alineada con la **Leadership and Collaboration Matrix (LACX)** definida al inicio del sprint, donde cada integrante asumió la responsabilidad principal de un módulo del frontend mientras colaboraba en los módulos restantes mediante revisiones de código y soporte técnico. El uso consistente de GitFlow, junto con la convención de Conventional Commits, permitió mantener un historial trazable y profesional en ambos repositorios del proyecto.
+La distribución del trabajo se mantuvo alineada con la **Leadership and Collaboration Matrix** definida al inicio del sprint, donde cada integrante asumió la responsabilidad principal de un módulo del frontend mientras colaboraba en los módulos restantes mediante revisiones de código y soporte técnico. El uso consistente de GitFlow, junto con la convención de Conventional Commits, permitió mantener un historial trazable y profesional en ambos repositorios del proyecto.
 
 ### 5.3. Validation Interviews
 
@@ -4208,167 +4676,243 @@ Se presentan las entrevistas de validación realizadas para evaluar la experienc
 
 El proceso de validación considera la interacción de los usuarios con el Landing Page y la Web Application. Durante las sesiones se observará si los participantes comprenden la propuesta de valor, si pueden completar tareas principales y si la experiencia resulta clara, confiable y fácil de usar.
 
-
 #### 5.3.1. Diseño de Entrevistas
 
-El diseño de entrevistas de validación define la estructura de las sesiones, los segmentos objetivo considerados, los artefactos a evaluar, los user flows utilizados y las preguntas que guiarán la interacción con los participantes entrevistados.
+El diseño de entrevistas de validación define la estructura que seguirá el equipo para evaluar la experiencia de uso de SafeRoute con representantes de los segmentos objetivo. A diferencia de las entrevistas iniciales de descubrimiento, estas sesiones tienen como propósito validar la solución propuesta mediante la interacción directa de los usuarios con el Landing Page y la Web Application.
 
-Para esta etapa, se considera como segmentos objetivo principales a los conductores de transporte escolar y padres de familia. Ambos representan los usuarios más críticos del servicio, ya que el conductor ejecuta el trayecto escolar y el padre monitorea la seguridad del estudiante durante el recorrido.
+Para esta etapa, se consideran como segmentos objetivo principales a los conductores de transporte escolar y padres de familia, debido a que ambos representan los usuarios más críticos del servicio. El conductor ejecuta el trayecto escolar y registra los eventos operativos, mientras que el padre de familia monitorea la seguridad y estado del traslado de su hijo.
 
-Aunque la solución también incluye roles como Visitor y Administrator, estos serán considerados dentro del flujo general de validación, principalmente para evaluar la comprensión del Landing Page, la navegación inicial y la lógica general de acceso a la plataforma.
 
 ##### Objetivo de la validación
 
-El objetivo principal de las entrevistas de validación es comprobar si los usuarios pueden comprender y utilizar correctamente las funcionalidades principales de SafeRoute mediante la interacción con el Landing Page y la Web Application.
+El objetivo principal de las entrevistas de validación es comprobar si los usuarios pueden comprender y utilizar correctamente las funcionalidades principales de SafeRoute, evaluando la claridad, utilidad, facilidad de uso y confianza generada por la solución.
 
 Durante las sesiones se busca validar:
 
 * Si el Landing Page comunica claramente la propuesta de valor de SafeRoute.
-* Si los usuarios entienden los beneficios principales del servicio.
-* Si los conductores pueden identificar su ruta, iniciar un viaje, registrar abordajes y finalizar el trayecto.
-* Si los padres de familia pueden visualizar el viaje activo, revisar la ubicación del vehículo, revisar el estado de sus hijos y comprender las notificaciones.
-* Si la navegación, los textos, botones e información mostrada resultan claros y útiles.
-* Si la solución transmite seguridad, confianza y utilidad para un contexto real de transporte escolar.
+* Si los usuarios comprenden los beneficios principales del servicio.
+* Si los conductores pueden ejecutar tareas críticas como iniciar viaje, controlar alumnos, reportar incidencias y actuar ante emergencias.
+* Si los padres de familia pueden monitorear el viaje, recibir información relevante y confirmar el estado del traslado escolar.
+* Si los textos, botones, pantallas y flujos resultan claros para los usuarios.
+* Si la experiencia propuesta transmite seguridad, confianza y utilidad en un contexto real de transporte escolar.
 
 ##### Segmentos objetivo considerados
 
 | Segmento objetivo | Descripción                                                                                                                                     | Propósito de validación                                                                                                 |
 | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| Driver            | Conductor responsable de ejecutar el trayecto escolar, iniciar viajes, registrar abordajes, reportar incidencias y finalizar rutas.             | Validar si el flujo operativo del conductor es claro, rápido y fácil de usar durante una jornada de transporte escolar normal. |
-| Parent            | Padre de familia que necesita monitorear el traslado escolar de su hijo y recibir información sobre ubicación, abordaje, llegada y posibles incidencias. | Validar si la plataforma reduce la incertidumbre y transmite confianza durante el viaje escolar.                        |
----
-
-##### Roles complementarios considerados en el flujo general(LucidChart)
-
-| Rol complementario | Motivo de inclusión                                                                                                                                                             |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Visitor            | Permite validar si una persona interesada comprende la propuesta de valor desde el Landing Page, revisa beneficios, planes y llamadas a la acción.                              |
-| Administrator      | Permite representar la gestión general del servicio, como registro de usuarios, creación de rutas y asignaciones. |
-
+| **Driver**        | Conductor responsable de ejecutar trayectos escolares, iniciar rutas, registrar abordajes, reportar incidencias y finalizar viajes.             | Validar si el flujo operativo del conductor es claro, rápido y fácil de usar durante una jornada de transporte escolar. |
+| **Parent**        | Padre de familia que necesita monitorear el traslado escolar de su hijo y recibir información sobre ubicación, abordaje, llegada e incidencias. | Validar si la plataforma reduce la incertidumbre y transmite confianza durante el viaje escolar.                        |
 
 ##### Artefactos a validar
 
-| Artefacto       | Descripción                                                  | Elementos evaluados                                                                             |
-| --------------- | ------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
-| Landing Page    | Página pública de presentación de SafeRoute.                 | Propuesta de valor, beneficios, roles, funcionamiento, planes y llamadas a la acción.           |
-| Web Application | Aplicación web utilizada por los usuarios según su rol.      | Login, dashboards, rutas, viaje activo, abordaje, monitoreo, notificaciones e historial.        |
-| User Flows      | Diagramas elaborados en LucidChart para guiar la validación. | Secuencia de pantallas, acciones del usuario, decisiones, errores y confirmaciones del sistema. |
+Durante las entrevistas se validarán los siguientes artefactos del producto:
 
-##### Metodología (Esto servira para la Heuristica asi que luego se puede borrrar xd)
+| Artefacto           | Descripción                                                                           | Elementos evaluados                                                                                         |
+| ------------------- | ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| **Landing Page**    | Página pública de presentación de SafeRoute.                                          | Propuesta de valor, beneficios, funcionamiento general, planes y llamadas a la acción.                      |
+| **Web Application** | Aplicación web utilizada por los usuarios según su rol.                               | Login, dashboards, rutas, viaje activo, abordaje, monitoreo, notificaciones, incidencias e historial.       |
+| **User Flows**      | Diagramas previamente definidos en la sección de Web Applications User Flow Diagrams. | Acciones del usuario, happy path, unhappy paths y validación de tareas principales. |
 
-Cada entrevista seguirá una dinámica guiada en la que el participante interactuará con el Landing Page y con el flujo correspondiente a su segmento objetivo.
 
-La sesión se desarrollará de la siguiente manera:
+##### Metodología de la sesión
 
-1. Presentación breve del proyecto SafeRoute.
+Cada entrevista seguirá una dinámica guiada en la que el participante interactuará primero con el Landing Page y luego con los flujos correspondientes de la Web Application, según su segmento objetivo.
+
+La sesión seguirá la siguiente estructura:
+
+1. Presentación breve de SafeRoute.
 2. Explicación del objetivo de la entrevista.
-3. Aclaración de que se evalúa la solución y no al participante.
-4. Interacción inicial con el Landing Page.
+3. Aclaración de que se evalúa la solución, no al participante.
+4. Exploración inicial del Landing Page.
 5. Ejecución de tareas según el segmento objetivo.
-6. Preguntas durante la navegación para identificar dudas o problemas.
-7. Preguntas finales sobre facilidad de uso, confianza y mejoras.
-8. Registro de observaciones para la evaluación heurística posterior.
+6. Observación de dudas, errores, comentarios espontáneos y dificultades.
+7. Aplicación de preguntas generales y específicas.
+8. Registro de hallazgos para el posterior análisis y evaluación heurística.
 
-##### User Flows utilizados para la validación
+##### User Flows considerados para la validación
 
-Para guiar las entrevistas se diseñaron user flows en LucidChart. Estos flujos representan las rutas principales que los participantes seguirán durante las sesiones de validación.
+Para las entrevistas de validación se seleccionaron seis User Flows previamente definidos en la sección 4.4.3. Web Applications User Flow Diagrams. Estos flujos fueron elegidos porque representan funcionalidades core de SafeRoute y permiten evaluar las tareas más importantes de los segmentos objetivo principales.
 
-Se consideró un flujo general de validación y dos flujos específicos asociados a los segmentos objetivo principales: Driver y Parent.
+Durante cada sesión, el participante interactuará primero con el Landing Page para validar la comprensión general del producto. Posteriormente, realizará tareas dentro de la Web Application siguiendo los User Flows correspondientes a su segmento.
 
-###### General Validation User Flow
+###### User Flows seleccionados para el segmento Driver
 
-El General Validation User Flow resume las rutas principales de interacción dentro de SafeRoute. Este flujo permite observar cómo los distintos tipos de usuario acceden a la plataforma y ejecutan acciones relevantes según su rol.
+Los User Flows seleccionados para el segmento Driver cubren el ciclo operativo principal del conductor dentro de SafeRoute: inicio de viaje, control de alumnos, reporte de incidencias y respuesta ante situaciones críticas.
 
-![General Validation User Flow](./assets/images/ChapterV/ValidationInterviews/general-validation-user-flow.png)
+Se considerarán los siguientes User Flows:
 
-Flujo considerado:
+* **User Flow 6:** Control claro de alumnos durante la ruta.
+* **User Flow 8:** Comunicación de incidencia o avance durante el viaje.
+* **User Flow 9:** Botón de pánico ante emergencia.
 
-Start → Access SafeRoute → Select user type → Visitor / Driver / Parent / Administrator → Complete main task according to role → System feedback → End
+Estos flujos permiten validar si el conductor puede realizar acciones críticas de forma clara, rápida y segura.
 
-**Tareas principales incluidas:**
+###### User Flow 6: Control claro de alumnos durante la ruta
 
-| Rol           | Tarea principal                                                                                                     |
-| ------------- | ------------------------------------------------------------------------------------------------------------------- |
-| Visitor       | Explorar el Landing Page, revisar beneficios, consultar planes y completar el formulario de contacto o demo.        |
-| Driver        | Iniciar sesión, seleccionar ruta asignada, iniciar viaje, registrar abordaje y finalizar trayecto.                  |
-| Parent        | Iniciar sesión, seleccionar viaje activo del hijo, revisar ubicación, estado de abordaje y notificación de llegada. |
-| Administrator | Iniciar sesión, revisar panel administrativo, registrar usuarios, crear ruta y asignar conductor/vehículo.          |
+* **User goal:**
+  Como conductor, quiero tener un control claro de los alumnos durante la ruta.
 
-Criterios de observación:
+* **User Story asociada:**
+  US11 - Como conductor, quiero registrar el abordaje de estudiantes, para confirmar asistencia durante la ruta.
+  US14 - Como conductor, quiero finalizar la ruta, para concluir el servicio correctamente.
 
-* El usuario identifica correctamente su rol.
-* La navegación inicial es clara.
-* Las acciones principales son fáciles de ubicar.
-* El sistema muestra retroalimentación comprensible.
-* El usuario entiende el propósito general de SafeRoute.
+* **Web:**
 
-###### Driver Trip Execution User Flow
+<p align="center">
+<img src="assets/images/ChapterIV/WebApp/UserFlow/Desktop/userflow6.png" alt="Driver User Flow 6" width="900"/>
+</p>
 
-Este flujo valida la experiencia del conductor durante la ejecución de un trayecto escolar. Es uno de los flujos más importantes del sistema porque representa el inicio operativo del viaje y se relaciona con el evento de dominio **TripStarted**.
+* **Descripción del flujo:**
 
-![Driver Trip Execution User Flow](./assets/images/ChapterV/ValidationInterviews/driver-trip-execution-user-flow.png)
+**Happy path:**
+El conductor inicia sesión en la plataforma y accede a su dashboard. Desde allí selecciona la ruta asignada para el día y revisa la lista de estudiantes y paradas correspondientes. Luego inicia el trayecto, activando el viaje dentro del sistema. Durante la ruta, registra el abordaje de los estudiantes y visualiza el estado actualizado de cada alumno. Finalmente, al completar el recorrido, selecciona la opción de finalización de ruta y el sistema confirma el cierre del trayecto.
 
-Flujo considerado:
-
-Start → Sign in as Driver → View Driver Dashboard → Select assigned route → Review students and stops → Start Trip → TripStarted event generated → Active Trip Screen → Register student boarding → Report incident if needed → Complete Trip → End
-
-**Tareas asignadas al participante conductor:**
-
-| N° | Tarea                                   | Resultado esperado                                             |
-| -- | --------------------------------------- | -------------------------------------------------------------- |
-| 1  | Iniciar sesión como conductor.          | El usuario accede correctamente al dashboard del conductor.    |
-| 2  | Identificar la ruta asignada.           | El conductor reconoce qué ruta debe ejecutar.                  |
-| 3  | Revisar estudiantes y paradas.          | El conductor entiende la lista de alumnos y puntos de recojo.  |
-| 4  | Iniciar el viaje.                       | El sistema cambia el estado del viaje a activo.                |
-| 5  | Registrar el abordaje de un estudiante. | El sistema actualiza el estado del alumno.                     |
-| 6  | Reportar una incidencia o retraso.      | El sistema registra el incidente y permite continuar el flujo. |
-| 7  | Finalizar el trayecto.                  | El sistema muestra confirmación de viaje completado.           |
-
-Criterios de observación:
-
-* El conductor encuentra rápidamente su ruta asignada.
-* El botón para iniciar viaje es claro.
-* El estado activo del viaje es visible.
-* El registro de abordaje es fácil de comprender.
-* El reporte de incidencias no genera confusión.
-* El flujo evita sobrecarga visual para un usuario operativo.
-* El sistema brinda confirmaciones claras después de cada acción crítica.
+**Unhappy path:**
+Si el conductor intenta iniciar el trayecto sin tener una ruta asignada o sin información completa de estudiantes y paradas, el sistema muestra un mensaje de advertencia indicando que no es posible iniciar la ruta. Si intenta finalizar el trayecto con acciones pendientes, el sistema advierte que aún existen registros incompletos antes de cerrar el viaje.
 
 
-###### Parent Trip Monitoring User Flow
+###### User Flow 8: Comunicación de incidencia o avance durante el viaje
 
-Este flujo valida la experiencia del padre de familia al monitorear el traslado escolar de su hijo. El objetivo es comprobar si la plataforma transmite tranquilidad, visibilidad y confianza durante el recorrido.
+* **User goal:**
+  Como conductor, quiero comunicar una incidencia o avance de la ruta durante el viaje.
 
-![Parent Trip Monitoring User Flow](./assets/images/ChapterV/ValidationInterviews/parent-trip-monitoring-user-flow.png)
+* **User Story asociada:**
+  US12 - Como conductor, quiero reportar incidencias, para informar retrasos o problemas durante la ruta.
 
-Flujo considerado:
+* **Web:**
 
-Start → Sign in as Parent → View Family Dashboard → Select child → Check active trip → View vehicle location on map → Check boarding status → Receive arrival notification → Review trip history → End
+<p align="center">
+<img src="assets/images/ChapterIV/WebApp/UserFlow/Desktop/userflow8.png" alt="Driver User Flow 8" width="900"/>
+</p>
 
-**Tareas asignadas al participante padre de familia:**
+* **Descripción del flujo:**
 
-| N° | Tarea                                    | Resultado esperado                                             |
-| -- | ---------------------------------------- | -------------------------------------------------------------- |
-| 1  | Iniciar sesión como padre de familia.    | El usuario accede correctamente al dashboard familiar.         |
-| 2  | Seleccionar al hijo o viaje activo.      | El usuario identifica el viaje correspondiente.                |
-| 3  | Visualizar la ubicación del vehículo.    | El usuario comprende dónde se encuentra la movilidad.          |
-| 4  | Revisar el estado de abordaje.           | El usuario identifica si el estudiante abordó correctamente.   |
-| 5  | Verificar la notificación de llegada.    | El usuario reconoce la confirmación de llegada del estudiante. |
-| 6  | Revisar el historial o estado del viaje. | El usuario accede a información complementaria del trayecto.   |
+**Happy path:**
+Durante una ruta activa, el conductor identifica un retraso, desvío, obstáculo u otro imprevisto. Desde la pantalla correspondiente accede al reporte de incidencias, selecciona una categoría y registra la información necesaria. Al enviar el reporte, el sistema confirma el registro de la incidencia y permite que la información sea comunicada a los usuarios correspondientes.
 
-Criterios de observación:
+**Unhappy path:**
+Si el conductor intenta enviar una incidencia sin completar los datos mínimos, el sistema resalta los campos faltantes y evita el envío hasta que la información sea corregida. Si ocurre un problema de conexión, el sistema debe mostrar un mensaje comprensible o conservar temporalmente la información para evitar pérdida de datos.
 
-* El padre encuentra fácilmente el viaje activo.
-* La ubicación del vehículo es comprensible.
-* El estado de abordaje transmite seguridad.
-* Las notificaciones son claras y oportunas.
-* La información mostrada reduce incertidumbre.
-* El usuario percibe confianza en el servicio.
-* La navegación no requiere explicaciones adicionales.
+
+###### User Flow 9: Botón de pánico ante emergencia
+
+* **User goal:**
+  Como conductor, quiero una manera inmediata de informar una emergencia.
+
+* **User Story asociada:**
+  US13 - Como conductor, quiero activar un botón de pánico, para alertar situaciones críticas durante la ruta.
+
+* **Web:**
+
+<p align="center">
+<img src="assets/images/ChapterIV/WebApp/UserFlow/Desktop/userflow9.png" alt="Driver User Flow 9" width="900"/>
+</p>
+
+* **Descripción del flujo:**
+
+**Happy path:**
+Durante una ruta activa, el conductor identifica una situación de emergencia y activa el botón de pánico. El sistema solicita o ejecuta la confirmación de alerta crítica y registra el evento dentro del viaje. La alerta queda disponible para notificar a los usuarios correspondientes y para su posterior revisión.
+
+**Unhappy path:**
+Si el botón de pánico se activa accidentalmente o no se confirma correctamente, el sistema evita generar una alerta falsa y muestra una indicación clara para confirmar o cancelar la acción. Si existe un fallo de conexión, el sistema debe informar el estado del envío de la alerta para evitar incertidumbre durante una situación crítica.
+
+
+
+###### User Flows seleccionados para el segmento Parent
+
+Los User Flows seleccionados para el segmento Parent cubren las acciones principales de monitoreo y seguimiento del traslado escolar: visualización del viaje, recepción de alertas y confirmación del estado del estudiante.
+
+Se considerarán los siguientes User Flows:
+
+* **User Flow 10:** Rastreo en tiempo real del vehículo.
+* **User Flow 11:** Recepción de notificaciones automáticas.
+* **User Flow 12:** Confirmación de llegada e historial de asistencia.
+
+Estos flujos permiten validar si el padre de familia puede obtener información suficiente sobre el traslado de su hijo sin depender de llamadas o mensajes constantes al conductor.
+
+###### User Flow 10: Rastreo en tiempo real del vehículo
+
+* **User goal:**
+  Como padre de familia, quiero estar informado de la ubicación y situación en tiempo real del vehículo.
+
+* **User Story asociada:**
+  US18 - Como padre, quiero ver el vehículo en el mapa, para calcular la hora de llegada.
+
+* **Web:**
+
+<p align="center">
+<img src="assets/images/ChapterIV/WebApp/UserFlow/Desktop/userflow10.png" alt="Parent User Flow 10" width="900"/>
+</p>
+
+Descripción del flujo:
+
+**Happy path:**
+El padre inicia sesión en SafeRoute y accede al módulo de monitoreo del viaje activo de su hijo. El sistema muestra el mapa con la ubicación del vehículo y la información relevante del trayecto. El usuario puede revisar el estado del viaje y comprender la situación actual sin necesidad de contactar directamente al conductor.
+
+**Unhappy path:**
+Si no existe un viaje activo, el sistema muestra un mensaje indicando que no hay trayectos disponibles en ese momento. Si la ubicación del vehículo no puede cargarse por problemas de conexión o señal GPS, el sistema muestra un estado de error comprensible, evitando que el padre interprete la falta de información como una situación de riesgo.
+
+
+###### User Flow 11: Recepción de notificaciones automáticas
+
+* **User goal:**
+  Como padre de familia, quiero recibir notificaciones sin tener que preguntar.
+
+* **User Story asociada:**
+  US19 - Como padre, quiero recibir una alerta de proximidad, para prepararme antes de la llegada del vehículo.
+  US20 - Como padre, quiero recibir confirmación de llegada, para estar tranquilo.
+
+* **Web:**
+
+<p align="center">
+<img src="assets/images/ChapterIV/WebApp/UserFlow/Desktop/UserFlow11.png" width="1500px" alt="ug11">
+</p>
+
+* **Descripción del flujo:**
+
+**Happy path:**
+El padre recibe notificaciones automáticas durante momentos importantes del trayecto, como inicio de ruta, aproximación del vehículo, abordaje del estudiante, llegada al destino o reporte de incidencia. Estas alertas mantienen informado al usuario sin necesidad de comunicarse constantemente con el conductor.
+
+**Unhappy path:**
+Si las notificaciones están desactivadas o el dispositivo no permite recibir alertas, el sistema mantiene los eventos visibles dentro de la plataforma para que el padre pueda consultarlos manualmente. Si una notificación no puede enviarse, la información debe permanecer disponible en el panel del viaje o historial correspondiente.
+
+
+###### User Flow 12: Confirmación de llegada e historial de asistencia
+
+* **User goal:**
+  Como padre de familia, quiero saber si mi hijo abordó el transporte y llegó correctamente.
+
+* **User Story asociada:**
+  US20 - Como padre, quiero saber si mi hijo llegó al colegio, para estar tranquilo.
+  US22 - Como padre, quiero ver los días que mi hijo abordó, para control mensual.
+
+* **Web:**
+
+<p align="center">
+<img src="assets/images/ChapterIV/WebApp/UserFlow/Desktop/user flow12.png" width="1500px" alt="ug12">
+</p>
+
+* **Descripción del flujo:**
+
+**Happy path:**
+Cuando el conductor registra el abordaje del estudiante, el sistema actualiza el estado del alumno y permite que el padre visualice la confirmación correspondiente. Posteriormente, cuando el estudiante llega al destino, el sistema muestra la confirmación de llegada. Estos eventos quedan registrados en el historial de asistencia, donde el padre puede revisar fechas, horarios y estados del servicio.
+
+**Unhappy path:**
+Si el estudiante aún no ha abordado o el conductor no ha registrado la acción, el sistema muestra un estado pendiente de forma clara. Si el padre intenta revisar un periodo sin registros disponibles, el sistema muestra un estado vacío indicando que no existe historial para el rango seleccionado, sin generar errores ni información incompleta.
+
+
+##### Justificación de selección de User Flows
+
+Los seis User Flows seleccionados corresponden a funcionalidades críticas de SafeRoute y representan las tareas principales que serán evaluadas durante las entrevistas de validación.
+
+En el caso del segmento Driver, los flujos seleccionados cubren la ejecución operativa del servicio: control de estudiantes, comunicación de incidencias y respuesta ante emergencias. En el caso del segmento Parent, los flujos seleccionados cubren la necesidad principal del usuario: monitorear el traslado, recibir alertas y confirmar que el estudiante llegó correctamente.
+
+De esta manera, el proceso de validación se enfoca en los flujos más relevantes para comprobar si la solución responde a las necesidades identificadas en los segmentos objetivo.
+
 
 ##### Guion general de preguntas
 
-Estas preguntas se utilizarán para iniciar y cerrar la sesión de validación, independientemente del segmento objetivo.
+Estas preguntas se utilizarán como guía base para las entrevistas de validación. El objetivo es mantener una sesión breve, clara y enfocada en la interacción del usuario con el Landing Page y la Web Application.
 
 **Preguntas iniciales:**
 
@@ -4390,17 +4934,19 @@ Estas preguntas se utilizarán para iniciar y cerrar la sesión de validación, 
 3. ¿Qué mejorarías del Landing Page o de la Web Application?
 4. ¿Usarías una plataforma como SafeRoute en un contexto real? ¿Por qué?
 
+
 ##### Preguntas específicas para el segmento Driver
 
-Estas preguntas están orientadas a validar la experiencia del conductor durante el flujo de inicio y ejecución de viaje.
+Estas preguntas están orientadas a validar la experiencia del conductor durante los flujos de operación del trayecto escolar.
 
-| Momento             | Pregunta                                                                     |
-| ------------------- | ---------------------------------------------------------------------------- |
-| Antes de la tarea   | ¿Qué información necesitarías ver antes de iniciar una ruta escolar?         |
-| Durante la tarea    | ¿El botón o acción para iniciar el viaje te parece fácil de encontrar?       |
-| Durante la tarea    | ¿El sistema te deja claro cuándo el viaje ya está activo?                    |
-| Durante la tarea    | ¿El registro de abordaje te parece rápido y entendible?                      |
-| Después de la tarea | ¿Qué cambiarías para que el flujo sea más rápido o seguro para un conductor? |
+| Momento             | Pregunta                                                                                               |
+| ------------------- | ------------------------------------------------------------------------------------------------------ |
+| Antes de la tarea   | ¿Qué información necesitarías ver antes de iniciar una ruta escolar?                                   |
+| Durante la tarea    | ¿El flujo para controlar alumnos durante la ruta te parece fácil de seguir?                            |
+| Durante la tarea    | ¿El sistema te deja claro cuándo una acción, como abordaje o incidencia, fue registrada correctamente? |
+| Durante la tarea    | ¿El reporte de incidencias o emergencia te parece suficientemente rápido y entendible?                 |
+| Después de la tarea | ¿Qué cambiarías para que el flujo sea más seguro o práctico para un conductor?                         |
+
 
 ##### Preguntas específicas para el segmento Parent
 
@@ -4411,23 +4957,427 @@ Estas preguntas están orientadas a validar la experiencia del padre de familia 
 | Antes de la tarea   | ¿Qué información te daría más tranquilidad durante el traslado de tu hijo?      |
 | Durante la tarea    | ¿Te resulta fácil encontrar el viaje activo de tu hijo?                         |
 | Durante la tarea    | ¿La ubicación del vehículo y el estado de abordaje son claros para ti?          |
-| Durante la tarea    | ¿La notificación de llegada es suficientemente clara?                           |
+| Durante la tarea    | ¿Las notificaciones y confirmaciones de llegada son suficientemente claras?     |
 | Después de la tarea | ¿La información mostrada reduce tu necesidad de llamar o escribir al conductor? |
 
-##### Métricas de observación (tambien para la parte de heuristica, servira para la escala de severidad)
+##### Métricas de observación
 
 Durante las entrevistas se registrarán observaciones cualitativas y operativas para analizar la experiencia de usuario.
 
-| Métrica                 | Descripción                                                                                                        |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| Éxito de tarea          | Indica si el participante logró completar la tarea asignada.                                                       |
-| Dificultad percibida    | Nivel de dificultad expresado o evidenciado durante la interacción.                                                |
-| Errores de navegación   | Acciones incorrectas, retrocesos o momentos de confusión.                                                          |
-| Tiempo aproximado       | Tiempo estimado para completar una tarea principal.                                                                |
-| Comentarios espontáneos | Opiniones, dudas o sugerencias expresadas por el usuario.                                                          |
-| Nivel de confianza      | Percepción del usuario sobre seguridad, claridad y utilidad del sistema.                                           |
-| Claridad del lenguaje   | Evalúa si los textos, etiquetas y botones son comprensibles.                                                       |
-| Visibilidad del estado  | Evalúa si el sistema comunica adecuadamente cambios como viaje iniciado, abordaje registrado o llegada confirmada. |
+| Métrica                 | Descripción                                                                                                            |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| Éxito de tarea          | Indica si el participante logró completar la tarea asignada.                                                           |
+| Dificultad percibida    | Nivel de dificultad expresado o evidenciado durante la interacción.                                                    |
+| Errores de navegación   | Acciones incorrectas, retrocesos o momentos de confusión.                                                              |
+| Tiempo aproximado       | Tiempo estimado para completar una tarea principal.                                                                    |
+| Comentarios espontáneos | Opiniones, dudas o sugerencias expresadas por el usuario.                                                              |
+| Nivel de confianza      | Percepción del usuario sobre seguridad, claridad y utilidad del sistema.                                               |
+| Claridad del lenguaje   | Evalúa si los textos, etiquetas y botones son comprensibles.                                                           |
+| Visibilidad del estado  | Evalúa si el sistema comunica adecuadamente cambios como abordaje registrado, incidencia enviada o llegada confirmada. |
+
+
+#### 5.3.2. Registro de Entrevistas
+
+Cada entrevista incluye los datos del participante, evidencia visual de la sesión, URL del video publicado en Microsoft Stream, timing de inicio, duración y un resumen descriptivo de las principales apreciaciones del entrevistado respecto a las tareas asignadas.
+
+
+##### Primer segmento: Conductores de transporte escolar
+
+Para el segmento Driver, las entrevistas se enfocan en validar la experiencia del conductor al interactuar con los flujos operativos principales de SafeRoute.
+
+**User Flows evaluados:**
+
+* **User Flow 6:** Control claro de alumnos durante la ruta.
+* **User Flow 8:** Comunicación de incidencia o avance durante el viaje.
+* **User Flow 9:** Botón de pánico ante emergencia.
+
+**Tareas asignadas al entrevistado:**
+
+* Explorar el Landing Page de SafeRoute.
+* Identificar la propuesta de valor del servicio.
+* Iniciar sesión como conductor.
+* Revisar la ruta asignada.
+* Controlar el estado de los estudiantes durante la ruta.
+* Reportar una incidencia o avance del viaje.
+* Identificar el uso del botón de pánico ante una emergencia.
+* Comentar dudas, dificultades y sugerencias de mejora.
+
+###### Entrevista de validación 1 - Driver
+
+**Entrevistador:**
+Fabio Vallejo
+
+**Datos del entrevistado**
+
+* **Nombre:** Andy
+* **Apellidos:** Pillaca
+* **Edad:** 28
+* **Distrito:** San Miguel y Miraflores
+* **Segmento:** Driver
+* **URL del video:** https://1drv.ms/v/c/a3bda66c80e2095c/IQCkK7xkt2N7TbSCOXPbCJTqAXZRWtdYueZppMSIM3shK4c?e=usVO15
+* **Timing de inicio:** 0:18
+* **Timing de fin:** 6:55
+* **Duración:** 6:36
+
+<p align="center">
+<img src="assets/images/ChapterV/ValidationInterviews/driver-validation-interview-1.png" alt="Driver Validation Interview 1" width="500"/>
+</p>
+
+**Resumen descriptivo:**
+Andy indicó que ha utilizado aplicaciones de mapas como Google Maps, pero no una plataforma especializada en movilidad escolar. Para él, una solución como SafeRoute debería mostrar desde el inicio la ruta asignada, lista de alumnos, horarios, puntos de recogida y estado del recorrido.
+
+Durante la evaluación, consideró que la plataforma es fácil de usar y que el flujo para controlar alumnos durante la ruta es claro. Destacó como puntos positivos las confirmaciones visuales, los mensajes de éxito y la posibilidad de reportar incidencias de forma rápida. Además, señaló que usaría SafeRoute en un contexto real porque mejora el control de la ruta, la comunicación con los padres y el seguimiento seguro de los alumnos.
+
+Como oportunidades de mejora, recomendó incluir botones más grandes para acciones críticas, acceso rápido a emergencias, menos pasos durante la operación y mayor información visual sobre los beneficios del sistema en el Landing Page.
+
+###### Entrevista de validación 2 - Driver
+###### User Flow 8: Comunicación de incidencia o avance durante el viaje
+- **User goal:**  
+Como conductor, quiero comunicar una incidencia o avance de la ruta durante el viaje.
+
+- **User Story asociada:**  
+US12 - Como conductor, quiero reportar incidencias, para informar retrasos o problemas durante la ruta.
+
+- **Validación durante entrevista:**  
+Este flujo fue observado de forma complementaria durante la entrevista del segmento Driver, en la que el usuario navegó por pantallas relacionadas con viaje activo, alertas y acciones disponibles durante la ruta.
+
+- **Descripción del flujo:**
+
+**Happy path:**  
+El conductor se encuentra dentro de un viaje activo y accede a las acciones disponibles durante la ruta. Ante un retraso, desvío, obstáculo o situación relevante, selecciona la opción de alerta o reporte correspondiente. El sistema muestra la sección de alertas/incidencias, permitiendo registrar o visualizar eventos asociados al viaje. Esta información permite mantener informado al sistema y facilita que padres o administradores conozcan el estado de la ruta.
+
+**Unhappy path:**  
+Si el conductor intenta reportar una incidencia sin información suficiente, el sistema debería evitar el envío incompleto y solicitar los datos necesarios. Si existe un problema de conexión o el reporte no puede enviarse correctamente, la plataforma debería mostrar un mensaje claro indicando que la acción no fue completada, evitando que el conductor crea que la incidencia fue comunicada cuando aún no fue registrada.
+
+- **Observación para validación:**  
+Durante la entrevista, el usuario logró identificar secciones relacionadas con alertas y acciones del viaje, lo que permite validar preliminarmente que el sistema contempla mecanismos para comunicar eventos durante la ruta. Sin embargo, se recomienda realizar una validación posterior más específica del formulario o flujo completo de reporte de incidencias.
+
+
+###### Entrevista de validación 3 - Driver
+###### User Flow 9: Botón de pánico ante emergencia
+
+- **User goal:**  
+Como conductor, quiero una manera inmediata de informar una emergencia.
+
+- **User Story asociada:**  
+US13 - Como conductor, quiero activar un botón de pánico, para alertar situaciones críticas durante la ruta.
+
+- **Validación durante entrevista:**  
+Este flujo fue observado de forma complementaria durante la entrevista del segmento Driver, debido a que en la pantalla de viaje activo se evidenció la presencia de una acción SOS o botón de emergencia dentro de las opciones disponibles para el conductor.
+
+- **Descripción del flujo:**
+
+**Happy path:**  
+El conductor se encuentra ejecutando una ruta activa y visualiza el botón SOS dentro de las acciones principales del viaje. Ante una emergencia, selecciona dicha opción para activar una alerta crítica. El sistema debe registrar el evento de emergencia y comunicarlo a los usuarios correspondientes, como administradores o padres de familia, permitiendo una respuesta rápida ante una situación de riesgo.
+
+**Unhappy path:**  
+Si el conductor presiona el botón por error, el sistema debería solicitar una confirmación antes de enviar la alerta crítica. Si la alerta no puede enviarse por problemas de conexión, el sistema debería mostrar un estado claro del envío o intentar reenviar la alerta automáticamente. Esto es importante porque, en una emergencia, el usuario necesita saber si la alerta fue realmente registrada.
+
+- **Observación para validación:**  
+Durante la entrevista, el botón SOS fue visible dentro del flujo de viaje activo, lo que permite validar que la funcionalidad está presente y ubicada en un contexto adecuado para el conductor. No obstante, se recomienda complementar esta validación con una prueba específica de activación, confirmación y visualización del estado de la alerta.
+
+---
+##### Segundo segmento: Padres de familia
+
+Para el segmento **Parent**, las entrevistas se enfocan en validar la experiencia del padre de familia al monitorear el viaje escolar de su hijo y recibir información relevante durante el trayecto.
+
+**User Flows evaluados:**
+
+* **User Flow 10:** Rastreo en tiempo real del vehículo.
+* **User Flow 11:** Recepción de notificaciones automáticas.
+* **User Flow 12:** Confirmación de llegada e historial de asistencia.
+
+**Tareas asignadas al entrevistado:**
+
+* Explorar el Landing Page de SafeRoute.
+* Identificar la propuesta de valor del servicio.
+* Iniciar sesión como padre de familia.
+* Revisar el dashboard familiar.
+* Ubicar el viaje activo del estudiante.
+* Visualizar la ubicación del vehículo.
+* Revisar el estado de abordaje o llegada.
+* Interpretar las notificaciones automáticas.
+* Revisar historial o confirmación del servicio.
+* Comentar dudas, dificultades y sugerencias de mejora.
+
+###### Entrevista de validación 1 - Parent
+
+* **User Flow 10:** Rastreo en tiempo real del vehículo.
+
+**Entrevistador:**
+Nickolas Ramirez Ruiz
+
+**Datos del entrevistado**
+
+* **Nombre:** Maximo 
+* **Apellidos:** Quevedo Cordova
+* **Edad:** 25 años
+* **Distrito:** Callería, Pucallpa
+* **Segmento:** Parent
+* **URL del video:** https://1drv.ms/v/c/a3bda66c80e2095c/IQCkK7xkt2N7TbSCOXPbCJTqAXZRWtdYueZppMSIM3shK4c?e=usVO15
+* **Timing de inicio:** 7:06
+* **Duración:** 6:15
+* **Fin de entrevista:** 13:21
+
+<p align="center">
+
+<img src="assets/images/ChapterV/ValidationInterviews/parent-validation-interview-1.png" alt="Parent Validation Interview 1" width="500"/>
+
+</p>
+
+
+**Resumen descriptivo:**
+En esta sesión de validación, Nickolas Ramirez y Maximo Quevedo exploraron a fondo la plataforma Safe Route,
+concluyendo que su diseño intuitivo y sus funciones críticas como el monitoreo en tiempo real de unidades, la gestión multiactivo de estudiantes y
+la alerta temprana ante incidencias de tráfico mediante una clara señalética cromática no solo garantizan una experiencia de usuario sumamente cómoda,
+sino que establecen un estándar de seguridad y eficiencia que convenció plenamente al entrevistado para su adopción definitiva.
+
+- **User Flow principal evaluado:** User Flow 10 - Rastreo en tiempo real del vehículo.
+- **User Flows complementarios observados:** User Flow 11 - Recepción de notificaciones automáticas.
+
+###### Entrevista de validación 2 - Parent
+###### User Flow 11: Recepción de notificaciones automáticas
+
+- **User goal:**  
+Como padre de familia, quiero recibir notificaciones sin tener que preguntar.
+
+- **User Story asociada:**  
+US19 - Como padre, quiero recibir una alerta de proximidad, para prepararme antes de la llegada del vehículo.  
+US20 - Como padre, quiero recibir confirmación de llegada, para estar tranquilo.
+
+- **Validación durante entrevista:**  
+Este flujo fue observado de forma complementaria durante las entrevistas del segmento Parent, debido a que los participantes revisaron secciones relacionadas con seguimiento del bus, estados del viaje, alertas y notificaciones dentro de la Web Application.
+
+- **Descripción del flujo:**
+
+**Happy path:**  
+El padre de familia inicia sesión en SafeRoute y accede a su dashboard familiar. Durante el seguimiento del viaje activo, el sistema muestra información relacionada con el estado del traslado escolar, como ubicación del vehículo, avance del recorrido, paradas y estado del estudiante. Cuando ocurre un evento relevante, como proximidad del bus, abordaje del estudiante, llegada al destino o incidencia, el sistema genera una notificación automática visible para el usuario. De esta manera, el padre puede mantenerse informado sin necesidad de llamar o escribir al conductor.
+
+**Unhappy path:**  
+Si las notificaciones no se muestran correctamente, están desactivadas o el usuario no las identifica con facilidad, el padre podría no enterarse oportunamente de eventos importantes del viaje. En ese caso, el sistema debería permitir consultar los eventos dentro de una sección de alertas o historial, mostrando claramente el tipo de notificación, hora, estado del evento y nivel de importancia. Si no existen notificaciones disponibles, la plataforma debería mostrar un estado vacío comprensible, evitando que el usuario interprete la ausencia de alertas como un error del sistema.
+
+- **Observación para validación:**  
+Durante las entrevistas Parent, se evidenció que las secciones de seguimiento del bus, alertas e historial son importantes para que el padre de familia comprenda el estado del traslado escolar. Aunque la validación principal se centró en el rastreo en tiempo real y la confirmación de llegada, también se pudo observar de forma complementaria la relevancia del User Flow 11, ya que las notificaciones automáticas funcionan como apoyo para reducir la incertidumbre del usuario durante el viaje.
+
+- **Recomendación:**  
+Se recomienda reforzar la visibilidad de las notificaciones dentro del dashboard familiar, diferenciando claramente eventos informativos, alertas de proximidad, confirmaciones de llegada e incidencias. También sería conveniente mostrar indicadores como “Nueva”, “Leída”, “Importante” o “Crítica”, para que el padre pueda reconocer rápidamente el nivel de urgencia de cada notificación.
+
+
+###### Entrevista de validación 3 - Parent
+* **User Flow 12**
+**Entrevistador:**
+Mathias De La Cruz
+
+**Datos del entrevistado**
+
+* **Nombre:** Carla
+* **Apellidos:** Peláez
+* **Edad:** 38 años
+* **Distrito:** Santiago de Surco, Lima
+* **Segmento:** Parent
+* **URL del video:** [https://1drv.ms/v/c/a3bda66c80e2095c/IQCkK7xkt2N7TbSCOXPbCJTqAXZRWtdYueZppMSIM3shK4c?e=usVO15]
+* **Timing de inicio:** 13:27
+* **Duración:** 06:31
+* * **Fin de entrevista:** 19:59
+
+<p align="center">
+<img src="assets/images/ChapterV/ValidationInterviews/parent-validation-interview-3.png" alt="Parent Validation Interview 1" width="500"/>
+</p>
+
+**Resumen descriptivo:**
+Durante la sesión de validación, Carla Peláez interactuó con la Web Application de SafeRoute desde el rol de padre de familia. Primero accedió a la pantalla de inicio de sesión, donde se validó el flujo de autenticación y la identificación del tipo de usuario. Posteriormente, ingresó al dashboard familiar, donde pudo visualizar las opciones principales relacionadas con el monitoreo del transporte escolar.
+
+Durante la navegación, la entrevistada revisó el módulo de seguimiento del bus, donde se mostró la ubicación del vehículo en un mapa y una lista de estados asociados al recorrido. Este flujo permitió validar si el padre de familia puede identificar la ubicación del transporte y comprender el estado del trayecto sin necesidad de contactar directamente al conductor.
+
+Asimismo, se revisó la sección de historial de asistencia, donde la participante pudo observar registros asociados a los viajes del estudiante. También se mostró el centro de alertas, orientado a la revisión de notificaciones o incidencias, y finalmente la sección de perfil, donde se visualizan datos personales, opciones de notificación y configuración de seguridad.
+
+En general, la entrevista permitió validar que el flujo del segmento Parent cubre tareas importantes como iniciar sesión, revisar el estado del viaje, monitorear el bus, consultar asistencia, revisar alertas y acceder a la configuración del perfil. Las observaciones obtenidas servirán como insumo para identificar oportunidades de mejora en claridad de navegación, visibilidad del estado del sistema y confianza percibida durante el monitoreo del transporte escolar.
+
+---
+#### 5.3.3. Evaluaciones según heurísticas
+
+### UX Heuristics & Principles Evaluation
+
+**Usability – Inclusive Design – Information Architecture**
+
+| Campo          | Detalle                                             |
+| -------------- | --------------------------------------------------- |
+| **Carrera**    | Ingeniería de Software                              |
+| **Curso**      | Aplicaciones Web                                    |
+| **Sección**    | 12053                              |
+| **Profesores** | Efraín Ricardo Bautista Ubillús                                             |
+| **Auditor**    | Powertech                                            |
+| **Cliente(s)** | Carla Peláez, Máximo Quevedo, Andy Pillaca Gonzales |
+
+---
+
+### Site o App a evaluar
+
+**SafeRoute Web Application**
+
+La evaluación se enfoca en la experiencia web de SafeRoute, considerando los flujos de uso asociados a los segmentos Parent y Driver.
+
+### Tareas a evaluar
+
+El alcance de esta evaluación incluye la revisión de la usabilidad de las siguientes tareas observadas durante las entrevistas de validación:
+
+1. Iniciar sesión en la plataforma.
+2. Acceder al dashboard correspondiente según el rol del usuario.
+3. Consultar el seguimiento del bus escolar desde el rol Parent.
+4. Visualizar la ubicación del vehículo en el mapa.
+5. Revisar información del viaje, paradas y estado del trayecto.
+6. Consultar historial de asistencia del estudiante.
+7. Revisar alertas o notificaciones relacionadas al viaje.
+8. Revisar viajes asignados desde el rol Driver.
+9. Visualizar un viaje activo desde el rol Driver.
+10. Consultar información de ruta, paradas y alumnos.
+11. Identificar acciones operativas disponibles para el conductor, como abordaje, navegación y finalización del viaje.
+
+No están incluidas en esta versión de la evaluación las siguientes tareas:
+
+1. Gestión administrativa de rutas, usuarios, conductores y vehículos.
+2. Contratación, pago o cambio de planes de servicio.
+3. Registro completo de nuevos usuarios desde cero.
+4. Activación funcional del botón SOS en un escenario real de emergencia.
+5. Validación completa del flujo de botón de pánico, incluyendo confirmación, envío y recepción de alerta.
+6. Envío real de notificaciones push a dispositivos externos.
+7. Gestión avanzada de reportes administrativos.
+
+---
+
+### Escala de severidad
+
+Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
+
+| Nivel | Descripción                                                                                                                                                                               |
+| ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **1** | Problema superficial: puede ser fácilmente superado por el usuario o ocurre con muy poca frecuencia. No necesita ser arreglado a menos que exista disponibilidad de tiempo.               |
+| **2** | Problema menor: puede ocurrir con mayor frecuencia o es un poco más difícil de superar para el usuario. Se le debería asignar una prioridad baja para resolverlo en el siguiente release. |
+| **3** | Problema mayor: ocurre frecuentemente o los usuarios no son capaces de resolverlo. Es importante corregirlo y asignarle prioridad alta.                                                   |
+| **4** | Problema muy grave: error de alto impacto que impide al usuario continuar con el uso de la herramienta. Es imperativo corregirlo antes del lanzamiento.                                   |
+
+---
+
+### Tabla resumen
+
+| # | Problema                                                                                                                                | Escala de severidad | Heurística / Principio violada(o)                                                                       |
+| - | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------: | ------------------------------------------------------------------------------------------------------- |
+| 1 | La opción de acceso Parent / Driver podría ser más explícita para diferenciar mejor ambos roles desde el inicio.                    |                   1 | Information Architecture: Labeling System / Usability: Correspondencia entre el sistema y el mundo real |
+| 2 | El dashboard del padre podría resaltar con mayor prioridad el estado actual del viaje activo del estudiante.                            |                   2 | Usability: Visibilidad del estado del sistema / Information Architecture: Is it findable?               |
+| 3 | Las secciones de alertas e historial podrían incorporar indicadores más claros para distinguir eventos recientes, leídos o pendientes.  |                   1 | Usability: Visibilidad del estado del sistema / Information Architecture: Is it understandable?         |
+| 4 | La vista de viaje activo del conductor podría organizar mejor algunas acciones operativas para facilitar su uso rápido durante la ruta. |                   2 | Usability: Diseño estético y minimalista / Information Architecture: Is it usable?                      |
+
+---
+
+### Descripción de problemas
+
+---
+
+#### Problema #1: La opción de acceso Parent / Driver podría ser más explícita
+
+**Severidad:** 1
+**Heurística violada:** Information Architecture - Labeling System / Usability - Correspondencia entre el sistema y el mundo real
+
+**Problema:**
+En la pantalla de inicio de sesión, los roles **Parent** y **Driver** aparecen agrupados dentro de una misma opción. Durante las entrevistas, los usuarios lograron continuar con el flujo sin bloqueo; sin embargo, para usuarios nuevos podría ser más claro contar con una diferenciación visual o textual entre ambos roles.
+
+Este hallazgo se considera superficial porque no impide el uso de la plataforma, pero sí representa una oportunidad para mejorar la claridad inicial del acceso.
+
+<p align="center">
+<img src="assets/images/ChapterV/HeuristicEvaluation/problem-1-parent-driver-login.png" alt="Problem 1 Parent Driver Login" width="500"/>
+</p>
+
+**Recomendación:**
+Mantener la opción actual si resulta conveniente para el diseño, pero agregar una breve ayuda textual o separar los roles si el equipo desea mayor claridad. Por ejemplo:
+
+* Parent
+* Driver
+* Administrator
+
+Otra alternativa sería agregar el texto:
+“Selecciona esta opción si eres padre de familia o conductor registrado”.
+
+---
+
+#### Problema #2: El dashboard del padre podría resaltar más el viaje activo
+
+**Severidad:** 2
+**Heurística violada:** Usability - Visibilidad del estado del sistema / Information Architecture - Is it findable?
+
+**Problema:**
+En las entrevistas del segmento Parent, los usuarios pudieron acceder a secciones como seguimiento del bus, historial, alertas y perfil. No obstante, considerando que la principal necesidad del padre de familia es conocer el estado actual del traslado de su hijo, sería recomendable que el viaje activo tenga una posición más destacada dentro del dashboard.
+
+El problema no impide completar el flujo, pero mejorar esta jerarquía ayudaría a reducir el esfuerzo del usuario y reforzaría la sensación de tranquilidad.
+
+<p align="center">
+<img src="assets/images/ChapterV/HeuristicEvaluation/problem-2-parent-dashboard.png" alt="Problem 2 Parent Dashboard" width="500"/>
+</p>
+
+**Recomendación:**
+Agregar una tarjeta principal o sección destacada con información del viaje activo:
+
+* Nombre del estudiante.
+* Estado actual del viaje.
+* Última actualización del vehículo.
+* Próxima parada o destino.
+* Botón directo a seguimiento del bus.
+
+---
+
+#### Problema #3: Las alertas e historial podrían mostrar indicadores más claros
+
+**Severidad:** 1
+**Heurística violada:** Usability - Visibilidad del estado del sistema / Information Architecture - Is it understandable?
+
+**Problema:**
+Durante la validación con padres de familia se revisaron pantallas relacionadas con alertas, notificaciones e historial. Estas secciones son útiles para consultar información del trayecto; sin embargo, podrían beneficiarse de pequeños indicadores que ayuden a distinguir si una alerta es nueva, leída, reciente, informativa o importante.
+
+Este hallazgo se considera leve porque la información existe y puede ser consultada, pero una mejora visual ayudaría a comprender más rápido el estado de cada evento.
+
+<p align="center">
+<img src="assets/images/ChapterV/HeuristicEvaluation/problem-3-alerts-history.png" alt="Problem 3 Alerts History" width="500"/>
+</p>
+
+**Recomendación:**
+Agregar etiquetas o indicadores simples como:
+
+* Nueva
+* Leída
+* Informativa
+* Importante
+* Reciente
+
+También se recomienda mantener orden cronológico para facilitar la revisión rápida de eventos.
+
+---
+
+#### Problema #4: La vista de viaje activo del conductor podría organizar mejor acciones operativas
+
+**Severidad:** 2
+**Heurística violada:** Usability - Diseño estético y minimalista / Information Architecture - Is it usable?
+
+**Problema:**
+En la entrevista del segmento Driver, el usuario pudo revisar información del viaje activo, mapa, paradas, alumnos y acciones operativas. La pantalla concentra información relevante para la ruta, lo cual es útil para el conductor; sin embargo, algunas acciones podrían organizarse por prioridad para que el usuario identifique con mayor rapidez qué debe hacer durante el trayecto.
+
+Este hallazgo no representa un bloqueo, pero sí una oportunidad de mejora considerando que el conductor necesita una experiencia rápida y clara durante una jornada operativa.
+
+<p align="center">
+<img src="assets/images/ChapterV/HeuristicEvaluation/problem-4-driver-active-trip.png" alt="Problem 4 Driver Active Trip" width="500"/>
+</p>
+
+**Recomendación:**
+Organizar las acciones del conductor según prioridad:
+
+* Acciones principales visibles: ver ruta, marcar abordaje, continuar navegación.
+* Acciones secundarias agrupadas en una sección adicional.
+* Botones grandes y con texto claro.
+* Estados del viaje visibles en la parte superior.
+* Separar información de ruta, alumnos y alertas para reducir carga visual.
+
+---
+
+
+
 
 
 
@@ -4475,8 +5425,9 @@ Durante las entrevistas se registrarán observaciones cualitativas y operativas 
 
 **1. Despliegues y Servicios API**
 
-- **Web Application (Frontend):** [https://happy-river-0e93e8e0f.7.azurestaticapps.net](https://happy-river-0e93e8e0f.7.azurestaticapps.net)
+- **Web Application (Frontend):** [https://ashy-dune-098494d0f.7.azurestaticapps.net/identity-and-access-management/sign-in](https://ashy-dune-098494d0f.7.azurestaticapps.net/identity-and-access-management/sign-in)
 - **Landing Page:** [https://upc-pre-202610-1asi0730-12053-powertech.github.io/saferoute-website/](https://upc-pre-202610-1asi0730-12053-powertech.github.io/saferoute-website/)
+- **Web Application (Backend):** [https://asp-powertech-prod-dfembvcde5bdfxdx.mexicocentral-01.azurewebsites.net/swagger/index.html](https://asp-powertech-prod-dfembvcde5bdfxdx.mexicocentral-01.azurewebsites.net/swagger/index.html)
 
 **2. Repositorios de GitHub**
 
@@ -4484,6 +5435,7 @@ Durante las entrevistas se registrarán observaciones cualitativas y operativas 
 - **Informe del Proyecto:** [https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-report](https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-report)
 - **Landing Page Source:** [https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-website](https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-website)
 - **Web Application Source:** [https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-webapp](https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-webapp)
+- **Web Application (Backend) Source:** [https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform](https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform)
 
 **3. Diseño y Prototipado**
 
