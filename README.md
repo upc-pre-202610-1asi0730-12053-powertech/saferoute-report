@@ -5338,7 +5338,7 @@ Si las notificaciones no se muestran correctamente, están desactivadas o el usu
 - **URL del video:** [https://1drv.ms/v/c/a3bda66c80e2095c/IQCkK7xkt2N7TbSCOXPbCJTqAXZRWtdYueZppMSIM3shK4c?e=usVO15]
 - **Timing de inicio:** 13:27
 - **Duración:** 06:31
-- - **Fin de entrevista:** 19:59
+- **Fin de entrevista:** 19:59
 
 <p align="center">
 <img src="assets/images/ChapterV/ValidationInterviews/parent-validation-interview-3.png" alt="Parent Validation Interview 1" width="500"/>
