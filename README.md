@@ -4277,7 +4277,146 @@ El objetivo del Sprint 3 fue implementar la primera versión funcional del Backe
 
 Durante el Sprint 3, el equipo realizó commits sobre los repositorios `saferoute-report` y `saferoute-platform` (Backend Web Service), abarcando la corrección de las observaciones de TB1 en el informe y la implementación de los servicios REST del backend en ASP.NET Core bajo DDD + CQRS, con persistencia en MySQL mediante Entity Framework Core.
 
-
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| powertech/saferoute-platform | develop | 351ece6 | chore: initial repository structure | — | 13/06/2026 |
+| powertech/saferoute-platform | feature/trip-execution-and-monitoring | 6c79a45 | feat: added complete trip command and Trip aggregate | — | 13/06/2026 |
+| powertech/saferoute-platform | develop | 0ddacec | init repository | — | 14/06/2026 |
+| powertech/saferoute-platform | develop | 930a767 | clear repository | — | 14/06/2026 |
+| powertech/saferoute-platform | feature/trip-execution-and-monitoring | a287609 | feat: added Trip aggregate and TripState value object for Trip bounded context | — | 15/06/2026 |
+| powertech/saferoute-platform | feature/trip-execution-and-monitoring | 3081ee4 | feat: added create trip command for Trip bounded context | — | 15/06/2026 |
+| powertech/saferoute-platform | feature/trip-execution-and-monitoring | 057880f | feat: added start trip command and get trip by id query for Trip bounded context | — | 16/06/2026 |
+| powertech/saferoute-platform | feature/trip-execution-and-monitoring | 1fb1d64 | feat: added complete trip command for Trip bounded context | — | 16/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | eaaf05b | feat: added initial structure for Fleet bounded context | — | 19/06/2026 |
+| powertech/saferoute-platform | feature/trip-execution-and-monitoring | 6a754aa | feat: added report incident command for Trip bounded context | — | 19/06/2026 |
+| powertech/saferoute-platform | feature/trip-execution-and-monitoring | 7f98d06 | feat: added set boarding status command for trip bounded context | — | 19/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | b0f03d9 | feat: added assign students to route command for Fleet bounded context | — | 19/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | e8c3556 | feat: added Create Route Command for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | b52bfd1 | feat: added IRouteCommandService for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | f22e074 | feat: added RouteCommandService for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | c0df997 | feat: added RouteQueryService for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 77cc0e1 | feat: added GetAllRoutesQuery for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | ea07cfb | feat: added GetRoutesByOrganizationIdQuery for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | c8269b0 | feat: added Route for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 5ca97bb | feat: added RouteActivationFinalized for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | e0acc40 | feat: added AssignStudentsToRouteCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | afa0755 | feat: update AssignStudentsToRouteCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 58a5315 | feat: added ActivateRouteCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | eb467f6 | feat: added AddStopCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 606168f | feat: added AssignDriverCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 502fd8d | feat: added AssignVehicleCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | e2f271b | feat: added CreateRouteCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | f9bbcfb | feat: added DeactivateRouteCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 8237fea | feat: added DefineServiceDaysCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | bdc5ea9 | feat: added RemoveStudentFromRouteCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | cba02bd | feat: added RemoveStopCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | f282666 | feat: added SetDepartureTimeCommand for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | e678f12 | feat: added Assigment for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | b86a699 | feat: added Stop/StopOrder for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 8850c90 | feat: added Vehicle for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 48c6466 | feat: added update for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 2b15408 | feat: added RouteActivatedEvent for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 2231d26 | feat: added RouteDefinedEvent for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 45d1ac8 | feat: added VehicleAssignedToRouteEvent for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 0adb5ad | feat: added GetAllRoutesQuery for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | d7d0e7c | feat: added GetRouteByIdQuery for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | c85c3c1 | feat: added GetRoutesByOrganizationIdQuery for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | b9ebadb | feat: added IRouteRepository for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | f709fab | Add Plan Aggregate | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 17e2733 | Add Subscription aggregate | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 607d84e | Add CancelSubscription command | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 2040fe1 | Add ActivateSubscription command | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 423b8c1 | feat: added UpgradeSubscriptionCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 9b85350 | feat: added CreatePlanCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 8588847 | feat: added CreateSubscriptionCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | d61cc90 | feat: added GetAllPlanQueries | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 185918f | feat: added GetAllSubscriptionQuery | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 49925a0 | feat: added GetPlanByIdQuery | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | cd98df8 | feat: added GetSubscriptionByIdQuery | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 77b184a | feat: added RouterQuota | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 2747328 | feat: added DriverQuota | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 35fad30 | feat: added PlanTier | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 2487af0 | feat: added SubscriptionState | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | a541928 | feat: added SubscriptionError | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 96bff20 | feat: added PlanRepository | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | e160464 | feat: added ISubscriptionRepository | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 4aec31e | feat: added ISubscriptionCommandService | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 0d64e3f | feat: added SubscriptionCommandService | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 1f364a0 | feat: added SubscriptionQueryService | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 5769cfd | feat: added ISubscriptionQueryService | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | e42bad4 | feat: added ModelBuildrExtensions | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 6470062 | feat: added PlanRepository | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | fc37d9d | feat: added SubscriptionRepository | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 1208300 | feat: added UpgradeSubscriptionResource | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 4c179aa | feat: added CreatePlanResource | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | a4a0522 | feat: added PlanResource | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 644474f | feat: added CreateSubscriptionResource | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 2adb8a7 | feat: added SubscriptionResource | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 33d930c | feat: added SubscriptionResourceFromEntityAssembler | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 8e3a79d | feat: added SubscriptionActionResultAssembler | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 4f52f81 | feat: added PlansController | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/subscription-and-plan-management | 340092b | feat: added SubscriptionsController | — | 20/06/2026 |
+| powertech/saferoute-platform | develop | cc28d7e | Merge pull request #1 from feature/subscription-and-plan-management | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | ac45381 | feat: added AddStopResource for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | a0f5a4a | feat: added AssignVehicleResource for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 1284413 | feat: added CreateRouteResource for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | b9b898a | feat: added DefineServiceDaysResource for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 67769d0 | feat: added SetDepartureTimeResource for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 1a48941 | feat: added StopResource for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 92fa2b2 | feat: added VehicleResource for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 9a68170 | feat: added CreateRouteCommandFromResourceAssembler for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | 30d9af0 | feat: update RoutesController for Fleet bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/fleet-and-route-management | e5e2db6 | fix: fixed files in fleet context and added value objects | — | 20/06/2026 |
+| powertech/saferoute-platform | develop | a14e9de | Merge branch 'feature/fleet-and-route-management' into develop | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 2ed124a | add AddChiToGrupCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | bbf9297 | add AddChildToParentCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 44833f3 | add CreateDruverCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 20948eb | add CreateStudentGroupCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | b091b89 | add DeleteDriverCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | b76c9fa | add DeleteParentCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 99ed904 | add DeleteParentCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | c4b2168 | add DeleteParentCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 10f560e | add ReomveChildFromParentCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 1422205 | add UpdateDriverCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 2396786 | add UpdateDriverPhoneCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 8a6e536 | add UpdateParentCommand | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | cd0a12e | add VOs | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 0efcc8c | add StakeHolderError | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 96611ca | add Domain Entities | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 2097f90 | add Parent Aggregate | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 1e9a2f2 | add Queries | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 048809e | add Repositories | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 22b565e | add CommandService | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | 707cca7 | add QueryService | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | e0aef7c | add Internal Appliication services | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/stakeholder-and-asset-management | f2b0af6 | add Infrastructure layer | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/trip-execution-and-monitoring | f729ddd | fix: fixed subscription context and added value objects | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/trip-execution-and-monitoring | 5ee604a | feat: added get all trips and get trips by route id queries for Trip bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/trip-execution-and-monitoring | c1dbe88 | feat: added trip errors for Trip bounded context | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 64be19d | feat(notification): add create notification command. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 0468d6e | feat(notification): add notification value objects. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | b861caf | feat(notification): add notification aggregate root. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 73a225c | feat(notification): add create notification command service contract. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 55f1f71 | feat(notification): add create notification command service skeleton. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | f7c14a1 | feat(notification): add notification repository contract. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | f02a9a4 | feat(notification): add notification errors. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 0686b88 | feat(notification): add create notification command handling implementation. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | de65f90 | feat(notification): add notification repository implementation. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | e44807f | feat(notification): add notification persistence mapping. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | cc6fa75 | feat(notification): add create notification REST resources and assemblers. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | a219eba | feat(notification): add create notification endpoint. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 791e07d | feat(notification): register create notification dependencies. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 46dcd53 | feat(notification): add get notification by id query. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 87afd9d | feat(notification): add get notification by id query service contract. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 9dfa32b | feat(notification): add get notification by id query service skeleton. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 243b29e | feat(notification): add get notification by id query handling implementation. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | d2a549a | feat(notification): add notification repository query method. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 02cc7fe | feat(notification): add notification repository query implementation. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 2665131 | feat(notification): add get notification by id endpoint. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 998b39c | feat(notification): register get notification by id dependencies. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 0227ec3 | feat(notification): add get all notifications query. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | 87e63a0 | feat(notification): add get all notifications query handling skeleton. | — | 20/06/2026 |
+| powertech/saferoute-platform | feature/notifications-and-communication | e36a72a | feat(notification): add get all notifications query handling implementation. | — | 20/06/2026 |
 
 
 #### 5.2.3.5. Execution Evidence for Sprint Review
