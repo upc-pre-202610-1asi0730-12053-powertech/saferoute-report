@@ -4636,7 +4636,7 @@ La distribución del trabajo se mantuvo alineada con la Leadership and Collabora
 
 **Resumen de colaboración del equipo:**
 
-La distribución del trabajo se mantuvo alineada con la **Leadership and Collaboration Matrix (LACX)** definida al inicio del sprint, donde cada integrante asumió la responsabilidad principal de un módulo del frontend mientras colaboraba en los módulos restantes mediante revisiones de código y soporte técnico. El uso consistente de GitFlow, junto con la convención de Conventional Commits, permitió mantener un historial trazable y profesional en ambos repositorios del proyecto.
+La distribución del trabajo se mantuvo alineada con la **Leadership and Collaboration Matrix** definida al inicio del sprint, donde cada integrante asumió la responsabilidad principal de un módulo del frontend mientras colaboraba en los módulos restantes mediante revisiones de código y soporte técnico. El uso consistente de GitFlow, junto con la convención de Conventional Commits, permitió mantener un historial trazable y profesional en ambos repositorios del proyecto.
 
 ### 5.3. Validation Interviews
 
