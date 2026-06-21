@@ -3841,7 +3841,7 @@ En la reunión de planificación del Sprint 1, el equipo definió como objetivo 
 | Prepared By                     | Ramirez Ruiz, Nickolas                                                                                                                                                                                                                         |
 | Attendees (to planning meeting) | De La Cruz De Los Santos, Mathias Marcelo / Ortega Quintana, Jose Zacarias / Quispe Serrano, Julio Frank / Ramirez Ruiz, Nickolas / Vallejo Trujillo, Fabio Cesar                                                                              |
 | Sprint 1 Review Summary         |                                                                                                                                                                                                                                                |
-| Sprint 1 Retrospective Summary  | Este es el primer sprint del proyecto, por lo que no existe una retrospectiva previa.                                                                                                                                                          |
+| Sprint 1 Retrospective Summary  |                                                                                                                                                           |
 | **Sprint Goal & User Stories**  |                                                                                                                                                                                                                                                |
 | Sprint 1 Goal                   | Estamos creando un sitio web bilingüe para SafeRoute para mostrar a los padres y a los conductores de transporte escolar lo que ofrecemos. Sabremos que está listo cuando el sitio esté activo y funcionando tanto en español como en inglés.. |
 | Sprint 1 Velocity               | 50                                                                                                                                                                                                                                             |
@@ -4695,10 +4695,10 @@ A continuación se documentan los endpoints implementados por bounded context, i
 
 **Repositorios relacionados:**
 
-| Componente               | Repositorio                                                                   | Estado al cierre del Sprint 3        |
-| ------------------------ | ----------------------------------------------------------------------------- | ------------------------------------ | --- |
-| Frontend Web Application | https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-webapp   | Desplegado en Azure (Link pendiente) |
-| Backend Web Services     | https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform | Link pendiente                       |     |
+| Componente | Repositorio | Estado al cierre del Sprint 3 |
+| :--- | :--- | :--- |
+| Frontend Web Application | https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-webapp | Desplegado en Azure (https://ashy-dune-098494d0f.7.azurestaticapps.net/identity-and-access-management/sign-in) |
+| Backend Web Services | https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform | Desplegado en Azure (https://asp-powertech-prod-dfembvcde5bdfxdx.mexicocentral-01.azurewebsites.net/swagger/index.html) |
 
 **Capturas del swagger en uso:**
 
@@ -5537,41 +5537,39 @@ Organizar las acciones del conductor según prioridad:
 
 ---
 
-**Conclusiones**
+#### 5.4 Video About-the-Product
 
-- El Sprint 1 permitió consolidar la identidad visual y comunicacional de SafeRoute mediante el despliegue de la Landing Page, logrando presentar de forma clara la propuesta de valor del producto a los segmentos objetivo. La implementación de secciones como Hero, Funcionalidades, Roles y Planes demostró que el equipo tiene una visión coherente del producto, alineada con los problemas identificados en el levantamiento de requerimientos.
+Enlace de YouTube: [https://youtu.be/qPBa6Kya2Fo](https://youtu.be/qPBa6Kya2Fo)
 
-- La elaboración de los wireframes y mockups tanto en versión desktop como mobile para los tres perfiles de usuario (Administrador, Conductor y Padre de Familia) evidencia un diseño centrado en el usuario que anticipa los flujos críticos del sistema. Este trabajo de diseño previo representa una base sólida que reducirá el tiempo de desarrollo del frontend en los siguientes sprints al tener ya definidas las interfaces y la lógica de navegación.
-
-- La adopción de Domain-Driven Design como enfoque arquitectónico del backend permitió al equipo identificar y documentar correctamente los seis bounded contexts del sistema (IAM, Subscriptions, Stakeholders, Fleet, Trip y Notifications), estableciendo contratos claros entre dominios que facilitarán la implementación progresiva del backend en ASP.NET Core a partir del Sprint 3.
-
-- El Sprint 2 permitió materializar el diseño previo en una Frontend Web Application funcional desplegada en Microsoft Azure, integrando los seis bounded contexts del sistema en una experiencia coherente para los tres perfiles de usuario. La implementación de los módulos core (IAM, Subscription, Stakeholder, Routes, Trip y Notifications) demuestra que el equipo logró traducir exitosamente la arquitectura DDD documentada en el Sprint 1 a una solución de software operativa.
-
-- El uso de una Fake REST API local mediante json-server durante el Sprint 2 resultó una decisión técnica acertada, ya que permitió validar los flujos de interacción, los DTOs y el modelo de dominio en el cliente antes de la implementación del backend real en ASP.NET Core. Esta estrategia desacopla el desarrollo del frontend del backend, facilitando avances paralelos y reduciendo riesgos de integración en el Sprint 3.
-
-- La integración de Leaflet Maps en el módulo Routes constituye un hito técnico relevante del Sprint 2, dado que habilita la funcionalidad core del producto: la planificación y monitoreo geográfico del transporte escolar. La validación temprana de esta integración asegura que el componente más crítico del sistema esté técnicamente viable antes de conectarse al backend real.
-
-**Recomendaciones**
-
-- Se recomienda mantener el repositorio actualizado conforme avance cada sprint, evitando acumular secciones pendientes para el último momento y reduciendo la carga de trabajo en las semanas de entrega.
-
-- Se recomienda que el equipo establezca una rutina de revisión de pull requests entre pares antes de mergear cualquier rama feature a develop, con el objetivo de reducir errores de integración, mantener la consistencia del informe y asegurar que todos los integrantes estén alineados con el avance general del proyecto.
-
-- Se recomienda iniciar las entrevistas con usuarios reales del segmento objetivo (padres de familia y transportistas) a la brevedad, con el fin de validar las hipótesis planteadas en el Lean UX Canvas y ajustar las funcionalidades del producto antes de invertir mayor esfuerzo de desarrollo en el frontend y backend.
-
-- Se recomienda priorizar el inicio del desarrollo del Backend Web Services en ASP.NET Core desde la primera semana del Sprint 3, definiendo claramente los contratos de API que ya están siendo consumidos por la Fake API actual, para asegurar una migración fluida del frontend desde json-server hacia el backend real sin requerir refactors mayores en los módulos ya implementados.
-
-- Se recomienda configurar pipelines de CI/CD automatizados en Azure tanto para el frontend como para el futuro backend, de modo que cada merge a la rama `develop` o `main` despliegue automáticamente la última versión estable, reduciendo el riesgo de errores manuales en los despliegues y agilizando la validación de cambios entre sprints.
-
-- Se recomienda realizar pruebas de usabilidad con usuarios reales sobre el frontend ya desplegado en Azure durante el Sprint 3, aprovechando que la aplicación es funcional con datos mock, para detectar fricciones de UX antes de invertir esfuerzo en la integración con el backend.
+Enlace de Microsoft Stream: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202424059_upc_edu_pe/IQBgC3pMo0wcSp3ERhMrj61kASg3LeEPclr1i0IiKDBtEyU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Zve2Sj](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202424059_upc_edu_pe/IQBgC3pMo0wcSp3ERhMrj61kASg3LeEPclr1i0IiKDBtEyU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Zve2Sj)
 
 ---
 
-## Conclusiones
+### Conclusiones
 
-### Conclusiones y recomendaciones
+#### Sprint 1
 
-Durante el Sprint 3, el equipo logró avanzar en la preparación de la capa de Web Services de SafeRoute, estableciendo la base necesaria para el desarrollo del backend del sistema. Los principales avances estuvieron relacionados con la creación del repositorio backend, configuración inicial del proyecto, instalación de dependencias y definición de la estructura arquitectónica que soportará la implementación de los servicios REST en los siguientes sprints. Estos avances permitieron consolidar una base técnica organizada y escalable para la futura integración entre la Web Application y la lógica de negocio del sistema.
+- Se desplegó la *Landing Page bilingüe* presentando la propuesta de valor del producto a padres y transportistas escolares.
+- Se elaboraron *wireframes y mockups* desktop/mobile para los tres perfiles (Administrador, Conductor, Padre), acelerando el desarrollo posterior.
+- Se adoptó *Domain-Driven Design* definiendo los 6 bounded contexts del sistema.
+
+#### Sprint 2
+
+- Se desplegó la *Frontend Web Application* funcional en Microsoft Azure, integrando los módulos core para los tres perfiles de usuario.
+- Se utilizó una *Fake REST API* con json-server para validar flujos y DTOs antes del backend real, desacoplando desarrollos paralelos.
+- Se integró *Leaflet Maps* habilitando la funcionalidad core: planificación y monitoreo geográfico del transporte escolar.
+
+#### Sprint 3
+
+- Se implementó y desplegó la primera versión funcional del *Backend Web Service* de SafeRoute en ASP.NET Core (.NET 10) con DDD, CQRS y EF Core sobre MySQL, logrando una arquitectura modular y escalable por bounded contexts.
+- El despliegue en *Azure App Service* y la verificación vía *Swagger* confirmaron el funcionamiento de extremo a extremo, dejando la API operativa y accesible públicamente para los siguientes Sprints.
+
+### Recomendaciones
+
+- Se recomienda *reforzar la seguridad de la API* con autenticación y autorización antes de exponerla a usuarios reales, dado que actualmente los endpoints son de acceso abierto y esto representa un riesgo al integrarla con la Web Application.
+- Se recomienda *incorporar pruebas automatizadas y monitoreo en la nube*, pues permitirían detectar fallos de forma temprana y mantener la estabilidad del servicio a medida que la solución crece en complejidad.
+
+---
 
 ### Video About-the-Team
 
