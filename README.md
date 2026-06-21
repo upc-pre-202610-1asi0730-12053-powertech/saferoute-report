@@ -4800,10 +4800,10 @@ Fabio Vallejo
 * **Edad:** 28
 * **Distrito:** San Miguel y Miraflores
 * **Segmento:** Driver
-* **URL del video:** [Pegar URL de Microsoft Stream]
-* **Timing de inicio:** [mm:ss]
-* **Timing de fin:** [mm:ss]
-* **Duración:** 6:37
+* **URL del video:** https://1drv.ms/v/c/a3bda66c80e2095c/IQCkK7xkt2N7TbSCOXPbCJTqAXZRWtdYueZppMSIM3shK4c?e=usVO15
+* **Timing de inicio:** 0:18
+* **Timing de fin:** 6:55
+* **Duración:** 6:36
 
 <p align="center">
 <img src="assets/images/ChapterV/ValidationInterviews/driver-validation-interview-1.png" alt="Driver Validation Interview 1" width="500"/>
@@ -4829,9 +4829,9 @@ Como oportunidades de mejora, recomendó incluir botones más grandes para accio
 * **Distrito:** [Distrito]
 * **Segmento:** Driver
 * **URL del video:** [Pegar URL de Microsoft Stream]
-* **Timing de inicio:** [mm:ss]
-**Timing de fin:** [mm:ss]
-* **Duración:** [mm:ss]
+* **Timing de inicio:** 
+* **Duración:** 
+**Fin de entrevista** 
 
 <p align="center">
 <img src="assets/images/ChapterV/ValidationInterviews/driver-validation-interview-2.png" alt="Driver Validation Interview 2" width="500"/>
@@ -4902,11 +4902,10 @@ Nickolas Ramirez Ruiz
 * **Edad:** 25 años
 * **Distrito:** Callería, Pucallpa
 * **Segmento:** Parent
-* **URL del video:** https://upcedupe-my.sharepoint.com/personal/u202415551_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu202415551%5Fupc%5Fedu%5Fpe%2FDocuments%2FEntrevista%20de%20Validaci%C3%B3n%20Parents%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E61cdc2bb%2D44e1%2D4061%2D9c3b%2D1f2812627c03
-
-
-**Timing de inicio:** [mm:ss]
-* **Duración:** [6:16]
+* **URL del video:** https://1drv.ms/v/c/a3bda66c80e2095c/IQCkK7xkt2N7TbSCOXPbCJTqAXZRWtdYueZppMSIM3shK4c?e=usVO15
+* **Timing de inicio:** 7:06
+* **Duración:** 6:15
+* **Fin de entrevista:** 13:21
 
 <p align="center">
 
@@ -4946,27 +4945,34 @@ sino que establecen un estándar de seguridad y eficiencia que convenció plenam
 
 
 ###### Entrevista de validación 3 - Parent
-
+* **User Flow 12**
 **Entrevistador:**
-[Nombre y apellido del entrevistador]
+Mathias De La Cruz
 
 **Datos del entrevistado**
 
-* **Nombre:** [Nombre]
-* **Apellidos:** [Apellidos]
-* **Edad:** [Edad]
-* **Distrito:** [Distrito]
+* **Nombre:** Carla
+* **Apellidos:** Peláez
+* **Edad:** 38 años
+* **Distrito:** Santiago de Surco, Lima
 * **Segmento:** Parent
-* **URL del video:** [Pegar URL de Microsoft Stream]
-* **Timing de inicio:** [mm:ss]
-* **Duración:** [mm:ss]
+* **URL del video:** [https://1drv.ms/v/c/a3bda66c80e2095c/IQCkK7xkt2N7TbSCOXPbCJTqAXZRWtdYueZppMSIM3shK4c?e=usVO15]
+* **Timing de inicio:** 13:27
+* **Duración:** 06:31
+* * **Fin de entrevista:** 19:59
 
 <p align="center">
-<img src="assets/images/ChapterV/ValidationInterviews/parent-validation-interview-3.png" alt="Parent Validation Interview 3" width="500"/>
+<img src="assets/images/ChapterV/ValidationInterviews/parent-validation-interview-3.png" alt="Parent Validation Interview 1" width="500"/>
 </p>
 
 **Resumen descriptivo:**
-[Redactar aquí el resumen de la entrevista. Indicar cómo el entrevistado completó las tareas asignadas, qué entendió del Landing Page, cómo percibió el monitoreo en tiempo real y si la información mostrada fue suficiente para sentirse tranquilo. Mencionar dificultades, sugerencias y apreciaciones sobre seguridad, confianza y facilidad de uso.]
+Durante la sesión de validación, Carla Peláez interactuó con la Web Application de SafeRoute desde el rol de padre de familia. Primero accedió a la pantalla de inicio de sesión, donde se validó el flujo de autenticación y la identificación del tipo de usuario. Posteriormente, ingresó al dashboard familiar, donde pudo visualizar las opciones principales relacionadas con el monitoreo del transporte escolar.
+
+Durante la navegación, la entrevistada revisó el módulo de seguimiento del bus, donde se mostró la ubicación del vehículo en un mapa y una lista de estados asociados al recorrido. Este flujo permitió validar si el padre de familia puede identificar la ubicación del transporte y comprender el estado del trayecto sin necesidad de contactar directamente al conductor.
+
+Asimismo, se revisó la sección de historial de asistencia, donde la participante pudo observar registros asociados a los viajes del estudiante. También se mostró el centro de alertas, orientado a la revisión de notificaciones o incidencias, y finalmente la sección de perfil, donde se visualizan datos personales, opciones de notificación y configuración de seguridad.
+
+En general, la entrevista permitió validar que el flujo del segmento Parent cubre tareas importantes como iniciar sesión, revisar el estado del viaje, monitorear el bus, consultar asistencia, revisar alertas y acceder a la configuración del perfil. Las observaciones obtenidas servirán como insumo para identificar oportunidades de mejora en claridad de navegación, visibilidad del estado del sistema y confianza percibida durante el monitoreo del transporte escolar.
 
 ---
 
