@@ -4610,47 +4610,119 @@ A continuación se documentan los endpoints implementados por bounded context, i
 
 ### 5.2.3.7. Software Deployment Evidence for Sprint Review
 
+Durante este Sprint se realizaron actividades de despliegue para publicar los principales componentes del sistema SafeRoute en entornos accesibles desde internet. En el caso del backend, se preparó la API desarrollada en ASP.NET Core para ejecutarse en un entorno cloud mediante contenedores Docker, utilizando Azure como proveedor principal.
 
+El proceso incluyó la creación y configuración de recursos en Azure, la preparación de una base de datos MySQL en la nube, la construcción de una imagen Docker del backend, la publicación de dicha imagen en Azure Container Registry y el despliegue final mediante Azure App Service. Además, se configuraron variables de entorno y cadenas de conexión necesarias para que la API pueda conectarse correctamente a la base de datos en producción.
 
-Durante este Sprint, el proceso de Deployment se centró en publicar la primera versión funcional del **Web Service de SafeRoute (Powertech-Platform)** en la nube, de modo que la API REST quedara accesible públicamente para su visualización, navegación y pruebas. El despliegue se realizó sobre **Microsoft Azure**, utilizando **Azure App Service** para alojar el backend en ASP.NET Core (.NET 10) y un servicio de base de datos **MySQL** para la persistencia gestionada con Entity Framework Core.
+##### Backend API Deployment
 
-Las actividades de Deployment realizadas en este Sprint abarcaron: la creación y configuración de la cuenta y suscripción en Azure, el aprovisionamiento de los recursos en la nube (App Service y base de datos MySQL), la configuración de las cadenas de conexión y variables de entorno, la publicación del Web Service desde el proyecto de desarrollo y la verificación final del despliegue mediante la documentación Swagger/OpenAPI en producción.
+El backend de SafeRoute fue desplegado en **Azure App Service** a partir de una imagen Docker almacenada en **Azure Container Registry**. La API se conecta a una base de datos alojada en **Azure Database for MySQL Flexible Server** y expone sus endpoints mediante una URL pública.
 
-> **Nota:** En este Sprint el producto desplegado corresponde al **Web Service**. La Landing Page y las Web Applications se desplegarán en Sprints posteriores.
+Por propósitos de **testeo, revisión y validación durante el Sprint Review**, se dejó accesible la documentación interactiva de Swagger en la nube. Esto permite que el equipo, docentes y revisores puedan inspeccionar los endpoints disponibles y validar rápidamente el funcionamiento del backend desplegado. Sin embargo, en un entorno de producción real, Swagger no debería permanecer expuesto públicamente o debería protegerse mediante mecanismos de autenticación, autorización o restricciones de acceso.
 
-### Pasos realizados
+**URL desplegada:** <https://asp-powertech-prod-dfembvcde5bdfxdx.mexicocentral-01.azurewebsites.net/swagger/index.html>
 
-**1. Creación de la cuenta y suscripción en Azure**
-Se configuró la cuenta de Microsoft Azure y la suscripción del equipo, habilitando el acceso al portal para el aprovisionamiento de recursos en la nube.
-![Creación de cuenta y suscripción en Azure](assets/images/Chapter-5/Sprint3/deploy-azure-account.png)
+##### Recursos utilizados en Azure
 
-**2. Creación del recurso Azure App Service**
-Se creó el recurso de App Service que aloja el Web Service, seleccionando la región **Mexico Central**, el runtime de .NET y el plan de hospedaje correspondiente.
-![Creación del App Service](assets/images/Chapter-5/Sprint3/deploy-app-service.png)
+Para el despliegue del backend se utilizaron los siguientes recursos:
 
-**3. Aprovisionamiento de la base de datos MySQL**
-Se aprovisionó el servicio de base de datos MySQL en la nube y se creó la base de datos del proyecto, sobre la cual EF Core aplica las migraciones del esquema.
-![Aprovisionamiento de base de datos MySQL](assets/images/Chapter-5/Sprint3/deploy-mysql.png)
+- **Azure App Service:** servicio encargado de ejecutar el contenedor Docker de la API.
+- **Azure Container Registry:** repositorio privado utilizado para almacenar la imagen Docker del backend.
+- **Azure Database for MySQL Flexible Server:** base de datos relacional utilizada por la API en producción.
+- **Azure Portal:** plataforma utilizada para configurar los recursos, variables de entorno, conexión al contenedor y monitoreo del despliegue.
 
-**4. Configuración de la cadena de conexión y variables de entorno**
-Se configuró en App Service la cadena de conexión `DefaultConnection` hacia la base de datos MySQL, junto con las variables de entorno necesarias para el entorno de producción.
-![Configuración de connection string](assets/images/Chapter-5/Sprint3/deploy-connection-string.png)
+##### Evidencia 1: Azure App Service creado para el backend
 
-**5. Publicación del Web Service**
-Se publicó el proyecto ASP.NET Core (.NET 10) en el App Service, generando el despliegue de la API REST de los bounded contexts de SafeRoute.
-![Publicación del Web Service](assets/images/Chapter-5/Sprint3/deploy-publish.png)
+En primer lugar, se creó un recurso de **Azure App Service** para alojar la API del proyecto. Este servicio permite ejecutar aplicaciones web y APIs en la nube. En este caso, fue configurado para ejecutar una imagen Docker proveniente de Azure Container Registry.
 
-**6. Verificación del despliegue**
-Se verificó el despliegue accediendo a la documentación Swagger UI publicada en producción, confirmando que todos los endpoints quedaron disponibles y operativos.
-![Verificación del despliegue en Swagger](assets/images/Chapter-5/Sprint3/swagger.png)
+![Azure App Service del backend](./assets/deployment/backend-app-service-overview.png)
 
-### Resultado
+*Figura 1. Vista general del Azure App Service utilizado para desplegar el backend de SafeRoute.*
 
-El Web Service quedó desplegado y accesible públicamente en Azure App Service, con la documentación OpenAPI disponible en:
+##### Evidencia 2: Azure Container Registry con la imagen Docker
 
-**URL del despliegue:**
-https://asp-powertech-prod-dfembvcde5bdfxdx.mexicocentral-01.azurewebsites.net/swagger/index.html
+Luego, se utilizó **Azure Container Registry** para almacenar la imagen Docker generada a partir del proyecto backend. Esta imagen contiene el código compilado de la API ASP.NET Core y todas las dependencias necesarias para ejecutarla.
 
+![Azure Container Registry con imagen Docker](./assets/deployment/backend-container-registry.png)
+
+*Figura 2. Imagen Docker del backend publicada en Azure Container Registry.*
+
+##### Evidencia 3: Configuración de la imagen en Azure App Service
+
+El App Service fue configurado para obtener la imagen del backend directamente desde Azure Container Registry. De esta forma, Azure puede iniciar el contenedor utilizando la versión publicada de la API.
+
+![Configuración del contenedor en App Service](./assets/deployment/backend-container-settings.png)
+
+*Figura 3. Configuración del contenedor Docker en Azure App Service.*
+
+##### Evidencia 4: Azure Database for MySQL Flexible Server
+
+Para la persistencia de datos se creó una instancia de **Azure Database for MySQL Flexible Server**. Esta base de datos es utilizada por el backend para almacenar la información correspondiente a rutas, viajes, conductores, padres, estudiantes, notificaciones, suscripciones y otros datos del sistema.
+
+![Azure MySQL Flexible Server](./assets/deployment/backend-mysql-flexible-server.png)
+
+*Figura 4. Recurso de Azure Database for MySQL Flexible Server utilizado por el backend.*
+
+##### Evidencia 5: Configuración de variables de entorno
+
+En la sección de configuración del App Service se agregaron las variables de entorno necesarias para la ejecución de la API en producción. Entre ellas se configuró la cadena de conexión hacia la base de datos MySQL.
+
+![Variables de entorno del backend](./assets/deployment/backend-environment-variables.png)
+
+*Figura 5. Variables de entorno configuradas en Azure App Service para conectar el backend con la base de datos.*
+
+##### Evidencia 6: Ejecución del contenedor y logs del backend
+
+Después de configurar el App Service, se reinició el servicio para levantar el contenedor con la nueva imagen. Se verificaron los logs de ejecución para confirmar que la aplicación iniciara correctamente y que las migraciones de Entity Framework Core se aplicaran sobre la base de datos.
+
+![Logs del backend en Azure](./assets/deployment/backend-log-stream.png)
+
+*Figura 6. Logs de Azure App Service mostrando la ejecución correcta del backend.*
+
+##### Evidencia 7: Swagger publicado para revisión
+
+Finalmente, se validó el despliegue accediendo al Swagger público de la API. Desde esta interfaz se pudo verificar que los endpoints del backend se encuentran disponibles y listos para ser consumidos por la aplicación frontend.
+
+Esta exposición pública de Swagger fue habilitada únicamente con fines de revisión académica y pruebas durante el Sprint. En una configuración productiva real, esta interfaz debería deshabilitarse, limitarse a entornos internos o protegerse mediante autenticación.
+
+![Swagger del backend desplegado](./assets/deployment/backend-swagger.png)
+
+*Figura 7. Swagger público del backend desplegado en Azure App Service para fines de revisión.*
+
+##### Actividades realizadas durante el despliegue
+
+Durante el proceso de despliegue del backend se realizaron las siguientes actividades:
+
+1. Se preparó el proyecto ASP.NET Core para ejecutarse mediante Docker.
+2. Se creó un archivo Dockerfile para construir la imagen del backend.
+3. Se creó un recurso de Azure Container Registry.
+4. Se construyó la imagen Docker del backend en el entorno local.
+5. Se etiquetó la imagen Docker con el servidor de Azure Container Registry.
+6. Se publicó la imagen Docker en Azure Container Registry.
+7. Se creó un Azure App Service configurado para ejecutar un contenedor Docker.
+8. Se conectó el App Service con la imagen almacenada en Azure Container Registry.
+9. Se creó una instancia de Azure Database for MySQL Flexible Server.
+10. Se creó la base de datos utilizada por la API.
+11. Se configuró la cadena de conexión en las variables de entorno del App Service.
+12. Se reinició el App Service para aplicar la nueva configuración.
+13. Se verificó el arranque del backend mediante Log Stream.
+14. Se validó la ejecución de migraciones de Entity Framework Core.
+15. Se accedió al Swagger público para confirmar que la API estuviera disponible.
+
+##### Resultado del despliegue
+
+Como resultado, el backend de SafeRoute quedó disponible públicamente en Azure App Service. La API se encuentra conectada a una base de datos MySQL en Azure y puede ser consumida por el frontend desplegado en Azure Static Web Apps.
+
+**URL del backend desplegado:**  
+<https://asp-powertech-prod-dfembvcde5bdfxdx.mexicocentral-01.azurewebsites.net/swagger/index.html>
+
+#### Observaciones
+
+El backend fue desplegado mediante una imagen Docker para asegurar mayor consistencia entre el entorno local y el entorno de producción. Asimismo, el uso de Azure Container Registry permite versionar y administrar las imágenes del backend de manera centralizada.
+
+Durante el Sprint también se realizaron ajustes para que el frontend consuma la API desplegada en Azure, mientras que el módulo IAM se mantiene conectado a una Fake API desplegada de forma independiente mediante json-server.
+
+Se debe considerar que Swagger fue dejado accesible temporalmente para facilitar la revisión del Sprint. Para un despliegue productivo real, se recomienda deshabilitar Swagger en producción o restringir su acceso mediante controles de seguridad.
 
 #### 5.2.3.8. Team Collaboration Insights during Sprint
 
