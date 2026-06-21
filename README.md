@@ -4299,7 +4299,9 @@ El objetivo del Sprint 3 fue implementar la primera versión funcional del Backe
 | — | Datos de Prueba | T08.2 | Generar seed desde db.json | Migrar los datos de la Fake API (`db.json`) a un script SQL de carga inicial en MySQL. | 2 | José | Done |
 | — | Levantamiento de Observaciones TB1 | T09.1 | Corregir observaciones de la entrega previa | Aplicar las correcciones señaladas en la evaluación TB1 sobre los artefactos del informe. | 3 | Nickolas | Done |
 | — | Documentación Sprint 3 | T09.2 | Documentar evidencias del Sprint 3 | Registrar planificación, backlog, evidencias de servicios y despliegue en el informe. | 2 | Nickolas | Done |
-
+| — | Landing Page – About Us | T10.1 | Implementar sección About Us | Agregar la sección About Us a la Landing Page como contenedor de la presentación del equipo y el producto. | 1 | Mathias | Done |
+| — | Landing Page – About Us | T10.2 | Implementar About the Team | Presentar a los integrantes del equipo PowerTech con sus roles dentro de la sección About Us. | 1 | Mathias | Done |
+| — | Landing Page – About Us | T10.3 | Implementar About the Product | Describir el producto SafeRoute (problema que resuelve y propuesta de valor) en la sección About Us. | 1 | Mathias | Done |
 
 
 
@@ -4449,7 +4451,7 @@ Durante el Sprint 3, el equipo realizó commits sobre los repositorios `saferout
 | powertech/saferoute-platform | feature/notifications-and-communication | 87e63a0 | feat(notification): add get all notifications query handling skeleton. | — | 20/06/2026 |
 | powertech/saferoute-platform | feature/notifications-and-communication | e36a72a | feat(notification): add get all notifications query handling implementation. | — | 20/06/2026 |
 
-
+> Se considero principalmente commits del Backend Web Service de SafeRoute.
 ### 5.2.3.5. Execution Evidence for Sprint Review
 
 
@@ -4466,6 +4468,13 @@ La API quedó organizada en bounded contexts, todos bajo el versionado `api/v1/`
 - **Notifications & Communication** — notificaciones (`/api/v1/notifications`): creación, despacho, entrega, alertas y anuncios.
 
 Todos los contextos se apoyan en el **Shared Kernel**, que provee entidades y value objects base, configuración de EF Core/MySQL, el mediador CQRS, middleware de manejo de errores (Problem Details) y la configuración de Swagger/OpenAPI.
+
+
+**Landing Page – Sección About Us**
+Se implementó la sección About Us de la landing page, que incluye "About the Team" (presentación de los integrantes del equipo PowerTech) y "About the Product" (descripción de la solución SafeRoute).
+
+
+![Landing Page - About Us](assets/images/Chapter-5/Sprint3/landing-about-us.png)
 
 ### Screenshots de las principales vistas implementadas
 
