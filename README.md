@@ -5194,6 +5194,188 @@ Asimismo, se revisó la sección de historial de asistencia, donde la participan
 En general, la entrevista permitió validar que el flujo del segmento Parent cubre tareas importantes como iniciar sesión, revisar el estado del viaje, monitorear el bus, consultar asistencia, revisar alertas y acceder a la configuración del perfil. Las observaciones obtenidas servirán como insumo para identificar oportunidades de mejora en claridad de navegación, visibilidad del estado del sistema y confianza percibida durante el monitoreo del transporte escolar.
 
 ---
+#### 5.3.3. Evaluaciones según heurísticas
+
+### UX Heuristics & Principles Evaluation
+
+**Usability – Inclusive Design – Information Architecture**
+
+| Campo          | Detalle                                             |
+| -------------- | --------------------------------------------------- |
+| **Carrera**    | Ingeniería de Software                              |
+| **Curso**      | Aplicaciones Web                                    |
+| **Sección**    | 12053                              |
+| **Profesores** | Efraín Ricardo Bautista Ubillús                                             |
+| **Auditor**    | Powertech                                            |
+| **Cliente(s)** | Carla Peláez, Máximo Quevedo, Andy Pillaca Gonzales |
+
+---
+
+### Site o App a evaluar
+
+**SafeRoute Web Application**
+
+La evaluación se enfoca en la experiencia web de SafeRoute, considerando los flujos de uso asociados a los segmentos Parent y Driver.
+
+### Tareas a evaluar
+
+El alcance de esta evaluación incluye la revisión de la usabilidad de las siguientes tareas observadas durante las entrevistas de validación:
+
+1. Iniciar sesión en la plataforma.
+2. Acceder al dashboard correspondiente según el rol del usuario.
+3. Consultar el seguimiento del bus escolar desde el rol Parent.
+4. Visualizar la ubicación del vehículo en el mapa.
+5. Revisar información del viaje, paradas y estado del trayecto.
+6. Consultar historial de asistencia del estudiante.
+7. Revisar alertas o notificaciones relacionadas al viaje.
+8. Revisar viajes asignados desde el rol Driver.
+9. Visualizar un viaje activo desde el rol Driver.
+10. Consultar información de ruta, paradas y alumnos.
+11. Identificar acciones operativas disponibles para el conductor, como abordaje, navegación y finalización del viaje.
+
+No están incluidas en esta versión de la evaluación las siguientes tareas:
+
+1. Gestión administrativa de rutas, usuarios, conductores y vehículos.
+2. Contratación, pago o cambio de planes de servicio.
+3. Registro completo de nuevos usuarios desde cero.
+4. Activación funcional del botón SOS en un escenario real de emergencia.
+5. Validación completa del flujo de botón de pánico, incluyendo confirmación, envío y recepción de alerta.
+6. Envío real de notificaciones push a dispositivos externos.
+7. Gestión avanzada de reportes administrativos.
+
+---
+
+### Escala de severidad
+
+Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
+
+| Nivel | Descripción                                                                                                                                                                               |
+| ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **1** | Problema superficial: puede ser fácilmente superado por el usuario o ocurre con muy poca frecuencia. No necesita ser arreglado a menos que exista disponibilidad de tiempo.               |
+| **2** | Problema menor: puede ocurrir con mayor frecuencia o es un poco más difícil de superar para el usuario. Se le debería asignar una prioridad baja para resolverlo en el siguiente release. |
+| **3** | Problema mayor: ocurre frecuentemente o los usuarios no son capaces de resolverlo. Es importante corregirlo y asignarle prioridad alta.                                                   |
+| **4** | Problema muy grave: error de alto impacto que impide al usuario continuar con el uso de la herramienta. Es imperativo corregirlo antes del lanzamiento.                                   |
+
+---
+
+### Tabla resumen
+
+| # | Problema                                                                                                                                | Escala de severidad | Heurística / Principio violada(o)                                                                       |
+| - | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------: | ------------------------------------------------------------------------------------------------------- |
+| 1 | La opción de acceso Parent / Driver podría ser más explícita para diferenciar mejor ambos roles desde el inicio.                    |                   1 | Information Architecture: Labeling System / Usability: Correspondencia entre el sistema y el mundo real |
+| 2 | El dashboard del padre podría resaltar con mayor prioridad el estado actual del viaje activo del estudiante.                            |                   2 | Usability: Visibilidad del estado del sistema / Information Architecture: Is it findable?               |
+| 3 | Las secciones de alertas e historial podrían incorporar indicadores más claros para distinguir eventos recientes, leídos o pendientes.  |                   1 | Usability: Visibilidad del estado del sistema / Information Architecture: Is it understandable?         |
+| 4 | La vista de viaje activo del conductor podría organizar mejor algunas acciones operativas para facilitar su uso rápido durante la ruta. |                   2 | Usability: Diseño estético y minimalista / Information Architecture: Is it usable?                      |
+
+---
+
+### Descripción de problemas
+
+---
+
+#### Problema #1: La opción de acceso Parent / Driver podría ser más explícita
+
+**Severidad:** 1
+**Heurística violada:** Information Architecture - Labeling System / Usability - Correspondencia entre el sistema y el mundo real
+
+**Problema:**
+En la pantalla de inicio de sesión, los roles **Parent** y **Driver** aparecen agrupados dentro de una misma opción. Durante las entrevistas, los usuarios lograron continuar con el flujo sin bloqueo; sin embargo, para usuarios nuevos podría ser más claro contar con una diferenciación visual o textual entre ambos roles.
+
+Este hallazgo se considera superficial porque no impide el uso de la plataforma, pero sí representa una oportunidad para mejorar la claridad inicial del acceso.
+
+<p align="center">
+<img src="assets/images/ChapterV/HeuristicEvaluation/problem-1-parent-driver-login.png" alt="Problem 1 Parent Driver Login" width="500"/>
+</p>
+
+**Recomendación:**
+Mantener la opción actual si resulta conveniente para el diseño, pero agregar una breve ayuda textual o separar los roles si el equipo desea mayor claridad. Por ejemplo:
+
+* Parent
+* Driver
+* Administrator
+
+Otra alternativa sería agregar el texto:
+“Selecciona esta opción si eres padre de familia o conductor registrado”.
+
+---
+
+#### Problema #2: El dashboard del padre podría resaltar más el viaje activo
+
+**Severidad:** 2
+**Heurística violada:** Usability - Visibilidad del estado del sistema / Information Architecture - Is it findable?
+
+**Problema:**
+En las entrevistas del segmento Parent, los usuarios pudieron acceder a secciones como seguimiento del bus, historial, alertas y perfil. No obstante, considerando que la principal necesidad del padre de familia es conocer el estado actual del traslado de su hijo, sería recomendable que el viaje activo tenga una posición más destacada dentro del dashboard.
+
+El problema no impide completar el flujo, pero mejorar esta jerarquía ayudaría a reducir el esfuerzo del usuario y reforzaría la sensación de tranquilidad.
+
+<p align="center">
+<img src="assets/images/ChapterV/HeuristicEvaluation/problem-2-parent-dashboard.png" alt="Problem 2 Parent Dashboard" width="500"/>
+</p>
+
+**Recomendación:**
+Agregar una tarjeta principal o sección destacada con información del viaje activo:
+
+* Nombre del estudiante.
+* Estado actual del viaje.
+* Última actualización del vehículo.
+* Próxima parada o destino.
+* Botón directo a seguimiento del bus.
+
+---
+
+#### Problema #3: Las alertas e historial podrían mostrar indicadores más claros
+
+**Severidad:** 1
+**Heurística violada:** Usability - Visibilidad del estado del sistema / Information Architecture - Is it understandable?
+
+**Problema:**
+Durante la validación con padres de familia se revisaron pantallas relacionadas con alertas, notificaciones e historial. Estas secciones son útiles para consultar información del trayecto; sin embargo, podrían beneficiarse de pequeños indicadores que ayuden a distinguir si una alerta es nueva, leída, reciente, informativa o importante.
+
+Este hallazgo se considera leve porque la información existe y puede ser consultada, pero una mejora visual ayudaría a comprender más rápido el estado de cada evento.
+
+<p align="center">
+<img src="assets/images/ChapterV/HeuristicEvaluation/problem-3-alerts-history.png" alt="Problem 3 Alerts History" width="500"/>
+</p>
+
+**Recomendación:**
+Agregar etiquetas o indicadores simples como:
+
+* Nueva
+* Leída
+* Informativa
+* Importante
+* Reciente
+
+También se recomienda mantener orden cronológico para facilitar la revisión rápida de eventos.
+
+---
+
+#### Problema #4: La vista de viaje activo del conductor podría organizar mejor acciones operativas
+
+**Severidad:** 2
+**Heurística violada:** Usability - Diseño estético y minimalista / Information Architecture - Is it usable?
+
+**Problema:**
+En la entrevista del segmento Driver, el usuario pudo revisar información del viaje activo, mapa, paradas, alumnos y acciones operativas. La pantalla concentra información relevante para la ruta, lo cual es útil para el conductor; sin embargo, algunas acciones podrían organizarse por prioridad para que el usuario identifique con mayor rapidez qué debe hacer durante el trayecto.
+
+Este hallazgo no representa un bloqueo, pero sí una oportunidad de mejora considerando que el conductor necesita una experiencia rápida y clara durante una jornada operativa.
+
+<p align="center">
+<img src="assets/images/ChapterV/HeuristicEvaluation/problem-4-driver-active-trip.png" alt="Problem 4 Driver Active Trip" width="500"/>
+</p>
+
+**Recomendación:**
+Organizar las acciones del conductor según prioridad:
+
+* Acciones principales visibles: ver ruta, marcar abordaje, continuar navegación.
+* Acciones secundarias agrupadas en una sección adicional.
+* Botones grandes y con texto claro.
+* Estados del viaje visibles en la parte superior.
+* Separar información de ruta, alumnos y alertas para reducir carga visual.
+
+---
+
 
 
 
