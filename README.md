@@ -4817,54 +4817,52 @@ Durante la evaluación, consideró que la plataforma es fácil de usar y que el 
 Como oportunidades de mejora, recomendó incluir botones más grandes para acciones críticas, acceso rápido a emergencias, menos pasos durante la operación y mayor información visual sobre los beneficios del sistema en el Landing Page.
 
 ###### Entrevista de validación 2 - Driver
+###### User Flow 8: Comunicación de incidencia o avance durante el viaje
+- **User goal:**  
+Como conductor, quiero comunicar una incidencia o avance de la ruta durante el viaje.
 
-**Entrevistador:**
-[Nombre y apellido del entrevistador]
+- **User Story asociada:**  
+US12 - Como conductor, quiero reportar incidencias, para informar retrasos o problemas durante la ruta.
 
-**Datos del entrevistado**
+- **Validación durante entrevista:**  
+Este flujo fue observado de forma complementaria durante la entrevista del segmento Driver, en la que el usuario navegó por pantallas relacionadas con viaje activo, alertas y acciones disponibles durante la ruta.
 
-* **Nombre:** [Nombre]
-* **Apellidos:** [Apellidos]
-* **Edad:** [Edad]
-* **Distrito:** [Distrito]
-* **Segmento:** Driver
-* **URL del video:** [Pegar URL de Microsoft Stream]
-* **Timing de inicio:** 
-* **Duración:** 
-**Fin de entrevista** 
+- **Descripción del flujo:**
 
-<p align="center">
-<img src="assets/images/ChapterV/ValidationInterviews/driver-validation-interview-2.png" alt="Driver Validation Interview 2" width="500"/>
-</p>
+**Happy path:**  
+El conductor se encuentra dentro de un viaje activo y accede a las acciones disponibles durante la ruta. Ante un retraso, desvío, obstáculo o situación relevante, selecciona la opción de alerta o reporte correspondiente. El sistema muestra la sección de alertas/incidencias, permitiendo registrar o visualizar eventos asociados al viaje. Esta información permite mantener informado al sistema y facilita que padres o administradores conozcan el estado de la ruta.
 
-**Resumen descriptivo:**
-[Redactar aquí el resumen de la entrevista. Debe explicar las principales apreciaciones del conductor respecto al Landing Page y los User Flows evaluados. Indicar si logró comprender el flujo de control de alumnos, reporte de incidencias y botón de emergencia. Incluir comentarios sobre facilidad de uso, claridad visual, rapidez del flujo, confianza y recomendaciones de mejora.]
+**Unhappy path:**  
+Si el conductor intenta reportar una incidencia sin información suficiente, el sistema debería evitar el envío incompleto y solicitar los datos necesarios. Si existe un problema de conexión o el reporte no puede enviarse correctamente, la plataforma debería mostrar un mensaje claro indicando que la acción no fue completada, evitando que el conductor crea que la incidencia fue comunicada cuando aún no fue registrada.
+
+- **Observación para validación:**  
+Durante la entrevista, el usuario logró identificar secciones relacionadas con alertas y acciones del viaje, lo que permite validar preliminarmente que el sistema contempla mecanismos para comunicar eventos durante la ruta. Sin embargo, se recomienda realizar una validación posterior más específica del formulario o flujo completo de reporte de incidencias.
 
 
 ###### Entrevista de validación 3 - Driver
+###### User Flow 9: Botón de pánico ante emergencia
 
-**Entrevistador:**
-[Nombre y apellido del entrevistador]
+- **User goal:**  
+Como conductor, quiero una manera inmediata de informar una emergencia.
 
-**Datos del entrevistado**
+- **User Story asociada:**  
+US13 - Como conductor, quiero activar un botón de pánico, para alertar situaciones críticas durante la ruta.
 
-* **Nombre:** [Nombre]
-* **Apellidos:** [Apellidos]
-* **Edad:** [Edad]
-* **Distrito:** [Distrito]
-* **Segmento:** Driver
-* **URL del video:** [Pegar URL de Microsoft Stream]
-* **Timing de inicio:** [mm:ss]
-* **Duración:** [mm:ss]
+- **Validación durante entrevista:**  
+Este flujo fue observado de forma complementaria durante la entrevista del segmento Driver, debido a que en la pantalla de viaje activo se evidenció la presencia de una acción SOS o botón de emergencia dentro de las opciones disponibles para el conductor.
 
-<p align="center">
-<img src="assets/images/ChapterV/ValidationInterviews/driver-validation-interview-3.png" alt="Driver Validation Interview 3" width="500"/>
-</p>
+- **Descripción del flujo:**
 
-**Resumen descriptivo:**
-[Redactar aquí el resumen de la entrevista. Explicar cómo el entrevistado realizó las tareas asignadas, qué elementos entendió con facilidad, qué problemas o dudas presentó y qué mejoras propuso para el flujo del conductor. Mencionar especialmente la percepción sobre seguridad, rapidez del uso durante una ruta y claridad de los mensajes del sistema.]
+**Happy path:**  
+El conductor se encuentra ejecutando una ruta activa y visualiza el botón SOS dentro de las acciones principales del viaje. Ante una emergencia, selecciona dicha opción para activar una alerta crítica. El sistema debe registrar el evento de emergencia y comunicarlo a los usuarios correspondientes, como administradores o padres de familia, permitiendo una respuesta rápida ante una situación de riesgo.
 
+**Unhappy path:**  
+Si el conductor presiona el botón por error, el sistema debería solicitar una confirmación antes de enviar la alerta crítica. Si la alerta no puede enviarse por problemas de conexión, el sistema debería mostrar un estado claro del envío o intentar reenviar la alerta automáticamente. Esto es importante porque, en una emergencia, el usuario necesita saber si la alerta fue realmente registrada.
 
+- **Observación para validación:**  
+Durante la entrevista, el botón SOS fue visible dentro del flujo de viaje activo, lo que permite validar que la funcionalidad está presente y ubicada en un contexto adecuado para el conductor. No obstante, se recomienda complementar esta validación con una prueba específica de activación, confirmación y visualización del estado de la alerta.
+
+---
 ##### Segundo segmento: Padres de familia
 
 Para el segmento **Parent**, las entrevistas se enfocan en validar la experiencia del padre de familia al monitorear el viaje escolar de su hijo y recibir información relevante durante el trayecto.
@@ -4920,28 +4918,35 @@ concluyendo que su diseño intuitivo y sus funciones críticas como el monitoreo
 la alerta temprana ante incidencias de tráfico mediante una clara señalética cromática no solo garantizan una experiencia de usuario sumamente cómoda,
 sino que establecen un estándar de seguridad y eficiencia que convenció plenamente al entrevistado para su adopción definitiva.
 
+- **User Flow principal evaluado:** User Flow 10 - Rastreo en tiempo real del vehículo.
+- **User Flows complementarios observados:** User Flow 11 - Recepción de notificaciones automáticas.
+
 ###### Entrevista de validación 2 - Parent
+###### User Flow 11: Recepción de notificaciones automáticas
 
-**Entrevistador:**
-[Nombre y apellido del entrevistador]
+- **User goal:**  
+Como padre de familia, quiero recibir notificaciones sin tener que preguntar.
 
-**Datos del entrevistado**
+- **User Story asociada:**  
+US19 - Como padre, quiero recibir una alerta de proximidad, para prepararme antes de la llegada del vehículo.  
+US20 - Como padre, quiero recibir confirmación de llegada, para estar tranquilo.
 
-* **Nombre:** [Nombre]
-* **Apellidos:** [Apellidos]
-* **Edad:** [Edad]
-* **Distrito:** [Distrito]
-* **Segmento:** Parent
-* **URL del video:** [Pegar URL de Microsoft Stream]
-* **Timing de inicio:** [mm:ss]
-* **Duración:** [mm:ss]
+- **Validación durante entrevista:**  
+Este flujo fue observado de forma complementaria durante las entrevistas del segmento Parent, debido a que los participantes revisaron secciones relacionadas con seguimiento del bus, estados del viaje, alertas y notificaciones dentro de la Web Application.
 
-<p align="center">
-<img src="assets/images/ChapterV/ValidationInterviews/parent-validation-interview-2.png" alt="Parent Validation Interview 2" width="500"/>
-</p>
+- **Descripción del flujo:**
 
-**Resumen descriptivo:**
-[Redactar aquí el resumen de la entrevista. Explicar las principales apreciaciones del padre de familia respecto a la navegación, monitoreo del viaje, claridad del mapa, estado de abordaje, notificaciones y confirmación de llegada. Incluir comentarios sobre confianza, reducción de incertidumbre y utilidad de la plataforma en un caso real.]
+**Happy path:**  
+El padre de familia inicia sesión en SafeRoute y accede a su dashboard familiar. Durante el seguimiento del viaje activo, el sistema muestra información relacionada con el estado del traslado escolar, como ubicación del vehículo, avance del recorrido, paradas y estado del estudiante. Cuando ocurre un evento relevante, como proximidad del bus, abordaje del estudiante, llegada al destino o incidencia, el sistema genera una notificación automática visible para el usuario. De esta manera, el padre puede mantenerse informado sin necesidad de llamar o escribir al conductor.
+
+**Unhappy path:**  
+Si las notificaciones no se muestran correctamente, están desactivadas o el usuario no las identifica con facilidad, el padre podría no enterarse oportunamente de eventos importantes del viaje. En ese caso, el sistema debería permitir consultar los eventos dentro de una sección de alertas o historial, mostrando claramente el tipo de notificación, hora, estado del evento y nivel de importancia. Si no existen notificaciones disponibles, la plataforma debería mostrar un estado vacío comprensible, evitando que el usuario interprete la ausencia de alertas como un error del sistema.
+
+- **Observación para validación:**  
+Durante las entrevistas Parent, se evidenció que las secciones de seguimiento del bus, alertas e historial son importantes para que el padre de familia comprenda el estado del traslado escolar. Aunque la validación principal se centró en el rastreo en tiempo real y la confirmación de llegada, también se pudo observar de forma complementaria la relevancia del User Flow 11, ya que las notificaciones automáticas funcionan como apoyo para reducir la incertidumbre del usuario durante el viaje.
+
+- **Recomendación:**  
+Se recomienda reforzar la visibilidad de las notificaciones dentro del dashboard familiar, diferenciando claramente eventos informativos, alertas de proximidad, confirmaciones de llegada e incidencias. También sería conveniente mostrar indicadores como “Nueva”, “Leída”, “Importante” o “Crítica”, para que el padre pueda reconocer rápidamente el nivel de urgencia de cada notificación.
 
 
 ###### Entrevista de validación 3 - Parent
