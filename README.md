@@ -5600,7 +5600,7 @@ El video también resume la evolución del proyecto desde la identificación de 
 **Pauta de secuencias de contenido**
 | Tiempo de inicio | Sección | Descripción |
 |------------------|----------|-------------|
-| 00:00:05 | Presentación de Pablo César Vallejo Trujillo | Participación en la gestión de configuración del software, aplicación de Git Flow y Conventional Commits, desarrollo frontend y backend en el contexto de planificación logística, despliegue en Azure e integración entre frontend y backend. |
+| 00:00:05 | Presentación de Fabio César Vallejo Trujillo | Participación en la gestión de configuración del software, aplicación de Git Flow y Conventional Commits, desarrollo frontend y backend en el contexto de planificación logística, despliegue en Azure e integración entre frontend y backend. |
 | 00:01:16 | Presentación de Nicolás Ramírez Ruiz | Responsable de la gestión ágil del proyecto, planificación de sprints, gestión de backlog y evidencias de desarrollo, elaboración de mockups en Figma, entrevistas con usuarios y desarrollo del módulo Core Trip en frontend y backend. |
 | 00:02:20 | Presentación de Julio Frank Quispe Serrano | Participación en la arquitectura de software mediante diagramas C4 y de clases, desarrollo frontend con Vue, backend con C# y .NET, implementación del módulo de notificaciones y despliegue de la aplicación en Azure. |
 | 00:03:12 | Presentación de Matías de la Cruz | Responsable de Product Design, Information Architecture, Style Guidelines, User Flows, wireframes y mockups de la Landing Page y Web App; participación en el desarrollo frontend, backend y fortalecimiento de habilidades técnicas y colaborativas. |
