@@ -4151,7 +4151,7 @@ A continuación se documentan los recursos consumidos por el frontend desde la F
 | Componente | Repositorio                                                                 | Estado al cierre del Sprint 2 |
 |------------|-----------------------------------------------------------------------------|-------------------------------|
 | Frontend Web Application | https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-webapp | Desplegado en Azure (https://happy-river-0e93e8e0f.7.azurestaticapps.net/identity-and-access-management/sign-in?redirect=/home) |
-| Backend Web Services | pendiente                                                                   | No implementado - planificado para Sprint 3 |
+| Backend Web Services |                                                                    | No implementado - planificado para Sprint 3 |
 
 ### 5.2.2.7. Software Deployment Evidence for Sprint Review
 
@@ -4419,27 +4419,87 @@ Durante el Sprint 3, el equipo realizó commits sobre los repositorios `saferout
 | powertech/saferoute-platform | feature/notifications-and-communication | e36a72a | feat(notification): add get all notifications query handling implementation. | — | 20/06/2026 |
 
 
-#### 5.2.3.5. Execution Evidence for Sprint Review
-
-Durante el Sprint 3, el equipo desarrolló e implementó la primera versión funcional del Backend Web Service de SafeRoute en ASP.NET Core (.NET 10), aplicando DDD con separación CQRS y persistencia sobre MySQL. La API expone los servicios REST de los bounded contexts del sistema, validados mediante la interfaz interactiva de Swagger UI. A continuación se presentan las principales evidencias de ejecución por contexto:
-
-- **Subscription & Plan Management:** creación y consulta de planes; creación, activación, cambio de plan y cancelación de suscripciones.
-- **Stakeholder Management:** CRUD de conductores (con actualización de teléfono), padres (con vinculación de hijos) y grupos de estudiantes (con asignación de alumnos y finalización).
-- **Assets:** CRUD de la flota vehicular (agregado Vehicle).
-- **Fleet & Route Planning:** ciclo de vida de la ruta (creación en borrador, paradas, asignación de vehículo/conductor, días de servicio, horario y activación/desactivación).
-- **Trip Execution:** preparación, inicio, registro de abordaje, reporte de incidentes y cierre del viaje.
-- **Notifications & Profiles:** creación, despacho, entrega, alertas y anuncios de notificaciones; creación y consulta de perfiles.
-
-![Swagger UI - Vista general](assets/images/Chapter-5/Sprint3/swagger.png)
+### 5.2.3.5. Execution Evidence for Sprint Review
 
 
-**Documentación interactiva (Swagger UI):** `https://asp-powertech-prod-dfembvcde5bdfxdx.mexicocentral-01.azurewebsites.net/swagger/index.html`
+### Resumen del Sprint 3
+
+Durante este Sprint se desarrolló y puso en ejecución la primera versión funcional del **Backend Web Service de SafeRoute**, construido en **ASP.NET Core (.NET 10)** bajo **Domain-Driven Design** con separación **CQRS** mediante **Cortex.Mediator** y persistencia con **Entity Framework Core sobre MySQL**. Al tratarse de un Web Service, la evidencia de ejecución se presenta a través de la **documentación interactiva OpenAPI (Swagger UI)**, que permite visualizar, navegar y probar en vivo todos los endpoints REST expuestos.
+
+La API quedó organizada en bounded contexts, todos bajo el versionado `api/v1/`, e incluye la ejecución funcional de:
+
+- **Subscription & Plan Management** — gestión de planes (`/api/v1/plans`) y suscripciones (`/api/v1/subscriptions`), con creación, consulta, activación, cambio de plan y cancelación.
+- **Stakeholder & Asset Management** — conductores (`/api/v1/drivers`), padres y vinculación de hijos (`/api/v1/parents`), grupos de estudiantes (`/api/v1/student-groups`), perfiles (`/api/v1/profiles`) y vehículos (`/api/v1/vehicles`).
+- **Fleet & Route Management** — gestión completa de rutas (`/api/v1/routes`): paradas, asignación de vehículo/conductor, días de servicio, horario de salida, activación y desactivación.
+- **Trip Execution & Monitoring** — ciclo de vida del viaje (`/api/v1/trips`): preparación, inicio, registro de abordaje, reporte de incidentes y cierre.
+- **Notifications & Communication** — notificaciones (`/api/v1/notifications`): creación, despacho, entrega, alertas y anuncios.
+
+Todos los contextos se apoyan en el **Shared Kernel**, que provee entidades y value objects base, configuración de EF Core/MySQL, el mediador CQRS, middleware de manejo de errores (Problem Details) y la configuración de Swagger/OpenAPI.
+
+### Screenshots de las principales vistas implementadas
+
+A continuación se presentan las capturas de la documentación Swagger UI con los endpoints en ejecución por cada bounded context:
+
+| # | Vista | Descripción |
+|---|---|---|
+| 1 | Swagger UI – Vista general | Panel principal de la API con todos los controllers agrupados por bounded context. |
+| 2 | Plans & Subscriptions | Endpoints de creación/consulta de planes y de creación, activación, upgrade y cancelación de suscripciones. |
+| 3 | Drivers, Parents & Student Groups | CRUD de conductores, gestión de padres con vinculación de hijos y agrupación de estudiantes. |
+| 4 | Vehicles & Profiles | CRUD de la flota vehicular y consulta de perfiles de usuario. |
+| 5 | Routes | Creación de rutas, paradas, asignación de vehículo/conductor, días de servicio y activación. |
+| 6 | Trips | Inicio, registro de abordaje, reporte de incidentes y cierre de viajes. |
+| 7 | Notifications | Creación, despacho, entrega, alertas y anuncios. |
+| 8 | Ejecución de un endpoint (Try it out) | Respuesta real `200 OK` de un request ejecutado sobre la API conectada a MySQL. |
+
+**1. Swagger UI – Vista general**
+Panel principal de la API con todos los controllers agrupados por bounded context.
+![Swagger UI - Vista general de endpoints](assets/images/Chapter-5/Sprint3/swagger.png)
+
+
+
+**2. Plans & Subscriptions**
+Endpoints de creación/consulta de planes y de creación, activación, upgrade y cancelación de suscripciones.
+![Swagger UI - Plans & Subscriptions](assets/images/Chapter-5/Sprint3/swagger-subscriptions.png)
+
+
+**3. Drivers, Parents & Student Groups**
+CRUD de conductores, gestión de padres con vinculación de hijos y agrupación de estudiantes.
+![Swagger UI - Drivers, Parents & Student Groups](assets/images/Chapter-5/Sprint3/swagger-stakeholder.png)
+
+
+**4. Vehicles & Profiles**
+CRUD de la flota vehicular y consulta de perfiles de usuario.
+![Swagger UI - Vehicles & Profiles](assets/images/Chapter-5/Sprint3/swagger-vehicles-profiles.png)
+
+
+**5. Routes**
+Creación de rutas, paradas, asignación de vehículo/conductor, días de servicio y activación.
+![Swagger UI - Routes](assets/images/Chapter-5/Sprint3/swagger-routes.png)
+
+
+**6. Trips**
+Inicio, registro de abordaje, reporte de incidentes y cierre de viajes.
+![Swagger UI - Trips](assets/images/Chapter-5/Sprint3/swagger-trips.png)
+
+
+**7. Notifications**
+Creación, despacho, entrega, alertas y anuncios.
+![Swagger UI - Notifications](assets/images/Chapter-5/Sprint3/swagger-notifications.png)
+
+**8. Ejecución de un endpoint (Try it out)**
+Respuesta real `200 OK` de un request ejecutado sobre la API conectada a MySQL.
+![Swagger UI - Try it out 200 OK](assets/images/Chapter-5/Sprint3/swagger-try-it-out.png)
+### Enlace al video
+
+El siguiente video ilustra y explica la visualización y navegación lograda en este Sprint, recorriendo la documentación Swagger y ejecutando endpoints representativos de cada bounded context contra la base de datos MySQL:
+
+ **Enlace al video:** *(pegar aquí la URL del video — YouTube/Drive)*
 
 #### 5.2.3.6. Services Documentation Evidence for Sprint Review
 
 Durante el Sprint 3, el equipo implementó y documentó el Backend Web Service de SafeRoute como una RESTful API en ASP.NET Core (.NET 10), sustituyendo la Fake REST API local del Sprint 2. La documentación de contratos se genera con **OpenAPI vía Swagger** (Swashbuckle), la persistencia se realiza con **Entity Framework Core 10 sobre MySQL** y todos los recursos se exponen bajo el prefijo de versión `api/v1`. Se excluye el contexto Identity & Access Management, cuya documentación formal se abordará en el siguiente sprint.
 
-Dado que en este Sprint el Web Service aún no se ha desplegado en la nube, la documentación OpenAPI de todos los endpoints se encuentra disponible y operativa en la **URL local de Swagger UI**: `https://localhost:7003/swagger`.
+**URL de Swagger UI**: `https://asp-powertech-prod-dfembvcde5bdfxdx.mexicocentral-01.azurewebsites.net/swagger/index.html`.
 
 A continuación se documentan los endpoints implementados por bounded context, indicando para cada acción el verbo HTTP, la sintaxis de llamada, los parámetros y el response esperado:
 
@@ -4498,42 +4558,18 @@ A continuación se documentan los endpoints implementados por bounded context, i
 | Disparar alerta | POST | `/api/v1/notifications/{id}/alerts` | Body: `{ panic }` | `200` → `NotificationResource` |
 | Publicar anuncio | POST | `/api/v1/notifications/{id}/announcements` | Body: `{ routeId, message }` | `200` → `NotificationResource` |
 
-**Ejemplos de request / response (datos de muestra):**
 
-*Crear suscripción — POST `/api/v1/subscriptions`*
-```jsonc
-// Request
-{ "organizationId": "a0000000-...-0001", "planId": "c0000000-...-0002",
-  "startDate": "2026-06-01T00:00:00Z", "endDate": "2026-12-01T00:00:00Z" }
-// Response 201 Created
-{ "id": "d0000000-...-0001", "organizationId": "a0000000-...-0001",
-  "planId": "c0000000-...-0002", "state": "Pending",
-  "startDate": "2026-06-01T00:00:00Z", "endDate": "2026-12-01T00:00:00Z",
-  "remainingDays": 183 }
-```
-El response devuelve `SubscriptionResource` en estado `Pending`; al invocar `/activate` cambia a `Active`.
 
-*Registrar conductor — POST `/api/v1/drivers`*
-```jsonc
-// Response 201 Created
-{ "id": "dd000000-...-0001", "organizationId": "a0000000-...-0001",
-  "userId": "b0000000-...-0001", "firstName": "Carlos", "lastName": "Pérez",
-  "fullName": "Carlos Pérez", "email": "carlos@saferoute.com",
-  "phoneNumber": "+51999888777", "licenseNumber": "Q-12345678", "available": true }
-```
-El response devuelve `DriverResource` con `available: true` y el `fullName` calculado por el dominio.
+**Repositorios relacionados:**
 
-*Crear viaje — POST `/api/v1/trips`*
-```jsonc
-// Response 201 Created
-{ "id": "bb000000-...-0001", "organizationId": "a0000000-...-0001",
-  "routeId": "aa000000-...-0001", "driverId": "dd000000-...-0001",
-  "tripState": "Prepared", "startTime": null, "endTime": null,
-  "attendances": [], "incidents": [] }
-```
-El response devuelve `TripResource` en estado `Prepared`; los campos `startTime`, `attendances` e `incidents` se completan al invocar `/start`, `/boarding` e `/incidents`.
+| Componente | Repositorio                                                                 | Estado al cierre del Sprint 3        |
+|------------|-----------------------------------------------------------------------------|--------------------------------------|
+| Frontend Web Application | https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-webapp | Desplegado en Azure (Link pendiente) |
+| Backend Web Services |  https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform    |        Link pendiente                | |
 
-**Capturas de la documentación en uso:**
+
+
+**Capturas del swagger en uso:**
 
 ![Swagger UI - Vista general de endpoints](assets/images/Chapter-5/Sprint3/swagger.png)
 
@@ -4550,9 +4586,11 @@ Durante el Sprint 3, el Backend Web Service de SafeRoute se ejecutó el servidor
 
 Durante el Sprint 3, el equipo mantuvo una colaboración activa distribuida en dos repositorios: el del informe y el nuevo repositorio del Backend Web Service. La actividad técnica se concentró en la implementación de los servicios REST por bounded context, mientras que en el informe se trabajó el levantamiento de las observaciones de TB1 y la documentación del sprint.
 
-![Report Pulse Sprint 3](assets/images/Chapter-5/Sprint3/report-pulse.png) PENIENTE
+![Report Pulse Sprint 3](assets/images/Chapter-5/Sprint3/report-pulse.png)
 
-![Backend Pulse Sprint 3](assets/images/Chapter-5/Sprint3/backend-pulse.png) PENDIENTE
+![Report contributors Sprint 3](assets/images/Chapter-5/Sprint3/contributors.png)
+
+![Backend Pulse Sprint 3](assets/images/Chapter-5/Sprint3/backend-pulse.png)
 
 La distribución del trabajo se mantuvo alineada con la Leadership and Collaboration Matrix (LACX) definida al inicio del sprint, donde cada integrante asumió la responsabilidad principal de uno o más bounded contexts del backend mientras colaboraba en los restantes mediante revisiones de código. El uso consistente de GitFlow y de Conventional Commits permitió mantener un historial trazable y profesional en ambos repositorios.
 
