@@ -48,6 +48,18 @@ TB1:
 
 [![Frontend Pulse Web Application Collaboration Insights](assets/images/Chapter-5/Sprint2/frontend-pulse.png)](assets/images/Chapter-5/Sprint2/frontend-pulse.png)
 
+
+AV2: 
+
+Report:
+[![Report Pulse ](assets/images/Chapter-5/Sprint3/report-pulse.png)](assets/images/Chapter-5/Sprint3/report-pulse.png)
+
+
+SafeRoute_platform(Backend):
+
+[![Backend Pulse ](assets/images/Chapter-5/Sprint3/backend-pulse.png)](assets/images/Chapter-5/Sprint3/backend-pulse.png)
+
+
 ---
 
 ## Contenido
@@ -4565,7 +4577,7 @@ A continuación se documentan los endpoints implementados por bounded context, i
 | Vincular / quitar hijo | POST · DELETE | `/api/v1/parents/{parentId}/children` · `/{parentId}/children/{childId}` | Body: `{ firstName, lastName, age }` | `200` → `ParentResource` |
 | Grupos de estudiantes | POST · GET | `/api/v1/student-groups` · `/student-groups/{id}` | Body: `{ organizationId, name }` | `201/200` → `StudentGroupResource` |
 | Asignar/quitar alumno · finalizar | POST · DELETE · POST | `/api/v1/student-groups/{id}/children` · `/{id}/children/{childId}` · `/{id}/finalize` | Path: `studentGroupId`; Body: `{ childId }` | `200` → `StudentGroupResource` |
-| CRUD de vehículos (assets) | POST · GET · PUT · DELETE | `/api/v1/vehicles` · `/vehicles/{vehicleId}` | Body: `{ organizationId, plate, model, capacity, status }` | `201/200` → `VehicleResource` · `204` (delete) |
+| CRUD de vehículos  | POST · GET · PUT · DELETE | `/api/v1/vehicles` · `/vehicles/{vehicleId}` | Body: `{ organizationId, plate, model, capacity, status }` | `201/200` → `VehicleResource` · `204` (delete) |
 | Listar / consultar perfiles | GET | `/api/v1/profiles` · `/profiles/{profileId}` | Path: `profileId` (Guid) | `200` → `ProfileResource` |
 
 **Fleet & Route Management**
@@ -4737,6 +4749,7 @@ Se debe considerar que Swagger fue dejado accesible temporalmente para facilitar
 Durante el Sprint 3, el equipo mantuvo una colaboración activa distribuida en dos repositorios: el del informe y el nuevo repositorio del Backend Web Service. La actividad técnica se concentró en la implementación de los servicios REST por bounded context, mientras que en el informe se trabajó el levantamiento de las observaciones de TB1 y la documentación del sprint.
 
 ![Report Pulse Sprint 3](assets/images/Chapter-5/Sprint3/report-pulse.png)
+
 
 ![Report contributors Sprint 3](assets/images/Chapter-5/Sprint3/contributors.png)
 
