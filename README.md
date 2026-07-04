@@ -4910,6 +4910,18 @@ El objetivo del Sprint 4, correspondiente a la entrega final (TB2 - Release Revi
 
 #### 5.2.4.8. Team Collaboration Insights during Sprint
 
+Durante el Sprint 4, correspondiente a la entrega final (TB2 - Release Review), el equipo mantuvo una colaboración activa distribuida en los repositorios del Backend Web Service (`saferoute-platform`) y del informe (`saferoute-report`). La actividad se concentró en completar el bounded context Identity & Access Management, fidelizar los diagramas respecto al backend implementado, y levantar las observaciones de la entrega AV2.
+
+El aspecto más representativo de la colaboración en este sprint fue la implementación del contexto IAM, Esta división por capas permitió que el equipo avanzara en paralelo manteniendo la integridad del diseño DDD.
+
+En paralelo, Fabio lideró la fidelización de los diagramas y el redespliegue de la solución, Frank encabezó las correcciones del informe señaladas en AV2 (carátula y documentación de base de datos) con la colaboración de José en la actualización del Lean UX, Nickolas y Frank realizaron las entrevistas de validación con los segmentos objetivo, y Mathias produjo el video About-the-Product.
+
+![Backend Pulse Sprint 4](assets/images/Chapter-5/Sprint4/backend-pulse.png)
+
+![Report Pulse Sprint 4](assets/images/Chapter-5/Sprint4/report-pulse.png)
+
+La distribución del trabajo se mantuvo alineada con la Leadership and Collaboration Matrix (LACX) definida al inicio del sprint. El uso consistente de GitFlow y de Conventional Commits permitió mantener un historial trazable y profesional en ambos repositorios, evidenciando la participación de todos los integrantes en la construcción del producto final.
+
 ### 5.3. Validation Interviews
 
 Se presentan las entrevistas de validación realizadas para evaluar la experiencia propuesta en SafeRoute. A diferencia de las entrevistas iniciales de descubrimiento, estas sesiones no buscan identificar el problema desde cero, sino validar si la solución desarrollada responde adecuadamente a las necesidades de los segmentos objetivo.
