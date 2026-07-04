@@ -60,11 +60,13 @@ Proyecto
   </tr>
 </table>
 
-<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
 
-**Ciclo 2026-10**
-**Junio, 2026**
-<br><br>
+**Período 202610**
+<br>
+
+**Julio, 2026**
+<br><br><br><br><br><br><br>
 
 </div>
 
@@ -5601,7 +5603,7 @@ El video también resume la evolución del proyecto desde la identificación de 
 | Tiempo de inicio | Sección | Descripción |
 |------------------|----------|-------------|
 | 00:00:05 | Presentación de Fabio César Vallejo Trujillo | Participación en la gestión de configuración del software, aplicación de Git Flow y Conventional Commits, desarrollo frontend y backend en el contexto de planificación logística, despliegue en Azure e integración entre frontend y backend. |
-| 00:01:16 | Presentación de Nicolás Ramírez Ruiz | Responsable de la gestión ágil del proyecto, planificación de sprints, gestión de backlog y evidencias de desarrollo, elaboración de mockups en Figma, entrevistas con usuarios y desarrollo del módulo Core Trip en frontend y backend. |
+| 00:01:16 | Presentación de Nickolas Ramírez Ruiz | Responsable de la gestión ágil del proyecto, planificación de sprints, gestión de backlog y evidencias de desarrollo, elaboración de mockups en Figma, entrevistas con usuarios y desarrollo del módulo Core Trip en frontend y backend. |
 | 00:02:20 | Presentación de Julio Frank Quispe Serrano | Participación en la arquitectura de software mediante diagramas C4 y de clases, desarrollo frontend con Vue, backend con C# y .NET, implementación del módulo de notificaciones y despliegue de la aplicación en Azure. |
 | 00:03:12 | Presentación de Matías de la Cruz | Responsable de Product Design, Information Architecture, Style Guidelines, User Flows, wireframes y mockups de la Landing Page y Web App; participación en el desarrollo frontend, backend y fortalecimiento de habilidades técnicas y colaborativas. |
 | 00:04:20 | Presentación de José Zacarías Ortega Quintana | Participación en investigación de usuarios, entrevistas, User Personas, UX, Event Storming, definición de Bounded Contexts y desarrollo frontend y backend, además de reflexión sobre el aprendizaje y trabajo en equipo. |
@@ -5629,6 +5631,7 @@ El video también resume la evolución del proyecto desde la identificación de 
 - **Web Application (Frontend):** [https://ashy-dune-098494d0f.7.azurestaticapps.net/identity-and-access-management/sign-in](https://ashy-dune-098494d0f.7.azurestaticapps.net/identity-and-access-management/sign-in)
 - **Landing Page:** [https://upc-pre-202610-1asi0730-12053-powertech.github.io/saferoute-website/](https://upc-pre-202610-1asi0730-12053-powertech.github.io/saferoute-website/)
 - **Web Application (Backend):** [https://asp-powertech-prod-dfembvcde5bdfxdx.mexicocentral-01.azurewebsites.net/swagger/index.html](https://asp-powertech-prod-dfembvcde5bdfxdx.mexicocentral-01.azurewebsites.net/swagger/index.html)
+- **Mock Api:** [https://mock-api-webapp.azurewebsites.net/](https://mock-api-webapp.azurewebsites.net/)
 
 **2. Repositorios de GitHub**
 
