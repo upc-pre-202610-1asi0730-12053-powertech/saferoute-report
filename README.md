@@ -4843,6 +4843,189 @@ La distribución del trabajo se mantuvo alineada con la Leadership and Collabora
 
 La distribución del trabajo se mantuvo alineada con la **Leadership and Collaboration Matrix** definida al inicio del sprint, donde cada integrante asumió la responsabilidad principal de un módulo del frontend mientras colaboraba en los módulos restantes mediante revisiones de código y soporte técnico. El uso consistente de GitFlow, junto con la convención de Conventional Commits, permitió mantener un historial trazable y profesional en ambos repositorios del proyecto.
 
+### Sprint  4
+
+#### 5.2.4.1. Sprint Planning 4
+
+En la reunión de planificación del Sprint 4, correspondiente a la entrega final (TB2 - Release Review), el equipo definió como objetivo principal completar el bounded context Identity & Access Management (IAM), fidelizar los diagramas del informe respecto al backend implementado y levantar las observaciones de la entrega anterior (AV2).
+
+| Sprint # | Sprint 4                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+|:---|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Sprint Planning Background** |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| Date | 2026-07-01                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| Time | 07:00 PM                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| Location | Reunión virtual vía Discord                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Prepared By | Ramirez Ruiz, Nickolas                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| Attendees (to planning meeting) | De La Cruz De Los Santos, Mathias Marcelo / Ortega Quintana, Jose Zacarias / Quispe Serrano, Julio Frank / Ramirez Ruiz, Nickolas / Vallejo Trujillo, Fabio Cesar                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| Sprint 3 Review Summary | En el Sprint 3 se implementó la primera versión funcional del Backend Web Service de SafeRoute en ASP.NET Core, exponiendo los servicios REST de los bounded contexts Subscription & Plan Management, Stakeholder & Asset Management, Fleet & Route Management, Trip Execution & Monitoring y Notifications & Communication, documentados con Swagger y persistidos sobre MySQL. El contexto Identity & Access Management quedó pendiente para el siguiente sprint.                                                                                                                                                                             |
+| Sprint 3 Retrospective Summary | El equipo valoró como acierto la implementación del backend por bounded context aplicando DDD y CQRS, que permitió avanzar de forma ordenada. Como oportunidades de mejora se identificó la necesidad de completar el contexto IAM, alinear los diagramas de arquitectura, clases y base de datos con el backend real, y atender las observaciones de la evaluación AV2.                                                                                                                                                                                                                                                                        |
+| **Sprint Goal & User Stories** |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| Sprint 4 Goal | **Nuestro enfoque está en** ofrecer a las organizaciones un acceso seguro y controlado a la plataforma SafeRoute, permitiendo que cada tipo de usuario ingrese con su propia cuenta y acceda solo a lo que le corresponde. **Creemos que ofrece** confianza y seguridad en el uso de la plataforma para administradores, conductores y padres, junto con una solución final consolidada y coherente. **Esto se confirmará cuando** los usuarios puedan registrarse e iniciar sesión de forma segura según su rol dentro de su organización, y la solución se presenta como un producto final íntegro y listo para su uso. |
+| Sprint 4 Velocity | 60                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Sum of Story Points | 58                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+#### 5.2.4.2. Aspect Leaders and Collaborators
+
+Para el Sprint 4, los aspectos de trabajo se organizaron en torno a la implementación del bounded context Identity & Access Management, la fidelización de los diagramas respecto al backend implementado con su redespliegue, las correcciones del informe señaladas en la entrega AV2 (carátula, diagrama de base de datos y Lean UX), las entrevistas de validación, el video About-the-Product y la documentación del sprint. Se presenta la Leadership-and-Collaboration Matrix (LACX):
+
+| Team Member (Last Name, First Name) | GitHub Username | IAM Bounded Context (L/C) | Diagram Fidelity & Redeployment (L/C) | AV2 Report Corrections (L/C) | Validation Interviews (L/C) | About-the-Product Video (L/C) | Sprint 4 Documentation (L/C) |
+|-------------------------------------|-----------------|:---:|:---:|:---:|:---:|:---:|:---:|
+| Quispe Serrano, Julio Frank | FraSe_JQ | C | C | L | C | C | C |
+| Ortega Quintana, Jose Zacarias | AgoxX61 | C | C | C | C | C | C |
+| De La Cruz, Mathias Marcelo | Dela050406 | L | C | C | C | L | C |
+| Vallejo Trujillo, Fabio Cesar | fabiovallejo | C | L | C | C | C | C |
+| Ramirez Ruiz, Nickolas | Bynickram02 | C | C | C | L | C | L |
+
+#### 5.2.4.3. Sprint Backlog 4
+
+El objetivo del Sprint 4, correspondiente a la entrega final (TB2 - Release Review), fue completar el bounded context Identity & Access Management (IAM) en el Backend Web Service de SafeRoute, fidelizar los diagramas del informe respecto al backend implementado con su redespliegue, y levantar las observaciones de la entrega AV2 (carátula, diagrama de base de datos y Lean UX), junto con las entrevistas de validación y el video About-the-Product.
+
+![Sprint Backlog 4](assets/images/Chapter-5/Sprint4/trello-sprint4.png)
+
+**URL del Board:** [SafeRoute - Sprint 4](https://trello.com/b/ghpx779g/sprint-4-saferoute)
+
+| Sprint # | Sprint 4 | | | | | | |
+|:---|:---|:---|:---|:---|:---|:---|:---|
+| **User Story** | | **Work-Item / Task** | | | | | |
+| **Id** | **Title** | **Id** | **Title** | **Description** | **Estimation (Hours)** | **Assigned To** | **Status** |
+| US08 | Registro e Inicio de Sesión | T01.1 | Implementar value objects y errores del dominio IAM | Modelar los value objects (email, password hash, role tier, organization) y los errores del dominio del contexto IAM. | 3 | Mathias | Done |
+| US08 | Registro e Inicio de Sesión | T01.2 | Implementar aggregates, commands y queries de IAM | Modelar los aggregates User y Organization con sus commands, queries y repositorios. | 4 | Nickolas | Done |
+| US08 | Registro e Inicio de Sesión | T01.3 | Implementar capa de aplicación de IAM | Implementar los servicios de aplicación para registro, inicio de sesión y gestión de organizaciones. | 4 | Frank | Done |
+| US08 | Registro e Inicio de Sesión | T01.4 | Implementar infraestructura de IAM (hashing, JWT, EF Core) | Implementar el hashing con BCrypt, el servicio de tokens JWT y la persistencia con EF Core. | 4 | Fabio | Done |
+| US08 | Registro e Inicio de Sesión | T01.5 | Implementar endpoints REST de IAM | Exponer los servicios REST de usuarios y organizaciones con sus resources y assemblers. | 3 | José | Done |
+| — | Fidelización de Diagramas | T02.1 | Alinear diagramas con las User Stories completadas | Actualizar los diagramas de arquitectura, clases y base de datos para reflejar el backend implementado. | 4 | Fabio | Done |
+| — | Redespliegue | T02.2 | Redesplegar la solución | Redesplegar la solución con el contexto IAM integrado y validar su funcionamiento. | 3 | Fabio | Done |
+| — | Correcciones AV2 | T03.1 | Corregir carátula del informe | Reemplazar "Ciclo" por "Período" y aplicar el salto de línea en la carátula. | 1 | Frank | Done |
+| — | Correcciones AV2 | T03.2 | Actualizar documentación de base de datos | Actualizar el diagrama y la documentación de base de datos según lo observado en AV2. | 2 | Frank | Done |
+| — | Correcciones AV2 | T03.3 | Actualizar Lean UX | Actualizar los artefactos de Lean UX según las observaciones de la entrega AV2. | 2 | José | Done |
+| — | Entrevistas de Validación | T04.1 | Realizar y registrar entrevistas de validación | Realizar las entrevistas de validación con usuarios de los segmentos objetivo y registrar sus resultados y evaluación según heurísticas. | 4 | Nickolas / Frank | Done |
+| — | Video About-the-Product | T05.1 | Producir video About-the-Product | Grabar y editar el video About-the-Product con testimonios, edición y branding de la startup. | 4 | Mathias | Done |
+| — | Documentación Sprint 4 | T06.1 | Documentar evidencias del Sprint 4 | Registrar planificación, backlog, evidencias de desarrollo, servicios y despliegue del Sprint 4 en el informe. | 3 | Nickolas | Done |
+
+
+#### 5.2.4.5. Execution Evidence for Sprint Review
+
+Durante el Sprint 4, el equipo integró el bounded context Identity & Access Management (IAM) a la solución de SafeRoute, habilitando el registro e inicio de sesión de usuarios con control de acceso por rol dentro de su organización. A continuación se presentan las principales vistas y flujos implementados, que evidencian el funcionamiento del acceso seguro a la plataforma.
+
+**Registro de usuario (Sign Up)**
+
+El usuario ingresa sus datos personales (nombres, apellidos, correo y contraseña) junto con el rol que desempeñará dentro de su organización. Al completar el registro, la cuenta queda creada y asociada a la organización correspondiente, permitiendo su posterior autenticación en la plataforma.
+
+![Vista de registro de usuario](assets/images/Chapter-5/Sprint4/execution-signup.png)
+
+**Inicio de sesión (Sign In)**
+
+El usuario ingresa su correo y contraseña para autenticarse en la plataforma. Una vez validadas sus credenciales, el sistema genera una sesión segura y lo redirige a la vista principal que corresponde a su rol dentro de la organización.
+
+![Vista de inicio de sesión](assets/images/Chapter-5/Sprint4/execution-signin.png)
+
+**Acceso según rol**
+
+Tras autenticarse, cada usuario accede únicamente a las vistas y acciones habilitadas para su rol (administrador, conductor o padre), garantizando que la información y las operaciones disponibles sean las adecuadas para cada tipo de usuario dentro de su organización.
+
+![Vista de acceso por rol](assets/images/Chapter-5/Sprint4/execution-role.png)
+
+**Video de demostración:** _pendiente_
+
+
+#### 5.2.4.6. Services Documentation Evidence for Sprint Review
+
+Durante el Sprint 4, el equipo completó la documentación del bounded context Identity & Access Management (IAM) del Backend Web Service de SafeRoute, exponiendo los servicios REST de autenticación, usuarios y organizaciones. La documentación de contratos se genera con OpenAPI vía Swagger , la persistencia se realiza con Entity Framework Core sobre MySQL y los recursos se exponen bajo el prefijo de versión `api/v1`. Con la incorporación de este contexto se completa la documentación de todos los bounded contexts de la solución.
+
+La documentación OpenAPI de todos los endpoints se encuentra disponible en la URL de Swagger UI: `_(pendiente link despliegue gaa )_`.
+
+A continuación se documentan los endpoints implementados en el contexto IAM, indicando para cada acción el verbo HTTP, la sintaxis de llamada, los parámetros y el response esperado:
+
+**Identity & Access Management**
+
+| Acción | Verbo | Sintaxis de llamada | Parámetros | Response |
+|--------|-------|---------------------|------------|----------|
+| Registrar usuario (Sign Up) | POST | `/api/v1/users` | Body: `{ firstName, lastName, email, password, roleTier, organizationId? }` | `201` → `AuthenticatedUserResource` |
+| Iniciar sesión (Sign In) | POST | `/api/v1/users/sign-in` | Body: `{ email, password }` | `200` → `AuthenticatedUserResource` (usuario + token JWT) |
+| Listar usuarios | GET | `/api/v1/users` | — | `200` → `UserResource[]` |
+| Obtener usuario por id | GET | `/api/v1/users/{userId}` | Path: `userId` (Guid) | `200` → `UserResource` |
+| Crear organización | POST | `/api/v1/organizations` | Body: `{ name }` | `201` → `OrganizationResource` |
+| Obtener organización por id | GET | `/api/v1/organizations/{organizationId}` | Path: `organizationId` (Guid) | `200` → `OrganizationResource` |
+| Actualizar organización | PUT | `/api/v1/organizations/{organizationId}` | Path: `organizationId`; Body: `{ name }` | `200` → `OrganizationResource` |
+
+**Ejemplos de request / response (datos de muestra):**
+
+*Registrar usuario — POST `/api/v1/users`*
+```jsonc
+// Request
+{ "firstName": "Ana", "lastName": "Torres", "email": "ana@saferoute.com",
+  "password": "P@ssw0rd", "roleTier": "Administrator",
+  "organizationId": "a0000000-0000-0000-0000-000000000001" }
+// Response 201 Created
+{ "id": "e0000000-0000-0000-0000-000000000001", "firstName": "Ana",
+  "lastName": "Torres", "email": "ana@saferoute.com", "roleTier": "Administrator",
+  "organizationId": "a0000000-0000-0000-0000-000000000001",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6..." }
+```
+
+*Iniciar sesión — POST `/api/v1/users/sign-in`*
+```jsonc
+// Request
+{ "email": "ana@saferoute.com", "password": "P@ssw0rd" }
+// Response 200 OK
+{ "id": "e0000000-0000-0000-0000-000000000001", "firstName": "Ana",
+  "lastName": "Torres", "email": "ana@saferoute.com", "roleTier": "Administrator",
+  "organizationId": "a0000000-0000-0000-0000-000000000001",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6..." }
+```
+El response devuelve `AuthenticatedUserResource` con los datos del usuario y el token JWT, que debe enviarse en el header `Authorization: Bearer {token}` para acceder a los endpoints protegidos de los demás bounded contexts.
+
+**Capturas de la documentación en uso (Swagger UI con datos de muestra):**
+
+![Swagger UI - Endpoints de IAM](assets/images/Chapter-5/Sprint4/swagger-iam.png)
+![Swagger UI - Ejecución de Sign-In con datos de muestra](assets/images/Chapter-5/Sprint4/swagger-signin.png)
+
+**Repositorio de Web Services:** `https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform`
+
+**Commits relacionados con Documentación (OpenAPI/Swagger):**
+
+_(pendiente commits)_
+
+#### 5.2.4.7. Software Deployment Evidence for Sprint Review
+
+Durante el Sprint 4, el equipo realizó el redespliegue de la solución de SafeRoute incorporando el bounded context Identity & Access Management (IAM), con el fin de consolidar la versión final de los productos digitales para la entrega TB2. A continuación se resumen los procesos de despliegue realizados durante el sprint.
+
+**Redespliegue del Backend Web Service**
+
+Se redesplegó el Backend Web Service incorporando el contexto IAM junto con los demás bounded contexts ya implementados. Tras aplicar las migraciones de la base de datos, se validó la disponibilidad de la documentación Swagger y el correcto funcionamiento de los endpoints de autenticación, usuarios y organizaciones en el entorno de operación.
+
+![Redespliegue del Web Service](assets/images/Chapter-5/Sprint4/deployment-backend.png)
+
+**Despliegue de la Frontend Web Application**
+
+Se desplegó la nueva versión de la Frontend Web Application integrada con el Backend Web Service, reemplazando el consumo de la Fake API por los servicios REST reales. Se verificó que el flujo de autenticación y el acceso por rol operaran correctamente sobre el backend desplegado.
+
+![Despliegue de la Web Application](assets/images/Chapter-5/Sprint4/deployment-webapp.png)
+
+**Despliegue del Landing Page**
+
+Se actualizó el despliegue del Landing Page manteniendo la consistencia visual con la Web Application y asegurando que los call-to-action redirijan correctamente hacia las vistas correspondientes de la aplicación web.
+
+![Despliegue del Landing Page](assets/images/Chapter-5/Sprint4/deployment-landing.png)
+
+**URLs de la solución desplegada:**
+- Landing Page: `_(pendiente)_`
+- Frontend Web Application: `_(pendiente)_`
+- Web Services (Swagger): `_(pendiente)_`
+
+#### 5.2.4.8. Team Collaboration Insights during Sprint
+
+Durante el Sprint 4, correspondiente a la entrega final (TB2 - Release Review), el equipo mantuvo una colaboración activa distribuida en los repositorios del Backend Web Service (`saferoute-platform`) y del informe (`saferoute-report`). La actividad se concentró en completar el bounded context Identity & Access Management, fidelizar los diagramas respecto al backend implementado, y levantar las observaciones de la entrega AV2.
+
+El aspecto más representativo de la colaboración en este sprint fue la implementación del contexto IAM, Esta división por capas permitió que el equipo avanzara en paralelo manteniendo la integridad del diseño DDD.
+
+En paralelo, Fabio lideró la fidelización de los diagramas y el redespliegue de la solución, Frank encabezó las correcciones del informe señaladas en AV2 (carátula y documentación de base de datos) con la colaboración de José en la actualización del Lean UX, Nickolas y Frank realizaron las entrevistas de validación con los segmentos objetivo, y Mathias produjo el video About-the-Product.
+
+![Backend Pulse Sprint 4](assets/images/Chapter-5/Sprint4/backend-pulse.png)
+
+![Report Pulse Sprint 4](assets/images/Chapter-5/Sprint4/report-pulse.png)
+
+La distribución del trabajo se mantuvo alineada con la Leadership and Collaboration Matrix (LACX) definida al inicio del sprint. El uso consistente de GitFlow y de Conventional Commits permitió mantener un historial trazable y profesional en ambos repositorios, evidenciando la participación de todos los integrantes en la construcción del producto final.
+
 ### 5.3. Validation Interviews
 
 Se presentan las entrevistas de validación realizadas para evaluar la experiencia propuesta en SafeRoute. A diferencia de las entrevistas iniciales de descubrimiento, estas sesiones no buscan identificar el problema desde cero, sino validar si la solución desarrollada responde adecuadamente a las necesidades de los segmentos objetivo.
@@ -5568,11 +5751,20 @@ Enlace de Microsoft Stream: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u
 - Se implementó y desplegó la primera versión funcional del *Backend Web Service* de SafeRoute en ASP.NET Core (.NET 10) con DDD, CQRS y EF Core sobre MySQL, logrando una arquitectura modular y escalable por bounded contexts.
 - El despliegue en *Azure App Service* y la verificación vía *Swagger* confirmaron el funcionamiento de extremo a extremo, dejando la API operativa y accesible públicamente para los siguientes Sprints.
 
+
+### Sprint 4 
+
+- El desarrollo de SafeRoute permitió construir una solución web distribuida que responde a la problemática de seguridad y seguimiento del transporte escolar, integrando en una arquitectura orientada a servicios un RESTful API en ASP.NET Core y una Web Application en Vue.js, con lo que se cubrieron los procesos core y de soporte del modelo de negocio planteado en el Lean UX.
+
+
+- Las entrevistas de validación confirmaron los principales assumptions e hypothesis statements del proyecto, evidenciando que padres y conductores valoran contar con una plataforma que centralice la gestión de rutas, viajes y notificaciones, lo que respalda la propuesta de valor definida al inicio del proyecto.
+
+
 ### Recomendaciones
 
 - Se recomienda *reforzar la seguridad de la API* con autenticación y autorización antes de exponerla a usuarios reales, dado que actualmente los endpoints son de acceso abierto y esto representa un riesgo al integrarla con la Web Application.
 - Se recomienda *incorporar pruebas automatizadas y monitoreo en la nube*, pues permitirían detectar fallos de forma temprana y mantener la estabilidad del servicio a medida que la solución crece en complejidad.
-
+- Se recomienda continuar el Roadmap del producto incorporando funcionalidades sugeridas por los usuarios durante las validaciones, como la geolocalización en tiempo real y las notificaciones push nativas, así como ampliar las pruebas de usabilidad a un mayor número de usuarios por segmento antes de un lanzamiento a mayor escala.
 ---
 
 ### Video About-the-Team
