@@ -3109,198 +3109,106 @@ Application & Infrastructure: SubscriptionStore maneja el estado de subscription
 
 ### 4.8. Database Design
 
-**- Trip Execution & Monitoring**
+**- Identity & Access Management**
 
-Este bounded context es el núcleo operativo del servicio. La tabla `trips` registra cada ejecución real de una ruta, con `start_time` y `end_time` nullable dado que el viaje puede estar en curso. `attendances` captura el estado de abordaje de cada estudiante por viaje, con `boarded_at` nullable para casos de ausencia. `incidents` referencia tanto `trip_id` como `route_id`, permitiendo trazabilidad del evento al viaje específico y a la ruta afectada.
+Este bounded context gestiona la seguridad perimetral del sistema. La tabla `organizations` actúa como raíz estructural, siendo referenciada por prácticamente todos los demás contextos. `users` centraliza las credenciales de autenticación (`email` UNIQUE, `password_hash`) y se vincula a `organizations` y `roles` mediante FK. `roles` es una tabla de catálogo con clave `INT` que define los niveles de acceso disponibles: administrador, conductor y padre de familia.
 
-**Tabla: trips**
+**Tabla: organizations**
 | Atributo | Tipo |
-|-----------------|--------------|
+|------------|--------------|
 | id | CHAR(36) (PK)|
-| organization_id | CHAR(36) (FK)|
-| route_id | CHAR(36) (FK)|
-| driver_id | CHAR(36) (FK)|
-| trip_state | VARCHAR(20) |
-| start_time | DATETIME |
-| end_time | DATETIME |
-
-**Métodos**
-| Método | Descripción |
-|---------------------------------|---------------------------------------------------|
-| Start() | Inicia el viaje. |
-| Complete() | Completa el viaje. |
-| RecordBoarding(childId, state) | Registra el estado de abordaje de un estudiante. |
-| IsInProgress() | Verifica si el viaje está en curso. |
-
----
-
-**Tabla: attendances**
-| Atributo | Tipo |
-|----------------|--------------|
-| id | CHAR(36) (PK)|
-| trip_id | CHAR(36) (FK)|
-| child_id | CHAR(36) (FK)|
-| boarding_state | VARCHAR(20) |
-| boarded_at | DATETIME |
-
-**Métodos**
-| Método | Descripción |
-|------------------------------|-------------------------------------------------|
-| UpdateBoardingState(state) | Actualiza el estado de abordaje del estudiante. |
-| IsBoarded() | Verifica si el estudiante abordó. |
-| GetBoardingTime() | Retorna la hora de abordaje. |
-
----
-
-**Tabla: incidents**
-| Atributo | Tipo |
-|-------------|--------------|
-| id | CHAR(36) (PK)|
-| trip_id | CHAR(36) (FK)|
-| route_id | CHAR(36) (FK)|
-| description | TEXT |
-| reported_at | DATETIME |
-
-**Métodos**
-| Método | Descripción |
-|--------------------|-----------------------------------------|
-| Report() | Registra el incidente. |
-| GetDescription() | Retorna la descripción del incidente. |
-| GetReportedAt() | Retorna la fecha de reporte. |
-
----
-
-**- Notifications & Communication**
-
-**Tabla: notifications**
-| Atributo | Tipo |
-|-----------------|--------------|
-| id | CHAR(36) (PK)|
-| organization_id | CHAR(36) (FK)|
-| parent_id | CHAR(36) (FK)|
-| trip_id | CHAR(36) (FK)|
-| category | VARCHAR(20) |
-| delivery_state | VARCHAR(20) |
-| message | TEXT |
-| sent_at | DATETIME |
-
-**Métodos**
-| Método | Descripción |
-|------------------|----------------------------------------------------|
-| Queue() | Encola la notificación para su envío. |
-| Dispatch() | Despacha la notificación al destinatario. |
-| MarkDelivered() | Marca la notificación como entregada. |
-| GetCategory() | Retorna la categoría de la notificación. |
-
----
-
-**Tabla: alerts**
-| Atributo | Tipo |
-|-----------------|--------------|
-| id | CHAR(36) (PK)|
-| notification_id | CHAR(36) (FK)|
-| triggered_at | DATETIME |
-
-**Métodos**
-| Método | Descripción |
-|-------------------|----------------------------------------|
-| Trigger() | Activa la alerta. |
-| IsPanic() | Verifica si la alerta es de pánico. |
-| GetTriggeredAt() | Retorna la hora en que se activó. |
-
----
-
-**Tabla: announcements**
-| Atributo | Tipo |
-|-----------------|--------------|
-| id | CHAR(36) (PK)|
-| notification_id | CHAR(36) (FK)|
-| route_id | CHAR(36) (FK)|
-| message | TEXT |
-| published_at | DATETIME |
-
-**Métodos**
-| Método | Descripción |
-|-------------------|-----------------------------------------------|
-| Publish() | Publica el comunicado. |
-| GetMessage() | Retorna el contenido del comunicado. |
-| GetPublishedAt() | Retorna la fecha de publicación. |
-
----
-
-**- Route Planning & Execution**
-
-Este bounded context coordina la planificación técnica de las rutas de transporte escolar. La tabla `routes` define cada ruta con su vehículo asignado, horario de salida y días de servicio. `stops` almacena los paraderos georreferenciados con coordenadas de alta precisión y orden de parada. `assignments` vincula una ruta con un conductor en cardinalidad 1:1, y `assignment_children` resuelve la relación muchos a muchos entre asignaciones y estudiantes.
-
-**Tabla: routes**
-| Atributo | Tipo |
-|-----------------|--------------|
-| id | CHAR(36) (PK)|
-| organization_id | CHAR(36) (FK)|
-| vehicle_id | CHAR(36) (FK)|
 | name | VARCHAR(100) |
-| route_state | VARCHAR(20) |
-| departure_time | TIME |
-| service_days | VARCHAR(100) |
+| status | VARCHAR(20) |
+| created_at | DATETIME |
 
 **Métodos**
 | Método | Descripción |
-|---------------------|----------------------------------------------|
-| Activate() | Activa la ruta para operación. |
-| Deactivate() | Desactiva la ruta. |
-| AddStop(stop) | Agrega un paradero a la ruta. |
-| GetStopSequence() | Retorna la secuencia ordenada de paraderos. |
+|---------------|--------------------------------------|
+| Create() | Crea una nueva organización. |
+| Activate() | Activa la organización. |
+| Suspend() | Suspende la organización. |
+| IsActive() | Verifica si la organización está activa. |
 
 ---
 
-**Tabla: stops**
+**Tabla: roles**
 | Atributo | Tipo |
-|------------|---------------|
-| id | CHAR(36) (PK) |
-| route_id | CHAR(36) (FK) |
-| name | VARCHAR(100) |
-| latitude | DECIMAL(10,8) |
-| longitude | DECIMAL(11,8) |
-| stop_order | INT |
+|----------|-------------|
+| id | INT (PK) |
+| name | VARCHAR(20) |
 
 **Métodos**
 | Método | Descripción |
-|------------------------------|----------------------------------------------|
-| IsFirst() | Verifica si es el primer paradero. |
-| IsLast() | Verifica si es el último paradero. |
-| UpdateCoordinates(coords) | Actualiza las coordenadas del paradero. |
-| GetPosition() | Retorna la posición del paradero en la ruta. |
+|----------------|------------------------------------|
+| GetRoleName() | Retorna el nombre del rol. |
+| IsAdmin() | Verifica si el rol es administrador.|
+| IsDriver() | Verifica si el rol es conductor. |
+| IsParent() | Verifica si el rol es padre. |
 
 ---
 
-**Tabla: assignments**
+**Tabla: users**
 | Atributo | Tipo |
-|-----------|--------------|
+|-----------------|--------------|
 | id | CHAR(36) (PK)|
-| route_id | CHAR(36) (FK)|
-| driver_id | CHAR(36) (FK)|
+| organization_id | CHAR(36) (FK)|
+| role_id | INT (FK) |
+| first_name | VARCHAR(100) |
+| last_name | VARCHAR(100) |
+| email | VARCHAR(255) |
+| password_hash | VARCHAR(255) |
+| created_at | DATETIME |
 
 **Métodos**
 | Método | Descripción |
-|-------------------------|-----------------------------------------------|
-| AssignDriver(driverId) | Asigna un conductor a la ruta. |
-| AssignChild(childId) | Agrega un estudiante a la asignación. |
-| RemoveChild(childId) | Elimina un estudiante de la asignación. |
-| GetChildCount() | Retorna la cantidad de estudiantes asignados. |
+|-----------------------------|------------------------------------------|
+| Register() | Registra un nuevo usuario. |
+| Authenticate(password) | Autentica al usuario con su contraseña. |
+| ChangeRole(role) | Cambia el rol asignado al usuario. |
+| GetEmail() | Retorna el email del usuario. |
 
 ---
 
-**Tabla: assignment_children**
+**- Subscription & Plan Management**
+
+Este bounded context administra el ciclo de vida comercial del servicio. La tabla `plans` es un catálogo que define los tiers disponibles y sus cuotas operativas. La tabla `subscriptions` vincula una organización a un plan y registra su estado, fecha de inicio y fecha de fin nullable, ya que una suscripción activa no tiene fecha de término definida.
+
+**Tabla: plans**
 | Atributo | Tipo |
-|---------------|--------------|
-| assignment_id | CHAR(36) (FK)|
-| child_id | CHAR(36) (FK)|
+|-------------|---------------|
+| id | INT (PK) |
+| plan_tier | VARCHAR(20) |
+| max_routes | INT |
+| max_drivers | INT |
+| price | DECIMAL(10,2) |
 
 **Métodos**
 | Método | Descripción |
-|----------------|------------------------------------------------------|
-| AssignChild() | Asocia un estudiante a una asignación de ruta. |
-| RemoveChild() | Desvincula un estudiante de una asignación de ruta. |
+|---------------------------|----------------------------------------------|
+| GetPlanName() | Retorna el nombre del tier del plan. |
+| GetRouteLimit() | Retorna el límite de rutas del plan. |
+| IsWithinRouteQuota(n) | Verifica si el valor está dentro de la cuota de rutas. |
+| IsWithinDriverQuota(n) | Verifica si el valor está dentro de la cuota de conductores. |
+
+---
+
+**Tabla: subscriptions**
+| Atributo | Tipo |
+|-----------------|-------------|
+| id | CHAR(36) (PK)|
+| organization_id | CHAR(36) (FK)|
+| plan_id | INT (FK) |
+| state | VARCHAR(20) |
+| start_date | DATETIME |
+| end_date | DATETIME |
+
+**Métodos**
+| Método | Descripción |
+|-------------------|----------------------------------------------|
+| Activate() | Activa la suscripción. |
+| Upgrade(planId) | Cambia el plan de la suscripción. |
+| Cancel() | Cancela la suscripción. |
+| GetRemainingDays()| Retorna los días restantes de la suscripción.|
 
 ---
 
@@ -3423,121 +3331,217 @@ Este bounded context maneja los perfiles de los actores críticos y los recursos
 
 ---
 
-**- Identity & Access Management**
+**- Route Planning & Execution**
 
-Este bounded context gestiona la seguridad perimetral del sistema. La tabla `organizations` actúa como raíz estructural, siendo referenciada por prácticamente todos los demás contextos. `users` centraliza las credenciales de autenticación (`email` UNIQUE, `password_hash`) y se vincula a `organizations` y `roles` mediante FK. `roles` es una tabla de catálogo con clave `INT` que define los niveles de acceso disponibles: administrador, conductor y padre de familia.
+Este bounded context coordina la planificación técnica de las rutas de transporte escolar. La tabla `routes` define cada ruta con su vehículo asignado, horario de salida y días de servicio. `stops` almacena los paraderos georreferenciados con coordenadas de alta precisión y orden de parada. `assignments` vincula una ruta con un conductor en cardinalidad 1:1, y `assignment_children` resuelve la relación muchos a muchos entre asignaciones y estudiantes.
 
-**Tabla: organizations**
-| Atributo | Tipo |
-|------------|--------------|
-| id | CHAR(36) (PK)|
-| name | VARCHAR(100) |
-| status | VARCHAR(20) |
-| created_at | DATETIME |
-
-**Métodos**
-| Método | Descripción |
-|---------------|--------------------------------------|
-| Create() | Crea una nueva organización. |
-| Activate() | Activa la organización. |
-| Suspend() | Suspende la organización. |
-| IsActive() | Verifica si la organización está activa. |
-
----
-
-**Tabla: roles**
-| Atributo | Tipo |
-|----------|-------------|
-| id | INT (PK) |
-| name | VARCHAR(20) |
-
-**Métodos**
-| Método | Descripción |
-|----------------|------------------------------------|
-| GetRoleName() | Retorna el nombre del rol. |
-| IsAdmin() | Verifica si el rol es administrador.|
-| IsDriver() | Verifica si el rol es conductor. |
-| IsParent() | Verifica si el rol es padre. |
-
----
-
-**Tabla: users**
+**Tabla: routes**
 | Atributo | Tipo |
 |-----------------|--------------|
 | id | CHAR(36) (PK)|
 | organization_id | CHAR(36) (FK)|
-| role_id | INT (FK) |
-| first_name | VARCHAR(100) |
-| last_name | VARCHAR(100) |
-| email | VARCHAR(255) |
-| password_hash | VARCHAR(255) |
-| created_at | DATETIME |
+| vehicle_id | CHAR(36) (FK)|
+| name | VARCHAR(100) |
+| route_state | VARCHAR(20) |
+| departure_time | TIME |
+| service_days | VARCHAR(100) |
 
 **Métodos**
 | Método | Descripción |
-|-----------------------------|------------------------------------------|
-| Register() | Registra un nuevo usuario. |
-| Authenticate(password) | Autentica al usuario con su contraseña. |
-| ChangeRole(role) | Cambia el rol asignado al usuario. |
-| GetEmail() | Retorna el email del usuario. |
+|---------------------|----------------------------------------------|
+| Activate() | Activa la ruta para operación. |
+| Deactivate() | Desactiva la ruta. |
+| AddStop(stop) | Agrega un paradero a la ruta. |
+| GetStopSequence() | Retorna la secuencia ordenada de paraderos. |
 
 ---
 
-**- Subscription & Plan Management**
-
-Este bounded context administra el ciclo de vida comercial del servicio. La tabla `plans` es un catálogo que define los tiers disponibles y sus cuotas operativas. La tabla `subscriptions` vincula una organización a un plan y registra su estado, fecha de inicio y fecha de fin nullable, ya que una suscripción activa no tiene fecha de término definida.
-
-**Tabla: plans**
+**Tabla: stops**
 | Atributo | Tipo |
-|-------------|---------------|
-| id | INT (PK) |
-| plan_tier | VARCHAR(20) |
-| max_routes | INT |
-| max_drivers | INT |
-| price | DECIMAL(10,2) |
+|------------|---------------|
+| id | CHAR(36) (PK) |
+| route_id | CHAR(36) (FK) |
+| name | VARCHAR(100) |
+| latitude | DECIMAL(10,8) |
+| longitude | DECIMAL(11,8) |
+| stop_order | INT |
 
 **Métodos**
 | Método | Descripción |
-|---------------------------|----------------------------------------------|
-| GetPlanName() | Retorna el nombre del tier del plan. |
-| GetRouteLimit() | Retorna el límite de rutas del plan. |
-| IsWithinRouteQuota(n) | Verifica si el valor está dentro de la cuota de rutas. |
-| IsWithinDriverQuota(n) | Verifica si el valor está dentro de la cuota de conductores. |
+|------------------------------|----------------------------------------------|
+| IsFirst() | Verifica si es el primer paradero. |
+| IsLast() | Verifica si es el último paradero. |
+| UpdateCoordinates(coords) | Actualiza las coordenadas del paradero. |
+| GetPosition() | Retorna la posición del paradero en la ruta. |
 
 ---
 
-**Tabla: subscriptions**
+**Tabla: assignments**
 | Atributo | Tipo |
-|-----------------|-------------|
+|-----------|--------------|
+| id | CHAR(36) (PK)|
+| route_id | CHAR(36) (FK)|
+| driver_id | CHAR(36) (FK)|
+
+**Métodos**
+| Método | Descripción |
+|-------------------------|-----------------------------------------------|
+| AssignDriver(driverId) | Asigna un conductor a la ruta. |
+| AssignChild(childId) | Agrega un estudiante a la asignación. |
+| RemoveChild(childId) | Elimina un estudiante de la asignación. |
+| GetChildCount() | Retorna la cantidad de estudiantes asignados. |
+
+---
+
+**Tabla: assignment_children**
+| Atributo | Tipo |
+|---------------|--------------|
+| assignment_id | CHAR(36) (FK)|
+| child_id | CHAR(36) (FK)|
+
+**Métodos**
+| Método | Descripción |
+|----------------|------------------------------------------------------|
+| AssignChild() | Asocia un estudiante a una asignación de ruta. |
+| RemoveChild() | Desvincula un estudiante de una asignación de ruta. |
+
+---
+
+**- Trip Execution & Monitoring**
+
+Este bounded context es el núcleo operativo del servicio. La tabla `trips` registra cada ejecución real de una ruta, con `start_time` y `end_time` nullable dado que el viaje puede estar en curso. `attendances` captura el estado de abordaje de cada estudiante por viaje, con `boarded_at` nullable para casos de ausencia. `incidents` referencia tanto `trip_id` como `route_id`, permitiendo trazabilidad del evento al viaje específico y a la ruta afectada.
+
+**Tabla: trips**
+| Atributo | Tipo |
+|-----------------|--------------|
 | id | CHAR(36) (PK)|
 | organization_id | CHAR(36) (FK)|
-| plan_id | INT (FK) |
-| state | VARCHAR(20) |
-| start_date | DATETIME |
-| end_date | DATETIME |
+| route_id | CHAR(36) (FK)|
+| driver_id | CHAR(36) (FK)|
+| trip_state | VARCHAR(20) |
+| start_time | DATETIME |
+| end_time | DATETIME |
 
 **Métodos**
 | Método | Descripción |
-|-------------------|----------------------------------------------|
-| Activate() | Activa la suscripción. |
-| Upgrade(planId) | Cambia el plan de la suscripción. |
-| Cancel() | Cancela la suscripción. |
-| GetRemainingDays()| Retorna los días restantes de la suscripción.|
+|---------------------------------|---------------------------------------------------|
+| Start() | Inicia el viaje. |
+| Complete() | Completa el viaje. |
+| RecordBoarding(childId, state) | Registra el estado de abordaje de un estudiante. |
+| IsInProgress() | Verifica si el viaje está en curso. |
 
 ---
+
+**Tabla: attendances**
+| Atributo | Tipo |
+|----------------|--------------|
+| id | CHAR(36) (PK)|
+| trip_id | CHAR(36) (FK)|
+| child_id | CHAR(36) (FK)|
+| boarding_state | VARCHAR(20) |
+| boarded_at | DATETIME |
+
+**Métodos**
+| Método | Descripción |
+|------------------------------|-------------------------------------------------|
+| UpdateBoardingState(state) | Actualiza el estado de abordaje del estudiante. |
+| IsBoarded() | Verifica si el estudiante abordó. |
+| GetBoardingTime() | Retorna la hora de abordaje. |
+
+---
+
+**Tabla: incidents**
+| Atributo | Tipo |
+|-------------|--------------|
+| id | CHAR(36) (PK)|
+| trip_id | CHAR(36) (FK)|
+| route_id | CHAR(36) (FK)|
+| description | TEXT |
+| reported_at | DATETIME |
+
+**Métodos**
+| Método | Descripción |
+|--------------------|-----------------------------------------|
+| Report() | Registra el incidente. |
+| GetDescription() | Retorna la descripción del incidente. |
+| GetReportedAt() | Retorna la fecha de reporte. |
+
+---
+
+**- Notifications & Communication**
+
+**Tabla: notifications**
+| Atributo | Tipo |
+|-----------------|--------------|
+| id | CHAR(36) (PK)|
+| organization_id | CHAR(36) (FK)|
+| parent_id | CHAR(36) (FK)|
+| trip_id | CHAR(36) (FK)|
+| category | VARCHAR(20) |
+| delivery_state | VARCHAR(20) |
+| message | TEXT |
+| sent_at | DATETIME |
+
+**Métodos**
+| Método | Descripción |
+|------------------|----------------------------------------------------|
+| Queue() | Encola la notificación para su envío. |
+| Dispatch() | Despacha la notificación al destinatario. |
+| MarkDelivered() | Marca la notificación como entregada. |
+| GetCategory() | Retorna la categoría de la notificación. |
+
+---
+
+**Tabla: alerts**
+| Atributo | Tipo |
+|-----------------|--------------|
+| id | CHAR(36) (PK)|
+| notification_id | CHAR(36) (FK)|
+| triggered_at | DATETIME |
+
+**Métodos**
+| Método | Descripción |
+|-------------------|----------------------------------------|
+| Trigger() | Activa la alerta. |
+| IsPanic() | Verifica si la alerta es de pánico. |
+| GetTriggeredAt() | Retorna la hora en que se activó. |
+
+---
+
+**Tabla: announcements**
+| Atributo | Tipo |
+|-----------------|--------------|
+| id | CHAR(36) (PK)|
+| notification_id | CHAR(36) (FK)|
+| route_id | CHAR(36) (FK)|
+| message | TEXT |
+| published_at | DATETIME |
+
+**Métodos**
+| Método | Descripción |
+|-------------------|-----------------------------------------------|
+| Publish() | Publica el comunicado. |
+| GetMessage() | Retorna el contenido del comunicado. |
+| GetPublishedAt() | Retorna la fecha de publicación. |
 
 #### 4.8.1. Database Diagrams
 
 Esta sección presenta y explica los Database Diagrams para cada bounded context de SafeRoute. Los diagramas modelan la persistencia relacional del sistema, especificando tablas, columnas, tipos de dato, constraints (PK, FK, NOT NULL, UNIQUE) y las relaciones entre tablas con su cardinalidad. Todos los identificadores primarios utilizan `CHAR(36)` para soportar UUIDs, a excepción de catálogos fijos como `roles` y `plans` que usan `INT`. Las relaciones entre bounded contexts se materializan mediante columnas FK que referencian los IDs del contexto origen.
-![DataBase](/assets/images/ChapterIV/DataBase/SafeRoute-DataBase.png)
+![DataBase](./assets/images/ChapterIV/DataBase/SafeRoute-DataBase.png)
+
+**Identity and Access Management**
+
+El bounded context de IAM persiste las entidades centrales de identidad y acceso. La tabla `organizations` actúa como raíz del sistema, siendo referenciada por prácticamente todos los demás contextos. `users` centraliza las credenciales de autenticación (`email` UNIQUE, `password_hash`) y se vincula a `organizations` y `roles` mediante FK. `roles` es una tabla de catálogo con clave `INT` que define los niveles de acceso disponibles en el sistema.
+
+![DataBase](./assets/images/ChapterIV/DataBase/DbIAM.png)
 
 ---
 
-**Trip Execution & Monitoring**
+**SafeRoute.Subscription**
 
-Este contexto registra la ejecución operativa de cada viaje. `trips` referencia `organization_id`, `route_id` y `driver_id` como FK, con `start_time` y `end_time` nullable dado que el viaje puede estar en curso. `attendances` registra el estado de embarque de cada niño por viaje (`trip_id` + `child_id`), con `boarded_at` nullable para casos de ausencia. `incidents` referencia tanto `trip_id` como `route_id`, permitiendo trazabilidad del incidente tanto al viaje específico como a la ruta afectada.
+Este contexto gestiona los planes comerciales y el estado de suscripción de cada organización. La tabla `plans` es un catálogo con `INT` PK que define los tiers disponibles y sus cuotas (`max_routes`, `max_drivers`, `price`). `subscriptions` vincula una organización a un plan mediante FK y registra el ciclo de vida de la suscripción a través de `state`, `start_date` y `end_date` (nullable, ya que una suscripción activa no tiene fecha de fin definida).
 
-![DataBase](./assets/images/ChapterIV/DataBase/DbTrip.png)
+![DataBase](./assets/images/ChapterIV/DataBase/DbSubscription.png)
 
 ---
 
@@ -3557,27 +3561,19 @@ Este contexto modela la infraestructura operativa de transporte. `vehicles` pert
 
 ---
 
+**Trip Execution & Monitoring**
+
+Este contexto registra la ejecución operativa de cada viaje. `trips` referencia `organization_id`, `route_id` y `driver_id` como FK, con `start_time` y `end_time` nullable dado que el viaje puede estar en curso. `attendances` registra el estado de embarque de cada niño por viaje (`trip_id` + `child_id`), con `boarded_at` nullable para casos de ausencia. `incidents` referencia tanto `trip_id` como `route_id`, permitiendo trazabilidad del incidente tanto al viaje específico como a la ruta afectada.
+
+![DataBase](./assets/images/ChapterIV/DataBase/DbTrip.png)
+
+---
+
 **Notifications & Communication**
 
 Este contexto gestiona la comunicación hacia los padres. `notifications` referencia `organization_id`, `parent_id` y `trip_id`, registrando `category`, `delivery_state` y `message` con `sent_at` obligatorio. `alerts` pertenece a una notificación mediante `notification_id` FK y registra el momento exacto del disparo. `announcements` extiende la notificación con una referencia adicional a `route_id`, permitiendo comunicados asociados a una ruta específica con su propio `message` y `published_at`.
 
 ![DataBase](./assets/images/ChapterIV/DataBase/DbNotifications.png)
-
----
-
-**Identity and Access Management**
-
-El bounded context de IAM persiste las entidades centrales de identidad y acceso. La tabla `organizations` actúa como raíz del sistema, siendo referenciada por prácticamente todos los demás contextos. `users` centraliza las credenciales de autenticación (`email` UNIQUE, `password_hash`) y se vincula a `organizations` y `roles` mediante FK. `roles` es una tabla de catálogo con clave `INT` que define los niveles de acceso disponibles en el sistema.
-
-![DataBase](/assets/images/ChapterIV/DataBase/DbIAM.png)
-
----
-
-**SafeRoute.Subscription**
-
-Este contexto gestiona los planes comerciales y el estado de suscripción de cada organización. La tabla `plans` es un catálogo con `INT` PK que define los tiers disponibles y sus cuotas (`max_routes`, `max_drivers`, `price`). `subscriptions` vincula una organización a un plan mediante FK y registra el ciclo de vida de la suscripción a través de `state`, `start_date` y `end_date` (nullable, ya que una suscripción activa no tiene fecha de fin definida).
-
-![DataBase](./assets/images/ChapterIV/DataBase/DbSubscription.png)
 
 ---
 
