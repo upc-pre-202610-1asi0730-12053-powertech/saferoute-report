@@ -4868,19 +4868,18 @@ Para el Sprint 4, los aspectos de trabajo se organizaron en torno a la implement
 | Team Member (Last Name, First Name) | GitHub Username | IAM Bounded Context (L/C) | Diagram Fidelity & Redeployment (L/C) | AV2 Report Corrections (L/C) | Validation Interviews (L/C) | About-the-Product Video (L/C) | Sprint 4 Documentation (L/C) |
 |-------------------------------------|-----------------|:---:|:---:|:---:|:---:|:---:|:---:|
 | Quispe Serrano, Julio Frank | FraSe_JQ | C | C | L | C | C | C |
-| Ortega Quintana, Jose Zacarias | AgoxX61 | C | C | C | L | C | C |
+| Ortega Quintana, Jose Zacarias | AgoxX61 | C | C | C | C | C | C |
 | De La Cruz, Mathias Marcelo | Dela050406 | L | C | C | C | L | C |
 | Vallejo Trujillo, Fabio Cesar | fabiovallejo | C | L | C | C | C | C |
-| Ramirez Ruiz, Nickolas | Bynickram02 | C | C | C | C | C | L |
-
+| Ramirez Ruiz, Nickolas | Bynickram02 | C | C | C | L | C | L |
 
 #### 5.2.4.3. Sprint Backlog 4
 
-El objetivo del Sprint 4, correspondiente a la entrega final (TB2 - Release Review), fue completar el bounded context Identity & Access Management (IAM) en el Backend Web Service de SafeRoute, fidelizar los diagramas del informe respecto al backend implementado con su redespliegue, y levantar las observaciones de la entrega AV2, junto con las entrevistas de validación y el video About-the-Product.
+El objetivo del Sprint 4, correspondiente a la entrega final (TB2 - Release Review), fue completar el bounded context Identity & Access Management (IAM) en el Backend Web Service de SafeRoute, fidelizar los diagramas del informe respecto al backend implementado con su redespliegue, y levantar las observaciones de la entrega AV2 (carátula, diagrama de base de datos y Lean UX), junto con las entrevistas de validación y el video About-the-Product.
 
 ![Sprint Backlog 4](assets/images/Chapter-5/Sprint4/trello-sprint4.png)
 
-**URL del Board:** [SafeRoute - Sprint 4](#)
+**URL del Board:** [SafeRoute - Sprint 4](https://trello.com/b/ghpx779g/sprint-4-saferoute)
 
 | Sprint # | Sprint 4 | | | | | | |
 |:---|:---|:---|:---|:---|:---|:---|:---|
@@ -4896,10 +4895,9 @@ El objetivo del Sprint 4, correspondiente a la entrega final (TB2 - Release Revi
 | — | Correcciones AV2 | T03.1 | Corregir carátula del informe | Reemplazar "Ciclo" por "Período" y aplicar el salto de línea en la carátula. | 1 | Frank | Done |
 | — | Correcciones AV2 | T03.2 | Actualizar documentación de base de datos | Actualizar el diagrama y la documentación de base de datos según lo observado en AV2. | 2 | Frank | Done |
 | — | Correcciones AV2 | T03.3 | Actualizar Lean UX | Actualizar los artefactos de Lean UX según las observaciones de la entrega AV2. | 2 | José | Done |
-| — | Entrevistas de Validación | T04.1 | Realizar y registrar entrevistas de validación | Realizar las entrevistas de validación con usuarios de los segmentos objetivo y registrar sus resultados. | 4 | José | Done |
+| — | Entrevistas de Validación | T04.1 | Realizar y registrar entrevistas de validación | Realizar las entrevistas de validación con usuarios de los segmentos objetivo y registrar sus resultados y evaluación según heurísticas. | 4 | Nickolas / Frank | Done |
 | — | Video About-the-Product | T05.1 | Producir video About-the-Product | Grabar y editar el video About-the-Product con testimonios, edición y branding de la startup. | 4 | Mathias | Done |
 | — | Documentación Sprint 4 | T06.1 | Documentar evidencias del Sprint 4 | Registrar planificación, backlog, evidencias de desarrollo, servicios y despliegue del Sprint 4 en el informe. | 3 | Nickolas | Done |
-
 
 
 #### 5.2.4.4. Development Evidence for Sprint Review
