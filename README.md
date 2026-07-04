@@ -4841,6 +4841,15 @@ La distribución del trabajo se mantuvo alineada con la Leadership and Collabora
 
 La distribución del trabajo se mantuvo alineada con la **Leadership and Collaboration Matrix** definida al inicio del sprint, donde cada integrante asumió la responsabilidad principal de un módulo del frontend mientras colaboraba en los módulos restantes mediante revisiones de código y soporte técnico. El uso consistente de GitFlow, junto con la convención de Conventional Commits, permitió mantener un historial trazable y profesional en ambos repositorios del proyecto.
 
+### 5.2.4. Sprint 4
+#### 5.2.4.1. Sprint Planning 4
+#### 5.2.4.2. Aspect Leaders and Collaborators
+#### 5.2.4.3. Sprint Backlog 4
+#### 5.2.4.4. Development Evidence for Sprint Review
+#### 5.2.4.5. Execution Evidence for Sprint Review
+#### 5.2.4.6. Services Documentation Evidence for Sprint Review
+#### 5.2.4.7. Software Deployment Evidence for Sprint Review
+#### 5.2.4.8. Team Collaboration Insights during Sprint
 ### 5.3. Validation Interviews
 
 Se presentan las entrevistas de validación realizadas para evaluar la experiencia propuesta en SafeRoute. A diferencia de las entrevistas iniciales de descubrimiento, estas sesiones no buscan identificar el problema desde cero, sino validar si la solución desarrollada responde adecuadamente a las necesidades de los segmentos objetivo.
@@ -5565,6 +5574,11 @@ Enlace de Microsoft Stream: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u
 
 - Se implementó y desplegó la primera versión funcional del *Backend Web Service* de SafeRoute en ASP.NET Core (.NET 10) con DDD, CQRS y EF Core sobre MySQL, logrando una arquitectura modular y escalable por bounded contexts.
 - El despliegue en *Azure App Service* y la verificación vía *Swagger* confirmaron el funcionamiento de extremo a extremo, dejando la API operativa y accesible públicamente para los siguientes Sprints.
+
+
+### Sprint 4 
+
+
 
 ### Recomendaciones
 
