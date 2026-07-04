@@ -4863,7 +4863,44 @@ En la reunión de planificación del Sprint 4, correspondiente a la entrega fina
 | Sum of Story Points | 58                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 #### 5.2.4.2. Aspect Leaders and Collaborators
 
+Para el Sprint 4, los aspectos de trabajo se organizaron en torno a la implementación del bounded context Identity & Access Management, la fidelización de los diagramas respecto al backend implementado con su redespliegue, las correcciones del informe señaladas en la entrega AV2 (carátula, diagrama de base de datos y Lean UX), las entrevistas de validación, el video About-the-Product y la documentación del sprint. Se presenta la Leadership-and-Collaboration Matrix (LACX):
+
+| Team Member (Last Name, First Name) | GitHub Username | IAM Bounded Context (L/C) | Diagram Fidelity & Redeployment (L/C) | AV2 Report Corrections (L/C) | Validation Interviews (L/C) | About-the-Product Video (L/C) | Sprint 4 Documentation (L/C) |
+|-------------------------------------|-----------------|:---:|:---:|:---:|:---:|:---:|:---:|
+| Quispe Serrano, Julio Frank | FraSe_JQ | C | C | L | C | C | C |
+| Ortega Quintana, Jose Zacarias | AgoxX61 | C | C | C | L | C | C |
+| De La Cruz, Mathias Marcelo | Dela050406 | L | C | C | C | L | C |
+| Vallejo Trujillo, Fabio Cesar | fabiovallejo | C | L | C | C | C | C |
+| Ramirez Ruiz, Nickolas | Bynickram02 | C | C | C | C | C | L |
+
+
 #### 5.2.4.3. Sprint Backlog 4
+
+El objetivo del Sprint 4, correspondiente a la entrega final (TB2 - Release Review), fue completar el bounded context Identity & Access Management (IAM) en el Backend Web Service de SafeRoute, fidelizar los diagramas del informe respecto al backend implementado con su redespliegue, y levantar las observaciones de la entrega AV2, junto con las entrevistas de validación y el video About-the-Product.
+
+![Sprint Backlog 4](assets/images/Chapter-5/Sprint4/trello-sprint4.png)
+
+**URL del Board:** [SafeRoute - Sprint 4](#)
+
+| Sprint # | Sprint 4 | | | | | | |
+|:---|:---|:---|:---|:---|:---|:---|:---|
+| **User Story** | | **Work-Item / Task** | | | | | |
+| **Id** | **Title** | **Id** | **Title** | **Description** | **Estimation (Hours)** | **Assigned To** | **Status** |
+| US08 | Registro e Inicio de Sesión | T01.1 | Implementar value objects y errores del dominio IAM | Modelar los value objects (email, password hash, role tier, organization) y los errores del dominio del contexto IAM. | 3 | Mathias | Done |
+| US08 | Registro e Inicio de Sesión | T01.2 | Implementar aggregates, commands y queries de IAM | Modelar los aggregates User y Organization con sus commands, queries y repositorios. | 4 | Nickolas | Done |
+| US08 | Registro e Inicio de Sesión | T01.3 | Implementar capa de aplicación de IAM | Implementar los servicios de aplicación para registro, inicio de sesión y gestión de organizaciones. | 4 | Frank | Done |
+| US08 | Registro e Inicio de Sesión | T01.4 | Implementar infraestructura de IAM (hashing, JWT, EF Core) | Implementar el hashing con BCrypt, el servicio de tokens JWT y la persistencia con EF Core. | 4 | Fabio | Done |
+| US08 | Registro e Inicio de Sesión | T01.5 | Implementar endpoints REST de IAM | Exponer los servicios REST de usuarios y organizaciones con sus resources y assemblers. | 3 | José | Done |
+| — | Fidelización de Diagramas | T02.1 | Alinear diagramas con las User Stories completadas | Actualizar los diagramas de arquitectura, clases y base de datos para reflejar el backend implementado. | 4 | Fabio | Done |
+| — | Redespliegue | T02.2 | Redesplegar la solución | Redesplegar la solución con el contexto IAM integrado y validar su funcionamiento. | 3 | Fabio | Done |
+| — | Correcciones AV2 | T03.1 | Corregir carátula del informe | Reemplazar "Ciclo" por "Período" y aplicar el salto de línea en la carátula. | 1 | Frank | Done |
+| — | Correcciones AV2 | T03.2 | Actualizar documentación de base de datos | Actualizar el diagrama y la documentación de base de datos según lo observado en AV2. | 2 | Frank | Done |
+| — | Correcciones AV2 | T03.3 | Actualizar Lean UX | Actualizar los artefactos de Lean UX según las observaciones de la entrega AV2. | 2 | José | Done |
+| — | Entrevistas de Validación | T04.1 | Realizar y registrar entrevistas de validación | Realizar las entrevistas de validación con usuarios de los segmentos objetivo y registrar sus resultados. | 4 | José | Done |
+| — | Video About-the-Product | T05.1 | Producir video About-the-Product | Grabar y editar el video About-the-Product con testimonios, edición y branding de la startup. | 4 | Mathias | Done |
+| — | Documentación Sprint 4 | T06.1 | Documentar evidencias del Sprint 4 | Registrar planificación, backlog, evidencias de desarrollo, servicios y despliegue del Sprint 4 en el informe. | 3 | Nickolas | Done |
+
+
 
 #### 5.2.4.4. Development Evidence for Sprint Review
 
