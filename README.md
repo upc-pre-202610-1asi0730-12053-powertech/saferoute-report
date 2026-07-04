@@ -4900,13 +4900,115 @@ El objetivo del Sprint 4, correspondiente a la entrega final (TB2 - Release Revi
 | — | Documentación Sprint 4 | T06.1 | Documentar evidencias del Sprint 4 | Registrar planificación, backlog, evidencias de desarrollo, servicios y despliegue del Sprint 4 en el informe. | 3 | Nickolas | Done |
 
 
-#### 5.2.4.4. Development Evidence for Sprint Review
-
 #### 5.2.4.5. Execution Evidence for Sprint Review
+
+Durante el Sprint 4, el equipo integró el bounded context Identity & Access Management (IAM) a la solución de SafeRoute, habilitando el registro e inicio de sesión de usuarios con control de acceso por rol dentro de su organización. A continuación se presentan las principales vistas y flujos implementados, que evidencian el funcionamiento del acceso seguro a la plataforma.
+
+**Registro de usuario (Sign Up)**
+
+El usuario ingresa sus datos personales (nombres, apellidos, correo y contraseña) junto con el rol que desempeñará dentro de su organización. Al completar el registro, la cuenta queda creada y asociada a la organización correspondiente, permitiendo su posterior autenticación en la plataforma.
+
+![Vista de registro de usuario](assets/images/Chapter-5/Sprint4/execution-signup.png)
+
+**Inicio de sesión (Sign In)**
+
+El usuario ingresa su correo y contraseña para autenticarse en la plataforma. Una vez validadas sus credenciales, el sistema genera una sesión segura y lo redirige a la vista principal que corresponde a su rol dentro de la organización.
+
+![Vista de inicio de sesión](assets/images/Chapter-5/Sprint4/execution-signin.png)
+
+**Acceso según rol**
+
+Tras autenticarse, cada usuario accede únicamente a las vistas y acciones habilitadas para su rol (administrador, conductor o padre), garantizando que la información y las operaciones disponibles sean las adecuadas para cada tipo de usuario dentro de su organización.
+
+![Vista de acceso por rol](assets/images/Chapter-5/Sprint4/execution-role.png)
+
+**Video de demostración:** _pendiente_
+
 
 #### 5.2.4.6. Services Documentation Evidence for Sprint Review
 
+Durante el Sprint 4, el equipo completó la documentación del bounded context Identity & Access Management (IAM) del Backend Web Service de SafeRoute, exponiendo los servicios REST de autenticación, usuarios y organizaciones. La documentación de contratos se genera con OpenAPI vía Swagger , la persistencia se realiza con Entity Framework Core sobre MySQL y los recursos se exponen bajo el prefijo de versión `api/v1`. Con la incorporación de este contexto se completa la documentación de todos los bounded contexts de la solución.
+
+La documentación OpenAPI de todos los endpoints se encuentra disponible en la URL de Swagger UI: `_(pendiente link despliegue gaa )_`.
+
+A continuación se documentan los endpoints implementados en el contexto IAM, indicando para cada acción el verbo HTTP, la sintaxis de llamada, los parámetros y el response esperado:
+
+**Identity & Access Management**
+
+| Acción | Verbo | Sintaxis de llamada | Parámetros | Response |
+|--------|-------|---------------------|------------|----------|
+| Registrar usuario (Sign Up) | POST | `/api/v1/users` | Body: `{ firstName, lastName, email, password, roleTier, organizationId? }` | `201` → `AuthenticatedUserResource` |
+| Iniciar sesión (Sign In) | POST | `/api/v1/users/sign-in` | Body: `{ email, password }` | `200` → `AuthenticatedUserResource` (usuario + token JWT) |
+| Listar usuarios | GET | `/api/v1/users` | — | `200` → `UserResource[]` |
+| Obtener usuario por id | GET | `/api/v1/users/{userId}` | Path: `userId` (Guid) | `200` → `UserResource` |
+| Crear organización | POST | `/api/v1/organizations` | Body: `{ name }` | `201` → `OrganizationResource` |
+| Obtener organización por id | GET | `/api/v1/organizations/{organizationId}` | Path: `organizationId` (Guid) | `200` → `OrganizationResource` |
+| Actualizar organización | PUT | `/api/v1/organizations/{organizationId}` | Path: `organizationId`; Body: `{ name }` | `200` → `OrganizationResource` |
+
+**Ejemplos de request / response (datos de muestra):**
+
+*Registrar usuario — POST `/api/v1/users`*
+```jsonc
+// Request
+{ "firstName": "Ana", "lastName": "Torres", "email": "ana@saferoute.com",
+  "password": "P@ssw0rd", "roleTier": "Administrator",
+  "organizationId": "a0000000-0000-0000-0000-000000000001" }
+// Response 201 Created
+{ "id": "e0000000-0000-0000-0000-000000000001", "firstName": "Ana",
+  "lastName": "Torres", "email": "ana@saferoute.com", "roleTier": "Administrator",
+  "organizationId": "a0000000-0000-0000-0000-000000000001",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6..." }
+```
+
+*Iniciar sesión — POST `/api/v1/users/sign-in`*
+```jsonc
+// Request
+{ "email": "ana@saferoute.com", "password": "P@ssw0rd" }
+// Response 200 OK
+{ "id": "e0000000-0000-0000-0000-000000000001", "firstName": "Ana",
+  "lastName": "Torres", "email": "ana@saferoute.com", "roleTier": "Administrator",
+  "organizationId": "a0000000-0000-0000-0000-000000000001",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6..." }
+```
+El response devuelve `AuthenticatedUserResource` con los datos del usuario y el token JWT, que debe enviarse en el header `Authorization: Bearer {token}` para acceder a los endpoints protegidos de los demás bounded contexts.
+
+**Capturas de la documentación en uso (Swagger UI con datos de muestra):**
+
+![Swagger UI - Endpoints de IAM](assets/images/Chapter-5/Sprint4/swagger-iam.png)
+![Swagger UI - Ejecución de Sign-In con datos de muestra](assets/images/Chapter-5/Sprint4/swagger-signin.png)
+
+**Repositorio de Web Services:** `https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform`
+
+**Commits relacionados con Documentación (OpenAPI/Swagger):**
+
+_(pendiente commits)_
+
 #### 5.2.4.7. Software Deployment Evidence for Sprint Review
+
+Durante el Sprint 4, el equipo realizó el redespliegue de la solución de SafeRoute incorporando el bounded context Identity & Access Management (IAM), con el fin de consolidar la versión final de los productos digitales para la entrega TB2. A continuación se resumen los procesos de despliegue realizados durante el sprint.
+
+**Redespliegue del Backend Web Service**
+
+Se redesplegó el Backend Web Service incorporando el contexto IAM junto con los demás bounded contexts ya implementados. Tras aplicar las migraciones de la base de datos, se validó la disponibilidad de la documentación Swagger y el correcto funcionamiento de los endpoints de autenticación, usuarios y organizaciones en el entorno de operación.
+
+![Redespliegue del Web Service](assets/images/Chapter-5/Sprint4/deployment-backend.png)
+
+**Despliegue de la Frontend Web Application**
+
+Se desplegó la nueva versión de la Frontend Web Application integrada con el Backend Web Service, reemplazando el consumo de la Fake API por los servicios REST reales. Se verificó que el flujo de autenticación y el acceso por rol operaran correctamente sobre el backend desplegado.
+
+![Despliegue de la Web Application](assets/images/Chapter-5/Sprint4/deployment-webapp.png)
+
+**Despliegue del Landing Page**
+
+Se actualizó el despliegue del Landing Page manteniendo la consistencia visual con la Web Application y asegurando que los call-to-action redirijan correctamente hacia las vistas correspondientes de la aplicación web.
+
+![Despliegue del Landing Page](assets/images/Chapter-5/Sprint4/deployment-landing.png)
+
+**URLs de la solución desplegada:**
+- Landing Page: `_(pendiente)_`
+- Frontend Web Application: `_(pendiente)_`
+- Web Services (Swagger): `_(pendiente)_`
 
 #### 5.2.4.8. Team Collaboration Insights during Sprint
 
@@ -5650,13 +5752,17 @@ Enlace de Microsoft Stream: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u
 
 ### Sprint 4 
 
+- El desarrollo de SafeRoute permitió construir una solución web distribuida que responde a la problemática de seguridad y seguimiento del transporte escolar, integrando en una arquitectura orientada a servicios un RESTful API en ASP.NET Core y una Web Application en Vue.js, con lo que se cubrieron los procesos core y de soporte del modelo de negocio planteado en el Lean UX.
+
+
+- Las entrevistas de validación confirmaron los principales assumptions e hypothesis statements del proyecto, evidenciando que padres y conductores valoran contar con una plataforma que centralice la gestión de rutas, viajes y notificaciones, lo que respalda la propuesta de valor definida al inicio del proyecto.
 
 
 ### Recomendaciones
 
 - Se recomienda *reforzar la seguridad de la API* con autenticación y autorización antes de exponerla a usuarios reales, dado que actualmente los endpoints son de acceso abierto y esto representa un riesgo al integrarla con la Web Application.
 - Se recomienda *incorporar pruebas automatizadas y monitoreo en la nube*, pues permitirían detectar fallos de forma temprana y mantener la estabilidad del servicio a medida que la solución crece en complejidad.
-
+- Se recomienda continuar el Roadmap del producto incorporando funcionalidades sugeridas por los usuarios durante las validaciones, como la geolocalización en tiempo real y las notificaciones push nativas, así como ampliar las pruebas de usabilidad a un mayor número de usuarios por segmento antes de un lanzamiento a mayor escala.
 ---
 
 ### Video About-the-Team
