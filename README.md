@@ -5166,15 +5166,15 @@ Si el botón de pánico se activa accidentalmente o no se confirma correctamente
 
 ###### User Flows seleccionados para el segmento Parent
 
-Los User Flows seleccionados para el segmento Parent cubren las acciones principales de monitoreo y seguimiento del traslado escolar: visualización del viaje, recepción de alertas y confirmación del estado del estudiante.
+Los User Flows seleccionados para el segmento Parent cubren las acciones principales de monitoreo y seguimiento del traslado escolar: visualización del viaje, gestión del perfil del usuario y confirmación del estado del estudiante.
 
 Se considerarán los siguientes User Flows:
 
 - **User Flow 10:** Rastreo en tiempo real del vehículo.
-- **User Flow 11:** Recepción de notificaciones automáticas.
+- **User Flow 11:** Gestión del perfil y configuración del padre.
 - **User Flow 12:** Confirmación de llegada e historial de asistencia.
 
-Estos flujos permiten validar si el padre de familia puede obtener información suficiente sobre el traslado de su hijo sin depender de llamadas o mensajes constantes al conductor.
+Estos flujos permiten validar si el padre de familia puede monitorear el traslado de su hijo, revisar información importante de su cuenta y confirmar el estado del servicio escolar sin depender de llamadas o mensajes constantes al conductor.
 
 ###### User Flow 10: Rastreo en tiempo real del vehículo
 
@@ -5198,28 +5198,30 @@ El padre inicia sesión en SafeRoute y accede al módulo de monitoreo del viaje 
 **Unhappy path:**
 Si no existe un viaje activo, el sistema muestra un mensaje indicando que no hay trayectos disponibles en ese momento. Si la ubicación del vehículo no puede cargarse por problemas de conexión o señal GPS, el sistema muestra un estado de error comprensible, evitando que el padre interprete la falta de información como una situación de riesgo.
 
-###### User Flow 11: Recepción de notificaciones automáticas
 
-- **User goal:**
-  Como padre de familia, quiero recibir notificaciones sin tener que preguntar.
+###### User Flow 11: Gestión del perfil y configuración del padre
 
-- **User Story asociada:**
-  US19 - Como padre, quiero recibir una alerta de proximidad, para prepararme antes de la llegada del vehículo.
-  US20 - Como padre, quiero recibir confirmación de llegada, para estar tranquilo.
+- **User goal:**  
+  Como padre de familia, quiero acceder a mi perfil, para revisar mi información personal y configuración de cuenta dentro de la plataforma.
+
+- **User Story asociada:**  
+  Como padre de familia, quiero revisar mi perfil de usuario, para asegurarme de que mis datos personales y preferencias estén correctamente configurados.
 
 - **Web:**
 
 <p align="center">
-<img src="assets/images/ChapterIV/WebApp/UserFlow/Desktop/UserFlow11.png" width="1500px" alt="ug11">
+<img src="assets/images/ChapterIV/WebApp/UserFlow/Desktop/UserFlow11.png" width="1500px" alt="Parent User Flow 11">
 </p>
 
 - **Descripción del flujo:**
 
-**Happy path:**
-El padre recibe notificaciones automáticas durante momentos importantes del trayecto, como inicio de ruta, aproximación del vehículo, abordaje del estudiante, llegada al destino o reporte de incidencia. Estas alertas mantienen informado al usuario sin necesidad de comunicarse constantemente con el conductor.
+**Happy path:**  
+El padre de familia inicia sesión en SafeRoute y accede a su dashboard. Desde el menú principal, selecciona la opción de perfil o configuración. El sistema muestra la información asociada a su cuenta, como datos personales, información de contacto, preferencias de notificación o configuración general. El usuario revisa la información disponible y confirma que los datos mostrados corresponden correctamente a su cuenta.
 
-**Unhappy path:**
-Si las notificaciones están desactivadas o el dispositivo no permite recibir alertas, el sistema mantiene los eventos visibles dentro de la plataforma para que el padre pueda consultarlos manualmente. Si una notificación no puede enviarse, la información debe permanecer disponible en el panel del viaje o historial correspondiente.
+**Unhappy path:**  
+Si el padre de familia no encuentra fácilmente la sección de perfil, puede necesitar explorar otras opciones del menú, generando una pequeña demora en la navegación. Si la información del perfil no carga correctamente, el sistema debe mostrar un mensaje claro indicando el problema y permitir volver al dashboard sin perder la sesión.
+
+Este flujo permite validar que el usuario Parent pueda acceder a una sección personal dentro de la plataforma y revisar información asociada a su cuenta. Aunque no corresponde directamente al monitoreo del viaje, complementa la experiencia del padre de familia al darle control sobre su información y configuración dentro de SafeRoute.
 
 ###### User Flow 12: Confirmación de llegada e historial de asistencia
 
@@ -5425,7 +5427,7 @@ Para el segmento **Parent**, las entrevistas se enfocan en validar la experienci
 **User Flows evaluados:**
 
 - **User Flow 10:** Rastreo en tiempo real del vehículo.
-- **User Flow 11:** Recepción de notificaciones automáticas.
+- **User Flow 11:** Gestión de perfil y configración del padre
 - **User Flow 12:** Confirmación de llegada e historial de asistencia.
 
 **Tareas asignadas al entrevistado:**
@@ -5477,32 +5479,59 @@ sino que establecen un estándar de seguridad y eficiencia que convenció plenam
 
 ###### Entrevista de validación 2 - Parent
 
-###### User Flow 11: Recepción de notificaciones automáticas
+###### User Flow 11: Gestión del perfil y configuración del padre
 
-- **User goal:**  
-  Como padre de familia, quiero recibir notificaciones sin tener que preguntar.
+* **User goal:**
+  Como padre de familia, quiero acceder a mi perfil, para revisar mi información personal y configuración de cuenta dentro de la plataforma.
 
-- **User Story asociada:**  
-  US19 - Como padre, quiero recibir una alerta de proximidad, para prepararme antes de la llegada del vehículo.  
-  US20 - Como padre, quiero recibir confirmación de llegada, para estar tranquilo.
+* **User Story asociada:**
+  Como padre de familia, quiero revisar mi perfil de usuario, para asegurarme de que mis datos personales y preferencias estén correctamente configurados.
 
-- **Validación durante entrevista:**  
-  Este flujo fue observado de forma complementaria durante las entrevistas del segmento Parent, debido a que los participantes revisaron secciones relacionadas con seguimiento del bus, estados del viaje, alertas y notificaciones dentro de la Web Application.
+* **Validación durante entrevista:**
+  Este flujo fue observado durante las entrevistas del segmento Parent, principalmente en la navegación donde se revisaron secciones como dashboard, seguimiento del bus, historial, alertas y perfil dentro de la Web Application. En este caso, el flujo permite validar que el padre de familia puede acceder a una sección personal y revisar información asociada a su cuenta.
 
-- **Descripción del flujo:**
+* **Descripción del flujo:**
 
-**Happy path:**  
-El padre de familia inicia sesión en SafeRoute y accede a su dashboard familiar. Durante el seguimiento del viaje activo, el sistema muestra información relacionada con el estado del traslado escolar, como ubicación del vehículo, avance del recorrido, paradas y estado del estudiante. Cuando ocurre un evento relevante, como proximidad del bus, abordaje del estudiante, llegada al destino o incidencia, el sistema genera una notificación automática visible para el usuario. De esta manera, el padre puede mantenerse informado sin necesidad de llamar o escribir al conductor.
+**Happy path:**
+El padre de familia inicia sesión en SafeRoute y accede a su dashboard familiar. Desde el menú principal, selecciona la opción de perfil o configuración. El sistema muestra la información asociada a su cuenta, como datos personales, información de contacto, configuración general y preferencias disponibles dentro de la plataforma. El usuario revisa la información presentada y confirma que los datos corresponden correctamente a su perfil.
 
-**Unhappy path:**  
-Si las notificaciones no se muestran correctamente, están desactivadas o el usuario no las identifica con facilidad, el padre podría no enterarse oportunamente de eventos importantes del viaje. En ese caso, el sistema debería permitir consultar los eventos dentro de una sección de alertas o historial, mostrando claramente el tipo de notificación, hora, estado del evento y nivel de importancia. Si no existen notificaciones disponibles, la plataforma debería mostrar un estado vacío comprensible, evitando que el usuario interprete la ausencia de alertas como un error del sistema.
+**Unhappy path:**
+Si el padre de familia no encuentra fácilmente la sección de perfil, puede necesitar explorar otras opciones del menú, generando una pequeña demora en la navegación. Si la información del perfil no carga correctamente, el sistema debe mostrar un mensaje claro indicando el problema y permitir volver al dashboard sin perder la sesión. Si alguna opción de configuración no está disponible, la plataforma debe comunicarlo de forma comprensible para evitar confusión.
 
-- **Observación para validación:**  
-  Durante las entrevistas Parent, se evidenció que las secciones de seguimiento del bus, alertas e historial son importantes para que el padre de familia comprenda el estado del traslado escolar. Aunque la validación principal se centró en el rastreo en tiempo real y la confirmación de llegada, también se pudo observar de forma complementaria la relevancia del User Flow 11, ya que las notificaciones automáticas funcionan como apoyo para reducir la incertidumbre del usuario durante el viaje.
+* **Observación para validación:**
+  Durante las entrevistas Parent, se evidenció que la sección de perfil complementa la experiencia del padre de familia dentro de SafeRoute. Aunque el flujo principal del segmento está relacionado con el monitoreo del traslado escolar, el acceso al perfil permite que el usuario revise información de su cuenta y mantenga mayor control sobre su experiencia dentro de la plataforma.
 
-- **Recomendación:**  
-  Se recomienda reforzar la visibilidad de las notificaciones dentro del dashboard familiar, diferenciando claramente eventos informativos, alertas de proximidad, confirmaciones de llegada e incidencias. También sería conveniente mostrar indicadores como “Nueva”, “Leída”, “Importante” o “Crítica”, para que el padre pueda reconocer rápidamente el nivel de urgencia de cada notificación.
+* **Recomendación:**
+  Se recomienda mantener la sección de perfil accesible desde el menú principal del usuario Parent y reforzar la claridad de sus opciones mediante etiquetas simples. También sería conveniente mostrar de forma ordenada la información personal, configuración de cuenta y preferencias disponibles, evitando que el usuario tenga que buscar en varias secciones para encontrar sus datos.
 
+
+###### User Flow 11 - Gestión del perfil y configuración del padre
+
+**Entrevistador:**
+[Nombre y apellido del entrevistador]
+
+**Datos del entrevistado**
+
+* **Nombre:** [Nombre]
+* **Apellidos:** [Apellidos]
+* **Edad:** [Edad]
+* **Distrito:** [Distrito]
+* **Segmento:** Parent
+* **URL del video:** [Pegar URL del video]
+* **Timing de inicio:** [mm:ss]
+* **Duración:** [mm:ss]
+* **Fin de entrevista:** [mm:ss]
+
+<p align="center">
+<img src="assets/images/ChapterV/ValidationInterviews/[nombre].png" alt="Parent Validation Interview" width="500"/>
+</p>
+
+**Resumen descriptivo:**
+Durante la sesión de validación, el/la entrevistado(a) interactuó con la Web Application de SafeRoute desde el rol de padre de familia. Primero accedió a la pantalla de inicio de sesión, donde se validó el ingreso a la plataforma y la identificación del usuario según su rol. Posteriormente, ingresó al dashboard familiar, desde donde pudo visualizar las opciones principales disponibles para el monitoreo y gestión de su cuenta.
+
+Durante la navegación, el/la participante accedió a la sección de perfil, donde pudo revisar información asociada a su cuenta, datos personales y opciones de configuración disponibles dentro de la plataforma. Este flujo permitió validar el **User Flow 11: Gestión del perfil y configuración del padre**, ya que el usuario pudo identificar una sección personal dentro del sistema y revisar información relacionada con su cuenta.
+
+Asimismo, la interacción permitió observar que el perfil complementa la experiencia del usuario Parent, ya que no solo se enfoca en el monitoreo del transporte escolar, sino también en brindar al padre de familia un espacio para consultar y gestionar información propia dentro de SafeRoute.
 ###### Entrevista de validación 3 - Parent
 
 - **User Flow 12**
