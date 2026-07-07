@@ -112,6 +112,19 @@ SafeRoute_platform(Backend):
 
 [![Backend Pulse ](assets/images/Chapter-5/Sprint3/backend-pulse.png)](assets/images/Chapter-5/Sprint3/backend-pulse.png)
 
+### Sprint 4
+
+TB2:
+
+---
+
+Report:
+![Backend Pulse Sprint 4](assets/images/Chapter-5/Sprint4/backend-pulse.png)
+
+
+
+Backend:
+![Report Pulse Sprint 4](assets/images/Chapter-5/Sprint4/report-pulse.png)
 
 ---
 
@@ -4867,11 +4880,13 @@ El usuario ingresa sus datos personales (nombres, apellidos, correo y contraseñ
 
 ![Vista de registro de usuario](assets/images/Chapter-5/Sprint4/execution-signup.png)
 
+
 **Inicio de sesión (Sign In)**
 
 El usuario ingresa su correo y contraseña para autenticarse en la plataforma. Una vez validadas sus credenciales, el sistema genera una sesión segura y lo redirige a la vista principal que corresponde a su rol dentro de la organización.
 
 ![Vista de inicio de sesión](assets/images/Chapter-5/Sprint4/execution-signin.png)
+
 
 **Acceso según rol**
 
@@ -4879,14 +4894,16 @@ Tras autenticarse, cada usuario accede únicamente a las vistas y acciones habil
 
 ![Vista de acceso por rol](assets/images/Chapter-5/Sprint4/execution-role.png)
 
-**Video de demostración:** _pendiente_
+
+**Video de demostración:** [Video de demostración](https://youtu.be/TjAK-1Koqd8)
 
 
 #### 5.2.4.6. Services Documentation Evidence for Sprint Review
 
 Durante el Sprint 4, el equipo completó la documentación del bounded context Identity & Access Management (IAM) del Backend Web Service de SafeRoute, exponiendo los servicios REST de autenticación, usuarios y organizaciones. La documentación de contratos se genera con OpenAPI vía Swagger , la persistencia se realiza con Entity Framework Core sobre MySQL y los recursos se exponen bajo el prefijo de versión `api/v1`. Con la incorporación de este contexto se completa la documentación de todos los bounded contexts de la solución.
 
-La documentación OpenAPI de todos los endpoints se encuentra disponible en la URL de Swagger UI: `_(pendiente link despliegue gaa )_`.
+La documentación OpenAPI de todos los endpoints se encuentra disponible en la URL de Swagger UI:
+[Swagger UI](https://asp-powertech-prod-dfembvcde5bdfxdx.mexicocentral-01.azurewebsites.net/swagger/index.html)
 
 A continuación se documentan los endpoints implementados en el contexto IAM, indicando para cada acción el verbo HTTP, la sintaxis de llamada, los parámetros y el response esperado:
 
@@ -4932,15 +4949,63 @@ El response devuelve `AuthenticatedUserResource` con los datos del usuario y el 
 **Capturas de la documentación en uso (Swagger UI con datos de muestra):**
 
 ![Swagger UI - Endpoints de IAM](assets/images/Chapter-5/Sprint4/swagger-iam.png)
-![Swagger UI - Ejecución de Sign-In con datos de muestra](assets/images/Chapter-5/Sprint4/swagger-signin.png)
+
+
+![Swagger UI - Ejecución de Sign-In con datos de muestra](assets/images/Chapter-5/Sprint4/swagger-signin.jpg)
+
+![Swagger UI - Ejecución de Sign-In con datos de muestra](assets/images/Chapter-5/Sprint4/swagger-signin2.jpg)
 
 **Repositorio de Web Services:** `https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform`
 
 **Commits relacionados con Documentación (OpenAPI/Swagger):**
 
-_(pendiente commits)_
+| Commit | Mensaje | Autor | Fecha |
+|--------|---------|-------|-------|
+| `aaa7960` | feat(iam): add Organization aggregate root | Bynickram02 | 4 jul 2026 |
+| `253c3c2` | feat(iam): add Organization audit trait | Bynickram02 | 4 jul 2026 |
+| `7a1fe63` | feat(iam): add User aggregate root | Bynickram02 | 4 jul 2026 |
+| `96551f4` | feat(iam): add SignUpCommand | Bynickram02 | 4 jul 2026 |
+| `5417592` | feat(iam): add SignInCommand | Bynickram02 | 4 jul 2026 |
+| `b858446` | feat(iam): add CreateOrganizationCommand | Bynickram02 | 4 jul 2026 |
+| `f15ddcb` | feat(iam): add UpdateOrganizationCommand | Bynickram02 | 4 jul 2026 |
+| `24c3dfa` | feat(iam): add GetUserByIdQuery | Bynickram02 | 4 jul 2026 |
+| `7bc9b13` | feat(iam): add GetAllUsersQuery | Bynickram02 | 4 jul 2026 |
+| `0eed264` | feat(iam): add GetOrganizationByIdQuery | Bynickram02 | 4 jul 2026 |
+| `1a44f3b` | feat(iam): add IUserRepository | Bynickram02 | 4 jul 2026 |
+| `5adce36` | feat(iam): add IOrganizationRepository | Bynickram02 | 4 jul 2026 |
+| `2c99c13` | Merge pull request #3 (feature/iam-user-organization-aggregates) | Bynickram02 | 4 jul 2026 |
+| `2a034cf` | feat(Iam): add IIamCommandService interface | FraSe-JQ | 4 jul 2026 |
+| `3b8f82e` | feat(Iam): add IIamQueryService interface | FraSe-JQ | 4 jul 2026 |
+| `21c400f` | feat(iam): add IamQueryService implementation | FraSe-JQ | 4 jul 2026 |
+| `18a4209` | feat(iam): add IamCommandService implementation | FraSe-JQ | 4 jul 2026 |
+| `3b21dd9` | feat(Iam): add IHashingService interface | FraSe-JQ | 4 jul 2026 |
+| `475ae3f` | feat(Iam): add ITokenService interface | FraSe-JQ | 4 jul 2026 |
+| `f530362` | Add UserController | AgoxX61 | 4 jul 2026 |
+| `d8454a8` | Add organization controller | AgoxX61 | 4 jul 2026 |
+| `dc01070` | feat(iam): add SingUpResource | AgoxX61 | 4 jul 2026 |
+| `f040a80` | feat(iam): add SingInResource | AgoxX61 | 4 jul 2026 |
+| `d844f73` | feat(iam): add UserResource | AgoxX61 | 4 jul 2026 |
+| `ca125f6` | feat(iam): add AuthenticatedUserResource | AgoxX61 | 4 jul 2026 |
+| `516d563` | feat(iam): add CreateOrganizationResource | AgoxX61 | 4 jul 2026 |
+| `c9e203a` | feat(iam): add UpdateOrganizationResource | AgoxX61 | 4 jul 2026 |
+| `2388a0b` | feat(iam): add OrganizationResource | AgoxX61 | 4 jul 2026 |
+| `a57f81c` | feat(iam): add IamResourceEntityAssembler | AgoxX61 | 4 jul 2026 |
+| `5402ff8` | feat(iam): add IamActionResultAssembler | AgoxX61 | 4 jul 2026 |
+| `cc9af56` | Merge pull request #4 (feature/iam-user-organization-REST-endpoints) | AgoxX61 | 4 jul 2026 |
+| `917a9d0` | feat: added hashing for Iam infrastructure | fabiovallejo | 5 jul 2026 |
+| `eb3dbab` | feat: added JWT token service for Iam infrastructure | fabiovallejo | 5 jul 2026 |
+| `48c8afa` | feat: added EF Core Persistence for Iam infrastructure | fabiovallejo | 5 jul 2026 |
+| `46e7637` | feat(iam): add Email value Object | Dela050406 | 5 jul 2026 |
+| `0c3bb56` | feat(iam): add PasswordHash value object | Dela050406 | 5 jul 2026 |
+| `a3235a1` | feat(iam): add RoleTier value object | Dela050406 | 5 jul 2026 |
+| `19e2cdd` | feat(iam): add OrganizationName value object | Dela050406 | 5 jul 2026 |
+| `228a599` | feat(iam): add OrganizationStatus value object | Dela050406 | 5 jul 2026 |
+| `a029fa3` | feat(iam): add IamError | Dela050406 | 5 jul 2026 |
+| `e892d0b` | Merge pull request #5 (feature/iam-user-organization-valueobjects) | Dela050406 | 5 jul 2026 |
+| `9856b10` | feat: integrate backend IAM and seed production data | fabiovallejo | 5 jul 2026 |
+| `897776a` | docs: update diagrams | Dela050406 | 6 jul 2026 |
 
-#### 5.2.4.7. Software Deployment Evidence for Sprint Review
+#### 5.2.4.7. Software Deployment Evidence for Sprint Review (FABIO)
 
 Durante el Sprint 4, el equipo realizó el redespliegue de la solución de SafeRoute incorporando el bounded context Identity & Access Management (IAM), con el fin de consolidar la versión final de los productos digitales para la entrega TB2. A continuación se resumen los procesos de despliegue realizados durante el sprint.
 
@@ -4977,7 +5042,9 @@ En paralelo, Fabio lideró la fidelización de los diagramas y el redespliegue d
 
 ![Backend Pulse Sprint 4](assets/images/Chapter-5/Sprint4/backend-pulse.png)
 
+
 ![Report Pulse Sprint 4](assets/images/Chapter-5/Sprint4/report-pulse.png)
+
 
 La distribución del trabajo se mantuvo alineada con la Leadership and Collaboration Matrix (LACX) definida al inicio del sprint. El uso consistente de GitFlow y de Conventional Commits permitió mantener un historial trazable y profesional en ambos repositorios, evidenciando la participación de todos los integrantes en la construcción del producto final.
 
