@@ -118,13 +118,14 @@ SafeRoute_platform(Backend):
 TB2:
 
 ---
-
-Report:
+Backend:
 ![Backend Pulse Sprint 4](assets/images/Chapter-5/Sprint4/backend-pulse.png)
 
 
 
-Backend:
+
+
+Report:
 ![Report Pulse Sprint 4](assets/images/Chapter-5/Sprint4/report-pulse.png)
 
 ---
