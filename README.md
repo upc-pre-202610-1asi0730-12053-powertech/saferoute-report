@@ -5508,14 +5508,14 @@ Si el padre de familia no encuentra fácilmente la sección de perfil, puede nec
 ###### User Flow 11 - Gestión del perfil y configuración del padre
 
 **Entrevistador:**
-[Nombre y apellido del entrevistador]
+Nickolas Ramirez Ruiz
 
 **Datos del entrevistado**
 
-* **Nombre:** [Nombre]
-* **Apellidos:** [Apellidos]
-* **Edad:** [Edad]
-* **Distrito:** [Distrito]
+* **Nombre:** Camila
+* **Apellidos:** Falcon
+* **Edad:** 28 años
+* **Distrito:** Callao
 * **Segmento:** Parent
 * **URL del video:** [Pegar URL del video]
 * **Timing de inicio:** [mm:ss]
@@ -5523,15 +5523,18 @@ Si el padre de familia no encuentra fácilmente la sección de perfil, puede nec
 * **Fin de entrevista:** [mm:ss]
 
 <p align="center">
-<img src="assets/images/ChapterV/ValidationInterviews/[nombre].png" alt="Parent Validation Interview" width="500"/>
+<img src="assets/images/ChapterV/ValidationInterviews/interview-parent.png" alt="Parent Validation Interview" width="500"/>
 </p>
 
 **Resumen descriptivo:**
-Durante la sesión de validación, el/la entrevistado(a) interactuó con la Web Application de SafeRoute desde el rol de padre de familia. Primero accedió a la pantalla de inicio de sesión, donde se validó el ingreso a la plataforma y la identificación del usuario según su rol. Posteriormente, ingresó al dashboard familiar, desde donde pudo visualizar las opciones principales disponibles para el monitoreo y gestión de su cuenta.
 
-Durante la navegación, el/la participante accedió a la sección de perfil, donde pudo revisar información asociada a su cuenta, datos personales y opciones de configuración disponibles dentro de la plataforma. Este flujo permitió validar el **User Flow 11: Gestión del perfil y configuración del padre**, ya que el usuario pudo identificar una sección personal dentro del sistema y revisar información relacionada con su cuenta.
+Durante la entrevista de validación conducida por Nickolas, la participante Camila Victoria Falcón Souza probó con éxito la plataforma de seguimiento escolar, 
+logrando iniciar sesión, cambiar el idioma a español y explorar la función "Seguir Bus" para monitorear rutas en tiempo real con alertas de proximidad a cero metros,
+lo que junto al historial detallado de notificaciones en la sección de alertas,
+le permitió confirmar la llegada segura del estudiante y calificar el proyecto de forma muy positiva por su facilidad de uso y su gran aporte a la seguridad en las calles.
 
-Asimismo, la interacción permitió observar que el perfil complementa la experiencia del usuario Parent, ya que no solo se enfoca en el monitoreo del transporte escolar, sino también en brindar al padre de familia un espacio para consultar y gestionar información propia dentro de SafeRoute.
+
+
 ###### Entrevista de validación 3 - Parent
 
 - **User Flow 12**
