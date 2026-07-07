@@ -4812,7 +4812,7 @@ Durante el proceso de despliegue del backend se realizaron las siguientes activi
 Como resultado, el backend de SafeRoute quedó disponible públicamente en Azure App Service. La API se encuentra conectada a una base de datos MySQL en Azure y puede ser consumida por el frontend desplegado en Azure Static Web Apps.
 
 **URL del backend desplegado:**  
-<https://asp-powertech-prod-dfembvcde5bdfxdx.mexicocentral-01.azurewebsites.net/swagger/index.html>
+* **Swagger / OpenAPI Backend:** [Backend Swagger Deployment](https://asp-powertech-prod-dfembvcde5bdfxdx.mexicocentral-01.azurewebsites.net/swagger/index.html)
 
 #### Observaciones
 
@@ -5541,11 +5541,9 @@ Organizar las acciones del conductor según prioridad:
 
 <img src="assets/images/Chapter-5/Sprint3/about-the-product.png" alt="Video About The Product" width="500"/>
 
-Enlace de YouTube: [https://youtu.be/qPBa6Kya2Fo](https://youtu.be/qPBa6Kya2Fo)
+* **Video About The Product - YouTube:** [About The Product Video - YouTube](https://youtu.be/qPBa6Kya2Fo)
 
-Enlace de Microsoft Stream: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202424059_upc_edu_pe/IQBgC3pMo0wcSp3ERhMrj61kASg3LeEPclr1i0IiKDBtEyU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=ECTx9t](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202424059_upc_edu_pe/IQBgC3pMo0wcSp3ERhMrj61kASg3LeEPclr1i0IiKDBtEyU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=ECTx9t)
-
----
+* **Video About The Product - Microsoft Stream:** [About The Product Video - Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202424059_upc_edu_pe/IQBgC3pMo0wcSp3ERhMrj61kASg3LeEPclr1i0IiKDBtEyU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=ECTx9t)
 
 ### Conclusiones
 
@@ -5591,12 +5589,13 @@ El video también resume la evolución del proyecto desde la identificación de 
 
 **URL del video**
 
-**Microsoft Stream:**  
-[https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241d922_upc_edu_pe/IQD9O5YgApFcSpcnArLVFQlOAR5QH6LYp8gJ-1pY8kjvyPQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=C8jtbJ](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241d922_upc_edu_pe/IQD9O5YgApFcSpcnArLVFQlOAR5QH6LYp8gJ-1pY8kjvyPQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=C8jtbJ)
+### Videos del Proyecto
 
-**YouTube:**  
-[https://youtu.be/qPBa6Kya2Fo](https://youtu.be/qPBa6Kya2Fo)
+* **Video About The Team - Microsoft Stream:** [About The Team Video - Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241d922_upc_edu_pe/IQD9O5YgApFcSpcnArLVFQlOAR5QH6LYp8gJ-1pY8kjvyPQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=C8jtbJ)
 
+* **Video About The Team - YouTube:** [About The Team Video - YouTube](https://youtu.be/qPBa6Kya2Fo)
+
+---
 **Pauta de secuencias de contenido**
 | Tiempo de inicio | Sección | Descripción |
 |------------------|----------|-------------|
