@@ -5086,13 +5086,17 @@ El response devuelve `AuthenticatedUserResource` con los datos del usuario y el 
 | `9856b10` | feat: integrate backend IAM and seed production data | fabiovallejo | 5 jul 2026 |
 | `897776a` | docs: update diagrams | Dela050406 | 6 jul 2026 |
 
-#### 5.2.4.7. Software Deployment Evidence for Sprint Review (FABIO)
+#### 5.2.4.7. Software Deployment Evidence for Sprint Review
 
 Durante el Sprint 4, el equipo realizó el redespliegue de la solución de SafeRoute incorporando el bounded context Identity & Access Management (IAM), con el fin de consolidar la versión final de los productos digitales para la entrega TB2. A continuación se resumen los procesos de despliegue realizados durante el sprint.
 
 **Redespliegue del Backend Web Service**
 
 Se redesplegó el Backend Web Service incorporando el contexto IAM junto con los demás bounded contexts ya implementados. Tras aplicar las migraciones de la base de datos, se validó la disponibilidad de la documentación Swagger y el correcto funcionamiento de los endpoints de autenticación, usuarios y organizaciones en el entorno de operación.
+
+La documentación del swagger permanecio visible en producción por motivos de testing academico.
+
+![Segunda version de la imagen del backend publicada](assets/images/Chapter-5/Sprint4/deployment-container-registry.png)
 
 ![Redespliegue del Web Service](assets/images/Chapter-5/Sprint4/deployment-backend.png)
 
@@ -5109,9 +5113,9 @@ Se actualizó el despliegue del Landing Page manteniendo la consistencia visual 
 ![Despliegue del Landing Page](assets/images/Chapter-5/Sprint4/deployment-landing.png)
 
 **URLs de la solución desplegada:**
-- Landing Page: `_(pendiente)_`
-- Frontend Web Application: `_(pendiente)_`
-- Web Services (Swagger): `_(pendiente)_`
+- Landing Page: `https://upc-pre-202610-1asi0730-12053-powertech.github.io/saferoute-website/`
+- Frontend Web Application: `https://ashy-dune-098494d0f.7.azurestaticapps.net/identity-and-access-management/sign-in`
+- Web Services (Swagger): `https://asp-powertech-prod-dfembvcde5bdfxdx.mexicocentral-01.azurewebsites.net/swagger/index.html`
 
 #### 5.2.4.8. Team Collaboration Insights during Sprint
 
