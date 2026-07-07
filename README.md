@@ -2940,17 +2940,17 @@ La SPA está desarrollada con Vue 3, PrimeVue y JavaScript, organizada en módul
 
 - Identity & Access Management:
   Desglosa el módulo de identidad del frontend en sus 4 capas internas. Ilustra cómo la Identity View gestiona los formularios de login y registro, el Pinia Store administra el estado de sesión y rol del usuario activo, y el IAM Service despacha las peticiones de autenticación hacia el Web Service adjuntando y almacenando el token JWT.
-  ![WebServices](<./assets/images/ChapterIV/C4/Front/ComponentDiagram_IAM-dark%20(1).png>)
+  ![WebServices](./assets/images/ChapterIV/C4/Front/ComponentDiagram_IAM-dark%20(1).png)
 
   -Presentation IAM:  
-  ![WebServices](<./assets/images/ChapterIV/C4/Front/Presentation/ComponentDiagram_IAM-dark%20(1).png>)
+  ![WebServices](./assets/images/ChapterIV/C4/Front/Presentation/ComponentDiagram_IAM-dark%20(1).png)
 
 - Subscription & Plan Management:
   Muestra la arquitectura interna de 4 capas del módulo encargado de la monetización en el cliente. Detalla el flujo desde la Subscriptions View que presenta los planes disponibles, el Pinia Store que mantiene el estado del plan activo y sus cuotas, hasta el Subscription Service que se comunica con el Web Service para gestionar el ciclo de vida del pago.
   ![WebServices](<./assets/images/ChapterIV/C4/Front/ComponentDiagram_Subscription-dark%20(1).png>)
 
   -Presentation subscription:  
-  ![WebServices](<./assets/images/ChapterIV/C4/Front/Presentation/ComponentDiagram_Subscription-dark%20(1).png>)
+  ![WebServices](./assets/images/ChapterIV/C4/Front/Presentation/ComponentDiagram_Subscription-dark%20(1).png)
 
 **BackEnd**
 
