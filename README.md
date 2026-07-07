@@ -2991,6 +2991,47 @@ Este diagrama ofrece la visión macro del backend. Demuestra cómo el monolito d
 
 **BackEnd**
 
+
+- Fleet & Route Planning:
+
+**Domain & Application Layers**
+
+![saferoute-fleet-route-domain-application](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/refs/heads/develop/saferoute-powertech-platform/docs/saferoute-fleet-route-domain-application.puml)
+
+**Interfaces & Infrastructure Layers**
+
+![saferoute-fleet-route-interfaces-infrastructure](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/refs/heads/develop/saferoute-powertech-platform/docs/saferoute-fleet-route-interfaces-infrastructure.puml)
+
+Encargado de la planificación logística y operativa del transporte. **Route (AggregateRoot)** define recorridos, horarios y estado operativo de las rutas utilizando Value Objects como `DepartureTime` y `ServiceDays`. **Stop (Entity)** gestiona la ubicación y secuencia de las paradas dentro de una ruta. **Vehicle (Entity)** controla la información y capacidad de las unidades de transporte. **Assignment (Entity)** vincula conductores y estudiantes a una ruta específica para su ejecución.
+
+- Trip Execution & Monitoring:
+
+**Domain & Application Layers**
+
+![saferoute-trip-trip-domain-application](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/refs/heads/develop/saferoute-powertech-platform/docs/saferoute-trip-trip-domain-application.puml)
+
+**Interfaces & Infrastructure Layers**
+
+![saferoute-trip-trip-interfaces-infrastructure](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/refs/heads/develop/saferoute-powertech-platform/docs/saferoute-trip-trip-interfaces-infrastructure.puml)
+
+Gestiona la ejecución y supervisión de los recorridos programados. **Trip (AggregateRoot)** controla el ciclo de vida de un viaje, asociando una ruta, un conductor y una organización. **Attendance (Entity)** registra la asistencia y abordaje de cada estudiante mediante el Value Object `BoardingState`. **Incident (Entity)** permite documentar situaciones ocurridas durante el trayecto utilizando `IncidentDescription` para validar y encapsular la información reportada.
+
+- Stakeholder & Asset Management:
+
+![saferoute-stakeholder-driver](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/refs/heads/develop/saferoute-powertech-platform/docs/saferoute-stakeholder-driver.puml)
+
+![saferoute-stakeholder-parent](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/refs/heads/develop/saferoute-powertech-platform/docs/saferoute-stakeholder-parent.puml)
+
+![saferoute-stakeholder-studentgroup](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/refs/heads/develop/saferoute-powertech-platform/docs/saferoute-stakeholder-studentgroup.puml)
+
+Modela a los actores humanos y sus agrupaciones dentro del sistema. **Parent (AggregateRoot)** representa a los apoderados y administra la relación con sus hijos registrados. **Driver (Entity)** define a los conductores, incorporando información específica como el número de licencia. **Child (Entity)** representa a los estudiantes y gestiona su estado de inscripción. **StudentGroup (Entity)** permite organizar referencias a múltiples estudiantes para facilitar procesos de asignación y gestión operativa.
+
+- Notifications & Communication:
+
+![saferoute-notifications-notification](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/refs/heads/develop/saferoute-powertech-platform/docs/saferoute-notifications-notification.puml)
+
+Centraliza el envío de información y alertas hacia los padres de familia. **Notification (AggregateRoot)** gestiona la creación, envío y seguimiento de mensajes relacionados con eventos de viaje. **Alert (Entity)** representa alertas inmediatas asociadas a incidentes o situaciones críticas. **Announcement (Entity)** administra comunicados generales vinculados a rutas específicas. Los Value Objects del contexto permiten clasificar mensajes y controlar su estado de entrega.
+
 - Identity and Access Management:
 
 ![saferoute-iam-organization](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/refs/heads/develop/saferoute-powertech-platform/docs/saferoute-iam-organization.puml)
@@ -3007,33 +3048,6 @@ Gestiona organizaciones, usuarios y roles en el entorno de la aplicación. **Org
 
 Controla el modelo de negocio, definiendo los planes y suscripciones de cada organización. **Subscription (AggregateRoot)** administra el estado y la vigencia de una suscripción mediante operaciones de activación, actualización y cancelación. **Plan (AggregateRoot)** define las capacidades operativas y comerciales de la plataforma mediante los Value Objects `RouteQuota` y `DriverQuota`, que regulan los límites de rutas y conductores disponibles para cada organización.
 
-- Stakeholder & Asset Management:
-
-![saferoute-stakeholder-driver](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/refs/heads/develop/saferoute-powertech-platform/docs/saferoute-stakeholder-driver.puml)
-
-![saferoute-stakeholder-parent](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/refs/heads/develop/saferoute-powertech-platform/docs/saferoute-stakeholder-parent.puml)
-
-![saferoute-stakeholder-studentgroup](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/refs/heads/develop/saferoute-powertech-platform/docs/saferoute-stakeholder-studentgroup.puml)
-
-Modela a los actores humanos y sus agrupaciones dentro del sistema. **Parent (AggregateRoot)** representa a los apoderados y administra la relación con sus hijos registrados. **Driver (Entity)** define a los conductores, incorporando información específica como el número de licencia. **Child (Entity)** representa a los estudiantes y gestiona su estado de inscripción. **StudentGroup (Entity)** permite organizar referencias a múltiples estudiantes para facilitar procesos de asignación y gestión operativa.
-
-- Fleet & Route Planning:
-
-![saferoute-fleet-route](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/refs/heads/develop/saferoute-powertech-platform/docs/saferoute-fleet-route.puml)
-
-Encargado de la planificación logística y operativa del transporte. **Route (AggregateRoot)** define recorridos, horarios y estado operativo de las rutas utilizando Value Objects como `DepartureTime` y `ServiceDays`. **Stop (Entity)** gestiona la ubicación y secuencia de las paradas dentro de una ruta. **Vehicle (Entity)** controla la información y capacidad de las unidades de transporte. **Assignment (Entity)** vincula conductores y estudiantes a una ruta específica para su ejecución.
-
-- Trip Execution & Monitoring:
-
-![saferoute-trip-trip](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/refs/heads/develop/saferoute-powertech-platform/docs/saferoute-trip-trip.puml)
-
-Gestiona la ejecución y supervisión de los recorridos programados. **Trip (AggregateRoot)** controla el ciclo de vida de un viaje, asociando una ruta, un conductor y una organización. **Attendance (Entity)** registra la asistencia y abordaje de cada estudiante mediante el Value Object `BoardingState`. **Incident (Entity)** permite documentar situaciones ocurridas durante el trayecto utilizando `IncidentDescription` para validar y encapsular la información reportada.
-
-- Notifications & Communication:
-
-![saferoute-notifications-notification](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/refs/heads/develop/saferoute-powertech-platform/docs/saferoute-notifications-notification.puml)
-
-Centraliza el envío de información y alertas hacia los padres de familia. **Notification (AggregateRoot)** gestiona la creación, envío y seguimiento de mensajes relacionados con eventos de viaje. **Alert (Entity)** representa alertas inmediatas asociadas a incidentes o situaciones críticas. **Announcement (Entity)** administra comunicados generales vinculados a rutas específicas. Los Value Objects del contexto permiten clasificar mensajes y controlar su estado de entrega.
 
 - Shared:
 
