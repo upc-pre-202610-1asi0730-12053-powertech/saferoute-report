@@ -5525,6 +5525,34 @@ Si el conductor presiona el botón por error, el sistema debería solicitar una 
 - **Observación para validación:**  
   Durante la entrevista, el botón SOS fue visible dentro del flujo de viaje activo, lo que permite validar que la funcionalidad está presente y ubicada en un contexto adecuado para el conductor. No obstante, se recomienda complementar esta validación con una prueba específica de activación, confirmación y visualización del estado de la alerta.
 
+
+**Entrevistador:**
+Frank Serrano
+
+**Datos del entrevistado**
+
+- **Nombre:** Dario
+- **Apellidos:** Romero
+- **Edad:** 28
+- **Distrito:** Miraflores y Santiago de surco
+- **Segmento:** Driver
+- **URL del video:** https://1drv.ms/v/c/a3bda66c80e2095c/IQCkK7xkt2N7TbSCOXPbCJTqAXZRWtdYueZppMSIM3shK4c?e=usVO15
+- **Timing de inicio:** 0:18
+- **Timing de fin:** 6:55
+- **Duración:** 6:36
+
+<p align="center">
+<img src="assets/images/ChapterV/ValidationInterviews/driver-validation-interview-3.png" alt="Driver Validation Interview 3" width="500"/>
+</p>
+
+**Resumen descriptivo:**
+Darío comentó que ha usado aplicaciones de navegación como Google Maps, aunque no plataformas enfocadas específicamente en el transporte escolar. Desde su perspectiva, SafeRoute debería presentar de manera inmediata información como la ruta asignada, los alumnos registrados, los horarios, los puntos de recojo y el estado actual del recorrido.
+
+Durante la evaluación, señaló que la plataforma resulta intuitiva y que el proceso para gestionar a los alumnos durante el trayecto es sencillo de comprender. También valoró las confirmaciones visuales, los mensajes de operación exitosa y la opción de registrar incidencias rápidamente. Asimismo, indicó que utilizaría SafeRoute en una situación real, ya que facilitaría el control de las rutas, la comunicación con los padres y el monitoreo seguro de los estudiantes.
+
+Como aspectos por mejorar, sugirió ampliar el tamaño de los botones destinados a acciones importantes, incorporar un acceso directo para emergencias.
+
+
 ---
 
 ##### Segundo segmento: Padres de familia
