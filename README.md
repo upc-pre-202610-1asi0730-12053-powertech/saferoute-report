@@ -4884,53 +4884,72 @@ El objetivo del Sprint 4, correspondiente a la entrega final (TB2 - Release Revi
 | — | Documentación Sprint 4 | T06.1 | Documentar evidencias del Sprint 4 | Registrar planificación, backlog, evidencias de desarrollo, servicios y despliegue del Sprint 4 en el informe. | 3 | Nickolas | Done |
 
 ### 5.2.4.4.Development Evidence for Sprint Review.
+Los commits documentados corresponden tanto al desarrollo del backend (`saferoute-platform`) como a la documentación del informe (`saferoute-report`). En `saferoute-platform` se implementó el bounded context Identity & Access Management (IAM),
+organizado en las ramas `iam-user-organization-aggregates`, `iam-user-organization-REST-endpoints` e `iam-user-organization-valueobjects`, integradas a `develop`. En `saferoute-report` se documentaron las secciones del capítulo 5 correspondientes al Sprint 4 y las conclusiones de TB2 , 
+y se incorporó el contenido de las entrevistas de validación , junto con correcciones a los diagramas de base de datos, 
+el modelo C4.
 
 
-| Commit | Mensaje | Autor | Fecha |
-|--------|---------|-------|-------|
-| `aaa7960` | feat(iam): add Organization aggregate root | Bynickram02 | 4 jul 2026 |
-| `253c3c2` | feat(iam): add Organization audit trait | Bynickram02 | 4 jul 2026 |
-| `7a1fe63` | feat(iam): add User aggregate root | Bynickram02 | 4 jul 2026 |
-| `96551f4` | feat(iam): add SignUpCommand | Bynickram02 | 4 jul 2026 |
-| `5417592` | feat(iam): add SignInCommand | Bynickram02 | 4 jul 2026 |
-| `b858446` | feat(iam): add CreateOrganizationCommand | Bynickram02 | 4 jul 2026 |
-| `f15ddcb` | feat(iam): add UpdateOrganizationCommand | Bynickram02 | 4 jul 2026 |
-| `24c3dfa` | feat(iam): add GetUserByIdQuery | Bynickram02 | 4 jul 2026 |
-| `7bc9b13` | feat(iam): add GetAllUsersQuery | Bynickram02 | 4 jul 2026 |
-| `0eed264` | feat(iam): add GetOrganizationByIdQuery | Bynickram02 | 4 jul 2026 |
-| `1a44f3b` | feat(iam): add IUserRepository | Bynickram02 | 4 jul 2026 |
-| `5adce36` | feat(iam): add IOrganizationRepository | Bynickram02 | 4 jul 2026 |
-| `2c99c13` | Merge pull request #3 (feature/iam-user-organization-aggregates) | Bynickram02 | 4 jul 2026 |
-| `2a034cf` | feat(Iam): add IIamCommandService interface | FraSe-JQ | 4 jul 2026 |
-| `3b8f82e` | feat(Iam): add IIamQueryService interface | FraSe-JQ | 4 jul 2026 |
-| `21c400f` | feat(iam): add IamQueryService implementation | FraSe-JQ | 4 jul 2026 |
-| `18a4209` | feat(iam): add IamCommandService implementation | FraSe-JQ | 4 jul 2026 |
-| `3b21dd9` | feat(Iam): add IHashingService interface | FraSe-JQ | 4 jul 2026 |
-| `475ae3f` | feat(Iam): add ITokenService interface | FraSe-JQ | 4 jul 2026 |
-| `f530362` | Add UserController | AgoxX61 | 4 jul 2026 |
-| `d8454a8` | Add organization controller | AgoxX61 | 4 jul 2026 |
-| `dc01070` | feat(iam): add SingUpResource | AgoxX61 | 4 jul 2026 |
-| `f040a80` | feat(iam): add SingInResource | AgoxX61 | 4 jul 2026 |
-| `d844f73` | feat(iam): add UserResource | AgoxX61 | 4 jul 2026 |
-| `ca125f6` | feat(iam): add AuthenticatedUserResource | AgoxX61 | 4 jul 2026 |
-| `516d563` | feat(iam): add CreateOrganizationResource | AgoxX61 | 4 jul 2026 |
-| `c9e203a` | feat(iam): add UpdateOrganizationResource | AgoxX61 | 4 jul 2026 |
-| `2388a0b` | feat(iam): add OrganizationResource | AgoxX61 | 4 jul 2026 |
-| `a57f81c` | feat(iam): add IamResourceEntityAssembler | AgoxX61 | 4 jul 2026 |
-| `5402ff8` | feat(iam): add IamActionResultAssembler | AgoxX61 | 4 jul 2026 |
-| `cc9af56` | Merge pull request #4 (feature/iam-user-organization-REST-endpoints) | AgoxX61 | 4 jul 2026 |
-| `917a9d0` | feat: added hashing for Iam infrastructure | fabiovallejo | 5 jul 2026 |
-| `eb3dbab` | feat: added JWT token service for Iam infrastructure | fabiovallejo | 5 jul 2026 |
-| `48c8afa` | feat: added EF Core Persistence for Iam infrastructure | fabiovallejo | 5 jul 2026 |
-| `46e7637` | feat(iam): add Email value Object | Dela050406 | 5 jul 2026 |
-| `0c3bb56` | feat(iam): add PasswordHash value object | Dela050406 | 5 jul 2026 |
-| `a3235a1` | feat(iam): add RoleTier value object | Dela050406 | 5 jul 2026 |
-| `19e2cdd` | feat(iam): add OrganizationName value object | Dela050406 | 5 jul 2026 |
-| `228a599` | feat(iam): add OrganizationStatus value object | Dela050406 | 5 jul 2026 |
-| `a029fa3` | feat(iam): add IamError | Dela050406 | 5 jul 2026 |
-| `e892d0b` | Merge pull request #5 (feature/iam-user-organization-valueobjects) | Dela050406 | 5 jul 2026 |
-| `9856b10` | feat: integrate backend IAM and seed production data | fabiovallejo | 5 jul 2026 |
-| `897776a` | docs: update diagrams | Dela050406 | 6 jul 2026 |
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+|---|---|---|---|---|---|
+| saferoute-platform | feature/iam-user-organization-aggregates | 3b8f82e | feat(iam): add IIamQueryService interface. | — | 04/07/2026 |
+| saferoute-platform | feature/iam-user-organization-aggregates | 2a034cf | feat(iam): add IIamCommandService interface. | — | 04/07/2026 |
+| saferoute-platform | feature/iam-user-organization-aggregates | 5adce36 | feat(iam): add IOrganizationRepository | — | 04/07/2026 |
+| saferoute-platform | feature/iam-user-organization-aggregates | 1a44f3b | feat(iam): add IUserRepository | — | 04/07/2026 |
+| saferoute-platform | feature/iam-user-organization-aggregates | 0eed264 | feat(iam): add GetOrganizationByIdQuery | — | 04/07/2026 |
+| saferoute-platform | feature/iam-user-organization-aggregates | 7bc9b13 | feat(iam): add GetAllUsersQuery | — | 04/07/2026 |
+| saferoute-platform | feature/iam-user-organization-aggregates | 24c3dfa | feat(iam): add GetUserByIdQuery | — | 04/07/2026 |
+| saferoute-platform | feature/iam-user-organization-aggregates | f15ddcb | feat(iam): add UpdateOrganizationCommand | — | 04/07/2026 |
+| saferoute-platform | feature/iam-user-organization-aggregates | b858446 | feat(iam): add CreateOrganizationCommand | — | 04/07/2026 |
+| saferoute-platform | feature/iam-user-organization-aggregates | 5417592 | feat(iam): add SignInCommand | — | 04/07/2026 |
+| saferoute-platform | feature/iam-user-organization-aggregates | 96551f4 | feat(iam): add SignUpCommand | — | 04/07/2026 |
+| saferoute-platform | feature/iam-user-organization-aggregates | 7a1fe63 | feat(iam): add User aggregate root | — | 04/07/2026 |
+| saferoute-platform | feature/iam-user-organization-aggregates | 253c3c2 | feat(iam): add Organization audit trait | — | 04/07/2026 |
+| saferoute-platform | feature/iam-user-organization-aggregates | aaa7960 | feat(iam): add Organization aggregate root | — | 04/07/2026 |
+| saferoute-platform | develop | 2c99c13 | Merge pull request #3 from feature/iam-user-organization-aggregates | — | 04/07/2026 |
+| saferoute-platform | feature/iam-user-organization-REST-endpoints | 5402ff8 | feat(iam): add IamActionResultAssembler | — | 04/07/2026 |
+| saferoute-platform | feature/iam-user-organization-REST-endpoints | a57f81c | feat(iam) add IamResourceEntityAssembler | — | 04/07/2026 |
+| saferoute-platform | feature/iam-user-organization-REST-endpoints | 2388a0b | feat(iam): add OrganizationResource | — | 04/07/2026 |
+| saferoute-platform | feature/iam-user-organization-REST-endpoints | c9e203a | feat(iam): add UpdateOrganizationResource | — | 04/07/2026 |
+| saferoute-platform | feature/iam-user-organization-REST-endpoints | 516d563 | feat(iam):add CreateOrganizationResource | — | 04/07/2026 |
+| saferoute-platform | feature/iam-user-organization-REST-endpoints | ca125f6 | feat(iam):add AuthenticatedUserResource | — | 04/07/2026 |
+| saferoute-platform | feature/iam-user-organization-REST-endpoints | d844f73 | feat(iam): add UserResource | — | 04/07/2026 |
+| saferoute-platform | feature/iam-user-organization-REST-endpoints | f040a80 | feat(iam):add SingInResource | — | 04/07/2026 |
+| saferoute-platform | feature/iam-user-organization-REST-endpoints | dc01070 | feat(iam): add SingUpResource | — | 04/07/2026 |
+| saferoute-platform | feature/iam-user-organization-REST-endpoints | d8454a8 | Add organization controller | — | 04/07/2026 |
+| saferoute-platform | feature/iam-user-organization-REST-endpoints | f530362 | Add UserController | — | 04/07/2026 |
+| saferoute-platform | feature/iam-user-organization-REST-endpoints | 475ae3f | feat(iam): add ITokenService interface. | — | 04/07/2026 |
+| saferoute-platform | feature/iam-user-organization-REST-endpoints | 3b21dd9 | feat(iam): add IHashingService interface. | — | 04/07/2026 |
+| saferoute-platform | feature/iam-user-organization-REST-endpoints | 18a4209 | feat(iam): add IamCommandService implementation. | — | 04/07/2026 |
+| saferoute-platform | feature/iam-user-organization-REST-endpoints | 21c400f | feat(iam): add IamQueryService implementation. | — | 04/07/2026 |
+| saferoute-platform | develop | cc9af56 | Merge pull request #4 from feature/iam-user-organization-REST-endpoints | — | 04/07/2026 |
+| saferoute-platform | feature/iam-user-organization-valueobjects | a029fa3 | feat(iam): add IamError | — | 05/07/2026 |
+| saferoute-platform | feature/iam-user-organization-valueobjects | 228a599 | feat(iam): add OrganizationStatus value object | — | 05/07/2026 |
+| saferoute-platform | feature/iam-user-organization-valueobjects | 19e2cdd | feat(iam): add OrganizationName value object | — | 05/07/2026 |
+| saferoute-platform | feature/iam-user-organization-valueobjects | a3235a1 | feat(iam): add RoleTier value object | — | 05/07/2026 |
+| saferoute-platform | feature/iam-user-organization-valueobjects | 0c3bb56 | feat(iam): add PasswordHash value object | — | 05/07/2026 |
+| saferoute-platform | feature/iam-user-organization-valueobjects | 46e7637 | feat(iam): add Email value Object | — | 05/07/2026 |
+| saferoute-platform | develop | e892d0b | Merge pull request #5 from feature/iam-user-organization-valueobjects | — | 05/07/2026 |
+| saferoute-platform | develop | 9856b10 | feat: integrate backend IAM and seed production data | — | 05/07/2026 |
+| saferoute-platform | develop | 897776a | docs: update diagrams | — | 06/07/2026 |
+| saferoute-report | develop | 90306b9 | docs(chapter5): add 5.2.4.1. Sprint Planning 4 | — | 04/07/2026 |
+| saferoute-report | develop | fc1aa94 | docs(chapter5): add 5.2.4.2, 5.2.4.3. Sprint 4 | — | 04/07/2026 |
+| saferoute-report | develop | 5469a04 | docs(chapter5): add Sprintbacklog link | — | 04/07/2026 |
+| saferoute-report | develop | 8553160 | fix: mounth and period | — | 04/07/2026 |
+| saferoute-report | develop | 013851b | docs(chapter5): add 5.2.4.8. Team Collaboration Insights during Sprint | — | 04/07/2026 |
+| saferoute-report | develop | 38e5392 | Merge pull request #31 from feature/chapter05-Sprint4 | — | 04/07/2026 |
+| saferoute-report | develop | 2865d4b | docs(chapter-5): add sprint 4 sections and TB2 conclusions | — | 04/07/2026 |
+| saferoute-report | develop | b73eb77 | fix: database diagrams | — | 04/07/2026 |
+| saferoute-report | develop | c45f719 | Merge branch 'develop' of saferoute-report into develop | — | 04/07/2026 |
+| saferoute-report | develop | 9f16d50 | fix: database diagrams links | — | 04/07/2026 |
+| saferoute-report | develop | 7270ab2 | docs: update user flow 11 for interviews validation | — | 05/07/2026 |
+| saferoute-report | develop | 5fa867d | feature/validation-interview: content-addition | — | 05/07/2026 |
+| saferoute-report | develop | 23d2f85 | Merge pull request #32 from feature/parent-validation-interview-Sprint4 | — | 05/07/2026 |
+| saferoute-report | develop | 9600b38 | fix: C4 delete resend | — | 05/07/2026 |
+| saferoute-report | develop | 42666ae | Merge branch 'develop' of saferoute-report into develop | — | 05/07/2026 |
+| saferoute-report | develop | b43c4b1 | fix: Database images and UML backend | — | 05/07/2026 |
+
+
 
 #### 5.2.4.5. Execution Evidence for Sprint Review
 
