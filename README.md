@@ -4912,6 +4912,54 @@ El objetivo del Sprint 4, correspondiente a la entrega final (TB2 - Release Revi
 | — | Video About-the-Product | T05.1 | Producir video About-the-Product | Grabar y editar el video About-the-Product con testimonios, edición y branding de la startup. | 4 | Mathias | Done |
 | — | Documentación Sprint 4 | T06.1 | Documentar evidencias del Sprint 4 | Registrar planificación, backlog, evidencias de desarrollo, servicios y despliegue del Sprint 4 en el informe. | 3 | Nickolas | Done |
 
+### 5.2.4.4.Development Evidence for Sprint Review.
+
+
+| Commit | Mensaje | Autor | Fecha |
+|--------|---------|-------|-------|
+| `aaa7960` | feat(iam): add Organization aggregate root | Bynickram02 | 4 jul 2026 |
+| `253c3c2` | feat(iam): add Organization audit trait | Bynickram02 | 4 jul 2026 |
+| `7a1fe63` | feat(iam): add User aggregate root | Bynickram02 | 4 jul 2026 |
+| `96551f4` | feat(iam): add SignUpCommand | Bynickram02 | 4 jul 2026 |
+| `5417592` | feat(iam): add SignInCommand | Bynickram02 | 4 jul 2026 |
+| `b858446` | feat(iam): add CreateOrganizationCommand | Bynickram02 | 4 jul 2026 |
+| `f15ddcb` | feat(iam): add UpdateOrganizationCommand | Bynickram02 | 4 jul 2026 |
+| `24c3dfa` | feat(iam): add GetUserByIdQuery | Bynickram02 | 4 jul 2026 |
+| `7bc9b13` | feat(iam): add GetAllUsersQuery | Bynickram02 | 4 jul 2026 |
+| `0eed264` | feat(iam): add GetOrganizationByIdQuery | Bynickram02 | 4 jul 2026 |
+| `1a44f3b` | feat(iam): add IUserRepository | Bynickram02 | 4 jul 2026 |
+| `5adce36` | feat(iam): add IOrganizationRepository | Bynickram02 | 4 jul 2026 |
+| `2c99c13` | Merge pull request #3 (feature/iam-user-organization-aggregates) | Bynickram02 | 4 jul 2026 |
+| `2a034cf` | feat(Iam): add IIamCommandService interface | FraSe-JQ | 4 jul 2026 |
+| `3b8f82e` | feat(Iam): add IIamQueryService interface | FraSe-JQ | 4 jul 2026 |
+| `21c400f` | feat(iam): add IamQueryService implementation | FraSe-JQ | 4 jul 2026 |
+| `18a4209` | feat(iam): add IamCommandService implementation | FraSe-JQ | 4 jul 2026 |
+| `3b21dd9` | feat(Iam): add IHashingService interface | FraSe-JQ | 4 jul 2026 |
+| `475ae3f` | feat(Iam): add ITokenService interface | FraSe-JQ | 4 jul 2026 |
+| `f530362` | Add UserController | AgoxX61 | 4 jul 2026 |
+| `d8454a8` | Add organization controller | AgoxX61 | 4 jul 2026 |
+| `dc01070` | feat(iam): add SingUpResource | AgoxX61 | 4 jul 2026 |
+| `f040a80` | feat(iam): add SingInResource | AgoxX61 | 4 jul 2026 |
+| `d844f73` | feat(iam): add UserResource | AgoxX61 | 4 jul 2026 |
+| `ca125f6` | feat(iam): add AuthenticatedUserResource | AgoxX61 | 4 jul 2026 |
+| `516d563` | feat(iam): add CreateOrganizationResource | AgoxX61 | 4 jul 2026 |
+| `c9e203a` | feat(iam): add UpdateOrganizationResource | AgoxX61 | 4 jul 2026 |
+| `2388a0b` | feat(iam): add OrganizationResource | AgoxX61 | 4 jul 2026 |
+| `a57f81c` | feat(iam): add IamResourceEntityAssembler | AgoxX61 | 4 jul 2026 |
+| `5402ff8` | feat(iam): add IamActionResultAssembler | AgoxX61 | 4 jul 2026 |
+| `cc9af56` | Merge pull request #4 (feature/iam-user-organization-REST-endpoints) | AgoxX61 | 4 jul 2026 |
+| `917a9d0` | feat: added hashing for Iam infrastructure | fabiovallejo | 5 jul 2026 |
+| `eb3dbab` | feat: added JWT token service for Iam infrastructure | fabiovallejo | 5 jul 2026 |
+| `48c8afa` | feat: added EF Core Persistence for Iam infrastructure | fabiovallejo | 5 jul 2026 |
+| `46e7637` | feat(iam): add Email value Object | Dela050406 | 5 jul 2026 |
+| `0c3bb56` | feat(iam): add PasswordHash value object | Dela050406 | 5 jul 2026 |
+| `a3235a1` | feat(iam): add RoleTier value object | Dela050406 | 5 jul 2026 |
+| `19e2cdd` | feat(iam): add OrganizationName value object | Dela050406 | 5 jul 2026 |
+| `228a599` | feat(iam): add OrganizationStatus value object | Dela050406 | 5 jul 2026 |
+| `a029fa3` | feat(iam): add IamError | Dela050406 | 5 jul 2026 |
+| `e892d0b` | Merge pull request #5 (feature/iam-user-organization-valueobjects) | Dela050406 | 5 jul 2026 |
+| `9856b10` | feat: integrate backend IAM and seed production data | fabiovallejo | 5 jul 2026 |
+| `897776a` | docs: update diagrams | Dela050406 | 6 jul 2026 |
 
 #### 5.2.4.5. Execution Evidence for Sprint Review
 
