@@ -5624,35 +5624,46 @@ El video también resume la evolución del proyecto desde la identificación de 
 
 #### A. Links Importantes
 
-**1. Despliegues y Servicios API**
+## Anexos - Enlaces del Proyecto
 
-- **Web Application (Frontend):** [https://ashy-dune-098494d0f.7.azurestaticapps.net/identity-and-access-management/sign-in](https://ashy-dune-098494d0f.7.azurestaticapps.net/identity-and-access-management/sign-in)
-- **Landing Page:** [https://upc-pre-202610-1asi0730-12053-powertech.github.io/saferoute-website/](https://upc-pre-202610-1asi0730-12053-powertech.github.io/saferoute-website/)
-- **Web Application (Backend):** [https://asp-powertech-prod-dfembvcde5bdfxdx.mexicocentral-01.azurewebsites.net/swagger/index.html](https://asp-powertech-prod-dfembvcde5bdfxdx.mexicocentral-01.azurewebsites.net/swagger/index.html)
+### 1. Despliegues y Servicios API
 
-**2. Repositorios de GitHub**
+* **Web Application (Frontend):** [Frontend Deployment](https://ashy-dune-098494d0f.7.azurestaticapps.net/identity-and-access-management/sign-in)
+* **Landing Page:** [Landing Page Deployment](https://upc-pre-202610-1asi0730-12053-powertech.github.io/saferoute-website/)
+* **Web Application (Backend):** [Swagger / OpenAPI Backend](https://asp-powertech-prod-dfembvcde5bdfxdx.mexicocentral-01.azurewebsites.net/swagger/index.html)
 
-- **Organización Principal:** [https://github.com/upc-pre-202610-1asi0730-12053-powertech](https://github.com/upc-pre-202610-1asi0730-12053-powertech)
-- **Informe del Proyecto:** [https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-report](https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-report)
-- **Landing Page Source:** [https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-website](https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-website)
-- **Web Application Source:** [https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-webapp](https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-webapp)
-- **Web Application (Backend) Source:** [https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform](https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform)
+---
 
-**3. Diseño y Prototipado**
+### 2. Repositorios de GitHub
 
-- **Big Picture Event Storming (Miro):** [https://miro.com/welcomeonboard/Q0xsbTlRVkpDQmlwdWJLUHl6dVBWSHQ4NnJQTVVCSUpTUWwzZHBncHAzM0taZWJDYngzTFYrQmdyY1crZS9mWWJ2K0NOTzlHbzd2V3BPdDB4SnpVR2owTTNCZkpZeDBCYWM1ZndITktNNjVhNWYvc1JESUkzenhtRE51ODV1cXdzVXVvMm53MW9OWFg5bkJoVXZxdFhRPT0hdjE=?share_link_id=806628004318](https://miro.com/welcomeonboard/Q0xsbTlRVkpDQmlwdWJLUHl6dVBWSHQ4NnJQTVVCSUpTUWwzZHBncHAzM0taZWJDYngzTFYrQmdyY1crZS9mWWJ2K0NOTzlHbzd2V3BPdDB4SnpVR2owTTNCZkpZeDBCYWM1ZndITktNNjVhNWYvc1JESUkzenhtRE51ODV1cXdzVXVvMm53MW9OWFg5bkJoVXZxdFhRPT0hdjE=?share_link_id=806628004318)
-- **Figma – UX/UI Design:** [https://www.figma.com/design/x30GjOLycF1yUG7fZfLXOk/Avances-2026-10?node-id=99-520&t=qdtagch7QHL2iL1a-0](https://www.figma.com/design/x30GjOLycF1yUG7fZfLXOk/Avances-2026-10?node-id=99-520&t=qdtagch7QHL2iL1a-0)
+* **Organización Principal:** [GitHub Organization](https://github.com/upc-pre-202610-1asi0730-12053-powertech)
+* **Informe del Proyecto:** [Project Report Repository](https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-report)
+* **Landing Page Source:** [Landing Page Repository](https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-website)
+* **Web Application Source:** [Web Application Repository](https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-webapp)
+* **Web Application Backend Source:** [Backend Repository](https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform)
 
-**4. Entrevistas y Evidencias**
+---
 
-- **Entrevistas de Segmentos:** [https://1drv.ms/v/c/f647ccc757f760c7/IQBpmAWWCOusSLuP0uLD_z7NAe5clO5HVvyL8gi5oJuddj8?e=9qIP9h](https://1drv.ms/v/c/f647ccc757f760c7/IQBpmAWWCOusSLuP0uLD_z7NAe5clO5HVvyL8gi5oJuddj8?e=9qIP9h)
+### 3. Diseño y Prototipado
 
-- **Entrevistas de Validacion:** [https://1drv.ms/v/c/a3bda66c80e2095c/IQCkK7xkt2N7TbSCOXPbCJTqAXZRWtdYueZppMSIM3shK4c?e=usVO15](https://1drv.ms/v/c/a3bda66c80e2095c/IQCkK7xkt2N7TbSCOXPbCJTqAXZRWtdYueZppMSIM3shK4c?e=usVO15)
+* **Big Picture Event Storming:** [Miro Board](https://miro.com/welcomeonboard/Q0xsbTlRVkpDQmlwdWJLUHl6dVBWSHQ4NnJQTVVCSUpTUWwzZHBncHAzM0taZWJDYngzTFYrQmdyY1crZS9mWWJ2K0NOTzlHbzd2V3BPdDB4SnpVR2owTTNCZkpZeDBCYWM1ZndITktNNjVhNWYvc1JESUkzenhtRE51ODV1cXdzVXVvMm53MW9OWFg5bkJoVXZxdFhRPT0hdjE=?share_link_id=806628004318)
+* **Figma UX/UI Design:** [Figma Design File](https://www.figma.com/design/x30GjOLycF1yUG7fZfLXOk/Avances-2026-10?node-id=99-520&t=qdtagch7QHL2iL1a-0)
 
-**5. About The Team**
+---
 
-- URL del video: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241d922_upc_edu_pe/IQD9O5YgApFcSpcnArLVFQlOAR5QH6LYp8gJ-1pY8kjvyPQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=C8jtbJ](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241d922_upc_edu_pe/IQD9O5YgApFcSpcnArLVFQlOAR5QH6LYp8gJ-1pY8kjvyPQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=C8jtbJ)
+### 4. Entrevistas y Evidencias
 
-**6. About the product**
+* **Entrevistas de Segmentos:** [Research Interviews Video](https://1drv.ms/v/c/f647ccc757f760c7/IQBpmAWWCOusSLuP0uLD_z7NAe5clO5HVvyL8gi5oJuddj8?e=9qIP9h)
+* **Entrevistas de Validación:** [Validation Interviews Video](https://1drv.ms/v/c/a3bda66c80e2095c/IQDOAnIaMNn8TpzuKDBc7LhXAadVGwc1kbVAzatawQyMsqM?e=VDLekN)
 
-- URL del video: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202424059_upc_edu_pe/IQBgC3pMo0wcSp3ERhMrj61kASg3LeEPclr1i0IiKDBtEyU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=ECTx9t](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202424059_upc_edu_pe/IQBgC3pMo0wcSp3ERhMrj61kASg3LeEPclr1i0IiKDBtEyU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=ECTx9t)
+---
+
+### 5. About The Team
+
+* **Video About The Team:** [About The Team Video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241d922_upc_edu_pe/IQD9O5YgApFcSpcnArLVFQlOAR5QH6LYp8gJ-1pY8kjvyPQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=C8jtbJ)
+
+---
+
+### 6. About The Product
+
+* **Video About The Product:** [About The Product Video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202424059_upc_edu_pe/IQBgC3pMo0wcSp3ERhMrj61kASg3LeEPclr1i0IiKDBtEyU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=ECTx9t)
