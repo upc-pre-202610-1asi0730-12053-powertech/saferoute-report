@@ -1247,7 +1247,7 @@ Segmento Objetivo 2: Rosita Nery, padre de familia
 # Product Backlog - SafeRoute
 
 El equipo gestionó el Product Backlog mediante una herramienta Scrum digital, organizando User Stories y Technical Stories
-![Product Backlog](./assets/images/product-backlog-scrum.png)
+![Product Backlog](./assets/images/product-backlog-scrum2.png)
 
 | Orden | Tipo | ID   | Título                           | Descripción                                                                                                                        | Story Points |
 | ----: | ---- | ---- | -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------------ |
