@@ -3007,11 +3007,11 @@ Este diagrama ofrece la visión macro del backend. Demuestra cómo el monolito d
 
 - Fleet & Route Planning:
 
-**Domain & Application Layers**
+**Domain & Application**
 
 ![saferoute-fleet-route-domain-application](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/refs/heads/develop/saferoute-powertech-platform/docs/saferoute-fleet-route-domain-application.puml)
 
-**Interfaces & Infrastructure Layers**
+**Interfaces & Infrastructure**
 
 ![saferoute-fleet-route-interfaces-infrastructure](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/refs/heads/develop/saferoute-powertech-platform/docs/saferoute-fleet-route-interfaces-infrastructure.puml)
 
@@ -3019,11 +3019,11 @@ Encargado de la planificación logística y operativa del transporte. **Route (A
 
 - Trip Execution & Monitoring:
 
-**Domain & Application Layers**
+**Domain & Application**
 
 ![saferoute-trip-trip-domain-application](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/refs/heads/develop/saferoute-powertech-platform/docs/saferoute-trip-trip-domain-application.puml)
 
-**Interfaces & Infrastructure Layers**
+**Interfaces & Infrastructure**
 
 ![saferoute-trip-trip-interfaces-infrastructure](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform/refs/heads/develop/saferoute-powertech-platform/docs/saferoute-trip-trip-interfaces-infrastructure.puml)
 
