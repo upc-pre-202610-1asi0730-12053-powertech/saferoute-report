@@ -1260,42 +1260,40 @@ Segmento Objetivo 2: Rosita Nery, padre de familia
 El equipo gestionó el Product Backlog mediante una herramienta Scrum digital, organizando User Stories y Technical Stories
 ![Product Backlog](./assets/images/product-backlog-scrum.png)
 
-| Orden | Tipo | ID   | Título                           | Descripción                                                                                                                        | Story Points |
-| ----: | ---- | ---- | -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------------ |
-|     1 | US   | US25 | Visualización de Hero            | Como visitante, deseo ver la propuesta de valor de SafeRoute para entender rápidamente el servicio.                                | 2            |
-|     2 | US   | US28 | Consulta de Precios              | Como visitante, deseo ver los planes y precios para evaluar mi presupuesto.                                                        | 3            |
-|     3 | US   | US32 | Formulario de Contacto           | Como visitante, deseo enviar mis datos para solicitar información o una demo comercial.                                            | 3            |
-|     4 | US   | US29 | Sección ¿Cómo funciona?          | Como visitante, deseo entender el proceso del servicio antes de contratar.                                                         | 2            |
-|     5 | US   | US31 | Testimonios Reales               | Como visitante, deseo leer reseñas para confiar en la marca.                                                                       | 2            |
-|     6 | TS   | TS5  | Soporte i18n                     | Como developer, deseo configurar soporte i18n para permitir la internacionalización de la Landing Page.                            | 5            |
-|     7 | TS   | TS7  | Implementación HTTPS/SSL         | Como developer, deseo configurar HTTPS/SSL para proteger la comunicación entre cliente y servidor.                                 | 3            |
-|     8 | TS   | TS2  | Integración Leaflet Maps         | Como developer, deseo integrar Leaflet Maps para visualizar rutas dinámicas consumiendo datos del sistema.                         | 5            |
-|     9 | US   | US1  | Contratar Plan                   | Como administrador, deseo elegir un plan para digitalizar y escalar mi operación.                                                  | 5            |
-|    10 | US   | US2  | Registro de Conductores          | Como administrador, deseo crear cuentas de conductores para asignar responsabilidades.                                             | 3            |
-|    11 | US   | US4  | Alta de Alumnos                  | Como administrador, deseo registrar alumnos para incluirlos en rutas.                                                              | 5            |
-|    12 | US   | US3  | Registro de Padres               | Como administrador, deseo registrar padres para habilitar monitoreo.                                                               | 3            |
-|    13 | TS   | TS1  | JWT Authentication               | Como developer, deseo implementar autenticación JWT para proteger los endpoints del sistema.                                       | 5            |
-|    14 | US   | US5  | Creación de Rutas                | Como administrador, deseo crear rutas y paradas para optimizar tiempos.                                                            | 8            |
-|    15 | US   | US6  | Asignación de Roles              | Como administrador, deseo asignar conductores a rutas para organizar operaciones.                                                  | 3            |
-|    16 | TS   | TS3  | Persistencia de Tracking GPS     | Como developer, deseo implementar persistencia de coordenadas GPS para registrar el historial de viajes.                           | 5            |
-|    17 | US   | US10 | Inicio de Trayecto               | Como conductor, deseo iniciar la ruta para notificar que estoy en camino.                                                          | 3            |
-|    18 | US   | US11 | Marcación de Abordaje            | Como conductor, deseo registrar el abordaje para confirmar asistencia.                                                             | 5            |
-|    19 | US   | US18 | Rastreo en Tiempo Real           | Como padre, deseo ver la movilidad en el mapa para calcular hora de llegada.                                                       | 8            |
-|    20 | US   | US19 | Alerta de Proximidad             | Como padre, deseo recibir aviso cuando el vehículo esté cerca.                                                                     | 5            |
-|    21 | TS   | TS6  | Sistema de Push Notifications    | Como developer, deseo implementar notificaciones push automáticas para informar eventos críticos del sistema.                      | 5            |
-|    22 | US   | US20 | Confirmación de Llegada          | Como padre, deseo saber si mi hijo llegó al colegio para estar tranquilo.                                                          | 3            |
-|    23 | US   | US14 | Finalización de Ruta             | Como conductor, deseo cerrar la ruta para concluir el servicio.                                                                    | 2            |
-|    24 | US   | US12 | Reporte de Incidencias           | Como conductor, deseo informar retrasos o problemas durante la ruta.                                                               | 5            |
-|    25 | US   | US16 | Navegación Integrada             | Como conductor, deseo abrir mapas externos para usar la mejor ruta disponible.                                                     | 3            |
-|    26 | TS   | TS8  | Soporte Offline para Conductores | Como developer, deseo implementar soporte offline para almacenar eventos temporalmente y sincronizarlos cuando vuelva la conexión. | 5            |
-|    27 | US   | US7  | Analítica de Flota               | Como administrador, deseo revisar métricas de rendimiento operativo.                                                               | 8            |
-|    28 | US   | US22 | Historial de Asistencia          | Como padre, deseo revisar asistencia mensual de mi hijo.                                                                           | 5            |
-|    29 | US   | US15 | Bitácora de Viajes               | Como conductor, deseo consultar historial de viajes realizados.                                                                    | 3            |
-|    30 | US   | US23 | Perfil del Estudiante            | Como padre, deseo registrar alergias o datos médicos relevantes.                                                                   | 5            |
-|    31 | US   | US24 | Chat con Soporte                 | Como padre, deseo reportar ausencias o dudas desde la app.                                                                         | 5            |
-|    32 | US   | US13 | Botón de Pánico                  | Como conductor, deseo activar SOS en emergencias críticas.                                                                         | 8            |
-|    33 | TS   | TS4  | Configuración Swagger/OpenAPI    | Como developer, deseo configurar Swagger/OpenAPI para documentar y probar los endpoints REST.                                      | 3            |
-
+| Orden | Tipo | ID   | Título                                      | Descripción                                                                                                                        | Story Points |
+| ----: | ---- | ---- | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+| 1 | US | US18 | Visualización de Hero | Como visitante, deseo ver la propuesta de valor de SafeRoute para entender rápidamente el servicio. | 2 |
+| 2 | US | US19 | Navegación de Funciones | Como visitante, deseo ver las funcionalidades principales para conocer el alcance del servicio. | 2 |
+| 3 | US | US20 | Detalle de Roles | Como visitante, deseo conocer los beneficios por perfil de usuario para identificar si SafeRoute se adapta a mis necesidades. | 3 |
+| 4 | US | US21 | Consulta de Precios | Como visitante, deseo ver los planes y precios para evaluar mi presupuesto. | 3 |
+| 5 | US | US22 | Sección ¿Cómo funciona? | Como visitante, deseo entender los pasos iniciales del servicio para saber cómo empezar. | 2 |
+| 6 | US | US23 | Implementación i18n | Como visitante, deseo cambiar el idioma entre español e inglés para navegar cómodamente. | 5 |
+| 7 | US | US24 | Testimonios Reales | Como visitante, deseo leer reseñas o testimonios para confiar en la marca. | 2 |
+| 8 | US | US25 | Formulario de Contacto | Como visitante, deseo enviar mis datos para solicitar información o una demo comercial. | 3 |
+| 9 | US | US28 | Preguntas Frecuentes FAQ | Como visitante, deseo revisar dudas comunes para comprender mejor el servicio sin contactar soporte. | 2 |
+| 10 | US | US33 | Verificación de SSL | Como visitante, deseo acceder a la plataforma mediante HTTPS para confiar en la seguridad del sitio. | 3 |
+| 11 | US | US34 | Cookies and Local Storage Policy | Como visitante, deseo conocer el uso de cookies y almacenamiento local para comprender cómo se gestiona mi sesión y preferencias. | 2 |
+| 12 | TS | TS1 | JWT Authentication | Como developer, deseo implementar autenticación JWT para proteger los endpoints del sistema. | 5 |
+| 13 | TS | TS2 | Configuración Swagger/OpenAPI | Como developer, deseo configurar Swagger/OpenAPI para documentar y probar los endpoints REST. | 3 |
+| 14 | TS | TS3 | Soporte i18n | Como developer, deseo configurar soporte i18n para permitir la internacionalización del Landing Page y la Web Application. | 5 |
+| 15 | TS | TS4 | Implementación HTTPS/SSL | Como developer, deseo configurar HTTPS/SSL para proteger la comunicación entre cliente y servidor. | 3 |
+| 16 | TS | TS5 | Integración Leaflet Maps | Como developer, deseo integrar Leaflet Maps para visualizar rutas y ubicaciones dentro de la Web Application. | 5 |
+| 17 | US | US1 | Contratar Plan | Como administrador, deseo elegir un plan para digitalizar y escalar mi operación. | 5 |
+| 18 | US | US2 | Registro de Conductores | Como administrador, deseo crear cuentas de conductores para asignar responsabilidades. | 3 |
+| 19 | US | US3 | Registro de Padres | Como administrador, deseo registrar padres para habilitar el monitoreo del servicio escolar. | 3 |
+| 20 | US | US4 | Alta de Alumnos | Como administrador, deseo registrar alumnos para incluirlos en los recorridos. | 5 |
+| 21 | US | US5 | Creación de Rutas | Como administrador, deseo crear rutas y paradas para organizar los recorridos escolares. | 8 |
+| 22 | US | US6 | Asignación de Roles | Como administrador, deseo asignar conductores a rutas para organizar la operación. | 3 |
+| 23 | US | US8 | Inicio de Trayecto | Como conductor, deseo activar la ruta para iniciar el servicio escolar. | 3 |
+| 24 | US | US9 | Marcación de Abordaje | Como conductor, deseo registrar el abordaje de los alumnos para confirmar asistencia. | 5 |
+| 25 | US | US12 | Finalización de Ruta | Como conductor, deseo cerrar la ruta para concluir el servicio correctamente. | 2 |
+| 26 | US | US13 | Navegación Integrada | Como conductor, deseo usar mapas externos para apoyarme durante el recorrido. | 3 |
+| 27 | US | US15 | Rastreo en Tiempo Real | Como padre, deseo ver el vehículo en el mapa para conocer el estado del traslado escolar. | 8 |
+| 28 | US | US16 | Gestión del Perfil del Padre | Como padre de familia, deseo revisar mi perfil y configuración de cuenta para mantener actualizada mi información dentro de SafeRoute. | 3 |
+| 29 | US | US17 | Confirmación de Llegada e Historial de Asistencia | Como padre, deseo saber si mi hijo llegó correctamente y revisar el historial de asistencia para estar tranquilo. | 5 |
+| 30 | TS | TS6 | API de Viajes del Conductor | Como developer, deseo exponer endpoints de viajes asignados para que el conductor pueda consultar su operación diaria. | 5 |
+| 31 | TS | TS7 | API de Seguimiento para Padres | Como developer, deseo exponer endpoints de seguimiento para que el padre pueda consultar el estado del viaje. | 5 |
+| 32 | TS | TS8 | API de Historial de Asistencia | Como developer, deseo exponer endpoints de historial para que el padre pueda revisar registros anteriores del servicio. | 3 |
 ---
 
 ## Capítulo IV: Product Design
