@@ -315,29 +315,38 @@ hijos?
 
 ##### 1.2.2.2. Lean UX Assumptions
 
-**Business Assumptions**
+De acuerdo con la tercera edición de *Lean UX*, los requerimientos deben tratarse como supuestos verificables y no como certezas. Por ello, los assumptions de SafeRoute no se limitan a las categorías de negocio y usuario, sino que se organizan en cinco apartados derivados de los primeros bloques del Lean UX Canvas que el equipo necesita declarar antes de formular hipótesis y validar la solución.
 
-- Creemos que existe demanda suficiente para digitalizar el transporte escolar privado en Lima Metropolitana, dado que opera mayoritariamente de forma tradicional y sin soporte tecnológico.
-- Creemos que los padres de familia adoptarán la plataforma si el proceso de incorporación es simple y la información que reciben sobre el trayecto de sus hijos es clara y confiable.
-- Creemos que los transportistas adoptarán la plataforma si la interfaz operativa durante el trayecto es simple, rápida y no distrae la conducción.
-- Creemos que el modelo de suscripción por planes escalonados Básico, Intermedio y Completo permite capturar tanto a grupos pequeños de padres organizados como a empresas de transporte escolar con flotas más grandes.
-- Creemos que SafeRoute transmite ahorro de tiempo, reduccion de errores y confianza al transporte de los escolares frente a los padres de familia, lo que justifica el costo de la suscripción.
-- Sabremos que estamos equivocados si los administradores abandonan la plataforma en los primeros 60 días por considerar que la curva de aprendizaje es demasiado alta o que el valor percibido no justifica el costo.
+**Business Problem Assumptions**
+
+- Creemos que el transporte escolar privado en Lima Metropolitana opera mayoritariamente con llamadas, WhatsApp y registros manuales, lo que genera poca visibilidad, errores operativos y desconfianza en el servicio.
+- Creemos que la falta de trazabilidad durante el traslado escolar afecta simultáneamente a los padres, que necesitan tranquilidad, y a los transportistas, que necesitan ordenar su operación diaria.
+- Creemos que existe una oportunidad de negocio si SafeRoute conecta la necesidad de seguridad de los padres con la necesidad de gestión digital de los transportistas escolares.
+
+**Business Outcome Assumptions**
+
+- Creemos que SafeRoute será viable si los administradores del servicio completan el registro de su operación durante los primeros 15 días de uso.
+- Creemos que la retención de suscriptores dependerá de que la plataforma demuestre ahorro de tiempo, reducción de errores y mayor confianza frente a los padres de familia.
+- Creemos que los planes Básico, Intermedio y Completo permitirán atender tanto a grupos pequeños de padres organizados como a empresas de transporte escolar con flotas más grandes.
 
 **User Assumptions**
 
-- ¿Quién es el usuario?
-  Los padres de familia con hijos en nivel inicial, kínder y primaria que utilizan un servicio de transporte escolar ya contratado, y los transportistas escolares como por ejemplo los conductores independientes o responsables de pequeñas empresas que operan ese servicio. Dentro de la plataforma, cualquiera de estos segmentos puede asumir además el rol de Administrador.
-- ¿Dónde encaja nuestro producto en su vida?
-  Para el transportista, en su jornada laboral operativa diaria. Para el padre, en los momentos de entrada y salida escolar de sus hijos.
-- ¿Qué problemas resuelve?
-  Elimina la gestión manual y la comunicación no estructurada del transporte escolar, proporcionando al transportista herramientas operativas digitales y al padre visibilidad del trayecto de sus hijos.
-- ¿Cuándo y cómo es usado?
-  El transportista lo usa durante cada trayecto para gestionar abordajes, paradas e incidencias. El padre lo consulta en los horarios de traslado escolar para monitorear el estado del viaje de sus hijos.
-- ¿Qué características son importantes?
-  Registro de abordaje por alumno, visualización de ruta y paradas, reporte de incidencias, historial de trayectos y gestión centralizada de usuarios y rutas.
-- ¿Cómo debe verse y comportarse?
-  Interfaz limpia, responsiva, rápida y accesible (a11y), disponible en español e inglés (i18n), e intuitiva para usuarios con distintos niveles de familiaridad tecnológica.
+- Creemos que los usuarios principales son padres de familia con hijos en inicial, kínder y primaria que ya utilizan transporte escolar privado, y transportistas escolares independientes o responsables de pequeñas empresas.
+- Creemos que cualquiera de estos segmentos puede asumir el rol de Administrador cuando necesita registrar usuarios, conductores, hijos, rutas y asignaciones.
+- Creemos que los padres usarán SafeRoute principalmente en los horarios de entrada y salida escolar, mientras que los transportistas lo usarán durante su jornada operativa diaria.
+
+**User Outcome and Benefit Assumptions**
+
+- Creemos que los padres buscan reducir su incertidumbre durante el trayecto escolar sin tener que llamar o escribir constantemente al conductor.
+- Creemos que los transportistas buscan reducir la carga manual de coordinación, evitar errores en abordajes y proyectar mayor profesionalismo ante las familias.
+- Creemos que los administradores buscan centralizar la operación del servicio para dejar de depender de herramientas desconectadas.
+
+**Solution Assumptions**
+
+- Creemos que un panel de administración de usuarios, hijos, conductores y rutas permitirá ordenar la operación del transporte escolar.
+- Creemos que el check-list de abordaje, la visualización de paradas, el historial de trayectos y el reporte de incidencias son funciones necesarias para entregar valor desde el MVP.
+- Creemos que el seguimiento GPS en tiempo real y las integraciones futuras con IoT pueden diferenciar los planes superiores cuando los usuarios ya perciban valor en la solución base.
+- Creemos que la interfaz debe ser limpia, responsiva, rápida, accesible, bilingüe e intuitiva para usuarios con distintos niveles de familiaridad tecnológica.
 
 ##### 1.2.2.3. Lean UX Hypothesis Statements
 
@@ -5468,7 +5477,7 @@ Fabio Vallejo
 - **Edad:** 28
 - **Distrito:** San Miguel y Miraflores
 - **Segmento:** Driver
-- **URL del video:** https://1drv.ms/v/c/a3bda66c80e2095c/IQCkK7xkt2N7TbSCOXPbCJTqAXZRWtdYueZppMSIM3shK4c?e=usVO15
+- **URL del video:** https://1drv.ms/v/c/a3bda66c80e2095c/IQDOAnIaMNn8TpzuKDBc7LhXAadVGwc1kbVAzatawQyMsqM?e=VDLekN
 - **Timing de inicio:** 0:18
 - **Timing de fin:** 6:55
 - **Duración:** 6:36
@@ -5543,7 +5552,7 @@ Frank Serrano
 - **Edad:** 28
 - **Distrito:** Miraflores y Santiago de surco
 - **Segmento:** Driver
-- **URL del video:** https://1drv.ms/v/c/a3bda66c80e2095c/IQCkK7xkt2N7TbSCOXPbCJTqAXZRWtdYueZppMSIM3shK4c?e=usVO15
+- **URL del video:** https://1drv.ms/v/c/a3bda66c80e2095c/IQDOAnIaMNn8TpzuKDBc7LhXAadVGwc1kbVAzatawQyMsqM?e=VDLekN
 - **Timing de inicio:** 0:18
 - **Timing de fin:** 6:55
 - **Duración:** 6:36
@@ -5599,7 +5608,7 @@ Nickolas Ramirez Ruiz
 - **Edad:** 25 años
 - **Distrito:** Callería, Pucallpa
 - **Segmento:** Parent
-- **URL del video:** https://1drv.ms/v/c/a3bda66c80e2095c/IQCkK7xkt2N7TbSCOXPbCJTqAXZRWtdYueZppMSIM3shK4c?e=usVO15
+- **URL del video:** https://1drv.ms/v/c/a3bda66c80e2095c/IQDOAnIaMNn8TpzuKDBc7LhXAadVGwc1kbVAzatawQyMsqM?e=VDLekN
 - **Timing de inicio:** 7:06
 - **Duración:** 6:15
 - **Fin de entrevista:** 13:21
@@ -5690,7 +5699,7 @@ le permitió confirmar la llegada segura del estudiante y calificar el proyecto 
 - **Edad:** 38 años
 - **Distrito:** Santiago de Surco, Lima
 - **Segmento:** Parent
-- **URL del video:** [https://1drv.ms/v/c/a3bda66c80e2095c/IQCkK7xkt2N7TbSCOXPbCJTqAXZRWtdYueZppMSIM3shK4c?e=usVO15]
+- **URL del video:** []
 - **Timing de inicio:** 13:27
 - **Duración:** 06:31
 - **Fin de entrevista:** 19:59
