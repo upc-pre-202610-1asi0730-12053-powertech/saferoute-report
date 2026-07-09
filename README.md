@@ -5988,6 +5988,7 @@ El video también resume la evolución del proyecto desde la identificación de 
 
 ---
 
+
 ## Bibliografía
 
 - Autoridad de Transporte Urbano para Lima y Callao. (2024). _Cifra de movilidades escolares autorizadas disminuyó en 25% en un año_. El Comercio. Recuperado el 9 de abril de 2026, de https://elcomercio.pe/lima/cifra-de-movilidades-escolares-autorizadas-disminuyo-en-25-en-un-ano-a-que-se-debe-esta-reduccion-informe-movilidad-escolar-noticia/
@@ -5996,64 +5997,78 @@ El video también resume la evolución del proyecto desde la identificación de 
 
 - Superintendencia de Transporte Terrestre de Personas, Carga y Mercancías. (2024). _Sutran (MTC) sensibilizó a más de 47 000 escolares sobre seguridad vial_. Gob.pe. Recuperado el 9 de abril de 2026, de https://www.gob.pe/institucion/sutran/noticias/1255228-sutran-mtc-sensibilizo-a-mas-de-47-000-escolares-sobre-seguridad-vial-en-lo-que-va-del-2025
 
+- Özkan, O., Babur, Ö., & van den Brand, M. G. J. (2025). Domain-driven design in software development: A
+systematic literature review on implementation, challenges, and effectiveness. Journal of Systems and Software,
+230, 112537. Recuperado el 5 de julio de 2026, de https://doi.org/10.1016/j.jss.2025.112537
+
+- Özkan, O., Babur, Ö., & van den Brand, M. G. J. (2023). Refactoring with domain-driven design in an industrial
+context: An action research report. Empirical Software Engineering, 28. Recuperado el 5 de julio de 2026, de
+https://link.springer.com/article/10.1007/s10664-023-10310-1
+
+- Vural, H., & Koyuncu, M. (2021). Does domain-driven design lead to finding the optimal modularity of a
+microservice?. IEEE Access, 9, 32721-32733. Recuperado el 5 de julio de 2026, de
+https://doi.org/10.1109/ACCESS.2021.3060895
+
+- Rizki, M., Fajar, A. N., & Retnowardhani, A. (2021). Designing online healthcare using DDD in microservices
+architecture. Journal of Physics: Conference Series, 1898(1), 012010. Recuperado el 5 de julio de 2026, de
+https://doi.org/10.1088/1742-6596/1898/1/012010
+
+- Vural, H., & Koyuncu, M. (2021). Does domain-driven design lead to finding the optimal modularity of a microservice? IEEE Access, 9, 32721–32733. https://doi.org/10.1109/ACCESS.2021.3060895
+
+- Özkan, O., Babur, Ö., & van den Brand, M. G. J. (2025). Domain-driven design in software development: A systematic literature review on implementation, challenges, and effectiveness. Journal of Systems and Software, 230, 112537. https://doi.org/10.1016/j.jss.2025.112537
+
+
 ## Anexos
 
-#### A. Links Importantes
 
-## Anexos - Enlaces del Proyecto
+### A. Links de despliegues y Servicios
 
-### 1. Despliegues y Servicios API
+- **Web Application (Frontend):** [Frontend Deployment](https://ashy-dune-098494d0f.7.azurestaticapps.net/identity-and-access-management/sign-in)
+- **Landing Page:** [Landing Page Deployment](https://upc-pre-202610-1asi0730-12053-powertech.github.io/saferoute-website/)
+- **Web Application (Backend):** [Swagger / OpenAPI Backend](https://asp-powertech-prod-dfembvcde5bdfxdx.mexicocentral-01.azurewebsites.net/swagger/index.html)
 
-* **Web Application (Frontend):** [Frontend Deployment](https://ashy-dune-098494d0f.7.azurestaticapps.net/identity-and-access-management/sign-in)
-* **Landing Page:** [Landing Page Deployment](https://upc-pre-202610-1asi0730-12053-powertech.github.io/saferoute-website/)
-* **Web Application (Backend):** [Swagger / OpenAPI Backend](https://asp-powertech-prod-dfembvcde5bdfxdx.mexicocentral-01.azurewebsites.net/swagger/index.html)
 
----
+<br>Acceso al sistema
 
-### 2. Repositorios de GitHub
+<br>**Admin:**
+<br>admin@saferoute.pe / admin123
 
-* **Organización Principal:** [GitHub Organization](https://github.com/upc-pre-202610-1asi0730-12053-powertech)
-* **Informe del Proyecto:** [Project Report Repository](https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-report)
-* **Landing Page Source:** [Landing Page Repository](https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-website)
-* **Web Application Source:** [Web Application Repository](https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-webapp)
-* **Web Application Backend Source:** [Backend Repository](https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform)
+<br>**Driver:**
+<br>driver@saferoute.pe / driver123
+<br>luis.torres@saferoute.pe / driver123
 
----
+<br>**Parent:**
 
-### 3. Diseño y Prototipado
+<br>parent@saferoute.pe / parent123
+<br>jorge.salas@gmail.com / parent123
 
-* **Big Picture Event Storming:** [Miro Board](https://miro.com/welcomeonboard/Q0xsbTlRVkpDQmlwdWJLUHl6dVBWSHQ4NnJQTVVCSUpTUWwzZHBncHAzM0taZWJDYngzTFYrQmdyY1crZS9mWWJ2K0NOTzlHbzd2V3BPdDB4SnpVR2owTTNCZkpZeDBCYWM1ZndITktNNjVhNWYvc1JESUkzenhtRE51ODV1cXdzVXVvMm53MW9OWFg5bkJoVXZxdFhRPT0hdjE=?share_link_id=806628004318)
-* **Figma UX/UI Design:** [Figma Design File](https://www.figma.com/design/x30GjOLycF1yUG7fZfLXOk/Avances-2026-10?node-id=99-520&t=qdtagch7QHL2iL1a-0)
 
----
+### B. Repositorios de GitHub
 
-### 4. Entrevistas y Evidencias
+- **Organización Principal:** [GitHub Organization](https://github.com/upc-pre-202610-1asi0730-12053-powertech)
+- **Informe del Proyecto:** [Project Report Repository](https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-report)
+- **Landing Page Source:** [Landing Page Repository](https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-website)
+- **Web Application Source:** [Web Application Repository](https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-webapp)
+- **Web Application Backend Source:** [Backend Repository](https://github.com/upc-pre-202610-1asi0730-12053-powertech/saferoute-platform)
 
-* **Entrevistas de Segmentos:** [Research Interviews Video](https://1drv.ms/v/c/f647ccc757f760c7/IQBpmAWWCOusSLuP0uLD_z7NAe5clO5HVvyL8gi5oJuddj8?e=9qIP9h)
-* **Entrevistas de Validación:** [Validation Interviews Video](https://1drv.ms/v/c/a3bda66c80e2095c/IQDOAnIaMNn8TpzuKDBc7LhXAadVGwc1kbVAzatawQyMsqM?e=VDLekN)
 
----
+### C. Diseño y Prototipado
 
-### 5. About The Team
+- **Big Picture Event Storming:** [Miro Board](https://miro.com/welcomeonboard/Q0xsbTlRVkpDQmlwdWJLUHl6dVBWSHQ4NnJQTVVCSUpTUWwzZHBncHAzM0taZWJDYngzTFYrQmdyY1crZS9mWWJ2K0NOTzlHbzd2V3BPdDB4SnpVR2owTTNCZkpZeDBCYWM1ZndITktNNjVhNWYvc1JESUkzenhtRE51ODV1cXdzVXVvMm53MW9OWFg5bkJoVXZxdFhRPT0hdjE=?share_link_id=806628004318)
+- **Figma UX/UI Design:** [Figma Design File](https://www.figma.com/design/x30GjOLycF1yUG7fZfLXOk/Avances-2026-10?node-id=99-520&t=qdtagch7QHL2iL1a-0)
 
-* **Video About The Team:** [About The Team Video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241d922_upc_edu_pe/IQD9O5YgApFcSpcnArLVFQlOAR5QH6LYp8gJ-1pY8kjvyPQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=C8jtbJ)
 
----
+### D. Entrevistas y Evidencias
 
-### 6. About The Product
+- **Entrevistas de Segmentos:** [Research Interviews Video](https://1drv.ms/v/c/f647ccc757f760c7/IQBpmAWWCOusSLuP0uLD_z7NAe5clO5HVvyL8gi5oJuddj8?e=9qIP9h)
+- **Entrevistas de Validación:** [Validation Interviews Video](https://1drv.ms/v/c/a3bda66c80e2095c/IQDOAnIaMNn8TpzuKDBc7LhXAadVGwc1kbVAzatawQyMsqM?e=VDLekN)
 
-* **Video About The Product:** [About The Product Video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202424059_upc_edu_pe/IQBgC3pMo0wcSp3ERhMrj61kASg3LeEPclr1i0IiKDBtEyU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=ECTx9t)
 
-#### B.  Acceso al sistema
+### E. About The Team
 
-**Admin:**
-admin@saferoute.pe / admin123
+- **Video About The Team:** [About The Team Video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241d922_upc_edu_pe/IQD9O5YgApFcSpcnArLVFQlOAR5QH6LYp8gJ-1pY8kjvyPQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=C8jtbJ)
 
-**Driver:**
-driver@saferoute.pe / driver123
-luis.torres@saferoute.pe / driver123
 
-**Parent:**
+### F. About The Product
 
-parent@saferoute.pe / parent123
-jorge.salas@gmail.com / parent123
+- **Video About The Product:** [About The Product Video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202424059_upc_edu_pe/IQBgC3pMo0wcSp3ERhMrj61kASg3LeEPclr1i0IiKDBtEyU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=ECTx9t)
