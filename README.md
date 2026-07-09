@@ -5909,17 +5909,23 @@ Enlace de Microsoft Stream: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u
 - Se desplegó la *Landing Page bilingüe* presentando la propuesta de valor del producto a padres y transportistas escolares.
 - Se elaboraron *wireframes y mockups* desktop/mobile para los tres perfiles (Administrador, Conductor, Padre), acelerando el desarrollo posterior.
 - Se adoptó *Domain-Driven Design* definiendo los 6 bounded contexts del sistema.
+- Desde una perspectiva gerencial, el Sprint 1 permitió alinear al equipo sobre un alcance inicial concreto, distribuyendo responsabilidades mediante la Leadership and Collaboration Matrix y estableciendo una base de trabajo ordenada para los siguientes entregables.
+- Asimismo, este sprint permitió consolidar una visión compartida del producto entre todos los integrantes, lo que redujo ambigüedades tempranas y facilitó la toma de decisiones en diseño, documentación y organización del trabajo.
 
 #### Sprint 2
 
 - Se desplegó la *Frontend Web Application* funcional en Microsoft Azure, integrando los módulos core para los tres perfiles de usuario.
 - Se utilizó una *Fake REST API* con json-server para validar flujos y DTOs antes del backend real, desacoplando desarrollos paralelos.
 - Se integró *Leaflet Maps* habilitando la funcionalidad core: planificación y monitoreo geográfico del transporte escolar.
+- Desde la gestión del proyecto, el Sprint 2 evidenció que la división del trabajo por módulos y el uso de artefactos Scrum facilitaron el seguimiento del avance, redujeron dependencias entre integrantes y permitieron sostener un ritmo de entrega coherente con los objetivos planteados.
+- Además, el cumplimiento de los entregables del sprint mostró una mejor capacidad de coordinación interna, ya que el equipo pudo avanzar en paralelo sin perder consistencia funcional ni documental entre los distintos componentes del proyecto.
 
 #### Sprint 3
 
 - Se implementó y desplegó la primera versión funcional del *Backend Web Service* de SafeRoute en ASP.NET Core (.NET 10) con DDD, CQRS y EF Core sobre MySQL, logrando una arquitectura modular y escalable por bounded contexts.
 - El despliegue en *Azure App Service* y la verificación vía *Swagger* confirmaron el funcionamiento de extremo a extremo, dejando la API operativa y accesible públicamente para los siguientes Sprints.
+- A nivel gerencial, el Sprint 3 confirmó la importancia de mantener trazabilidad técnica y organizacional mediante GitFlow, Conventional Commits y la asignación clara de líderes por bounded context, lo que hizo posible coordinar desarrollo, documentación y despliegue sin perder control del avance.
+- De igual manera, este sprint evidenció madurez en la gestión del proyecto, pues el equipo logró integrar trabajo técnico especializado con levantamiento de observaciones académicas, manteniendo el foco tanto en la calidad del producto como en la calidad del entregable.
 
 
 ### Sprint 4 
@@ -5930,11 +5936,17 @@ Enlace de Microsoft Stream: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u
 - Las entrevistas de validación confirmaron los principales assumptions e hypothesis statements del proyecto, evidenciando que padres y conductores valoran contar con una plataforma que centralice la gestión de rutas, viajes y notificaciones, lo que respalda la propuesta de valor definida al inicio del proyecto.
 
 
+- En términos gerenciales, el Sprint 4 demostró capacidad de cierre del proyecto, ya que el equipo logró priorizar el contexto IAM como pendiente crítica, levantar las observaciones de la entrega AV2, coordinar validaciones con usuarios y consolidar la documentación final, mostrando control del alcance, respuesta a la retroalimentación y cumplimiento de objetivos de entrega.
+- Finalmente, este sprint reflejó una gestión orientada a resultados, donde la planificación, la reasignación de esfuerzos y la integración de evidencias técnicas y funcionales permitieron presentar una entrega final más sólida, coherente y alineada con los objetivos del curso.
+
+
 ### Recomendaciones
 
 - Se recomienda *reforzar la seguridad de la API* con autenticación y autorización antes de exponerla a usuarios reales, dado que actualmente los endpoints son de acceso abierto y esto representa un riesgo al integrarla con la Web Application.
 - Se recomienda *incorporar pruebas automatizadas y monitoreo en la nube*, pues permitirían detectar fallos de forma temprana y mantener la estabilidad del servicio a medida que la solución crece en complejidad.
 - Se recomienda continuar el Roadmap del producto incorporando funcionalidades sugeridas por los usuarios durante las validaciones, como la geolocalización en tiempo real y las notificaciones push nativas, así como ampliar las pruebas de usabilidad a un mayor número de usuarios por segmento antes de un lanzamiento a mayor escala.
+- Se recomienda definir una *estrategia gerencial de pilotaje* con indicadores de adopción, satisfacción, tiempos de respuesta ante incidencias y continuidad operativa, a fin de evaluar el desempeño del servicio en un entorno real antes de escalarlo comercialmente.
+- Se recomienda formalizar un *plan de operación y crecimiento* que contemple soporte a usuarios, priorización de backlog, mantenimiento de infraestructura y seguimiento de hallazgos de validación, para convertir el prototipo académico en una solución sostenible.
 ---
 
 ### Video About-the-Team
