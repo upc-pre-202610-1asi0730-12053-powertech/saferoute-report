@@ -315,35 +315,29 @@ hijos?
 
 ##### 1.2.2.2. Lean UX Assumptions
 
-**1. Business Problem Assumptions**
+**Business Assumptions**
 
-- Creemos que la falta de visibilidad durante el trayecto escolar constituye un problema recurrente y emocionalmente relevante para los padres de familia, especialmente en los horarios de entrada y salida escolar.
-- Creemos que la operación informal de muchos servicios de transporte escolar genera errores de coordinación, pérdida de tiempo y baja trazabilidad para conductores, responsables del servicio y familias.
-- Creemos que ambos problemas son interdependientes: los padres necesitan información confiable y los transportistas necesitan herramientas operativas para poder brindarla de manera consistente.
+- Creemos que existe demanda suficiente para digitalizar el transporte escolar privado en Lima Metropolitana, dado que opera mayoritariamente de forma tradicional y sin soporte tecnológico.
+- Creemos que los padres de familia adoptarán la plataforma si el proceso de incorporación es simple y la información que reciben sobre el trayecto de sus hijos es clara y confiable.
+- Creemos que los transportistas adoptarán la plataforma si la interfaz operativa durante el trayecto es simple, rápida y no distrae la conducción.
+- Creemos que el modelo de suscripción por planes escalonados Básico, Intermedio y Completo permite capturar tanto a grupos pequeños de padres organizados como a empresas de transporte escolar con flotas más grandes.
+- Creemos que SafeRoute transmite ahorro de tiempo, reduccion de errores y confianza al transporte de los escolares frente a los padres de familia, lo que justifica el costo de la suscripción.
+- Sabremos que estamos equivocados si los administradores abandonan la plataforma en los primeros 60 días por considerar que la curva de aprendizaje es demasiado alta o que el valor percibido no justifica el costo.
 
-**2. Business Outcomes Assumptions**
+**User Assumptions**
 
-- Creemos que el éxito inicial del producto debe reflejarse en cambios medibles de comportamiento, no solo en la publicación de la plataforma.
-- Creemos que una señal temprana de valor será que los administradores completen el registro operativo de usuarios, rutas y alumnos dentro de los primeros 15 días.
-- Creemos que la retención de suscriptores y el upgrade entre planes serán indicadores válidos de que SafeRoute genera valor suficiente como para justificar continuidad y pago.
-
-**3. Users/Customers Assumptions**
-
-- Creemos que el principal cliente o tomador de decisión será el administrador del servicio, que puede ser un transportista independiente, una pequeña empresa de movilidad escolar o un grupo organizado de padres.
-- Creemos que los usuarios directos de la solución serán tres: administradores, conductores y padres de familia, cada uno con tareas, motivaciones y necesidades de información distintas.
-- Creemos que la adopción dependerá de resolver restricciones específicas por segmento: control y centralización para el administrador, rapidez y baja distracción para el conductor, y confianza y tranquilidad para el padre.
-
-**4. User Outcomes & Benefits Assumptions**
-
-- Creemos que los administradores buscan centralizar la operación del servicio para reducir coordinación manual, errores de asignación y dependencia de WhatsApp, llamadas y registros dispersos.
-- Creemos que los padres de familia buscan reducir su incertidumbre y obtener tranquilidad al poder verificar el estado del trayecto sin interrumpir al conductor.
-- Creemos que los conductores buscan ejecutar la ruta con mayor orden, registrar abordajes e incidencias con menor fricción y proyectar una imagen más profesional frente a las familias.
-
-**5. Solution Ideas Assumptions**
-
-- Creemos que una web application con acceso por roles y un panel centralizado puede cubrir de forma suficiente las necesidades clave de administración, operación y monitoreo del servicio.
-- Creemos que funcionalidades como registro de abordaje, visualización de paradas, estado del trayecto, historial e incidencias entregan valor inmediato incluso antes de incorporar automatizaciones más avanzadas.
-- Creemos que diferenciar planes por nivel de visibilidad y monitoreo, incluyendo seguimiento GPS en tiempo real y alertas de mayor sofisticación, puede sostener una estrategia de monetización escalonada.
+- ¿Quién es el usuario?
+  Los padres de familia con hijos en nivel inicial, kínder y primaria que utilizan un servicio de transporte escolar ya contratado, y los transportistas escolares como por ejemplo los conductores independientes o responsables de pequeñas empresas que operan ese servicio. Dentro de la plataforma, cualquiera de estos segmentos puede asumir además el rol de Administrador.
+- ¿Dónde encaja nuestro producto en su vida?
+  Para el transportista, en su jornada laboral operativa diaria. Para el padre, en los momentos de entrada y salida escolar de sus hijos.
+- ¿Qué problemas resuelve?
+  Elimina la gestión manual y la comunicación no estructurada del transporte escolar, proporcionando al transportista herramientas operativas digitales y al padre visibilidad del trayecto de sus hijos.
+- ¿Cuándo y cómo es usado?
+  El transportista lo usa durante cada trayecto para gestionar abordajes, paradas e incidencias. El padre lo consulta en los horarios de traslado escolar para monitorear el estado del viaje de sus hijos.
+- ¿Qué características son importantes?
+  Registro de abordaje por alumno, visualización de ruta y paradas, reporte de incidencias, historial de trayectos y gestión centralizada de usuarios y rutas.
+- ¿Cómo debe verse y comportarse?
+  Interfaz limpia, responsiva, rápida y accesible (a11y), disponible en español e inglés (i18n), e intuitiva para usuarios con distintos niveles de familiaridad tecnológica.
 
 ##### 1.2.2.3. Lean UX Hypothesis Statements
 
@@ -4361,7 +4355,7 @@ El objetivo del Sprint 3 fue implementar la primera versión funcional del Backe
 
 ![Sprint Backlog 3](assets/images/Chapter-5/Sprint3/trello-sprint3.png)
 
-**URL del Board:** [https://trello.com/b/HOyzrybS/sprint-3-saferoute](#)
+**URL del Board:** [https://trello.com/b/HOyzrybS/sprint-3-saferoute](https://trello.com/b/HOyzrybS/sprint-3-saferoute)
 
 | Sprint # | Sprint 3 | | | | | | |
 |:---|:---|:---|:---|:---|:---|:---|:---|
